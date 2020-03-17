@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-style: border-box;
+}
+
+.title-page .background {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("../img/camp-photo.jpg");
+  -webkit-filter: brightness(30%) blur(6px);
+          filter: brightness(30%) blur(6px);
+  background-size: cover;
+  background-position: bottom;
+  -webkit-animation: blurIn 2s linear forwards, breathe 10s linear 2.5s infinite;
+          animation: blurIn 2s linear forwards, breathe 10s linear 2.5s infinite;
+}
+
+.title-page .name-block {
+  font-family: 'Ubuntu Mono', monospace;
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  text-align: center;
+  font-size: 22px;
+  width: 22%;
+  z-index: 3;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1% 4%;
+  border-radius: 10%;
+  position: absolute;
+  top: 20%;
+  right: 25%;
+  -webkit-box-shadow: black 8px 8px 16px;
+          box-shadow: black 8px 8px 16px;
+  -webkit-animation: slideInRight ease-in 750ms forwards 1.75s;
+          animation: slideInRight ease-in 750ms forwards 1.75s;
+}
+
+.title-page .name-block h1, .title-page .name-block h3, .title-page .name-block h4 {
+  line-height: 3em;
+}
+
+@-webkit-keyframes blurIn {
+  from {
+    -webkit-filter: brightness(30%) blur(6px);
+            filter: brightness(30%) blur(6px);
+  }
+  to {
+    -webkit-filter: brightness(70%) blur(0);
+            filter: brightness(70%) blur(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    -webkit-filter: brightness(30%) blur(6px);
+            filter: brightness(30%) blur(6px);
+  }
+  to {
+    -webkit-filter: brightness(70%) blur(0);
+            filter: brightness(70%) blur(0);
+  }
+}
+
+@-webkit-keyframes breathe {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes breathe {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=title.css.map */

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-style: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+.title-page {
+
+    .background {
+        min-height: 100vh;
+        min-width: 100vw;
+        background-image: url('../img/camp-photo.jpg');
+        filter: brightness(30%) blur(6px);
+        background-size: cover;
+        background-position: bottom;
+        animation: blurIn 2s linear forwards, breathe 10s linear 2.5s infinite;
+    }
+
+    .name-block {
+        font-family: 'Ubuntu Mono', monospace;
+        opacity: 0;
+        transform: translateX(20px);
+        text-align: center;
+        font-size: 22px;
+        width: 22%;
+        z-index: 3;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 1% 4%;
+        border-radius: 10%;
+        position: absolute;
+        top: 20%;
+        right: 25%;
+        box-shadow: black 8px 8px 16px;
+        animation: slideInRight ease-in 750ms forwards 1.75s;
+
+        h1, h3, h4 {
+            line-height: 3em;
+        }
+    }
+}
+
+@keyframes blurIn {
+    from {
+        filter: brightness(30%) blur(6px);
+    }
+    to {
+        filter: brightness(70%) blur(0);
+    }
+}
+
+@keyframes breathe {
+    from {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
