@@ -13,35 +13,112 @@
   -webkit-filter: brightness(30%) blur(6px);
           filter: brightness(30%) blur(6px);
   background-size: cover;
-  background-position: bottom;
-  -webkit-animation: blurIn 2s linear forwards, breathe 10s linear 2.5s infinite;
-          animation: blurIn 2s linear forwards, breathe 10s linear 2.5s infinite;
+  background-position: center;
+  -webkit-animation: blurIn 2s linear forwards, breathe 10s linear 2s infinite;
+          animation: blurIn 2s linear forwards, breathe 10s linear 2s infinite;
 }
 
-.title-page .name-block {
+.title-page .profile-block {
   font-family: 'Ubuntu Mono', monospace;
   opacity: 0;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
   text-align: center;
-  font-size: 22px;
-  width: 22%;
+  font-size: 10px;
+  width: 55%;
   z-index: 3;
   color: white;
   background-color: rgba(0, 0, 0, 0.95);
-  padding: 1% 4%;
+  padding: 1% 3%;
   border-radius: 10%;
   position: absolute;
-  top: 20%;
-  right: 25%;
+  top: 42%;
+  right: 5%;
   -webkit-box-shadow: black 8px 8px 16px;
           box-shadow: black 8px 8px 16px;
   -webkit-animation: slideInRight ease-in 750ms forwards 1.75s;
           animation: slideInRight ease-in 750ms forwards 1.75s;
 }
 
-.title-page .name-block h1, .title-page .name-block h3, .title-page .name-block h4 {
-  line-height: 3em;
+.title-page .profile-block .name-block {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+.title-page .profile-block .name-block .left-line, .title-page .profile-block .name-block .right-line {
+  width: 15%;
+}
+
+.title-page .profile-block .name-block .left-line hr, .title-page .profile-block .name-block .right-line hr {
+  width: 0;
+  border: none;
+  background-color: #E1E415;
+  height: 0.2em;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.title-page .profile-block .name-block .left-line hr {
+  float: right;
+}
+
+.title-page .profile-block .name-block .right-line hr {
+  float: left;
+}
+
+.title-page .profile-block .name-block h1 {
+  padding: 3% 0;
+  margin: 0 1%;
+  max-width: 70%;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.title-page .profile-block h3 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+.title-page .profile-block p {
+  line-height: 1.2em;
+  font-size: 1.1em;
+}
+
+.title-page .profile-block h4 {
+  font-size: 1.2em;
+}
+
+.title-page .profile-block h1, .title-page .profile-block h3, .title-page .profile-block p, .title-page .profile-block h4 {
+  padding: 5% 0;
+  -webkit-transition: padding 500ms;
+  transition: padding 500ms;
+}
+
+.title-page .profile-block:hover .name-block {
+  color: #E1E415;
+}
+
+.title-page .profile-block:hover .name-block .left-line hr, .title-page .profile-block:hover .name-block .right-line hr {
+  width: 100%;
+}
+
+.title-page .profile-block:hover .name-block h1 {
+  padding: 5% 0;
+}
+
+.title-page .profile-block:hover h3, .title-page .profile-block:hover p, .title-page .profile-block:hover h4 {
+  padding: 7% 0;
 }
 
 @-webkit-keyframes blurIn {
@@ -119,6 +196,46 @@
     -webkit-transform: translateX(0);
             transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/*--------------- MEDIA QUERIES --------------*/
+@media only screen and (min-width: 500px) {
+  .title-page .profile-block {
+    width: 44%;
+    font-size: 13px;
+    top: 30%;
+    right: 8%;
+  }
+}
+
+@media only screen and (min-width: 910px) {
+  .title-page .profile-block {
+    width: 38%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .title-page .profile-block {
+    width: 30%;
+    font-size: 15px;
+    top: 30%;
+    right: 15%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .title-page .profile-block {
+    width: 30%;
+    font-size: 18px;
+    top: 25%;
+    right: 15%;
+  }
+  .title-page .profile-block h1, .title-page .profile-block h3, .title-page .profile-block p, .title-page .profile-block h4 {
+    padding: 4% 0;
+  }
+  .title-page .profile-block:hover h3, .title-page .profile-block:hover p, .title-page .profile-block:hover h4 {
+    padding: 4.5% 0;
   }
 }
 /*# sourceMappingURL=title.css.map */

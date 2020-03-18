@@ -20,10 +20,18 @@ function Title() {
             <div className="background">
 
             </div>
-            <div className="name-block">
-                <h1>Rahul Eswar</h1>
+            <div className="profile-block">
+                <div className="name-block">
+                    <div className="left-line">
+                        <hr />
+                    </div>
+                    <h1>Rahul Eswar</h1>
+                    <div className="right-line">
+                        <hr />
+                    </div>
+                </div>
                 <h3>Systems and Computing Engineer</h3>
-                <p>Passionate about the development of electrical and embedded systems. Background in biomedical engineering with experience working on medical devices and researching diagnostic technology.</p>
+                <p>Background in Biomedical Engineering with a passion for electrical design and embedded systems. Experienced working on electronics of medical devices and researching micro-electromechanical systems.</p>
                 <h4>Toronto, Canada</h4>
             </div>
         </div>
