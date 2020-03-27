@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-import lightReducer from './lightSwitch'
+import nightMode from './nightMode'
 
 const rootReducer = combineReducers({
-    lightReducer
+    nightMode
 })
 
 export default rootReducer

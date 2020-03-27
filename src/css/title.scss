@@ -8,106 +8,173 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
 $nameYellow: #E1E415;
+$borderBlue: #A1C8F7;
+$even-bar: honeydew;
+$odd-bar: khaki;
 
 .title-page {
-
-    .background {
-        min-height: 100vh;
-        min-width: 100vw;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: visible;
+    
+    #background {
+        height: 100%;
+        width: 100%;
         background-image: url('../img/camp-photo.jpg');
         filter: brightness(30%) blur(6px);
         background-size: cover;
         background-position: center;
-        animation: blurIn 2s linear forwards, breathe 10s linear 2s infinite;
+        animation: blurIn 2s linear forwards, breathe 6s linear 2s infinite running;
+        display: flex;
+        flex-flow: column wrap;
+    
+        .fill-bar {
+            display: block;
+            line-height: 0;
+            width: 0;
+        }
+        .even-bar {
+            align-self: flex-start;
+            background-color: $even-bar;
+        }
+        .odd-bar {
+            align-self: flex-end;
+            background-color: $odd-bar;
+        }
     }
 
-    .profile-block {
-        font-family: 'Ubuntu Mono', monospace;
-        opacity: 0;
-        transform: translateX(20px);
-        text-align: center;
+    #title-content {
         font-size: 10px;
-        width: 55%;
-        z-index: 3;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.95);
-        padding: 1% 3%;
-        border-radius: 10%;
+        width: 60%;
         position: absolute;
-        top: 42%;
+        top: 40%;
         right: 5%;
-        box-shadow: black 8px 8px 16px;
-        animation: slideInRight ease-in 750ms forwards 1.75s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;  // to allow for box shadow
+        opacity: 0;
+        transform: translateX(20px);  // initial transform and opacity for animation
+        animation: slideInRight ease-in 750ms forwards 1.5s;
 
-        .name-block {
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 1s;  // for hover effect
+        .profile-block {
+            font-family: 'Ubuntu Mono', monospace;
+            position: relative;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 1% 3%;
+            border-radius: 10%;
+            box-shadow: black 8px 8px 16px;
 
-            .left-line, .right-line {
-                width: 15%;
-
-                hr {
-                    width: 0;
-                    border: none;
-                    background-color: $nameYellow;
-                    height: 0.2em;
-                    transition: width 1s;  // for hover effect
-                }
-            }
-            .left-line hr {
-                float: right;
-            }
-            .right-line hr {
-                float: left;
-            }
-
-            h1 {
-                padding: 3% 0;
-                margin: 0 1%;
-                max-width: 70%;
-                position: relative;
-                text-transform: uppercase;
-            }
-        }
-
-        h3 {
-            font-size: 1.3em;
-            text-transform: uppercase;
-        }
-        p {
-            line-height: 1.2em;
-            font-size: 1.1em;
-        }
-        h4 {
-            font-size: 1.2em;
-        }
-        h1, h3, p, h4 {
-            padding: 5% 0;
-            transition: padding 500ms;  // for hover effect
-        }
-
-        &:hover {
             .name-block {
-                color: $nameYellow;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: color 1s;  // for hover effect
 
-                .left-line hr, .right-line hr {
-                    width: 100%;
+                .left-line, .right-line {
+                    width: 15%;
+
+                    hr {
+                        width: 0;
+                        border: none;
+                        background-color: $nameYellow;
+                        height: 0.2em;
+                        transition: width 1s;  // for hover effect
+                    }
+                }
+                .left-line hr {
+                    float: right;
+                }
+                .right-line hr {
+                    float: left;
                 }
 
                 h1 {
-                    padding: 5% 0;
+                    padding: 3% 0;
+                    margin: 0 1%;
+                    max-width: 70%;
+                    position: relative;
+                    text-transform: uppercase;
                 }
             }
-            h3, p, h4 {
-                padding: 7% 0;
+
+            h3 {
+                font-size: 1.3em;
+                text-transform: uppercase;
+            }
+            p {
+                line-height: 1.2em;
+                font-size: 1.1em;
+            }
+            h4 {
+                font-size: 1.2em;
+            }
+            h1, h3, p, h4 {
+                padding: 5% 0;
+                transition: padding 500ms;  // for hover effect
+            }
+
+            &:hover {
+                .name-block {
+                    color: $nameYellow;
+
+                    .left-line hr, .right-line hr {
+                        width: 100%;
+                    }
+
+                    h1 {
+                        padding: 5% 0;
+                    }
+                }
+                h3, p, h4 {
+                    padding: 7% 0;
+                }
+            }
+        }
+
+        .entry-button {
+            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1em;
+            width: 70%;
+            margin: 8% 0;
+            padding: 5% 1%;
+            background-color: rgba(1, 1, 1, 0.98);
+            color: white;
+            border: none;
+            border-radius: 5px 15px;
+            border: 2px solid $borderBlue;
+            transition: color 500ms;
+
+            span {
+                opacity: 0;
+                transition: all 500ms;
+            }
+
+
+            &:hover {
+                color: $nameYellow;
+
+                span {
+                    display: initial;
+                    opacity: 1;
+                    color: $nameYellow;
+                    transform: translateX(0);
+                }
             }
         }
     }
 }
+
+
+/*------------------- ANIMATIONS -----------------*/
 
 @keyframes blurIn {
     from {
@@ -141,10 +208,31 @@ $nameYellow: #E1E415;
     }
 }
 
+@keyframes slideOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+@keyframes barsFillIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
 /*--------------- MEDIA QUERIES --------------*/
 
 @media only screen and (min-width: 500px) {
-    .title-page .profile-block {
+    .title-page #title-content {
         width: 44%;
         font-size: 13px;
         top: 30%;
@@ -153,13 +241,13 @@ $nameYellow: #E1E415;
 }
 
 @media only screen and (min-width: 910px) {
-    .title-page .profile-block {
+    .title-page #title-content {
         width: 38%;
     }
 }
 
 @media only screen and (min-width: 1024px) {
-    .title-page .profile-block {
+    .title-page #title-content {
         width: 30%;
         font-size: 15px;
         top: 30%;
@@ -168,20 +256,26 @@ $nameYellow: #E1E415;
 }
 
 @media only screen and (min-width: 1300px) {
-    .title-page .profile-block {
+    .title-page #title-content{
         width: 30%;
         font-size: 18px;
         top: 25%;
         right: 15%;
 
-        h1, h3, p, h4 {
-            padding: 4% 0;
+        .profile-block {
+            h1, h3, p, h4 {
+                padding: 4% 0;
+            }
+
+            &:hover {
+                h3, p, h4 {
+                    padding: 4.1% 0;
+                }
+            }
         }
 
-        &:hover {
-            h3, p, h4 {
-                padding: 4.5% 0;
-            }
+        .entry-button {
+            width: 45%;
         }
     }
 }

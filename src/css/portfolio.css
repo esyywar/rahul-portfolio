@@ -1,0 +1,22 @@
+.portfolio {
+  height: 100vh;
+  width: 100vw;
+  background: repeating-linear-gradient(honeydew, honeydew calc(100vh / 14), khaki calc(100vh / 14), khaki calc(2 * 100vh / 14));
+}
+
+.portfolio-enter {
+  opacity: 0;
+}
+
+.portfolio-enter-active {
+  opacity: 1;
+}
+
+.portfolio-exit {
+  opacity: 1;
+}
+
+.portfolio-exit-active {
+  opacity: 0;
+}
+/*# sourceMappingURL=portfolio.css.map */

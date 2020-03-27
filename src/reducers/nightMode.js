@@ -1,4 +1,4 @@
-const lightReducer = (state = false, action) => {
+const nightMode = (state = false, action) => {
     switch (action.type) {
         case "LIGHT_SWITCH":
             return action.payload
@@ -7,4 +7,4 @@ const lightReducer = (state = false, action) => {
     }
 }
 
-export default lightReducer
+export default nightMode
