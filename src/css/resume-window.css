@@ -32,6 +32,8 @@
   border-radius: 35px;
   color: white;
   text-align: center;
+  -webkit-box-shadow: 20px 20px 12px #242323;
+          box-shadow: 20px 20px 12px #242323;
 }
 
 .grid-container .page-change-out-enter {

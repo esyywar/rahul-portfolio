@@ -1,4 +1,4 @@
-.nav-bar {
+.nav-bar-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,5 +7,12 @@
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   position: fixed;
+  grid-column: 0 / 9;
+  grid-row: 0 / 1;
+  background: black;
+}
+
+.nav-bar-container .nav-link-container {
+  height: 100%;
 }
 /*# sourceMappingURL=navbar.css.map */

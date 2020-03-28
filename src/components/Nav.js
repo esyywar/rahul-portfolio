@@ -14,7 +14,7 @@ function Nav() {
         },
         {
             name: "Work Experience",
-            text: "Professionl Experience",
+            text: "Professional Experience",
             path: "/workexp"
         },
         {
@@ -35,11 +35,11 @@ function Nav() {
     ]
 
     return (
-        <div className="nav-bar">
+        <div className="nav-bar-container">
             {navLinks.map(({ text, path}, index) => {
                 return (
-                    <div className="nav-link">
-                        <NavLink key={index} to={path}>
+                    <div className="nav-link-container">
+                        <NavLink key={index} to={path} className="nav-link">
                             {text}
                         </NavLink>
                     </div>

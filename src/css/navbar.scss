@@ -1,5 +1,13 @@
-.nav-bar {
+.nav-bar-container {
     display: flex;
     flex-flow: row wrap;
     position: fixed;
+    grid-column: 0 / 9;
+    grid-row: 0 / 1;
+
+    background: black;
+
+    .nav-link-container {
+        height: 100%;
+    }
 }
