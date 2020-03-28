@@ -1,7 +1,7 @@
-$even-bar: honeydew;
-$odd-bar: khaki;
+$even-bar: rgb(85, 187, 255);
+$odd-bar: rgb(24, 163, 255);
 
-.portfolio {
+body {
     height: 100vh;
     width: 100vw;
     background: repeating-linear-gradient(
@@ -12,17 +12,27 @@ $odd-bar: khaki;
     );
 }
 
+/********************* REACT TRANSITIONS GROUP ANIMATION *******************/
+
 .portfolio-enter {
     opacity: 0;
 }
 .portfolio-enter-active {
     opacity: 1;
+    transition: all 500ms;
 }
 
 .portfolio-exit {
     opacity: 1;
+    transition: all 500ms;
 }
 
 .portfolio-exit-active {
     opacity: 0;
+}
+
+/************************* PORTFOLIO PAGE STYLING *************************/
+
+.portfolio {
+    margin: auto;
 }

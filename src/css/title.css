@@ -2,8 +2,8 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   border-style: border-box;
+  overflow: hidden;
 }
 
 .title-page {
@@ -21,8 +21,8 @@
           filter: brightness(30%) blur(6px);
   background-size: cover;
   background-position: center;
-  -webkit-animation: blurIn 2s linear forwards, breathe 6s linear 2s infinite running;
-          animation: blurIn 2s linear forwards, breathe 6s linear 2s infinite running;
+  -webkit-animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
+          animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,13 +41,13 @@
 .title-page #background .even-bar {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  background-color: honeydew;
+  background-color: #55bbff;
 }
 
 .title-page #background .odd-bar {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  background-color: khaki;
+  background-color: #18a3ff;
 }
 
 .title-page #title-content {
@@ -70,8 +70,8 @@
   opacity: 0;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
-  -webkit-animation: slideInRight ease-in 750ms forwards 1.5s;
-          animation: slideInRight ease-in 750ms forwards 1.5s;
+  -webkit-animation: slideInRight ease-in 750ms forwards 0.8s;
+          animation: slideInRight ease-in 750ms forwards 0.8s;
 }
 
 .title-page #title-content .profile-block {
@@ -210,8 +210,8 @@
             filter: brightness(30%) blur(6px);
   }
   to {
-    -webkit-filter: brightness(70%) blur(0);
-            filter: brightness(70%) blur(0);
+    -webkit-filter: brightness(100%) blur(0);
+            filter: brightness(100%) blur(0);
   }
 }
 @keyframes blurIn {
@@ -220,8 +220,8 @@
             filter: brightness(30%) blur(6px);
   }
   to {
-    -webkit-filter: brightness(70%) blur(0);
-            filter: brightness(70%) blur(0);
+    -webkit-filter: brightness(100%) blur(0);
+            filter: brightness(100%) blur(0);
   }
 }
 

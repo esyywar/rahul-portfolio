@@ -1,16 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     border-style: border-box;
+    overflow: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
 $nameYellow: #E1E415;
 $borderBlue: #A1C8F7;
-$even-bar: honeydew;
-$odd-bar: khaki;
+$even-bar: rgb(85, 187, 255);
+$odd-bar: rgb(24, 163, 255);
 
 .title-page {
     height: 100vh;
@@ -25,7 +25,7 @@ $odd-bar: khaki;
         filter: brightness(30%) blur(6px);
         background-size: cover;
         background-position: center;
-        animation: blurIn 2s linear forwards, breathe 6s linear 2s infinite running;
+        animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
         display: flex;
         flex-flow: column wrap;
     
@@ -56,7 +56,7 @@ $odd-bar: khaki;
         overflow: visible;  // to allow for box shadow
         opacity: 0;
         transform: translateX(20px);  // initial transform and opacity for animation
-        animation: slideInRight ease-in 750ms forwards 1.5s;
+        animation: slideInRight ease-in 750ms forwards 0.8s;
 
         .profile-block {
             font-family: 'Ubuntu Mono', monospace;
@@ -181,7 +181,7 @@ $odd-bar: khaki;
         filter: brightness(30%) blur(6px);
     }
     to {
-        filter: brightness(70%) blur(0);
+        filter: brightness(100%) blur(0);
     }
 }
 
