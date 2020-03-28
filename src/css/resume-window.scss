@@ -1,4 +1,10 @@
-.container {
+$even-bar: rgb(85, 187, 255);
+$odd-bar: rgb(24, 163, 255);
+
+
+/*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
+
+.grid-container {
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -6,6 +12,16 @@
     grid-template-columns: repeat(8, 1fr);
     justify-items: center;
     align-items: center;
+
+    background: repeating-linear-gradient(
+        $even-bar,
+        $even-bar calc(100vh / 14),
+        $odd-bar calc(100vh / 14),
+        $odd-bar calc(2 * 100vh / 14)
+    );
+
+    opacity: 0;
+    animation: fadeIn 300ms ease-in forwards;
 
 
     .resume-window {
@@ -18,6 +34,15 @@
         color: white;
         text-align: center;
 
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

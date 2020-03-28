@@ -1,17 +1,3 @@
-$even-bar: rgb(85, 187, 255);
-$odd-bar: rgb(24, 163, 255);
-
-body {
-    height: 100vh;
-    width: 100vw;
-    background: repeating-linear-gradient(
-        $even-bar,
-        $even-bar calc(100vh / 14),
-        $odd-bar calc(100vh / 14),
-        $odd-bar calc(2 * 100vh / 14)
-    );
-}
-
 /********************* REACT TRANSITIONS GROUP ANIMATION *******************/
 
 .portfolio-enter {

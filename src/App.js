@@ -47,13 +47,15 @@ function App() {
         <Route exact path="/">
           <Title numBars={14} />
         </Route>
-        {routes.map(({ path, component : Component }, index) => {
-          return (
-            <Route key={index} path={path}>
-              {Component}
-            </Route>
-          )
-        })}
+        <div className="grid-container">
+          {routes.map(({ path, component : Component }, index) => {
+            return (
+              <Route key={index} path={path}>
+                {Component}
+              </Route>
+            )
+          })}
+        </div>
       </Router>
     </div>
   )

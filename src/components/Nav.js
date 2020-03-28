@@ -10,35 +10,41 @@ function Nav() {
         {
             name: "Main Page",
             text: "Profile Card",
-            to: "/myresume"
+            path: "/myresume"
         },
         {
             name: "Work Experience",
             text: "Professionl Experience",
-            to: "/workexp"
+            path: "/workexp"
         },
         {
             name: "Education",
             text: "Education",
-            to: "/edu"
+            path: "/edu"
         },
         {
             name: "Projects",
             text: "My Projects",
-            to: "/projects"
+            path: "/projects"
         },
         {
             name: "Skills",
             text: "Technical Skills",
-            to: "/techskills"
+            path: "/techskills"
         }
     ]
 
     return (
-        <div className="container">
-            <div className="nav-bar">
-                <h1>I am the navbar!</h1>
-            </div>
+        <div className="nav-bar">
+            {navLinks.map(({ text, path}, index) => {
+                return (
+                    <div className="nav-link">
+                        <NavLink key={index} to={path}>
+                            {text}
+                        </NavLink>
+                    </div>
+                )
+            })}
         </div>
     )
 }
