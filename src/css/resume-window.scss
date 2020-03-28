@@ -35,6 +35,27 @@ $odd-bar: rgb(24, 163, 255);
         text-align: center;
 
     }
+
+    /**** REACT TRANSITION SETTINGS ******/
+    .page-change-out-enter {
+        transform: translateX(-100%);
+    }
+
+    .page-change-out-enter-active {
+        transform: translateX(0);
+        transition: all 500ms;
+    }
+
+    .page-change-out-exit {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 500ms;
+    }
+
+    .page-change-out-exit-active {
+        transform: scale(0.7);
+        opacity: 0;
+    }
 }
 
 @keyframes fadeIn {

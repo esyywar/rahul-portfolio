@@ -16,6 +16,7 @@
   opacity: 0;
   -webkit-animation: fadeIn 300ms ease-in forwards;
           animation: fadeIn 300ms ease-in forwards;
+  /**** REACT TRANSITION SETTINGS ******/
 }
 
 .grid-container .resume-window {
@@ -31,6 +32,32 @@
   border-radius: 35px;
   color: white;
   text-align: center;
+}
+
+.grid-container .page-change-out-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.grid-container .page-change-out-enter-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.grid-container .page-change-out-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.grid-container .page-change-out-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
 }
 
 @-webkit-keyframes fadeIn {
