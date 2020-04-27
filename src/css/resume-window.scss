@@ -9,62 +9,57 @@ $odd-bar: rgb(24, 163, 255);
     width: 100vw;
     display: grid;
     grid-template-rows: repeat(14, 1fr);
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     justify-items: center;
     align-items: center;
 
-    background: repeating-linear-gradient(
+    /*background: repeating-linear-gradient(
         $even-bar,
         $even-bar calc(100vh / 14),
         $odd-bar calc(100vh / 14),
         $odd-bar calc(2 * 100vh / 14)
+    );*/
+
+    background: repeating-linear-gradient(
+        whitesmoke, 
+        rgb(52, 132, 236)
     );
 
-    opacity: 0;
-    animation: fadeIn 300ms ease-in forwards;
-
-
     .resume-window {
-        grid-row: 2 / 15;
-        grid-column: 2 / 8;
-        background-color: black;
+        grid-row: 3 / 14;
+        grid-column: 4 / 12;
+        background-color: whitesmoke;
         width: 100%;
         height: 90%;
         border-radius: 35px;
-        color: white;
+        color: black;
         text-align: center;
-        box-shadow: 20px 20px 12px rgb(36, 35, 35);
-
+        box-shadow: 10px 10px 15px rgb(19, 19, 19);
+        border: 5px solid black;
     }
 
     /**** REACT TRANSITION SETTINGS ******/
     .page-change-out-enter {
-        transform: translateX(-100%);
+        transform: translateX(100%);
+        opacity: 0;
     }
 
     .page-change-out-enter-active {
+        opacity: 1;
         transform: translateX(0);
         transition: all 500ms;
+        transition-delay: 120ms;
     }
 
     .page-change-out-exit {
         transform: translateX(0);
         opacity: 1;
-        transition: all 500ms;
+        transition: all 200ms;
     }
 
     .page-change-out-exit-active {
         transform: scale(0.7);
         opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
 

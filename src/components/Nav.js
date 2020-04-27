@@ -9,12 +9,12 @@ function Nav() {
     const navLinks = [
         {
             name: "Main Page",
-            text: "Profile Card",
+            text: "Summary",
             path: "/myresume"
         },
         {
             name: "Work Experience",
-            text: "Professional Experience",
+            text: "Experience",
             path: "/workexp"
         },
         {
@@ -24,27 +24,29 @@ function Nav() {
         },
         {
             name: "Projects",
-            text: "My Projects",
+            text: "Projects",
             path: "/projects"
         },
         {
             name: "Skills",
-            text: "Technical Skills",
+            text: "Skills",
             path: "/techskills"
         }
     ]
 
     return (
-        <div className="nav-bar-container">
-            {navLinks.map(({ text, path}, index) => {
-                return (
-                    <div className="nav-link-container">
-                        <NavLink key={index} to={path} className="nav-link">
-                            {text}
-                        </NavLink>
-                    </div>
-                )
-            })}
+        <div className="full-nav-container">
+            <div className="nav-bar">            
+                {navLinks.map(({ text, path}, index) => {
+                    return (
+                        <div className="nav-link-container">
+                            <NavLink key={index} to={path} className="nav-link">
+                                {text}
+                            </NavLink>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
