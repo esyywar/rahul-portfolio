@@ -30,10 +30,15 @@ $odd-bar: $light-colour;
 .title-page {
     height: 100vh;
     width: 100vw;
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     position: relative;
     overflow: hidden;
     
     #background {
+        grid-row: 1 / 17;
+        grid-column: 1 / 13;
         height: 100%;
         width: 100%;
         background-image: url('../img/camp-photo.jpg');
@@ -41,18 +46,29 @@ $odd-bar: $light-colour;
         background-size: cover;
         background-position: center;
         animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
-        display: flex;
-        flex-flow: column wrap;
+        
+        display: grid;
+
+        // ATTENTION: number of rows here must match 'numBars' in title
+        grid-template-rows: repeat(14, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     
+        // Applied to all horizontal bars shown on transition
         .fill-bar {
+            grid-column: 1 / 5;
             display: block;
             line-height: 0;
+            height: 250%;
             width: 0;
         }
+
+        // Applied only even numbered bars
         .even-bar {
             align-self: flex-start;
             background-color: $even-bar;
         }
+
+        // Applied only odd numbered bars
         .odd-bar {
             align-self: flex-end;
             background-color: $odd-bar;
@@ -302,3 +318,5 @@ $odd-bar: $light-colour;
         }
     }
 }
+
+

@@ -49,14 +49,15 @@ function PortfolioMain() {
     return (
         <Router>
             <div className="grid-container">
-            <Nav />
-            {routes.map(({ path, component : Component }, index, isExact) => {
-                return (
-                <Route key={index} path={path} exact={isExact}>
-                    {Component}
-                </Route>
-                )
-            })}
+              <Nav />
+              
+              {routes.map(({ path, component : Component }, index, isExact) => {
+                  return (
+                  <Route key={index} path={path} exact={isExact}>
+                      {Component}
+                  </Route>
+                  )
+              })}
             </div>
         </Router>
     )

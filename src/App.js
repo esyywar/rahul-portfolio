@@ -11,7 +11,7 @@ function App() {
     <div>
       <Router>
         <Route exact path="/">
-          <Title numBars={14} />
+          <Title />
         </Route>
         <Route path="/portfolio">
           <PortfolioMain />

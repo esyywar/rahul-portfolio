@@ -7,7 +7,10 @@ import { Redirect } from 'react-router-dom'
 
 import '../css/title.css'
 
-function Title(props) {
+function Title() {
+    // Number of bars for animation
+    const numBars = 14;
+
     const [doRedirect, setRedirect] = useState(false)
 
     // On load show "enter" or "swipe" depending on user device
@@ -18,9 +21,9 @@ function Title(props) {
     // Calling this function will create the number of bars given in props
     function makeBars(numBars) {
         var bars = []
-        for (let i = 0; i < numBars; i++) {
+        for (let i = 1; i < numBars + 1; i++) {
             bars[i] = (
-                <div key={i} className={"fill-bar " + ((i % 2 === 0) ? "even-bar" : "odd-bar")} style={{height: `calc(100vh / ${props.numBars})`}}>
+                <div key={i} className={"fill-bar " + ((i % 2 === 0) ? "even-bar" : "odd-bar")} style={{gridRow: `${i} / ${i + 1}`}}>
 
                 </div>
             )
@@ -28,7 +31,7 @@ function Title(props) {
         return bars
     }
 
-    // Calling will initialize the bars animation
+    // Calling will start the bars animation
     function barAnimation() {
         document.getElementById("title-content").style.animation = "slideOutLeft linear 200ms forwards"
         document.getElementById("background").style.animationPlayState = "paused"
@@ -45,13 +48,14 @@ function Title(props) {
     function enterSite(e) {
         barAnimation();
 
-        setTimeout(() => setRedirect(true), props.numBars * 50 + 600)
+        setTimeout(() => setRedirect(true), numBars * 50 + 600)
     }
 
     return (
         <div className="title-page">
             <div id="background">
-                {makeBars(props.numBars)}
+                {makeBars(numBars)}
+                {console.log(document.getElementsByClassName("fill-bar"))}
             </div>
             <div id="title-content">
                 <div className="profile-block">

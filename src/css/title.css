@@ -11,11 +11,23 @@
 .title-page {
   height: 100vh;
   width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[16];
+      grid-template-rows: repeat(16, 1fr);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
   position: relative;
   overflow: hidden;
 }
 
 .title-page #background {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 16;
+  grid-row: 1 / 17;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 12;
+  grid-column: 1 / 13;
   height: 100%;
   width: 100%;
   background-image: url("../img/camp-photo.jpg");
@@ -25,18 +37,21 @@
   background-position: center;
   -webkit-animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
           animation: blurIn 1s linear forwards, breathe 6s linear 1s infinite running;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[14];
+      grid-template-rows: repeat(14, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
 }
 
 .title-page #background .fill-bar {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
   display: block;
   line-height: 0;
+  height: 250%;
   width: 0;
 }
 
