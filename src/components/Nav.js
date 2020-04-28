@@ -15,27 +15,27 @@ function Nav() {
         {
             name: "Main Page",
             text: "Summary",
-            path: "/myresume"
+            path: "/portfolio"
         },
         {
             name: "Work Experience",
             text: "Professional",
-            path: "/workexp"
+            path: "/portfolio/workexp"
         },
         {
             name: "Education",
             text: "Education",
-            path: "/edu"
+            path: "/portfolio/edu"
         },
         {
             name: "Projects",
             text: "Projects",
-            path: "/projects"
+            path: "/portfolio/projects"
         },
         {
             name: "Skills",
             text: "Skills",
-            path: "/techskills"
+            path: "/portfolio/techskills"
         }
     ]
 

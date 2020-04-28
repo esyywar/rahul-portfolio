@@ -3,7 +3,7 @@ import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 
-function Portfolio(props) {
+function Summary(props) {
     return (
         <CSSTransition in={props.match != null} timeout={500} classNames="page-change-out" unmountOnExit>
             <div className="resume-window">
@@ -13,4 +13,4 @@ function Portfolio(props) {
     )
 }
 
-export default Portfolio
+export default Summary

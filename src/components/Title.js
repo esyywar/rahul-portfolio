@@ -73,7 +73,7 @@ function Title(props) {
                 </button>
                 
                 {// Redirect page when triggered by button press (and after delay)
-                (doRedirect && <Redirect exact from="/" to="/myresume" />)}
+                (doRedirect && <Redirect exact from="/" to="/portfolio" />)}
             </div>
         </div>
     )
