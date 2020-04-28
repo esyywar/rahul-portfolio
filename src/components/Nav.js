@@ -6,6 +6,11 @@ import '../css/navbar.css'
 
 function Nav() {
 
+    function sideNavToggle(e)
+    {
+        console.log("toggled")
+    }
+
     const navLinks = [
         {
             name: "Main Page",
@@ -14,7 +19,7 @@ function Nav() {
         },
         {
             name: "Work Experience",
-            text: "Experience",
+            text: "Professional",
             path: "/workexp"
         },
         {
@@ -36,11 +41,19 @@ function Nav() {
 
     return (
         <div className="full-nav-container">
-            <div className="nav-bar">            
+            {/* burger menu icon for opening side nav */}
+            <div className="burger-icon" onClick={sideNavToggle}>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
+            </div>
+
+            <div className="nav-bar">  
+                {/* map the navLinks array to generate nav bar route links */}          
                 {navLinks.map(({ text, path}, index) => {
                     return (
-                        <div className="nav-link-container">
-                            <NavLink key={index} to={path} className="nav-link">
+                        <div key={index} className="nav-link-container">
+                            <NavLink to={path} className="nav-link hover-underline">
                                 {text}
                             </NavLink>
                         </div>

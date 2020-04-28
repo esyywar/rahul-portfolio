@@ -1,9 +1,13 @@
-/*
-* Font selections
-*/
+/************************* COLOUR SELECTIONS ***************/
+/*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
 .grid-container .full-nav-container {
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: navDropIn 300ms 300ms ease-in forwards;
+          animation: navDropIn 300ms 300ms ease-in forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,6 +18,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-column: 1 / 13;
@@ -21,6 +28,26 @@
   width: 100%;
   height: 100%;
   background-color: black;
+  border-bottom: 4px solid #18a3ff;
+}
+
+.grid-container .full-nav-container .burger-icon {
+  position: relative;
+  margin-right: auto;
+  margin-left: 3%;
+  padding: 2px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.grid-container .full-nav-container .burger-icon div {
+  width: 25px;
+  height: 3px;
+  margin: 4px;
+  background-color: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .grid-container .full-nav-container .nav-bar {
@@ -39,12 +66,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 50%;
+  width: 60%;
   height: 100%;
   margin-right: 5%;
 }
 
-.grid-container .full-nav-container .nav-link-container {
+.grid-container .full-nav-container .nav-bar .nav-link-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,25 +84,52 @@
   height: 100%;
 }
 
-.grid-container .full-nav-container .nav-link-container .nav-link {
+.grid-container .full-nav-container .nav-bar .nav-link-container .nav-link {
   text-decoration: none;
   color: whitesmoke;
   position: relative;
   height: 40%;
 }
 
-.grid-container .full-nav-container .nav-link-container .nav-link::before {
+/***************** HOVER AND CLICK EFFECTS **************************/
+.hover-underline::before {
   height: 8px;
   width: 0;
   content: "";
   position: absolute;
-  background-color: #cee25d;
+  background-color: #EEC643;
   bottom: -10%;
   -webkit-transition: width 300ms;
   transition: width 300ms;
 }
 
-.grid-container .full-nav-container .nav-link-container .nav-link:hover::before {
+.hover-underline:hover::before {
   width: 100%;
+}
+
+/****************** ANIMATIONS ***************************/
+@-webkit-keyframes navDropIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 /*# sourceMappingURL=navbar.css.map */

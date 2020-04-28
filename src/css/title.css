@@ -1,3 +1,5 @@
+/************************* COLOUR SELECTIONS ***************/
+/*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap");
 * {
   margin: 0;
@@ -41,13 +43,13 @@
 .title-page #background .even-bar {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  background-color: #55bbff;
+  background-color: #F0E2E7;
 }
 
 .title-page #background .odd-bar {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  background-color: #18a3ff;
+  background-color: #F0E2E7;
 }
 
 .title-page #title-content {

@@ -6,7 +6,7 @@ function Skills(props) {
     return (
         <CSSTransition in={props.match != null} timeout={700} classNames="page-change-out" unmountOnExit>
             <div className="resume-window">
-                <h1>Skills</h1>
+                <h1 className="page-title">Skills</h1>
             </div>
         </CSSTransition>
     )

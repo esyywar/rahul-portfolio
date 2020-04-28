@@ -6,7 +6,7 @@ function Education(props) {
     return (
         <CSSTransition in={props.match != null} timeout={700} classNames="page-change-out" unmountOnExit>
             <div className="resume-window">
-                <h1>Education</h1>
+                <h1 className="page-title">Education</h1>
             </div>
         </CSSTransition>
     )

@@ -1,19 +1,58 @@
-/*
-* Font selections
-*/
+/************************* COLOUR SELECTIONS ***************/
+
+$light-blue: rgb(85, 187, 255);
+$true-blue: rgb(24, 163, 255);
+
+$prim-colour: #758BFD;
+$second-colour: #27187E;
+$contrast-colour: #EEC643;
+$dark-colour: #0D0221;
+$light-colour: #F0E2E7;
+
+
+/*************************** FONT SELECTIONS ****************/
+
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
+
 .grid-container .full-nav-container {
+    // Drop in on render animation
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: navDropIn 300ms 300ms ease-in forwards;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
+    align-items: center;
     grid-column: 1 / 13;
     grid-row: 0 / 3;
     width: 100%;
     height: 100%;
 
     background-color: black;
+    border-bottom: 4px solid $true-blue;
+
+    .burger-icon
+    {
+        position: relative;
+        margin-right: auto;
+        margin-left: 3%;
+        padding: 2px;
+        cursor: pointer;
+        border: 2px solid white;
+        border-radius: 4px;
+
+        div 
+        {
+            width: 25px;
+            height: 3px;
+            margin: 4px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+    }
 
     .nav-bar
     {
@@ -23,42 +62,63 @@
         flex-flow: row wrap;
         align-items: center;
         justify-content: space-between;
-        width: 50%;
+        width: 60%;
         height: 100%;
         margin-right: 5%;
-    }
 
-    .nav-link-container
-    {   
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-around;
-        height: 100%;
+        .nav-link-container
+        {   
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-around;
+            height: 100%;
 
-        .nav-link {
-            text-decoration: none;
-            color: whitesmoke;
+            .nav-link {
+                text-decoration: none;
+                color: whitesmoke;
 
-            // underline hover effect
-            position: relative;
-            height: 40%;
-
-            &::before
-            {
-                height: 8px;
-                width: 0;
-                content: "";
-                position: absolute;
-                background-color: rgb(206, 226, 93);
-                bottom: -10%;
-                transition: width 300ms;
-            }
-
-            &:hover::before
-            {
-                width: 100%;
+                // underline hover effect
+                position: relative;
+                height: 40%;
             }
         }
-
     }
+}
+
+
+/***************** HOVER AND CLICK EFFECTS **************************/
+
+.hover-underline
+{
+    &::before
+    {
+        height: 8px;
+        width: 0;
+        content: "";
+        position: absolute;
+        background-color: $contrast-colour;
+        bottom: -10%;
+        transition: width 300ms;
+    }
+
+    &:hover::before
+    {
+        width: 100%;
+    }
+}
+
+
+/****************** ANIMATIONS ***************************/
+
+@keyframes navDropIn
+{
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+
 }
