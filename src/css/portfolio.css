@@ -1,0 +1,195 @@
+/************************* COLOUR SELECTIONS ***************/
+/************************* CSS TRANSITIONS *******************/
+/*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
+.grid-container {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[14];
+      grid-template-rows: repeat(14, 1fr);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-container .resume-window {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 11;
+  grid-row: 3 / 14;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 10;
+  grid-column: 2 / 12;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.grid-container .resume-window .page-title {
+  margin-top: 5%;
+}
+
+/*************************** CSS REACT TRANSITIONS **************************/
+.grid-container {
+  /*********** SUMMARY PAGE ********/
+  /******* WORK EXP / PROFESSIONAL PAGE ******/
+  /*********** EDUCATION PAGE **********/
+  /**** SKILLS PAGE ****/
+  /********** SKILLS PAGE *********/
+}
+
+.grid-container .summary-transition-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  opacity: 0;
+}
+
+.grid-container .summary-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.grid-container .summary-transition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.grid-container .summary-transition-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+
+.grid-container .workexp-transition-enter {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+.grid-container .workexp-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.grid-container .workexp-transition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.grid-container .workexp-transition-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+
+.grid-container .education-transition-enter {
+  -webkit-transform: translate3d(-100%, 100%, 0);
+          transform: translate3d(-100%, 100%, 0);
+  opacity: 0;
+}
+
+.grid-container .education-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.grid-container .education-transition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.grid-container .education-transition-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+
+.grid-container .skills-transition-enter {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+}
+
+.grid-container .skills-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.grid-container .skills-transition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.grid-container .skills-transition-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+
+.grid-container .projects-transition-enter {
+  -webkit-transform: translate3d(100%, 100%, 0);
+          transform: translate3d(100%, 100%, 0);
+  opacity: 0;
+}
+
+.grid-container .projects-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.grid-container .projects-transition-exit {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.grid-container .projects-transition-exit-active {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+}
+/*# sourceMappingURL=portfolio.css.map */

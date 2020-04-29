@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 
-import nightMode from './nightMode'
+import isNightMode from './isNightMode'
+import bgColour from './bgColour'
 
 const rootReducer = combineReducers({
-    nightMode,
+    isNightMode,
+    bgColour
 })
 
 export default rootReducer

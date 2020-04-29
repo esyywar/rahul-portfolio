@@ -342,7 +342,7 @@
   }
 }
 
-/*--------------- MEDIA QUERIES --------------*/
+/********************* MEDIA QUERIES *******************/
 @media only screen and (min-width: 500px) {
   .title-page #title-content {
     width: 44%;

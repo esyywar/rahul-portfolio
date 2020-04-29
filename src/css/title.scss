@@ -8,8 +8,6 @@ $light-colour: #F0E2E7;
 
 $nameYellow: #E1E415;
 $borderBlue: #A1C8F7;
-$light-blue: rgb(85, 187, 255);
-$true-blue: rgb(24, 163, 255);
 
 $even-bar: $light-colour;
 $odd-bar: $light-colour;
@@ -260,7 +258,7 @@ $odd-bar: $light-colour;
 }
 
 
-/*--------------- MEDIA QUERIES --------------*/
+/********************* MEDIA QUERIES *******************/
 
 @media only screen and (min-width: 500px) {
     .title-page #title-content {

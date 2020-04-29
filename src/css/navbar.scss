@@ -16,11 +16,11 @@ $light-colour: #F0E2E7;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 
-.grid-container .full-nav-container {
+.grid-container .top-nav-container {
     // Drop in on render animation
     opacity: 0;
     transform: translateY(-100%);
-    animation: navDropIn 300ms 300ms ease-in forwards;
+    animation: navDropIn 300ms ease-in forwards;
 
     display: flex;
     flex-flow: row wrap;
@@ -34,18 +34,17 @@ $light-colour: #F0E2E7;
     background-color: black;
     border-bottom: 4px solid $true-blue;
 
-    .burger-icon
-    {
+    .burger-icon {
+
         position: relative;
         margin-right: auto;
-        margin-left: 3%;
+        margin-left: 4%;
         padding: 2px;
         cursor: pointer;
         border: 2px solid white;
         border-radius: 4px;
 
-        div 
-        {
+        div {
             width: 25px;
             height: 3px;
             margin: 4px;
@@ -54,34 +53,8 @@ $light-colour: #F0E2E7;
         }
     }
 
-    .nav-bar
-    {
-        font-size: 1.1em;
-        font-family: 'Lato', sans-serif;
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-between;
-        width: 60%;
-        height: 100%;
-        margin-right: 5%;
-
-        .nav-link-container
-        {   
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: space-around;
-            height: 100%;
-
-            .nav-link {
-                text-decoration: none;
-                color: whitesmoke;
-
-                // underline hover effect
-                position: relative;
-                height: 40%;
-            }
-        }
+    .nav-bar {
+        display: none;
     }
 }
 
@@ -120,5 +93,43 @@ $light-colour: #F0E2E7;
         opacity: 1;
         transform: translate(0);
     }
+}
 
+
+/********************* MEDIA QUERIES *******************/
+
+@media only screen and (min-width: 700px) {
+    .grid-container .top-nav-container {
+        .burger-icon {
+            margin-left: 2%;
+        }
+    
+        .nav-bar {    
+            display: flex;    
+            font-size: 1.1em;
+            font-family: 'Lato', sans-serif;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            height: 100%;
+            margin-right: 5%;
+
+            .nav-link-container {   
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-around;
+                height: 100%;
+
+                .nav-link {
+                    text-decoration: none;
+                    color: whitesmoke;
+
+                    // underline hover effect
+                    position: relative;
+                    height: 40%;
+                }
+            }
+        }
+    }
 }

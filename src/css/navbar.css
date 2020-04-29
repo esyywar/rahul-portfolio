@@ -2,12 +2,12 @@
 /*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
-.grid-container .full-nav-container {
+.grid-container .top-nav-container {
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-animation: navDropIn 300ms 300ms ease-in forwards;
-          animation: navDropIn 300ms 300ms ease-in forwards;
+  -webkit-animation: navDropIn 300ms ease-in forwards;
+          animation: navDropIn 300ms ease-in forwards;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,17 +31,17 @@
   border-bottom: 4px solid #18a3ff;
 }
 
-.grid-container .full-nav-container .burger-icon {
+.grid-container .top-nav-container .burger-icon {
   position: relative;
   margin-right: auto;
-  margin-left: 3%;
+  margin-left: 4%;
   padding: 2px;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 4px;
 }
 
-.grid-container .full-nav-container .burger-icon div {
+.grid-container .top-nav-container .burger-icon div {
   width: 25px;
   height: 3px;
   margin: 4px;
@@ -50,45 +50,8 @@
   transition: all 0.3s ease;
 }
 
-.grid-container .full-nav-container .nav-bar {
-  font-size: 1.1em;
-  font-family: 'Lato', sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 60%;
-  height: 100%;
-  margin-right: 5%;
-}
-
-.grid-container .full-nav-container .nav-bar .nav-link-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 100%;
-}
-
-.grid-container .full-nav-container .nav-bar .nav-link-container .nav-link {
-  text-decoration: none;
-  color: whitesmoke;
-  position: relative;
-  height: 40%;
+.grid-container .top-nav-container .nav-bar {
+  display: none;
 }
 
 /***************** HOVER AND CLICK EFFECTS **************************/
@@ -130,6 +93,51 @@
     opacity: 1;
     -webkit-transform: translate(0);
             transform: translate(0);
+  }
+}
+
+/********************* MEDIA QUERIES *******************/
+@media only screen and (min-width: 700px) {
+  .grid-container .top-nav-container .burger-icon {
+    margin-left: 2%;
+  }
+  .grid-container .top-nav-container .nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 60%;
+    height: 100%;
+    margin-right: 5%;
+  }
+  .grid-container .top-nav-container .nav-bar .nav-link-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+  }
+  .grid-container .top-nav-container .nav-bar .nav-link-container .nav-link {
+    text-decoration: none;
+    color: whitesmoke;
+    position: relative;
+    height: 40%;
   }
 }
 /*# sourceMappingURL=navbar.css.map */

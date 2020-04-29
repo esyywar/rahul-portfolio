@@ -2,20 +2,19 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
-import '../css/navbar.css'
 
-
-function Nav(props) {
+function SideNav(props) {
     return (
-        <div className="top-nav-container">
-            {/* burger menu icon for opening side nav */}
-            <div className="burger-icon">
-                <div className="line1"></div>
-                <div className="line2"></div>
-                <div className="line3"></div>
+        <div className="side-nav">
+            {/* Side navigation bar - pulled open on click for mobile */}
+            <div className="headshot-container">
+                <img src="" alt="rahul-headshot" className="headshot" />
             </div>
+            <hr />
+            <div className="profile links">
 
-            <div className="nav-bar">  
+            </div>
+            <div className="side-nav-link-container">
                 {/* map the navLinks array to generate nav bar route links */}          
                 {props.navLinks.map(({ text, path}, index) => {
                     return (
@@ -30,6 +29,3 @@ function Nav(props) {
         </div>
     )
 }
-
-export default Nav
-

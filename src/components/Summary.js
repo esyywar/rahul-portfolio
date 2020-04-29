@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import { CSSTransition } from 'react-transition-group'
+import { useDispatch } from 'react-redux'
+import { bgClrSwitch } from '../actions/bgClrSwitch'
 
 
 function Summary(props) {
+    // Update background colour state on render
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(bgClrSwitch(props.bgColour))
+    })
+
     return (
-        <CSSTransition in={props.match != null} timeout={500} classNames="page-change-out" unmountOnExit>
-            <div className="resume-window">
-                <h1 className="page-title"> Home Page</h1>
-            </div>
-        </CSSTransition>
+        <h1 className="page-title">Welcome</h1>
     )
 }
 
