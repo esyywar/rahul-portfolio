@@ -1,5 +1,5 @@
 // Default state is the 'Welcome' window background colour
-const bgColour = (state="#5E6FDC", action) => {
+const bgColour = (state="FFFFFF", action) => {
     switch (action.type)
     {
         case "COLOUR_SWITCH":

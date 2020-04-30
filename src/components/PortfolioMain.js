@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { CSSTransition } from 'react-transition-group'
 
-import { useSelector, useDispatch } from 'react-redux'
-import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { useSelector } from 'react-redux'
 
 import Nav from './Nav'
 import SideNav from './SideNav'
@@ -116,13 +115,6 @@ function PortfolioMain() {
     }
   ]
 
-  // This function will be called by navBars to change background colour (passed to nav elements as prop)
-  const dispatch = useDispatch()
-  function bgColourHandler(idClicked) {
-    const newBg = navLinks[idClicked - 1].bgColour
-    dispatch(bgClrSwitch(newBg))
-  }
-
   return (
       <Router>
         {/* Bg colour switched depending on active component */}
@@ -130,7 +122,7 @@ function PortfolioMain() {
 
           {/* Render side nav and top nav bar */}
           {/* <SideNav navLinks={navLinks}/> */}
-          <Nav navLinks={navLinks} bgChangeHandler={bgColourHandler}/>
+          <Nav navLinks={navLinks} />
 
           {/* Mapping out components rendered by react rransitions group */}
           {routes.map(({ path, isExact, Component, transitionClass, divClass, bgColour }) => (
