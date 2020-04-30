@@ -53,18 +53,7 @@
   line-height: 0;
   height: 250%;
   width: 0;
-}
-
-.title-page #background .even-bar {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  background-color: #F0E2E7;
-}
-
-.title-page #background .odd-bar {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  background-color: #F0E2E7;
+  background-color: #5E6FDC;
 }
 
 .title-page #title-content {

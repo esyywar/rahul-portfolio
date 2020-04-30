@@ -1,16 +1,14 @@
 /************************* COLOUR SELECTIONS ***************/
 
-$prim-colour: #758BFD;
-$second-colour: #27187E;
-$contrast-colour: #EEC643;
-$dark-colour: #0D0221;
-$light-colour: #F0E2E7;
+$summary-bg: #5E6FDC;
+$workexp-bg: #D59A66;
+$projects-bg: #8BAB91;
+$education-bg: #E9596A;
+$skills-bg: #A47EAF;
 
 $nameYellow: #E1E415;
 $borderBlue: #A1C8F7;
 
-$even-bar: $light-colour;
-$odd-bar: $light-colour;
 
 /*************************** FONT SELECTIONS ****************/
 
@@ -58,18 +56,7 @@ $odd-bar: $light-colour;
             line-height: 0;
             height: 250%;
             width: 0;
-        }
-
-        // Applied only even numbered bars
-        .even-bar {
-            align-self: flex-start;
-            background-color: $even-bar;
-        }
-
-        // Applied only odd numbered bars
-        .odd-bar {
-            align-self: flex-end;
-            background-color: $odd-bar;
+            background-color: $summary-bg;
         }
     }
 

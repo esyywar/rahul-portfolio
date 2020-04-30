@@ -1,0 +1,14 @@
+/************************* COLOUR SELECTIONS ***************/
+/*************************** FONT SELECTIONS ****************/
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+.grid-container .side-nav {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 12;
+  grid-row: 1 / 13;
+  grid-column: 0;
+  border: 5px solid red;
+  z-index: 2;
+  position: fixed;
+  width: 50%;
+}
+/*# sourceMappingURL=sideNav.css.map */

@@ -1,35 +1,36 @@
 /************************* COLOUR SELECTIONS ***************/
 
-$prim-colour: #758BFD;
-$second-colour: #27187E;
-$contrast-colour: #EEC643;
-$dark-colour: #0D0221;
-$light-background: #F0E2E7;
+$summary-bg: #5E6FDC;
+$workexp-bg: #D59A66;
+$projects-bg: #8BAB91;
+$education-bg: #E9596A;
+$skills-bg: #A47EAF;
 
 
 /************************* CSS TRANSITIONS *******************/
 
 $transition-enter-time: 500ms;
-$transition-delay: 120ms;
+$transition-delay: 0;
 $transition-exit-time: 200ms;
 
 
 /*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
 
+// Make grid container used by all portfolio items
 .grid-container {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-rows: repeat(14, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
     justify-items: center;
     align-items: center;
 
     // Background colour set by state and changes on routed component
-    transition: background-color 300ms;
+    transition: background-color 500ms;
 
     .resume-window {
-        grid-row: 3 / 14;
+        grid-row: 3 / 12;
         grid-column: 2 / 12;
         width: 100%;
         height: 100%;
@@ -55,7 +56,6 @@ $transition-exit-time: 200ms;
         opacity: 1;
         transform: translateX(0);
         transition: all $transition-enter-time;
-        transition-delay: $transition-delay;
     }
     .summary-transition-exit {
         transform: translateX(0);
@@ -76,7 +76,6 @@ $transition-exit-time: 200ms;
         opacity: 1;
         transform: translateX(0);
         transition: all $transition-enter-time;
-        transition-delay: $transition-delay;
     }
     .workexp-transition-exit {
         transform: translateX(0);
@@ -97,7 +96,6 @@ $transition-exit-time: 200ms;
         opacity: 1;
         transform: translate3d(0, 0, 0);
         transition: all $transition-enter-time;
-        transition-delay: $transition-delay;
     }
     .education-transition-exit {
         transform: translateX(0);
@@ -118,7 +116,6 @@ $transition-exit-time: 200ms;
         opacity: 1;
         transform: translateY(0);
         transition: all $transition-enter-time;
-        transition-delay: $transition-delay;
     }
     .skills-transition-exit {
         transform: translateX(0);
@@ -139,7 +136,6 @@ $transition-exit-time: 200ms;
         opacity: 1;
         transform: translate3d(0, 0, 0);
         transition: all $transition-enter-time;
-        transition-delay: $transition-delay;
     }
     .projects-transition-exit {
         transform: translateX(0);

@@ -1,0 +1,25 @@
+/************************* COLOUR SELECTIONS ***************/
+
+$light-blue: rgb(85, 187, 255);
+$true-blue: rgb(24, 163, 255);
+
+$prim-colour: #758BFD;
+$second-colour: #27187E;
+$contrast-colour: #EEC643;
+$dark-colour: #0D0221;
+$light-colour: #F0E2E7;
+
+
+/*************************** FONT SELECTIONS ****************/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+.grid-container .side-nav {
+    grid-row: 1 / 13;
+    grid-column: 0;
+    border: 5px solid red;
+    z-index: 2;
+    position: fixed;
+
+    width: 50%;
+}

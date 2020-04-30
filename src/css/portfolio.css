@@ -6,20 +6,22 @@
   width: 100vw;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[14];
-      grid-template-rows: repeat(14, 1fr);
+  -ms-grid-rows: (1fr)[12];
+      grid-template-rows: repeat(12, 1fr);
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
 }
 
 .grid-container .resume-window {
   -ms-grid-row: 3;
-  -ms-grid-row-span: 11;
-  grid-row: 3 / 14;
+  -ms-grid-row-span: 9;
+  grid-row: 3 / 12;
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2 / 12;
@@ -55,8 +57,6 @@
           transform: translateX(0);
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transition-delay: 120ms;
-          transition-delay: 120ms;
 }
 
 .grid-container .summary-transition-exit {
@@ -85,8 +85,6 @@
           transform: translateX(0);
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transition-delay: 120ms;
-          transition-delay: 120ms;
 }
 
 .grid-container .workexp-transition-exit {
@@ -115,8 +113,6 @@
           transform: translate3d(0, 0, 0);
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transition-delay: 120ms;
-          transition-delay: 120ms;
 }
 
 .grid-container .education-transition-exit {
@@ -145,8 +141,6 @@
           transform: translateY(0);
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transition-delay: 120ms;
-          transition-delay: 120ms;
 }
 
 .grid-container .skills-transition-exit {
@@ -175,8 +169,6 @@
           transform: translate3d(0, 0, 0);
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  -webkit-transition-delay: 120ms;
-          transition-delay: 120ms;
 }
 
 .grid-container .projects-transition-exit {

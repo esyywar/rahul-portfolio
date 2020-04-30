@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { CSSTransition } from 'react-transition-group'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { bgClrSwitch } from '../actions/bgClrSwitch'
 
 import Nav from './Nav'
+import SideNav from './SideNav'
 
 import Summary from './Summary'
 import WorkExp from './WorkExp'
@@ -18,7 +20,7 @@ import '../css/portfolio.css'
 
 
 function PortfolioMain() {
-  // Read background colour state from store
+  // Read background colour will be updated on click (changes with routes)
   const bgColour = useSelector(state => state.bgColour)
 
   // Routes to pages which will be mapped
@@ -45,16 +47,6 @@ function PortfolioMain() {
     },
     {
       id: 3,
-      name: "Projects",
-      path: "/portfolio/projects",
-      isExact: false,
-      Component: Projects,
-      transitionClass: "projects-transition",
-      divClass: "projects",
-      bgColour: "#8BAB91"
-    },
-    {
-      id: 4,
       name: "Education",
       path: "/portfolio/edu",
       isExact: false,
@@ -62,6 +54,16 @@ function PortfolioMain() {
       transitionClass: "education-transition",
       divClass: "education",
       bgColour: "#E9596A"
+    },
+    {
+      id: 4,
+      name: "Projects",
+      path: "/portfolio/projects",
+      isExact: false,
+      Component: Projects,
+      transitionClass: "projects-transition",
+      divClass: "projects",
+      bgColour: "#8BAB91"
     },
     {
       id: 5,
@@ -78,41 +80,59 @@ function PortfolioMain() {
   // Items passed to navigation bars to generate links
   const navLinks = [
     {
+        id: 1,
         name: "Main Page",
         text: "Welcome",
-        path: "/portfolio"
+        path: "/portfolio",
+        bgColour: "#5E6FDC"
     },
     {
+        id: 2,
         name: "Work Experience",
         text: "Professional",
-        path: "/portfolio/workexp"
+        path: "/portfolio/workexp",
+        bgColour: "#D59A66"
     },
     {
+        id: 3,
         name: "Education",
         text: "Education",
-        path: "/portfolio/edu"
+        path: "/portfolio/edu",
+        bgColour: "#E9596A"
     },
     {
+        id: 4,
         name: "Projects",
         text: "Projects",
-        path: "/portfolio/projects"
+        path: "/portfolio/projects",
+        bgColour: "#8BAB91"
     },
     {
+        id: 5,
         name: "Skills",
         text: "Skills",
-        path: "/portfolio/techskills"
+        path: "/portfolio/techskills",
+        bgColour: "#A47EAF"
     }
   ]
+
+  // This function will be called by navBars to change background colour (passed to nav elements as prop)
+  const dispatch = useDispatch()
+  function bgColourHandler(idClicked) {
+    const newBg = navLinks[idClicked - 1].bgColour
+    dispatch(bgClrSwitch(newBg))
+  }
 
   return (
       <Router>
         {/* Bg colour switched depending on active component */}
         <div className="grid-container" style={{backgroundColor: bgColour}}>
 
-          {/* Render side nav and top nav bar TODO */}
-          <Nav navLinks={navLinks}/>
+          {/* Render side nav and top nav bar */}
+          {/* <SideNav navLinks={navLinks}/> */}
+          <Nav navLinks={navLinks} bgChangeHandler={bgColourHandler}/>
 
-          {/* Mapping out components rendered by React Transitions Group */}
+          {/* Mapping out components rendered by react rransitions group */}
           {routes.map(({ path, isExact, Component, transitionClass, divClass, bgColour }) => (
             <Route key={path} exact={isExact} path={path}>
               {({ match }) => (
@@ -123,7 +143,7 @@ function PortfolioMain() {
                   unmountOnExit
                 >
                   <div className={`resume-window ${divClass}`}>
-                    <Component bgColour={bgColour} />
+                    <Component bgColour={bgColour}/>
                   </div>
                 </CSSTransition>
               )}

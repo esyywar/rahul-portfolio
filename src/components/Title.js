@@ -23,9 +23,7 @@ function Title() {
         var bars = []
         for (let i = 1; i < numBars + 1; i++) {
             bars[i] = (
-                <div key={i} className={"fill-bar " + ((i % 2 === 0) ? "even-bar" : "odd-bar")} style={{gridRow: `${i} / ${i + 1}`}}>
-
-                </div>
+                <div key={i} className="fill-bar" style={{gridRow: `${i} / ${i + 1}`}}></div>
             )
         }
         return bars

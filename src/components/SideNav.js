@@ -2,6 +2,8 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
+import '../css/sideNav.css'
+
 
 function SideNav(props) {
     return (
@@ -11,14 +13,16 @@ function SideNav(props) {
                 <img src="" alt="rahul-headshot" className="headshot" />
             </div>
             <hr />
+
             <div className="profile links">
 
             </div>
+            
             <div className="side-nav-link-container">
                 {/* map the navLinks array to generate nav bar route links */}          
-                {props.navLinks.map(({ text, path}, index) => {
+                {props.navLinks.map(({ id, text, path }) => {
                     return (
-                        <div key={index} className="nav-link-container">
+                        <div key={id} className="nav-link-container">
                             <NavLink to={path} className="nav-link hover-underline">
                                 {text}
                             </NavLink>
@@ -29,3 +33,5 @@ function SideNav(props) {
         </div>
     )
 }
+
+export default SideNav

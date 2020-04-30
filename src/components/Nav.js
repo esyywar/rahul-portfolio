@@ -17,9 +17,9 @@ function Nav(props) {
 
             <div className="nav-bar">  
                 {/* map the navLinks array to generate nav bar route links */}          
-                {props.navLinks.map(({ text, path}, index) => {
+                {props.navLinks.map(({ id, text, path}) => {
                     return (
-                        <div key={index} className="nav-link-container">
+                        <div key={id} className="nav-link-container">
                             <NavLink to={path} className="nav-link hover-underline">
                                 {text}
                             </NavLink>
