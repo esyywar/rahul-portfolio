@@ -53,7 +53,6 @@ function Title() {
         <div className="title-page">
             <div id="background">
                 {makeBars(numBars)}
-                {console.log(document.getElementsByClassName("fill-bar"))}
             </div>
             <div id="title-content">
                 <div className="profile-block">

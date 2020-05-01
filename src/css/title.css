@@ -30,7 +30,7 @@
   grid-column: 1 / 13;
   height: 100%;
   width: 100%;
-  background-image: url("../img/camp-photo.jpg");
+  background-image: url("../img/title/camp-photo.jpg");
   -webkit-filter: brightness(30%) blur(6px);
           filter: brightness(30%) blur(6px);
   background-size: cover;

@@ -32,7 +32,7 @@ function PortfolioMain() {
       Component: Summary,
       transitionClass: "summary-transition",
       divClass: "summary",
-      bgColour: "#5E6FDC"
+      bgColour: "#FD8536"
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ function PortfolioMain() {
       Component: WorkExp,
       transitionClass: "workexp-transition",
       divClass: "workexp",
-      bgColour: "#D59A66"
+      bgColour: "#F16481"
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ function PortfolioMain() {
       Component: Education,
       transitionClass: "education-transition",
       divClass: "education",
-      bgColour: "#E9596A"
+      bgColour: "#D8A47F"
     },
     {
       id: 4,
@@ -72,7 +72,7 @@ function PortfolioMain() {
       Component: Skills,
       transitionClass: "skills-transition",
       divClass: "skills",
-      bgColour: "#A47EAF"
+      bgColour: "#C18AF8"
     }
   ]
 
@@ -83,35 +83,30 @@ function PortfolioMain() {
         name: "Main Page",
         text: "Welcome",
         path: "/portfolio",
-        bgColour: "#5E6FDC"
     },
     {
         id: 2,
         name: "Work Experience",
         text: "Professional",
         path: "/portfolio/workexp",
-        bgColour: "#D59A66"
     },
     {
         id: 3,
         name: "Education",
         text: "Education",
         path: "/portfolio/edu",
-        bgColour: "#E9596A"
     },
     {
         id: 4,
         name: "Projects",
         text: "Projects",
         path: "/portfolio/projects",
-        bgColour: "#8BAB91"
     },
     {
         id: 5,
         name: "Skills",
         text: "Skills",
         path: "/portfolio/techskills",
-        bgColour: "#A47EAF"
     }
   ]
 
@@ -121,7 +116,7 @@ function PortfolioMain() {
         <div className="grid-container" style={{backgroundColor: bgColour}}>
 
           {/* Render side nav and top nav bar */}
-          {/* <SideNav navLinks={navLinks}/> */}
+          <SideNav navLinks={navLinks} />
           <Nav navLinks={navLinks} />
 
           {/* Mapping out components rendered by react rransitions group */}

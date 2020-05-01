@@ -1,4 +1,4 @@
-// Default state is the 'Welcome' window background colour
+//set background colour depending on active component (called by components on render)
 const bgColour = (state="FFFFFF", action) => {
     switch (action.type)
     {

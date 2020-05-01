@@ -1,15 +1,22 @@
 import React from 'react'
 
+import { useDispatch } from 'react-redux'
+import { sideNavToggle } from '../actions/sideNavToggle'
+
 import { NavLink } from 'react-router-dom'
 
 import '../css/navbar.css'
 
 
 function Nav(props) {
+    
+    // TODO - render side nav depending on sideNavOpen state
+    const dispatch = useDispatch()
+
     return (
         <div className="top-nav-container">
             {/* burger menu icon for opening side nav */}
-            <div className="burger-icon">
+            <div className="burger-icon" onClick={() => dispatch(sideNavToggle())}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>

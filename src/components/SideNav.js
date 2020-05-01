@@ -10,11 +10,13 @@ function SideNav(props) {
         <div className="side-nav">
             {/* Side navigation bar - pulled open on click for mobile */}
             <div className="headshot-container">
-                <img src="" alt="rahul-headshot" className="headshot" />
+                {/* Headshot image put as bg in this div by sideNav.css */}
             </div>
+
+            {/* horizontal rule divider beneath image */}
             <hr />
 
-            <div className="profile links">
+            <div className="profile-links">
 
             </div>
             

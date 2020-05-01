@@ -2,13 +2,67 @@
 /*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
 .grid-container .side-nav {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 12;
-  grid-row: 1 / 13;
-  grid-column: 0;
-  border: 5px solid red;
-  z-index: 2;
   position: fixed;
-  width: 50%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #3772FF;
+  height: 100%;
+  width: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-right: 2px solid whitesmoke;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-container .side-nav .headshot-container {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  margin-top: 3em;
+  background-image: url("../img/nav/rahul-arsenal-photo.jpg");
+  background-position: center;
+}
+
+.grid-container .side-nav hr {
+  margin: 1.5em 0;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  height: 3px;
+  width: 70%;
+}
+
+.grid-container .side-nav .side-nav-link-container {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.grid-container .side-nav .side-nav-link-container .nav-link-container {
+  padding: 0.5em 0;
+}
+
+.grid-container .side-nav .side-nav-link-container .nav-link-container .nav-link {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 650;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.grid-container .side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
+  letter-spacing: 2px;
+  color: #F0A202;
 }
 /*# sourceMappingURL=sideNav.css.map */
