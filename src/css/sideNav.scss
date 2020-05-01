@@ -15,62 +15,101 @@ $skills-bg: #A47EAF;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 
 
-.grid-container .side-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color:#3772FF; //#5289D4;;
+.grid-container .navigation {
 
-    height: 100%;
-    width: 0;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-right: 2px solid whitesmoke;
-
-    font-size: 20px;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-
-    .headshot-container {
-        border-radius: 50%;
-        width: 7em;
-        height: 7em;
-        margin-top: 3em;
-
-        background-image: url('../img/nav/rahul-arsenal-photo.jpg');
-        background-position: center;
-    }
-
-    hr {
-        margin: 1.5em 0;
-        background-color: white;
+    .burger-icon {
+        z-index: 2;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        padding: 2px;
+        cursor: pointer;
         border: 2px solid white;
         border-radius: 4px;
-        height: 3px;
-        width: 70%;
+
+        div {
+            width: 25px;
+            height: 3px;
+            margin: 4px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
     }
 
-    .side-nav-link-container {
-        font-family: 'Lato', sans-serif;
-        text-align: center;
+    .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color:#3772FF; //#5289D4;;
 
-        .nav-link-container {
-            padding: 0.5em 0;
+        height: 100%;
+        width: 0;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-right: 2px solid whitesmoke;
 
-            .nav-link {
-                color: whitesmoke;
-                text-decoration: none;
-                font-size: 1.1em;
-                font-weight: 650;
-                transition: 300ms;
+        font-size: 20px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
 
-                &:hover {
-                    letter-spacing: 2px;
-                    color: #F0A202;
+        .headshot-container {
+            border-radius: 50%;
+            width: 7em;
+            height: 7em;
+            margin-top: 3em;
+
+            background-image: url('../img/nav/rahul-arsenal-photo.jpg');
+            background-position: center;
+        }
+
+        hr {
+            margin: 1.5em 0;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 4px;
+            height: 3px;
+            width: 70%;
+        }
+
+        .side-nav-link-container {
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+
+            .nav-link-container {
+                padding: 0.5em 0;
+
+                .nav-link {
+                    color: whitesmoke;
+                    text-decoration: none;
+                    font-size: 1.1em;
+                    font-weight: 650;
+                    transition: 300ms;
+
+                    &:hover {
+                        letter-spacing: 2px;
+                        color: #F0A202;
+                    }
                 }
             }
         }
     }
+}
+
+
+/*************************** ANIMATION EFFECT FOR BURGER ICON *********************/
+
+/*Animation effect for burger to close button*/
+.burgerChange {
+    background-color: red;
+}
+.burgerChange .line1 {
+    transform: rotate(-45deg) translate(-4px,6px);
+}
+.burgerChange .line2 {
+    opacity: 0;
+}
+.burgerChange .line3 {
+    transform: rotate(45deg) translate(-4px, -6px);
 }

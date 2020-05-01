@@ -1,7 +1,27 @@
 /************************* COLOUR SELECTIONS ***************/
 /*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
-.grid-container .side-nav {
+.grid-container .navigation .burger-icon {
+  z-index: 2;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  padding: 2px;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.grid-container .navigation .burger-icon div {
+  width: 25px;
+  height: 3px;
+  margin: 4px;
+  background-color: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.grid-container .navigation .side-nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +45,7 @@
           align-items: center;
 }
 
-.grid-container .side-nav .headshot-container {
+.grid-container .navigation .side-nav .headshot-container {
   border-radius: 50%;
   width: 7em;
   height: 7em;
@@ -34,7 +54,7 @@
   background-position: center;
 }
 
-.grid-container .side-nav hr {
+.grid-container .navigation .side-nav hr {
   margin: 1.5em 0;
   background-color: white;
   border: 2px solid white;
@@ -43,16 +63,16 @@
   width: 70%;
 }
 
-.grid-container .side-nav .side-nav-link-container {
+.grid-container .navigation .side-nav .side-nav-link-container {
   font-family: 'Lato', sans-serif;
   text-align: center;
 }
 
-.grid-container .side-nav .side-nav-link-container .nav-link-container {
+.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container {
   padding: 0.5em 0;
 }
 
-.grid-container .side-nav .side-nav-link-container .nav-link-container .nav-link {
+.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container .nav-link {
   color: whitesmoke;
   text-decoration: none;
   font-size: 1.1em;
@@ -61,8 +81,28 @@
   transition: 300ms;
 }
 
-.grid-container .side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
+.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
   letter-spacing: 2px;
   color: #F0A202;
+}
+
+/*************************** ANIMATION EFFECT FOR BURGER ICON *********************/
+/*Animation effect for burger to close button*/
+.burgerChange {
+  background-color: red;
+}
+
+.burgerChange .line1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 6px);
+          transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.burgerChange .line2 {
+  opacity: 0;
+}
+
+.burgerChange .line3 {
+  -webkit-transform: rotate(45deg) translate(-4px, -6px);
+          transform: rotate(45deg) translate(-4px, -6px);
 }
 /*# sourceMappingURL=sideNav.css.map */

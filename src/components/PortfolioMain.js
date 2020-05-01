@@ -6,7 +6,6 @@ import { CSSTransition } from 'react-transition-group'
 
 import { useSelector } from 'react-redux'
 
-import Nav from './Nav'
 import SideNav from './SideNav'
 
 import Summary from './Summary'
@@ -117,7 +116,6 @@ function PortfolioMain() {
 
           {/* Render side nav and top nav bar */}
           <SideNav navLinks={navLinks} />
-          <Nav navLinks={navLinks} />
 
           {/* Mapping out components rendered by react rransitions group */}
           {routes.map(({ path, isExact, Component, transitionClass, divClass, bgColour }) => (
