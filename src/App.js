@@ -5,6 +5,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import PortfolioMain from './components/PortfolioMain'
 import Title from './components/Title'
 
+// To build font-awesome library
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faBook)
+
 
 function App() {
   return (

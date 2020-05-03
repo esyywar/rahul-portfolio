@@ -1,18 +1,23 @@
 /************************* COLOUR SELECTIONS ***************/
 /*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
-.grid-container .navigation .burger-icon {
+.grid-container .navigation #burger-icon {
   z-index: 2;
   position: absolute;
   top: 1em;
   left: 1em;
-  padding: 2px;
+  padding: 3px;
   cursor: pointer;
   border: 2px solid white;
   border-radius: 4px;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: navDropIn 300ms ease-in forwards;
+          animation: navDropIn 300ms ease-in forwards;
 }
 
-.grid-container .navigation .burger-icon div {
+.grid-container .navigation #burger-icon div {
   width: 25px;
   height: 3px;
   margin: 4px;
@@ -21,14 +26,16 @@
   transition: all 0.3s ease;
 }
 
-.grid-container .navigation .side-nav {
+.grid-container .navigation #side-nav {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: #3772FF;
+  background-color: #dddbdb;
   height: 100%;
   width: 0;
+  -webkit-transition: width 250ms linear;
+  transition: width 250ms linear;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   border-right: 2px solid whitesmoke;
@@ -45,35 +52,64 @@
           align-items: center;
 }
 
-.grid-container .navigation .side-nav .headshot-container {
+.grid-container .navigation #side-nav .headshot-container {
   border-radius: 50%;
   width: 7em;
   height: 7em;
-  margin-top: 3em;
+  margin-top: 3.5em;
+  margin-bottom: 1em;
   background-image: url("../img/nav/rahul-arsenal-photo.jpg");
   background-position: center;
 }
 
-.grid-container .navigation .side-nav hr {
-  margin: 1.5em 0;
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 4px;
-  height: 3px;
-  width: 70%;
+.grid-container .navigation #side-nav .profile-link-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
 }
 
-.grid-container .navigation .side-nav .side-nav-link-container {
+.grid-container .navigation #side-nav .profile-link-container .profile-link {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+  opacity: 0;
+}
+
+.grid-container .navigation #side-nav #nav-hr {
+  margin: 0.5em 0 1em 0;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 4px;
+  height: 3px;
+  opacity: 0;
+  width: 0;
+}
+
+.grid-container .navigation #side-nav .side-nav-link-container {
   font-family: 'Lato', sans-serif;
   text-align: center;
 }
 
-.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container {
+.grid-container .navigation #side-nav .side-nav-link-container .nav-link-container {
   padding: 0.5em 0;
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
-.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container .nav-link {
-  color: whitesmoke;
+.grid-container .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link {
+  color: black;
   text-decoration: none;
   font-size: 1.1em;
   font-weight: 650;
@@ -81,28 +117,154 @@
   transition: 300ms;
 }
 
-.grid-container .navigation .side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
+.grid-container .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
   letter-spacing: 2px;
   color: #F0A202;
 }
 
 /*************************** ANIMATION EFFECT FOR BURGER ICON *********************/
 /*Animation effect for burger to close button*/
-.burgerChange {
+.grid-container .navigation .burger-change {
   background-color: red;
 }
 
-.burgerChange .line1 {
+.grid-container .navigation .burger-change .line1 {
   -webkit-transform: rotate(-45deg) translate(-4px, 6px);
           transform: rotate(-45deg) translate(-4px, 6px);
 }
 
-.burgerChange .line2 {
+.grid-container .navigation .burger-change .line2 {
   opacity: 0;
 }
 
-.burgerChange .line3 {
+.grid-container .navigation .burger-change .line3 {
   -webkit-transform: rotate(45deg) translate(-4px, -6px);
           transform: rotate(45deg) translate(-4px, -6px);
+}
+
+/****************** ANIMATIONS ***************************/
+@-webkit-keyframes navDropIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@-webkit-keyframes hrFill {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 75%;
+  }
+}
+
+@keyframes hrFill {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 75%;
+  }
+}
+
+@-webkit-keyframes navItemsAppear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes navItemsAppear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=sideNav.css.map */

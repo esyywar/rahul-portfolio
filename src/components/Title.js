@@ -49,6 +49,7 @@ function Title() {
         setTimeout(() => setRedirect(true), numBars * 50 + 600)
     }
 
+    
     return (
         <div className="title-page">
             <div id="background">

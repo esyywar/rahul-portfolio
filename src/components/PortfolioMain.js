@@ -26,6 +26,7 @@ function PortfolioMain() {
     {
       id: 1,
       name: "Main Page",
+      text: "Welcome",
       path: "/portfolio",
       isExact: true,
       Component: Summary,
@@ -36,6 +37,7 @@ function PortfolioMain() {
     {
       id: 2,
       name: "Work Experience",
+      text: "Professional Exp.",
       path: "/portfolio/workexp",
       isExact: false,
       Component: WorkExp,
@@ -46,26 +48,29 @@ function PortfolioMain() {
     {
       id: 3,
       name: "Education",
+      text: "Education",
       path: "/portfolio/edu",
       isExact: false,
       Component: Education,
       transitionClass: "education-transition",
       divClass: "education",
-      bgColour: "#D8A47F"
+      bgColour: "#7BB2D9"
     },
     {
       id: 4,
       name: "Projects",
+      text: "Projects",
       path: "/portfolio/projects",
       isExact: false,
       Component: Projects,
       transitionClass: "projects-transition",
       divClass: "projects",
-      bgColour: "#8BAB91"
+      bgColour: "#74DE86"
     },
     {
       id: 5,
       name: "Skills",
+      text: "Technical Skills",
       path: "/portfolio/techSkills",
       isExact: false,
       Component: Skills,
@@ -74,40 +79,7 @@ function PortfolioMain() {
       bgColour: "#C18AF8"
     }
   ]
-
-  // Items passed to navigation bars to generate links
-  const navLinks = [
-    {
-        id: 1,
-        name: "Main Page",
-        text: "Welcome",
-        path: "/portfolio",
-    },
-    {
-        id: 2,
-        name: "Work Experience",
-        text: "Professional",
-        path: "/portfolio/workexp",
-    },
-    {
-        id: 3,
-        name: "Education",
-        text: "Education",
-        path: "/portfolio/edu",
-    },
-    {
-        id: 4,
-        name: "Projects",
-        text: "Projects",
-        path: "/portfolio/projects",
-    },
-    {
-        id: 5,
-        name: "Skills",
-        text: "Skills",
-        path: "/portfolio/techskills",
-    }
-  ]
+  
 
   return (
       <Router>
@@ -115,7 +87,7 @@ function PortfolioMain() {
         <div className="grid-container" style={{backgroundColor: bgColour}}>
 
           {/* Render side nav and top nav bar */}
-          <SideNav navLinks={navLinks} />
+          <SideNav navLinks={routes} />
 
           {/* Mapping out components rendered by react rransitions group */}
           {routes.map(({ path, isExact, Component, transitionClass, divClass, bgColour }) => (

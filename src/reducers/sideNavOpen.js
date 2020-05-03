@@ -4,6 +4,8 @@ const sideNavOpen = (state = false, action) => {
     {
         case "NAV_TOGGLE":
             return !state
+        case "NAV_SET":
+            return action.payload
         default:
             return state
     }

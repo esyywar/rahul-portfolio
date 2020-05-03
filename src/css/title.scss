@@ -1,10 +1,10 @@
 /************************* COLOUR SELECTIONS ***************/
 
-$summary-bg: #5E6FDC;
-$workexp-bg: #D59A66;
-$projects-bg: #8BAB91;
-$education-bg: #E9596A;
-$skills-bg: #A47EAF;
+$summary-bg: #FD8536;
+$workexp-bg: #F16481;
+$projects-bg: #74DE86;
+$education-bg: #7BB2D9;
+$skills-bg: #C18AF8;
 
 $nameYellow: #E1E415;
 $borderBlue: #A1C8F7;
@@ -64,7 +64,7 @@ $borderBlue: #A1C8F7;
         font-size: 10px;
         width: 60%;
         position: absolute;
-        top: 40%;
+        top: 30%;
         right: 5%;
         display: flex;
         flex-direction: column;
@@ -79,8 +79,8 @@ $borderBlue: #A1C8F7;
             position: relative;
             text-align: center;
             color: white;
-            background-color: rgba(0, 0, 0, 0.99);
-            padding: 1% 3%;
+            background-color: rgba(0, 0, 0, 0.96);
+            padding: 1% 10%;
             border-radius: 10%;
             box-shadow: black 8px 8px 16px;
 

@@ -1,10 +1,10 @@
 /************************* COLOUR SELECTIONS ***************/
 
-$summary-bg: #5E6FDC;
-$workexp-bg: #D59A66;
-$projects-bg: #8BAB91;
-$education-bg: #E9596A;
-$skills-bg: #A47EAF;
+$summary-bg: #FD8536;
+$workexp-bg: #F16481;
+$projects-bg: #74DE86;
+$education-bg: #7BB2D9;
+$skills-bg: #C18AF8;
 
 
 /************************* CSS TRANSITIONS *******************/
@@ -38,11 +38,6 @@ $transition-exit-time: 200ms;
         border-radius: 35px;
         color: whitesmoke;
         text-align: center;
-
-        .page-title
-        {
-            margin-top: 5%;
-        }
     }
 }
 
