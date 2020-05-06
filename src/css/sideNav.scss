@@ -30,7 +30,7 @@ $skills-bg: #C18AF8;
         // Drop in on render animation
         opacity: 0;
         transform: translateY(-100%);
-        animation: navDropIn 300ms ease-in forwards;
+        animation: navDropIn 400ms ease-in forwards 200ms;
 
         div {
             width: 25px;
@@ -39,6 +39,13 @@ $skills-bg: #C18AF8;
             background-color: #ffffff;
             transition: all 0.3s ease;
         }
+    }
+
+    // This class to be applied only when the side-nav is opened
+    .side-nav-border {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-right: 2px solid whitesmoke;
     }
 
     #side-nav {
@@ -50,10 +57,7 @@ $skills-bg: #C18AF8;
 
         height: 100%;
         width: 0;
-        transition: width 250ms linear;
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-        border-right: 2px solid whitesmoke;
+        transition: all 250ms linear;
 
         font-size: 20px;
         display: flex;
@@ -83,8 +87,8 @@ $skills-bg: #C18AF8;
                 text-decoration: none;
 
                 // Initial conditions for animation
-                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
                 opacity: 0;
+                transform: translateX(-100%);
             }
         }
 
@@ -173,7 +177,7 @@ $skills-bg: #C18AF8;
     }
 }
 
-@keyframes navItemsAppear
+@keyframes itemsAppear
 {
     from {
         opacity: 0;
@@ -184,25 +188,3 @@ $skills-bg: #C18AF8;
         transform: translateX(0);
     }
 }
-
-
-@keyframes flipInY {
-    from {
-      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-      opacity: 0;
-    }
-    40% {
-      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-    }
-    60% {
-      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
-      opacity: 1;
-    }
-    80% {
-      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
-    }  
-    to {
-      transform: perspective(400px);
-      opacity: 1;
-    }
-  }

@@ -14,11 +14,17 @@ $transition-delay: 0;
 $transition-exit-time: 200ms;
 
 
+/************************* CSS RESET *************************/
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+} 
+
 /*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
 
 // Make grid container used by all portfolio items
 .grid-container {
-    //border: 3px solid blue;
     height: 100vh;
     width: 100vw;
     display: grid;

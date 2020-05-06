@@ -35,6 +35,7 @@ function SideNav(props) {
         {
             // Give width to the side nabigation bar
             document.getElementById("side-nav").style.width = "12em"
+            document.getElementById("side-nav").classList.add("side-nav-border")
 
             // Animate the burger icon, horizontal rule
             document.getElementById("burger-icon").classList.add("burger-change")
@@ -42,12 +43,12 @@ function SideNav(props) {
             
             // Animate profile links to appear when nav opens
             Array.from(document.getElementsByClassName("profile-link")).forEach((element, index) => {
-                element.style.animation = "flipInY 300ms ease " + (250 + index * 50) + "ms forwards"
+                element.style.animation = "itemsAppear 400ms ease " + (250 + index * 100) + "ms forwards"
             })
 
             // Animate nav links to appear when nav opens
             Array.from(document.getElementsByClassName("nav-link-container")).forEach((element, index) => {
-                element.style.animation = "navItemsAppear 300ms ease " + (250 + index * 80) + "ms forwards" 
+                element.style.animation = "itemsAppear 300ms ease " + (250 + index * 80) + "ms forwards" 
             })
 
             console.log("setting event listener")
@@ -57,6 +58,7 @@ function SideNav(props) {
         {
             // Remove animations added to side navigation, burger icon, horizontal rule and profile links
             document.getElementById("side-nav").style.width = "0"
+            document.getElementById("side-nav").classList.remove("side-nav-border")
             document.getElementById("burger-icon").classList.remove("burger-change")
             document.getElementById("nav-hr").style.animation = ""
 

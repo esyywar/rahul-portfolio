@@ -85,7 +85,7 @@
   position: relative;
   text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 1% 10%;
   border-radius: 10%;
   -webkit-box-shadow: black 8px 8px 16px;
@@ -351,7 +351,7 @@
   .title-page #title-content {
     width: 35%;
     font-size: 18px;
-    top: 30%;
+    top: 20%;
     right: 15%;
   }
   .title-page #title-content .profile-block {
@@ -366,7 +366,7 @@
   .title-page #title-content {
     width: 35%;
     font-size: 20px;
-    top: 25%;
+    top: 20%;
     right: 15%;
   }
   .title-page #title-content .profile-block h1, .title-page #title-content .profile-block h3, .title-page #title-content .profile-block p, .title-page #title-content .profile-block h4 {

@@ -1,5 +1,11 @@
 /************************* COLOUR SELECTIONS ***************/
 /************************* CSS TRANSITIONS *******************/
+/************************* CSS RESET *************************/
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
 /*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
 .grid-container {
   height: 100vh;

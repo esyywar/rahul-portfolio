@@ -1,0 +1,62 @@
+[
+    {
+        "id": "0",
+        "title": "Sudoku Solver",
+        "date": "4/1/2020",
+        "photo": "img/...TODO",
+        "open-source": true,
+        "link": "https://github.com/esyywar/sudoku-solve-GUI",
+        "tags": ["C/C++", "Win32", "UI/UX"],
+        "description": ""
+    },
+    {
+        "id": "1",
+        "title": "ARM Cortex M4 Drivers",
+        "date": "3/1/2020",
+        "photo": "img/...TODO",
+        "open-source": true,
+        "link": "TODO",
+        "tags": ["C/C++", "Embedded", "Bare-Metal"],
+        "description": ""
+    },
+    {
+        "id": "2",
+        "title": "Literature Blog - rahulscorner.me",
+        "date": "12/1/2019",
+        "photo": "img/...TODO",
+        "open-source": false,
+        "link": "",
+        "tags": ["Web-Dev", "UI/UX", "React-JS", "Javscript"],
+        "description": ""
+    },
+    {
+        "id": "3",
+        "title": "LED Light Strip Controller",
+        "date": "11/1/2019",
+        "photo": "img/projects/TODO",
+        "open-source": true,
+        "link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
+        "tags": ["C/C++", "Embedded"],
+        "description": ""
+    },
+    {
+        "id": "4",
+        "title": "Rubikloud Retail Return Customer Predictions",
+        "date": "12/1/2019",
+        "photo": "img/projects/TODO",
+        "open-source": false,
+        "link": "",
+        "tags": ["Python", "Machine Learning"],
+        "description": ""
+    },
+    {
+        "id": "5",
+        "title": "OTTOGROW Hydroponics Grower",
+        "date": "4/1/2019",
+        "photo": "img/projects/TODO",
+        "open-source": false,
+        "link": "",
+        "tags": ["LabVIEW", "Embedded", "Automation"],
+        "descripion": ""
+    }
+]

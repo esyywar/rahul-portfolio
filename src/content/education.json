@@ -1,0 +1,39 @@
+[
+    {
+        "id": "0",
+        "specialization": "Systems and Computing Engineering",
+        "degree": "Master of Applied Science",
+        "abbrev-degree": "MASc.",
+        "institution": "University of Guelph",
+        "current": true,
+        "start-date": "5/30/2019",
+        "end-date": "1/1/2019",
+        "photo": "img/education/...TODO",
+        "GPA": "",
+        "allocades": []
+    },
+    {
+        "id": "1",
+        "specialization": "Biomedical Engineering",
+        "degree": "Bachelor of Engineering",
+        "abbrev-degree": "B.Eng (Co-op)",
+        "institution": "University of Guelph",
+        "current": false,
+        "start-date": "9/1/2014",
+        "end-date": "4/1/2019",
+        "photo": "img/education/...TODO",
+        "GPA": "82.5",
+        "allocades": ["Honours Graduate", "Entrance Scholarship ($3000)"]
+    },
+    {
+        "id": "2",
+        "degree": "High School",
+        "institution": "Bayview Secondary School",
+        "current": false,
+        "start-date": "9/1/2010",
+        "end-date": "6/1/2014",
+        "photo": "img/education/...TODO",
+        "GPA": "87",
+        "allocades": ["Honours Graduate"]
+    }
+]
