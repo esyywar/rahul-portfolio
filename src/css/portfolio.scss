@@ -7,6 +7,10 @@ $education-bg: #7BB2D9;
 $skills-bg: #C18AF8;
 
 
+/************************** FONT IMPORTS *******************/ 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
 /************************* CSS TRANSITIONS *******************/
 
 $transition-enter-time: 500ms;
@@ -42,6 +46,7 @@ html, body {
         height: 100%;
         color: whitesmoke;
         text-align: center;
+        font-family: 'Roboto', sans-serif;
     }
 }
 

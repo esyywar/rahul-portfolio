@@ -6,9 +6,7 @@
   display: grid;
   -ms-grid-rows: (1fr)[8];
       grid-template-rows: repeat(8, 1fr);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -26,7 +24,7 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 5;
   grid-row: 2 / 7;
-  margin-top: 5em;
+  margin-top: 3em;
   height: 100%;
   width: 100%;
 }
@@ -52,25 +50,93 @@
   width: 100%;
 }
 
-.skills-page .back-btn {
+.skills-page .skills-content .menu-screen .btn-container button {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.skills-page .skills-content .prog-langs {
+  height: 100%;
+  width: 100%;
+}
+
+.skills-page .skills-footer {
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
   grid-row: 8 / span 1;
+  width: 80%;
 }
 
-.skills-page .back-btn button {
-  color: black;
-  font-size: 1.1em;
-  font-weight: 600;
-  text-transform: uppercase;
-  background: whitesmoke;
-  padding: 1em;
-  border-radius: 50px;
-  display: inline-block;
-  border: 2px solid black;
-  outline: none;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
+.skills-page .skills-footer p {
+  font-size: 1.2em;
+}
+
+.skills-page .slide-right {
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation: slideFromRight 300ms ease forwards;
+          animation: slideFromRight 300ms ease forwards;
+}
+
+.skills-page .slide-left {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: slideFromLeft 300ms ease forwards;
+          animation: slideFromLeft 300ms ease forwards;
+}
+
+/*************************** ANIMATIONS *********************/
+@-webkit-keyframes slideFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/
@@ -136,30 +202,30 @@
 }
 
 .skills-page .skills-content .skills-component-transition-enter {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
 }
 
 .skills-page .skills-content .skills-component-transition-enter-active {
   opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-transition: all 400ms;
   transition: all 400ms;
 }
 
-.skills-page .skills-content .sskills-component-transition-exit {
+.skills-page .skills-content .skills-component-transition-exit {
   opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
 
 .skills-page .skills-content .skills-component-transition-exit-active {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
 }
 /*# sourceMappingURL=skills.css.map */

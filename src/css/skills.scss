@@ -10,7 +10,7 @@ $transition-exit-time: 200ms;
 
     display: grid;
     grid-template-rows: repeat(8, 1fr);
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     text-align: center;
 
@@ -21,7 +21,7 @@ $transition-exit-time: 200ms;
     .skills-content {
         font-size: 15px;
         grid-row: 2 / 7;
-        margin-top: 5em;
+        margin-top: 3em;
         height: 100%;
         width: 100%;
 
@@ -36,31 +36,68 @@ $transition-exit-time: 200ms;
 
             .btn-container {
                 width: 100%;
+
+                button {
+                    font-weight: 300;
+                    font-size: 1em;
+                }
             }
+        }
+
+        // Styling for programming languages page
+        .prog-langs {
+            height: 100%;
+            width: 100%;
         }
     }
 
-    .back-btn {
-        grid-row: 8 / span 1;
+    .skills-footer {
+        grid-row: 8 / span 1; 
+        width: 80%;
 
-        button {
-            color: black;
-            font-size: 1.1em;
-            font-weight: 600;
-            text-transform: uppercase;
-            background: whitesmoke;
-            padding: 1em;
-            border-radius: 50px;
-            display: inline-block;
-            border: 2px solid black;
-            outline: none;
-            transition: all 0.4s ease 0s;
-
-            // TODO - add hover effect for larger screens
+        p {
+            font-size: 1.2em;
         }
+    }
+
+    // Pure animations classes
+    .slide-right {
+        opacity: 0;
+        transform: translateX(100%);
+        animation: slideFromRight 300ms ease forwards;
+    }
+
+    .slide-left {
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideFromLeft 300ms ease forwards;
     }
 }
 
+
+/*************************** ANIMATIONS *********************/ 
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /*************************** CSS REACT TRANSITIONS **************************/
 
@@ -108,21 +145,21 @@ $transition-exit-time: 200ms;
 
         /************* SKILL COMPONENT TRANSITIONS *********/ 
         .skills-component-transition-enter {
-            transform: translateX(-100%);
+            transform: scale(0.5);
             opacity: 0;
         }
         .skills-component-transition-enter-active {
             opacity: 1;
-            transform: translateX(0);
+            transform: scale(1);
             transition: all $transition-enter-time;
         }
-        .sskills-component-transition-exit {
+        .skills-component-transition-exit {
             opacity: 1;
-            transform: translateX(0);
+            transform: scale(1);
             transition: all $transition-exit-time;
         }
         .skills-component-transition-exit-active {
-            transform: translateX(100%);
+            transform: scale(0.5);
             opacity: 0;
         }  
     }

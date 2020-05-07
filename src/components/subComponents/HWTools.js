@@ -1,8 +1,17 @@
 import React from 'react'
 
+import techSkills from '../../content/techSkills.json'
+
+
 function HWTools() {
+    // Import hardware knowledge from contents JSON
+    const hwTools = techSkills.hardwareTools
+
+
     return (
-        <h4>Hardware Tools</h4>
+        <div>
+            <h4>Hardware Tools</h4>
+        </div>
     )
 }
 

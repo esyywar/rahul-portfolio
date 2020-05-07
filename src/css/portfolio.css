@@ -1,4 +1,6 @@
 /************************* COLOUR SELECTIONS ***************/
+/************************** FONT IMPORTS *******************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 /************************* CSS TRANSITIONS *******************/
 /************************* CSS RESET *************************/
 html, body {
@@ -35,6 +37,7 @@ html, body {
   height: 100%;
   color: whitesmoke;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/

@@ -1,10 +1,49 @@
 {
-    "embeddedSystems": {
-        "Microcontrollers": [],
-        "SDK": [],
-        "Tools": [],
+    "hardwareTools": {
+        "Microcontrollers": ["ARM Cortex-M", "ATMega(Arduino)", "PIC"],
         "Electrical": []
     },
-    "programmingLangs": [],
-    "softwareTools": []
+    "programmingLangs": [
+        {
+            "id": 0,
+            "language": "C/C++",
+            "proficiency": "90%"
+        },
+        {
+            "id": 1,
+            "language": "NI LabVIEW",
+            "proficiency": "90%"
+        },
+        {
+            "id": 2,
+            "language": "NI TestStand",
+            "proficiency": "75%"
+        },
+        {
+            "id": 3,
+            "language": "Javascript",
+            "proficiency": "65%"
+        },
+        {
+            "id": 4,
+            "language": "CSS3",
+            "proficiency": "80%"
+        },
+        {
+            "id": 5,
+            "language": "HTML5",
+            "proficiency": "95%"
+        },
+        {
+            "id": 6,
+            "language": "Python",
+            "proficiency": "55%"
+        }
+    ],
+    "softwareTools": {
+        "topLevel": ["Visual Studio", "Visual Studio Code", "Git", "TortoiseSVN"],
+        "embedded": ["Keil", "STM32CubeIDE", "FreeRTOS", "GNU/GDB", "makefile"],
+        "circuitDesign": ["KiCAD", "LTspice", "OrCAD"],
+        "wedDev": ["React JS, React Router, SASS, Bootstrap, Material UI"]
+    }
 }
