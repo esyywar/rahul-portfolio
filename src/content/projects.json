@@ -6,7 +6,7 @@
         "photo": "img/...TODO",
         "open-source": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
-        "tags": ["C/C++", "Win32", "UI/UX"],
+        "tags": ["C/C++", "Win32", "UI/UX Design"],
         "description": ""
     },
     {
@@ -26,7 +26,7 @@
         "photo": "img/...TODO",
         "open-source": false,
         "link": "",
-        "tags": ["Web-Dev", "UI/UX", "React-JS", "Javscript"],
+        "tags": ["Web-Dev", "UI/UX Design", "React-JS", "Javscript"],
         "description": ""
     },
     {
@@ -56,7 +56,7 @@
         "photo": "img/projects/TODO",
         "open-source": false,
         "link": "",
-        "tags": ["LabVIEW", "Embedded", "Automation"],
+        "tags": ["LabVIEW", "Embedded", "UI/UX Design", "Automation"],
         "descripion": ""
     }
 ]

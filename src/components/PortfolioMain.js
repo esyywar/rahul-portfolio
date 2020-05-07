@@ -24,7 +24,7 @@ function PortfolioMain() {
   // Routes to pages which will be mapped
   const routes = [
     {
-      id: 1,
+      id: 0,
       name: "Main Page",
       text: "Welcome",
       path: "/portfolio",
@@ -35,7 +35,7 @@ function PortfolioMain() {
       bgColour: "#FD8536"
     },
     {
-      id: 2,
+      id: 1,
       name: "Work Experience",
       text: "Professional Exp.",
       path: "/portfolio/workexp",
@@ -46,7 +46,7 @@ function PortfolioMain() {
       bgColour: "#F16481"
     },
     {
-      id: 3,
+      id: 2,
       name: "Education",
       text: "Education",
       path: "/portfolio/edu",
@@ -57,7 +57,7 @@ function PortfolioMain() {
       bgColour: "#7BB2D9"
     },
     {
-      id: 4,
+      id: 3,
       name: "Projects",
       text: "Projects",
       path: "/portfolio/projects",
@@ -68,7 +68,7 @@ function PortfolioMain() {
       bgColour: "#74DE86"
     },
     {
-      id: 5,
+      id: 4,
       name: "Skills",
       text: "Technical Skills",
       path: "/portfolio/techSkills",

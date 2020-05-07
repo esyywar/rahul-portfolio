@@ -1,0 +1,101 @@
+/************************* CSS TRANSITIONS *******************/
+
+$transition-enter-time: 300ms;
+$transition-delay: 200ms;
+$transition-exit-time: 200ms;
+
+
+.skills-page {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .page-title {
+        grid-row: 1 / 2;
+    }
+    
+    .skills-btns {
+        grid-row: 3 / 6;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .btn-container {
+            width: 100%;
+        }
+    }
+
+    .back-btn {
+        grid-row: 7 / 8;
+
+        button {
+            color: black;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: whitesmoke;
+            padding: 1em;
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid black;
+            outline: none;
+            transition: all 0.4s ease 0s;
+
+            // TODO - add hover effect for larger screens
+        }
+    }
+}
+
+
+/*************************** CSS REACT TRANSITIONS **************************/
+
+.skills-page {
+    /************ BACK BUTTON ************/
+    .back-btn-transition-enter {
+        height: 0;
+        opacity: 0;
+    }
+    .back-btn-transition-enter-active {
+        opacity: 1;
+        height: 100%;
+        transition-delay: $transition-delay;
+        transition: all $transition-enter-time;
+    }
+    .back-btn-transition-exit {
+        opacity: 1;
+        height: 100%;
+        transition: all $transition-exit-time;
+    }
+    .back-btn-transition-exit-active {
+        height: 0;
+        opacity: 0;
+    }  
+
+    /*********** MENU TRANSITION **********/
+    .skills-menu-transition-enter {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+    }
+    .skills-menu-transition-enter-active {
+        opacity: 1;
+        transform: perspective(400px);
+        transition-delay: $transition-delay;
+        transition: all $transition-enter-time;
+    }
+    .skills-menu-transition-exit {
+        opacity: 1;
+        transform: perspective(400px);
+        transition: all $transition-exit-time;
+    }
+    .skills-menu-transition-exit-active {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+    }  
+}

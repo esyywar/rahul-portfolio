@@ -51,7 +51,7 @@ function SideNav(props) {
                 element.style.animation = "itemsAppear 300ms ease " + (250 + index * 80) + "ms forwards" 
             })
 
-            console.log("setting event listener")
+            // Set event listener for click -> close nav if user clicks away from nav
             document.addEventListener("mousedown", handleClick)
         }
         else
@@ -74,7 +74,7 @@ function SideNav(props) {
         }
 
         return (isSideNavOpen => {
-            console.log("removing event listener")
+            // Callback function removes event listener for user click
             if (!isSideNavOpen) document.removeEventListener("mousedown", handleClick)
         })
 

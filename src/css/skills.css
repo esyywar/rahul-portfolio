@@ -1,0 +1,130 @@
+/************************* CSS TRANSITIONS *******************/
+.skills-page {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.skills-page .page-title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+.skills-page .skills-btns {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  grid-row: 3 / 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.skills-page .skills-btns .btn-container {
+  width: 100%;
+}
+
+.skills-page .back-btn {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7 / 8;
+}
+
+.skills-page .back-btn button {
+  color: black;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: whitesmoke;
+  padding: 1em;
+  border-radius: 50px;
+  display: inline-block;
+  border: 2px solid black;
+  outline: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+/*************************** CSS REACT TRANSITIONS **************************/
+.skills-page {
+  /************ BACK BUTTON ************/
+  /*********** MENU TRANSITION **********/
+}
+
+.skills-page .back-btn-transition-enter {
+  height: 0;
+  opacity: 0;
+}
+
+.skills-page .back-btn-transition-enter-active {
+  opacity: 1;
+  height: 100%;
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.skills-page .back-btn-transition-exit {
+  opacity: 1;
+  height: 100%;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.skills-page .back-btn-transition-exit-active {
+  height: 0;
+  opacity: 0;
+}
+
+.skills-page .skills-menu-transition-enter {
+  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+  opacity: 0;
+}
+
+.skills-page .skills-menu-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: perspective(400px);
+          transform: perspective(400px);
+  -webkit-transition-delay: 200ms;
+          transition-delay: 200ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.skills-page .skills-menu-transition-exit {
+  opacity: 1;
+  -webkit-transform: perspective(400px);
+          transform: perspective(400px);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.skills-page .skills-menu-transition-exit-active {
+  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+  opacity: 0;
+}
+/*# sourceMappingURL=skills.css.map */
