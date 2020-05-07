@@ -1,7 +1,6 @@
 /************************* CSS TRANSITIONS *******************/
 
-$transition-enter-time: 300ms;
-$transition-delay: 200ms;
+$transition-enter-time: 400ms;
 $transition-exit-time: 200ms;
 
 
@@ -19,21 +18,30 @@ $transition-exit-time: 200ms;
         grid-row: 1 / 2;
     }
     
-    .skills-btns {
-        grid-row: 3 / 6;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: space-between;
+    .skills-content {
+        font-size: 15px;
+        grid-row: 2 / 7;
+        margin-top: 5em;
         height: 100%;
+        width: 100%;
 
-        .btn-container {
+        // For menu screen component
+        .menu-screen {
+            height: 100%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            .btn-container {
+                width: 100%;
+            }
         }
     }
 
     .back-btn {
-        grid-row: 7 / 8;
+        grid-row: 8 / span 1;
 
         button {
             color: black;
@@ -65,7 +73,6 @@ $transition-exit-time: 200ms;
     .back-btn-transition-enter-active {
         opacity: 1;
         height: 100%;
-        transition-delay: $transition-delay;
         transition: all $transition-enter-time;
     }
     .back-btn-transition-exit {
@@ -78,24 +85,45 @@ $transition-exit-time: 200ms;
         opacity: 0;
     }  
 
-    /*********** MENU TRANSITION **********/
-    .skills-menu-transition-enter {
-        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-        opacity: 0;
+    .skills-content {
+        /*********** MENU TRANSITION **********/
+        .skills-menu-transition-enter {
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            opacity: 0;
+        }
+        .skills-menu-transition-enter-active {
+            opacity: 1;
+            transform: perspective(400px);
+            transition: all $transition-enter-time;
+        }
+        .skills-menu-transition-exit {
+            opacity: 1;
+            transform: perspective(400px);
+            transition: all $transition-exit-time;
+        }
+        .skills-menu-transition-exit-active {
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            opacity: 0;
+        }  
+
+        /************* SKILL COMPONENT TRANSITIONS *********/ 
+        .skills-component-transition-enter {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .skills-component-transition-enter-active {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all $transition-enter-time;
+        }
+        .sskills-component-transition-exit {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all $transition-exit-time;
+        }
+        .skills-component-transition-exit-active {
+            transform: translateX(100%);
+            opacity: 0;
+        }  
     }
-    .skills-menu-transition-enter-active {
-        opacity: 1;
-        transform: perspective(400px);
-        transition-delay: $transition-delay;
-        transition: all $transition-enter-time;
-    }
-    .skills-menu-transition-exit {
-        opacity: 1;
-        transform: perspective(400px);
-        transition: all $transition-exit-time;
-    }
-    .skills-menu-transition-exit-active {
-        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-        opacity: 0;
-    }  
 }

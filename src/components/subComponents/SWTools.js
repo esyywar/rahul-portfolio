@@ -2,7 +2,7 @@ import React from 'react'
 
 function SWTools() {
     return (
-        <h1>Software Tools</h1>
+        <h4>Software Tools</h4>
     )
 }
 

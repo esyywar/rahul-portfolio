@@ -117,8 +117,8 @@ html, body {
 }
 
 .grid-container .education-transition-exit {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 1;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -145,8 +145,8 @@ html, body {
 }
 
 .grid-container .skills-transition-exit {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   opacity: 1;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -173,8 +173,8 @@ html, body {
 }
 
 .grid-container .projects-transition-exit {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 1;
   -webkit-transition: all 200ms;
   transition: all 200ms;

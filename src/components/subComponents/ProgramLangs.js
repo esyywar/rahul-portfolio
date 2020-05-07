@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProgramLangs() {
     return (
-        <h1>Programming languages</h1>
+        <h4>Programming languages</h4>
     )
 }
 

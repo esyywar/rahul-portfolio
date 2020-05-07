@@ -9,7 +9,10 @@ import ProgramLangs from './subComponents/ProgramLangs'
 import SWTools from './subComponents/SWTools'
 import HWTools from './subComponents/HWTools'
 
+import { MDBBtn } from "mdbreact";
+
 import '../css/skills.css'
+import 'mdbreact/dist/css/mdb.css' 
 
 
 function Skills(props) {
@@ -46,49 +49,53 @@ function Skills(props) {
         <div className="skills-page">
             <h1 className="page-title">Technical Skills</h1>
 
-            <CSSTransition 
-                in={activeWnd === "MENU"}
-                timeout={300}
-                classNames="skills-menu-transition"
-                unmountOnExit
-            >
-                <div className="skills-btns">
-                    <div className="btn-container"><button onClick={() => setActiveWnd("PLANGS")}>Programming Languages</button></div>
-                    <div className="btn-container"><button onClick={() => setActiveWnd("SWTOOLS")}>Software Tools</button></div>
-                    <div className="btn-container"><button onClick={() => setActiveWnd("HWTOOLS")}>Hardware Tools</button></div>
-                </div>
-            </CSSTransition>
+            <div className="skills-content">
+                <CSSTransition 
+                    in={activeWnd === "MENU"}
+                    timeout={300}
+                    classNames="skills-menu-transition"
+                    unmountOnExit
+                >
+                    <div className="menu-screen">
+                        <div className="btn-container">
+                            <MDBBtn color="primary" onClick={() => setActiveWnd("HWTOOLS")}>Hardware</MDBBtn>
+                        </div>
+                        <div className="btn-container">
+                            <MDBBtn color="deep-orange" onClick={() => setActiveWnd("PLANGS")}>Coding</MDBBtn>
+                        </div>
+                        <div className="btn-container">
+                            <MDBBtn color="amber" onClick={() => setActiveWnd("SWTOOLS")}>SW Tools</MDBBtn>
+                        </div>
+                    </div>
+                </CSSTransition>
 
-            {
-                skillComponents.map(({ id, Component, wndName }) => {
+                {/* Mapping the skill component items accessible from menu buttons */}
+                {skillComponents.map(({ id, Component, wndName }) => {
                     return (
-                    <CSSTransition 
-                        key={id}
-                        in={activeWnd === wndName}
-                        timeout={300}
-                        classNames="skills-component-transition"
-                        unmountOnExit
-                    >
-                        <Component />
-                    </CSSTransition>
+                        <CSSTransition 
+                            key={id}
+                            in={activeWnd === wndName}
+                            timeout={300}
+                            classNames="skills-component-transition"
+                            unmountOnExit
+                        >
+                            <Component />
+                        </CSSTransition>
                     )
-                })
-            }
-
+                })}
+            </div>
 
             {/* If not at menu screen, display 'Back to Menu' button */}
             <CSSTransition 
                 in={activeWnd !== "MENU"}
-                timeout={700}
+                timeout={300}
                 classNames="back-btn-transition"
                 unmountOnExit
             >
                 <div className="back-btn">
                     <button onClick={() => setActiveWnd("MENU")}>Back to Menu</button>
                 </div>
-            </CSSTransition>
-
-            
+            </CSSTransition> 
         </div>
     )
 }

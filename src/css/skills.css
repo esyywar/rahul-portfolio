@@ -21,34 +21,41 @@
   grid-row: 1 / 2;
 }
 
-.skills-page .skills-btns {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 3;
-  grid-row: 3 / 6;
+.skills-page .skills-content {
+  font-size: 15px;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 5;
+  grid-row: 2 / 7;
+  margin-top: 5em;
+  height: 100%;
+  width: 100%;
+}
+
+.skills-page .skills-content .menu-screen {
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.skills-page .skills-btns .btn-container {
+.skills-page .skills-content .menu-screen .btn-container {
   width: 100%;
 }
 
 .skills-page .back-btn {
-  -ms-grid-row: 7;
+  -ms-grid-row: 8;
   -ms-grid-row-span: 1;
-  grid-row: 7 / 8;
+  grid-row: 8 / span 1;
 }
 
 .skills-page .back-btn button {
@@ -69,7 +76,6 @@
 /*************************** CSS REACT TRANSITIONS **************************/
 .skills-page {
   /************ BACK BUTTON ************/
-  /*********** MENU TRANSITION **********/
 }
 
 .skills-page .back-btn-transition-enter {
@@ -80,10 +86,8 @@
 .skills-page .back-btn-transition-enter-active {
   opacity: 1;
   height: 100%;
-  -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
 }
 
 .skills-page .back-btn-transition-exit {
@@ -98,23 +102,26 @@
   opacity: 0;
 }
 
-.skills-page .skills-menu-transition-enter {
+.skills-page .skills-content {
+  /*********** MENU TRANSITION **********/
+  /************* SKILL COMPONENT TRANSITIONS *********/
+}
+
+.skills-page .skills-content .skills-menu-transition-enter {
   -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
           transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
   opacity: 0;
 }
 
-.skills-page .skills-menu-transition-enter-active {
+.skills-page .skills-content .skills-menu-transition-enter-active {
   opacity: 1;
   -webkit-transform: perspective(400px);
           transform: perspective(400px);
-  -webkit-transition-delay: 200ms;
-          transition-delay: 200ms;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
 }
 
-.skills-page .skills-menu-transition-exit {
+.skills-page .skills-content .skills-menu-transition-exit {
   opacity: 1;
   -webkit-transform: perspective(400px);
           transform: perspective(400px);
@@ -122,9 +129,37 @@
   transition: all 200ms;
 }
 
-.skills-page .skills-menu-transition-exit-active {
+.skills-page .skills-content .skills-menu-transition-exit-active {
   -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
           transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+  opacity: 0;
+}
+
+.skills-page .skills-content .skills-component-transition-enter {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  opacity: 0;
+}
+
+.skills-page .skills-content .skills-component-transition-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.skills-page .skills-content .sskills-component-transition-exit {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.skills-page .skills-content .skills-component-transition-exit-active {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   opacity: 0;
 }
 /*# sourceMappingURL=skills.css.map */

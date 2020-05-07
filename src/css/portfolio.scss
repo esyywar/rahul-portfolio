@@ -10,7 +10,6 @@ $skills-bg: #C18AF8;
 /************************* CSS TRANSITIONS *******************/
 
 $transition-enter-time: 500ms;
-$transition-delay: 0;
 $transition-exit-time: 200ms;
 
 
@@ -100,7 +99,7 @@ html, body {
         transition: all $transition-enter-time;
     }
     .education-transition-exit {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
         transition: all $transition-exit-time;
     }
@@ -120,7 +119,7 @@ html, body {
         transition: all $transition-enter-time;
     }
     .skills-transition-exit {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
         transition: all $transition-exit-time;
     }
@@ -140,7 +139,7 @@ html, body {
         transition: all $transition-enter-time;
     }
     .projects-transition-exit {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
         transition: all $transition-exit-time;
     }
