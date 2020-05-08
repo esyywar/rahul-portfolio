@@ -40,6 +40,12 @@ $transition-exit-time: 200ms;
             align-items: center;
             justify-content: space-around;
 
+            // Initial conditions for animation
+            opacity: 0;
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+
+            animation: flipIn 300ms ease forwards;
+
             .btn-container {
                 width: 100%;
 
@@ -72,6 +78,14 @@ $transition-exit-time: 200ms;
         transform: translateX(-100%);
         animation: slideFromLeft 300ms ease forwards;
     }
+
+    .skill-entrance-animation {
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transform: scale(0.5);
+        animation: growBig 300ms ease forwards;
+    }
 }
 
 
@@ -81,7 +95,7 @@ $transition-exit-time: 200ms;
     height: 95%;
     width: 95%;
     display: grid;
-    grid-template-columns: 7em auto;
+    grid-template-columns: 7.5em auto;
 
     .lang-column {
         grid-column: 1 / 2;
@@ -94,8 +108,12 @@ $transition-exit-time: 200ms;
 
         .lang-item {
             font-family: 'VT323', monospace;
-            font-size: 1.3em;
+            font-size: 1.5em;
             width: 100%;
+
+            // Initial conditions for animation
+            opacity: 0;
+            transform: translateX(-100%);
         }
     }
 
@@ -110,14 +128,20 @@ $transition-exit-time: 200ms;
 
         .empty-skill-bar {
             width: 90%;
-            height: 1.1em;
+            height: 4px;
+            box-shadow: 5px 5px 15px green;
             background-color: whitesmoke;
             overflow: hidden;
 
+            // Initial conditions for animation
+            opacity: 0;
+            transform: translateX(100%);
+
             .skill-bar-fill {
-                background-color: peru;
+                background-color: green;
                 height: 100%;
-                animation: fillUpDown 1.5s ease;
+                width: 0;
+                // NOTE: width and transition to fill bar up managed in CodeLang.js
             }
         }
     }
@@ -148,52 +172,24 @@ $transition-exit-time: 200ms;
     }
 }
 
-@keyframes fillUpDown {
-    0% {
-        width: 0;
+@keyframes flipIn {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotate3d(0, 0, 0, 0);
+        opacity: 1;
     }
 }
 
-/*************************** CSS REACT TRANSITIONS **************************/
-
-.skills-page .skills-content {
-    /*********** MENU TRANSITION **********/
-    .skills-menu-transition-enter {
-        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+@keyframes growBig {
+    from {
         opacity: 0;
-    }
-    .skills-menu-transition-enter-active {
-        opacity: 1;
-        transform: perspective(400px);
-        transition: all $transition-enter-time;
-    }
-    .skills-menu-transition-exit {
-        opacity: 1;
-        transform: perspective(400px);
-        transition: all $transition-exit-time;
-    }
-    .skills-menu-transition-exit-active {
-        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-        opacity: 0;
-    }  
-
-    /************* SKILL COMPONENT TRANSITIONS *********/ 
-    .skills-component-transition-enter {
         transform: scale(0.5);
-        opacity: 0;
     }
-    .skills-component-transition-enter-active {
+    to {
         opacity: 1;
         transform: scale(1);
-        transition: all $transition-enter-time;
     }
-    .skills-component-transition-exit {
-        opacity: 1;
-        transform: scale(1);
-        transition: all $transition-exit-time;
-    }
-    .skills-component-transition-exit-active {
-        transform: scale(0.5);
-        opacity: 0;
-    }  
 }

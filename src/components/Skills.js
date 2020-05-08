@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import { CSSTransition } from 'react-transition-group'
-
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
 
@@ -104,43 +102,31 @@ function Skills(props) {
             <h1 className="page-title">{pageTitle}</h1>
 
             <div className="skills-content">
-                {/* Mapping CSS Transitions to skill component items accessible from menu buttons */}
+                {/* Mapping skill component items accessible from menu buttons */}
                 {skillComponents.map(({ id, Component, wndName }) => {
                     return (
-                        <CSSTransition 
-                            key={id}
-                            in={activeWnd === wndName}
-                            timeout={500}
-                            classNames="skills-component-transition"
-                            exit={false}
-                            unmountOnExit
-                        >
-                            <Component />
-                        </CSSTransition>
+                        (activeWnd === wndName) && (
+                            <div key={id} className="skill-entrance-animation">
+                                <Component />
+                            </div>
+                        )
                     )
                 })}
 
-                {/* Creating main skill menu screen with button links to other components */}
-                <CSSTransition 
-                    in={activeWnd === "MENU"}
-                    timeout={500}
-                    classNames="skills-menu-transition"
-                    exit={false}
-                    unmountOnExit
-                >
-                    <div className="menu-screen">
-                        {/* Mapping buttons to skill components on skill menu screen */}
-                        {skillComponents.map(({ id, btnColour, faIcon, wndTitle }) => {
-                            return (
-                                <div key={id} className="btn-container">
-                                    <MDBBtn color={btnColour} onClick={() => handleBtnClick(id)}>
-                                         <span><FontAwesomeIcon icon={faIcon} size="lg" /> {wndTitle}</span>
-                                    </MDBBtn>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </CSSTransition>
+                {/* Render menu screen if active window is menu */}
+                {(activeWnd === "MENU") && (
+                <div className="menu-screen">
+                    {/* Mapping buttons to skill components on menu screen */}
+                    {skillComponents.map(({ id, btnColour, faIcon, wndTitle }) => {
+                        return (
+                            <div key={id} className="btn-container">
+                                <MDBBtn color={btnColour} onClick={() => handleBtnClick(id)}>
+                                        <span><FontAwesomeIcon icon={faIcon} size="lg" /> {wndTitle}</span>
+                                </MDBBtn>
+                            </div>
+                        )
+                    })}
+                </div>)}
             </div>
 
             <div className="skills-footer">

@@ -46,6 +46,11 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  opacity: 0;
+  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+  -webkit-animation: flipIn 300ms ease forwards;
+          animation: flipIn 300ms ease forwards;
 }
 
 .skills-page .skills-content .menu-screen .btn-container {
@@ -84,14 +89,24 @@
           animation: slideFromLeft 300ms ease forwards;
 }
 
+.skills-page .skill-entrance-animation {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-animation: growBig 300ms ease forwards;
+          animation: growBig 300ms ease forwards;
+}
+
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 .skills-page .skills-content .code-langs-list {
   height: 95%;
   width: 95%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 7em auto;
-      grid-template-columns: 7em auto;
+  -ms-grid-columns: 7.5em auto;
+      grid-template-columns: 7.5em auto;
 }
 
 .skills-page .skills-content .code-langs-list .lang-column {
@@ -116,8 +131,11 @@
 
 .skills-page .skills-content .code-langs-list .lang-column .lang-item {
   font-family: 'VT323', monospace;
-  font-size: 1.3em;
+  font-size: 1.5em;
   width: 100%;
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .skills-page .skills-content .code-langs-list .skill-bar-column {
@@ -142,16 +160,20 @@
 
 .skills-page .skills-content .code-langs-list .skill-bar-column .empty-skill-bar {
   width: 90%;
-  height: 1.1em;
+  height: 4px;
+  -webkit-box-shadow: 5px 5px 15px green;
+          box-shadow: 5px 5px 15px green;
   background-color: whitesmoke;
   overflow: hidden;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .skills-page .skills-content .code-langs-list .skill-bar-column .empty-skill-bar .skill-bar-fill {
-  background-color: peru;
+  background-color: green;
   height: 100%;
-  -webkit-animation: fillUpDown 1.5s ease;
-          animation: fillUpDown 1.5s ease;
+  width: 0;
 }
 
 /*************************** ANIMATIONS *********************/
@@ -206,77 +228,55 @@
   }
 }
 
-@-webkit-keyframes fillUpDown {
-  0% {
-    width: 0;
+@-webkit-keyframes flipIn {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 0, 0, 0);
+            transform: perspective(400px) rotate3d(0, 0, 0, 0);
+    opacity: 1;
   }
 }
 
-@keyframes fillUpDown {
-  0% {
-    width: 0;
+@keyframes flipIn {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 0, 0, 0);
+            transform: perspective(400px) rotate3d(0, 0, 0, 0);
+    opacity: 1;
   }
 }
 
-/*************************** CSS REACT TRANSITIONS **************************/
-.skills-page .skills-content {
-  /*********** MENU TRANSITION **********/
-  /************* SKILL COMPONENT TRANSITIONS *********/
+@-webkit-keyframes growBig {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
-.skills-page .skills-content .skills-menu-transition-enter {
-  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-  opacity: 0;
-}
-
-.skills-page .skills-content .skills-menu-transition-enter-active {
-  opacity: 1;
-  -webkit-transform: perspective(400px);
-          transform: perspective(400px);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-
-.skills-page .skills-content .skills-menu-transition-exit {
-  opacity: 1;
-  -webkit-transform: perspective(400px);
-          transform: perspective(400px);
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.skills-page .skills-content .skills-menu-transition-exit-active {
-  -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-          transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-  opacity: 0;
-}
-
-.skills-page .skills-content .skills-component-transition-enter {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  opacity: 0;
-}
-
-.skills-page .skills-content .skills-component-transition-enter-active {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-
-.skills-page .skills-content .skills-component-transition-exit {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.skills-page .skills-content .skills-component-transition-exit-active {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  opacity: 0;
+@keyframes growBig {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=skills.css.map */
