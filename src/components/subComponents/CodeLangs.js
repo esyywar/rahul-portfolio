@@ -24,7 +24,8 @@ function CodeLangs() {
             element.style.transition = "width 1s ease-out " + (index * 100 + 300) + "ms"
             element.style.width = progLangs[index].proficiency
         })
-    }, [])
+    }, [progLangs])
+    
 
     return (
         <div className="code-langs-list">

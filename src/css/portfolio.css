@@ -1,6 +1,7 @@
 /************************* COLOUR SELECTIONS ***************/
 /************************** FONT IMPORTS *******************/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 /************************* CSS TRANSITIONS *******************/
 /************************* CSS RESET *************************/
 html, body {
@@ -27,9 +28,9 @@ html, body {
 }
 
 .grid-container .resume-window {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 9;
-  grid-row: 3 / 12;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 10;
+  grid-row: 2 / 12;
   -ms-grid-column: 2;
   -ms-grid-column-span: 10;
   grid-column: 2 / 12;

@@ -29,8 +29,17 @@ function Skills(props) {
 
     /************ LOCAL STATE INITIALIZATION ******************/
 
+    // Enum for active window state
+    const windows = {
+        MENU: "MENU",
+        HWTOOLS: "HWTOOLS",
+        PLANGS: "PLANGS",
+        SWTOOLS: "SWTOOLS"
+    }
+    Object.freeze(windows)
+
     // State of active window switching between skill components
-    const [activeWnd, setActiveWnd] = useState("MENU")
+    const [activeWnd, setActiveWnd] = useState(windows.MENU)
 
     // State of page title to be displayed
     const [pageTitle, setPageTitle] = useState("Technical Skills")
@@ -44,7 +53,7 @@ function Skills(props) {
             Component: HWTools,
             btnColour: "primary",
             faIcon: "plug",
-            wndName: "HWTOOLS",
+            wndName: windows.HWTOOLS,
             wndTitle: "Hardware"
         },
         {
@@ -52,7 +61,7 @@ function Skills(props) {
             Component: CodeLangs,
             btnColour: "deep-orange",
             faIcon: "keyboard",
-            wndName: "PLANGS",
+            wndName: windows.PLANGS,
             wndTitle: "Coding"
         },
         {
@@ -60,7 +69,7 @@ function Skills(props) {
             Component: SWTools,
             btnColour: "amber",
             faIcon: "tools",
-            wndName: "SWTOOLS",
+            wndName: windows.SWTOOLS,
             wndTitle: "Software Tools"
         }
     ]
@@ -92,7 +101,7 @@ function Skills(props) {
     }
 
     function backToMenu() {
-        setActiveWnd("MENU")
+        setActiveWnd(windows.MENU)
         setPageTitle("Technical Skills")
     }
 

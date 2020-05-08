@@ -1,6 +1,7 @@
 /************************* CSS TRANSITIONS *******************/
 /************************ FONT IMPORTS *********************/
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 .skills-page {
   height: 100%;
   width: 100%;
@@ -13,16 +14,18 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  font-size: 16px;
+  font-family: 'VT323', monospace;
 }
 
 .skills-page .page-title {
+  font-size: 2.2em;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
 }
 
 .skills-page .skills-content {
-  font-size: 15px;
   -ms-grid-row: 2;
   -ms-grid-row-span: 5;
   grid-row: 2 / 7;
@@ -49,8 +52,8 @@
   opacity: 0;
   -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
           transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-  -webkit-animation: flipIn 300ms ease forwards;
-          animation: flipIn 300ms ease forwards;
+  -webkit-animation: flipInVert 300ms ease forwards;
+          animation: flipInVert 300ms ease forwards;
 }
 
 .skills-page .skills-content .menu-screen .btn-container {
@@ -70,7 +73,7 @@
 }
 
 .skills-page .skills-footer p {
-  font-size: 1.2em;
+  font-size: 1.7em;
 }
 
 .skills-page .slide-right {
@@ -101,8 +104,8 @@
 
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 .skills-page .skills-content .code-langs-list {
-  height: 95%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 7.5em auto;
@@ -176,6 +179,39 @@
   width: 0;
 }
 
+/**************** SOFTWARE TOOLS COMPONENT ****************/
+.skills-page .skills-content .sw-tools-grid {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(7em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+  grid-gap: 1em;
+}
+
+.skills-page .skills-content .sw-tools-grid .sw-tool-pack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 0.5em;
+  padding: 0.5em 0;
+  font-family: 'Oswald', sans-serif;
+  -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+          transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+  opacity: 0;
+}
+
 /*************************** ANIMATIONS *********************/
 @-webkit-keyframes slideFromRight {
   from {
@@ -228,7 +264,7 @@
   }
 }
 
-@-webkit-keyframes flipIn {
+@-webkit-keyframes flipInVert {
   from {
     -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -241,7 +277,7 @@
   }
 }
 
-@keyframes flipIn {
+@keyframes flipInVert {
   from {
     -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
@@ -250,6 +286,58 @@
   to {
     -webkit-transform: perspective(400px) rotate3d(0, 0, 0, 0);
             transform: perspective(400px) rotate3d(0, 0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flipInHoriz {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInHoriz {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
     opacity: 1;
   }
 }

@@ -40,10 +40,26 @@
             "proficiency": "55%"
         }
     ],
-    "softwareTools": {
-        "topLevel": ["Visual Studio", "Visual Studio Code", "Git", "TortoiseSVN"],
-        "embedded": ["Keil", "STM32CubeIDE", "FreeRTOS", "GNU/GDB", "makefile"],
-        "circuitDesign": ["KiCAD", "LTspice", "OrCAD"],
-        "wedDev": ["React JS, React Router, SASS, Bootstrap, Material UI"]
-    }
+    "softwareTools": [
+        {
+            "id": 0,
+            "title": "General",
+            "items": ["Visual Studio", "Visual Studio Code", "Git", "TortoiseSVN"]
+        },
+        {
+            "id": 1,
+            "title": "Embedded",
+            "items": ["Keil uVision", "STM32CubeIDE", "FreeRTOS", "CMSIS & HAL", "GNU/GDB"]
+        },
+        {
+            "id": 2,
+            "title": "Circuit Design",
+            "items": ["KiCAD", "LTspice", "OrCAD"]
+        },
+        {
+            "id": 3,
+            "title": "Web Dev",
+            "items": ["React JS", "Node JS", "SASS", "Bootstrap"]
+        }
+    ]
 }

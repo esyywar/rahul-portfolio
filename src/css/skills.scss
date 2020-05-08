@@ -7,6 +7,7 @@ $transition-exit-time: 200ms;
 /************************ FONT IMPORTS *********************/
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 
 
@@ -20,12 +21,15 @@ $transition-exit-time: 200ms;
     align-items: center;
     text-align: center;
 
+    font-size: 16px;
+    font-family: 'VT323', monospace;
+
     .page-title {
+        font-size: 2.2em;
         grid-row: 1 / 2;
     }
     
     .skills-content {
-        font-size: 15px;
         grid-row: 2 / 7;
         margin-top: 3em;
         height: 100%;
@@ -44,7 +48,7 @@ $transition-exit-time: 200ms;
             opacity: 0;
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
 
-            animation: flipIn 300ms ease forwards;
+            animation: flipInVert 300ms ease forwards;
 
             .btn-container {
                 width: 100%;
@@ -62,7 +66,7 @@ $transition-exit-time: 200ms;
         width: 80%;
 
         p {
-            font-size: 1.2em;
+            font-size: 1.7em;
         }
     }
 
@@ -92,8 +96,8 @@ $transition-exit-time: 200ms;
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 
 .skills-page .skills-content .code-langs-list {
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 7.5em auto;
 
@@ -148,6 +152,32 @@ $transition-exit-time: 200ms;
 }
 
 
+/**************** SOFTWARE TOOLS COMPONENT ****************/
+
+.skills-page .skills-content .sw-tools-grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+    grid-gap: 1em;
+
+    .sw-tool-pack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0.5em;
+        padding: 0.5em 0;
+        font-family: 'Oswald', sans-serif;
+
+        // Initial conditions for animation applied in SWTools.js
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+    }
+}
+
+
+
 /*************************** ANIMATIONS *********************/ 
 
 @keyframes slideFromRight {
@@ -172,13 +202,39 @@ $transition-exit-time: 200ms;
     }
 }
 
-@keyframes flipIn {
+@keyframes flipInVert {
     from {
         transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
         opacity: 0;
     }
     to {
         transform: perspective(400px) rotate3d(0, 0, 0, 0);
+        opacity: 1;
+    }
+}
+
+// From animate.css
+@keyframes flipInHoriz {
+    from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    to {
+        transform: perspective(400px);
         opacity: 1;
     }
 }
