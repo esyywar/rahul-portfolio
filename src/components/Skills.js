@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
 
-import ProgramLangs from './subComponents/ProgramLangs'
+import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
 import HWTools from './subComponents/HWTools'
 
@@ -18,6 +18,9 @@ import 'mdbreact/dist/css/mdb.css'
 
 
 function Skills(props) {
+
+    /************ STATE MANAGEMENT FROM REDUX STORE **************/
+
     const dispatch = useDispatch()
 
     // Change background colour on render
@@ -25,26 +28,47 @@ function Skills(props) {
         dispatch(bgClrSwitch(props.bgColour))
     }, [props.bgColour, dispatch])
 
-    // For switching between skill components
+
+    /************ LOCAL STATE INITIALIZATION ******************/
+
+    // State of active window switching between skill components
     const [activeWnd, setActiveWnd] = useState("MENU")
+
+    // State of page title to be displayed
+    const [pageTitle, setPageTitle] = useState("Technical Skills")
+
+
+    /************ DATA ARRAY OF SUB-COMPONENTS TO BE LINKED **************/
 
     const skillComponents = [
         {
             id: 0,
-            Component: ProgramLangs,
-            wndName: "PLANGS"
+            Component: HWTools,
+            btnColour: "primary",
+            faIcon: "plug",
+            wndName: "HWTOOLS",
+            wndTitle: "Hardware"
         },
         {
             id: 1,
-            Component: SWTools,
-            wndName: "SWTOOLS"
+            Component: CodeLangs,
+            btnColour: "deep-orange",
+            faIcon: "keyboard",
+            wndName: "PLANGS",
+            wndTitle: "Coding"
         },
         {
             id: 2,
-            Component: HWTools,
-            wndName: "HWTOOLS"
+            Component: SWTools,
+            btnColour: "amber",
+            faIcon: "tools",
+            wndName: "SWTOOLS",
+            wndTitle: "Software Tools"
         }
     ]
+
+
+    /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
 
     // Render back button or user prompt depending on active window state
     function skillsFooter(activeWnd) {
@@ -57,18 +81,30 @@ function Skills(props) {
         else
         {
             return (
-                <MDBBtn size="lg" color="mdb-color" className="slide-right" onClick={() => setActiveWnd("MENU")}>Back to Menu</MDBBtn>
+                <MDBBtn size="lg" color="mdb-color" className="slide-right" onClick={backToMenu}>Back to Menu</MDBBtn>
             )
         }
+    }
+
+    // Handle user clicking on menu button
+    function handleBtnClick(id) {
+        var clickedSkill = skillComponents.find(element => element.id === id)
+        setActiveWnd(clickedSkill.wndName)
+        setPageTitle(clickedSkill.wndTitle)
+    }
+
+    function backToMenu() {
+        setActiveWnd("MENU")
+        setPageTitle("Technical Skills")
     }
 
 
     return (
         <div className="skills-page">
-            <h1 className="page-title">Technical Skills</h1>
+            <h1 className="page-title">{pageTitle}</h1>
 
             <div className="skills-content">
-                {/* Mapping the skill component items accessible from menu buttons */}
+                {/* Mapping CSS Transitions to skill component items accessible from menu buttons */}
                 {skillComponents.map(({ id, Component, wndName }) => {
                     return (
                         <CSSTransition 
@@ -84,6 +120,7 @@ function Skills(props) {
                     )
                 })}
 
+                {/* Creating main skill menu screen with button links to other components */}
                 <CSSTransition 
                     in={activeWnd === "MENU"}
                     timeout={500}
@@ -92,21 +129,16 @@ function Skills(props) {
                     unmountOnExit
                 >
                     <div className="menu-screen">
-                        <div className="btn-container">
-                            <MDBBtn color="primary" onClick={() => setActiveWnd("HWTOOLS")}>
-                                <span><FontAwesomeIcon icon="plug" size="lg" /> Hardware</span>
-                            </MDBBtn>
-                        </div>
-                        <div className="btn-container">
-                            <MDBBtn color="deep-orange" onClick={() => setActiveWnd("PLANGS")}>
-                                <span><FontAwesomeIcon icon="keyboard" size="lg" /> Coding</span>
-                            </MDBBtn>
-                        </div>
-                        <div className="btn-container">
-                            <MDBBtn color="amber" onClick={() => setActiveWnd("SWTOOLS")}>
-                                <span><FontAwesomeIcon icon="tools" size="lg" /> SW Tools</span>
-                            </MDBBtn>
-                        </div>
+                        {/* Mapping buttons to skill components on skill menu screen */}
+                        {skillComponents.map(({ id, btnColour, faIcon, wndTitle }) => {
+                            return (
+                                <div key={id} className="btn-container">
+                                    <MDBBtn color={btnColour} onClick={() => handleBtnClick(id)}>
+                                         <span><FontAwesomeIcon icon={faIcon} size="lg" /> {wndTitle}</span>
+                                    </MDBBtn>
+                                </div>
+                            )
+                        })}
                     </div>
                 </CSSTransition>
             </div>

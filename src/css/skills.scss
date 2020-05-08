@@ -4,6 +4,12 @@ $transition-enter-time: 400ms;
 $transition-exit-time: 200ms;
 
 
+/************************ FONT IMPORTS *********************/
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+
 .skills-page {
     height: 100%;
     width: 100%;
@@ -43,12 +49,6 @@ $transition-exit-time: 200ms;
                 }
             }
         }
-
-        // Styling for programming languages page
-        .prog-langs {
-            height: 100%;
-            width: 100%;
-        }
     }
 
     .skills-footer {
@@ -71,6 +71,55 @@ $transition-exit-time: 200ms;
         opacity: 0;
         transform: translateX(-100%);
         animation: slideFromLeft 300ms ease forwards;
+    }
+}
+
+
+/**************** PROGRAMMING LANGUAGES COMPONENT ****************/
+
+.skills-page .skills-content .code-langs-list {
+    height: 95%;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 7em auto;
+
+    .lang-column {
+        grid-column: 1 / 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .lang-item {
+            font-family: 'VT323', monospace;
+            font-size: 1.3em;
+            width: 100%;
+        }
+    }
+
+    .skill-bar-column {
+        grid-column: 2 / 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .empty-skill-bar {
+            width: 90%;
+            height: 1.1em;
+            background-color: whitesmoke;
+            overflow: hidden;
+
+            .skill-bar-fill {
+                background-color: peru;
+                height: 100%;
+                animation: fillUpDown 1.5s ease;
+            }
+        }
     }
 }
 
@@ -99,68 +148,52 @@ $transition-exit-time: 200ms;
     }
 }
 
+@keyframes fillUpDown {
+    0% {
+        width: 0;
+    }
+}
+
 /*************************** CSS REACT TRANSITIONS **************************/
 
-.skills-page {
-    /************ BACK BUTTON ************/
-    .back-btn-transition-enter {
-        height: 0;
+.skills-page .skills-content {
+    /*********** MENU TRANSITION **********/
+    .skills-menu-transition-enter {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
         opacity: 0;
     }
-    .back-btn-transition-enter-active {
+    .skills-menu-transition-enter-active {
         opacity: 1;
-        height: 100%;
+        transform: perspective(400px);
         transition: all $transition-enter-time;
     }
-    .back-btn-transition-exit {
+    .skills-menu-transition-exit {
         opacity: 1;
-        height: 100%;
+        transform: perspective(400px);
         transition: all $transition-exit-time;
     }
-    .back-btn-transition-exit-active {
-        height: 0;
+    .skills-menu-transition-exit-active {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
         opacity: 0;
     }  
 
-    .skills-content {
-        /*********** MENU TRANSITION **********/
-        .skills-menu-transition-enter {
-            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-            opacity: 0;
-        }
-        .skills-menu-transition-enter-active {
-            opacity: 1;
-            transform: perspective(400px);
-            transition: all $transition-enter-time;
-        }
-        .skills-menu-transition-exit {
-            opacity: 1;
-            transform: perspective(400px);
-            transition: all $transition-exit-time;
-        }
-        .skills-menu-transition-exit-active {
-            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-            opacity: 0;
-        }  
-
-        /************* SKILL COMPONENT TRANSITIONS *********/ 
-        .skills-component-transition-enter {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-        .skills-component-transition-enter-active {
-            opacity: 1;
-            transform: scale(1);
-            transition: all $transition-enter-time;
-        }
-        .skills-component-transition-exit {
-            opacity: 1;
-            transform: scale(1);
-            transition: all $transition-exit-time;
-        }
-        .skills-component-transition-exit-active {
-            transform: scale(0.5);
-            opacity: 0;
-        }  
+    /************* SKILL COMPONENT TRANSITIONS *********/ 
+    .skills-component-transition-enter {
+        transform: scale(0.5);
+        opacity: 0;
     }
+    .skills-component-transition-enter-active {
+        opacity: 1;
+        transform: scale(1);
+        transition: all $transition-enter-time;
+    }
+    .skills-component-transition-exit {
+        opacity: 1;
+        transform: scale(1);
+        transition: all $transition-exit-time;
+    }
+    .skills-component-transition-exit-active {
+        transform: scale(0.5);
+        opacity: 0;
+    }  
 }

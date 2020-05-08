@@ -1,4 +1,6 @@
 /************************* CSS TRANSITIONS *******************/
+/************************ FONT IMPORTS *********************/
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 .skills-page {
   height: 100%;
   width: 100%;
@@ -55,11 +57,6 @@
   font-size: 1em;
 }
 
-.skills-page .skills-content .prog-langs {
-  height: 100%;
-  width: 100%;
-}
-
 .skills-page .skills-footer {
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
@@ -85,6 +82,76 @@
           transform: translateX(-100%);
   -webkit-animation: slideFromLeft 300ms ease forwards;
           animation: slideFromLeft 300ms ease forwards;
+}
+
+/**************** PROGRAMMING LANGUAGES COMPONENT ****************/
+.skills-page .skills-content .code-langs-list {
+  height: 95%;
+  width: 95%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 7em auto;
+      grid-template-columns: 7em auto;
+}
+
+.skills-page .skills-content .code-langs-list .lang-column {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.skills-page .skills-content .code-langs-list .lang-column .lang-item {
+  font-family: 'VT323', monospace;
+  font-size: 1.3em;
+  width: 100%;
+}
+
+.skills-page .skills-content .code-langs-list .skill-bar-column {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.skills-page .skills-content .code-langs-list .skill-bar-column .empty-skill-bar {
+  width: 90%;
+  height: 1.1em;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.skills-page .skills-content .code-langs-list .skill-bar-column .empty-skill-bar .skill-bar-fill {
+  background-color: peru;
+  height: 100%;
+  -webkit-animation: fillUpDown 1.5s ease;
+          animation: fillUpDown 1.5s ease;
 }
 
 /*************************** ANIMATIONS *********************/
@@ -139,35 +206,19 @@
   }
 }
 
+@-webkit-keyframes fillUpDown {
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes fillUpDown {
+  0% {
+    width: 0;
+  }
+}
+
 /*************************** CSS REACT TRANSITIONS **************************/
-.skills-page {
-  /************ BACK BUTTON ************/
-}
-
-.skills-page .back-btn-transition-enter {
-  height: 0;
-  opacity: 0;
-}
-
-.skills-page .back-btn-transition-enter-active {
-  opacity: 1;
-  height: 100%;
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
-}
-
-.skills-page .back-btn-transition-exit {
-  opacity: 1;
-  height: 100%;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.skills-page .back-btn-transition-exit-active {
-  height: 0;
-  opacity: 0;
-}
-
 .skills-page .skills-content {
   /*********** MENU TRANSITION **********/
   /************* SKILL COMPONENT TRANSITIONS *********/
