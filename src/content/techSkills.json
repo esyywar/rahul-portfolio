@@ -1,8 +1,21 @@
 {
-    "hardwareTools": {
-        "Microcontrollers": ["ARM Cortex-M", "ATMega(Arduino)", "PIC"],
-        "Electrical": []
-    },
+    "hardwareTools": [
+        {
+            "id": 0,
+            "title": "Electrical",
+            "items": ["Oscilloscope", "DMM", "Function Generator"]
+        },
+        {
+            "id": 1,
+            "title": "Microcontrollers",
+            "items": ["ARM Cortex-M", "ATMega(Arduino)", "ESP8266", "PIC"]
+        },
+        {
+            "id": 2,
+            "title": "Peripherals",
+            "items": ["SPI", "I2C", "USART/UART", "ADC/DAC"]
+        }
+    ],
     "programmingLangs": [
         {
             "id": 0,
@@ -59,7 +72,7 @@
         {
             "id": 3,
             "title": "Web Dev",
-            "items": ["React JS", "Node JS", "SASS", "Bootstrap"]
+            "items": ["React JS", "Redux", "SASS", "Bootstrap"]
         }
     ]
 }

@@ -38,7 +38,7 @@ function CodeLangs() {
             </div>
 
             <div className="skill-bar-column">
-                {progLangs.map(({ id, proficiency }) => {
+                {progLangs.map(({ id }) => {
                     return (
                         <div key={id} className="empty-skill-bar">
                             <div className="skill-bar-fill"></div>

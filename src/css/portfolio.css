@@ -28,6 +28,7 @@ html, body {
 }
 
 .grid-container .resume-window {
+  margin-top: 1em;
   -ms-grid-row: 2;
   -ms-grid-row-span: 10;
   grid-row: 2 / 12;
@@ -39,6 +40,10 @@ html, body {
   color: whitesmoke;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+}
+
+.grid-container .resume-window .page-title {
+  margin-top: 1em;
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/

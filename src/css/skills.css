@@ -2,6 +2,7 @@
 /************************ FONT IMPORTS *********************/
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap");
 .skills-page {
   height: 100%;
   width: 100%;
@@ -14,12 +15,11 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  font-size: 16px;
-  font-family: 'VT323', monospace;
+  font-size: 15px;
 }
 
 .skills-page .page-title {
-  font-size: 2.2em;
+  font-size: 2.5em;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -32,6 +32,7 @@
   margin-top: 3em;
   height: 100%;
   width: 100%;
+  overflow: visible;
 }
 
 .skills-page .skills-content .menu-screen {
@@ -61,11 +62,13 @@
 }
 
 .skills-page .skills-content .menu-screen .btn-container button {
+  font-family: 'VT323', monospace;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .skills-page .skills-footer {
+  font-family: 'VT323', monospace;
   -ms-grid-row: 8;
   -ms-grid-row-span: 1;
   grid-row: 8 / span 1;
@@ -106,10 +109,12 @@
 .skills-page .skills-content .code-langs-list {
   height: 100%;
   width: 100%;
+  max-width: 700px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 7.5em auto;
-      grid-template-columns: 7.5em auto;
+  margin: 0 auto;
+  -ms-grid-columns: 7.5em minmax(auto, 500px);
+      grid-template-columns: 7.5em minmax(auto, 500px);
 }
 
 .skills-page .skills-content .code-langs-list .lang-column {
@@ -163,6 +168,7 @@
 
 .skills-page .skills-content .code-langs-list .skill-bar-column .empty-skill-bar {
   width: 90%;
+  max-width: 500px;
   height: 4px;
   -webkit-box-shadow: 5px 5px 15px green;
           box-shadow: 5px 5px 15px green;
@@ -210,6 +216,58 @@
   -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
           transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
   opacity: 0;
+}
+
+.skills-page .skills-content .sw-tools-grid .sw-tool-pack h3 {
+  color: #FFBF00;
+}
+
+/**************** HARDWARE TOOLS COMPONENT ****************/
+.skills-page .skills-content .hardware-page {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.skills-page .skills-content .hardware-page .hw-tool-pack {
+  height: 130px;
+  width: 120px;
+  padding: 8px 12px;
+  font-family: 'Archivo', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+  color: black;
+  -webkit-box-shadow: 4px 4px 8px #4b4a4a;
+          box-shadow: 4px 4px 8px #4b4a4a;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.skills-page .skills-content .hardware-page .hw-tool-pack h3 {
+  margin-bottom: 0.6em;
 }
 
 /*************************** ANIMATIONS *********************/

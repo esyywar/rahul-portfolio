@@ -8,6 +8,7 @@ $transition-exit-time: 200ms;
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
 
 
 
@@ -21,11 +22,11 @@ $transition-exit-time: 200ms;
     align-items: center;
     text-align: center;
 
-    font-size: 16px;
-    font-family: 'VT323', monospace;
+    font-size: 15px;
+    //font-family: 'VT323', monospace;
 
     .page-title {
-        font-size: 2.2em;
+        font-size: 2.5em;
         grid-row: 1 / 2;
     }
     
@@ -34,6 +35,7 @@ $transition-exit-time: 200ms;
         margin-top: 3em;
         height: 100%;
         width: 100%;
+        overflow: visible;
 
         // For menu screen component
         .menu-screen {
@@ -47,21 +49,22 @@ $transition-exit-time: 200ms;
             // Initial conditions for animation
             opacity: 0;
             transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-
             animation: flipInVert 300ms ease forwards;
 
             .btn-container {
                 width: 100%;
 
                 button {
+                    font-family: 'VT323', monospace;
                     font-weight: 300;
-                    font-size: 1em;
+                    font-size: 1.3em;
                 }
             }
         }
     }
 
     .skills-footer {
+        font-family: 'VT323', monospace;
         grid-row: 8 / span 1; 
         width: 80%;
 
@@ -98,8 +101,10 @@ $transition-exit-time: 200ms;
 .skills-page .skills-content .code-langs-list {
     height: 100%;
     width: 100%;
+    max-width: 700px;
     display: grid;
-    grid-template-columns: 7.5em auto;
+    margin: 0 auto;
+    grid-template-columns: 7.5em minmax(auto, 500px);
 
     .lang-column {
         grid-column: 1 / 2;
@@ -132,6 +137,7 @@ $transition-exit-time: 200ms;
 
         .empty-skill-bar {
             width: 90%;
+            max-width: 500px;
             height: 4px;
             box-shadow: 5px 5px 15px green;
             background-color: whitesmoke;
@@ -173,6 +179,45 @@ $transition-exit-time: 200ms;
         // Initial conditions for animation applied in SWTools.js
         transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
         opacity: 0;
+
+        h3 {
+            color: #FFBF00;
+        }
+    }
+}
+
+
+/**************** HARDWARE TOOLS COMPONENT ****************/
+
+.skills-page .skills-content .hardware-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    .hw-tool-pack {
+        height: 130px;
+        width: 120px;
+        padding: 8px 12px;
+
+        font-family: 'Archivo', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        color: black;
+        box-shadow: 4px 4px 8px rgb(75, 74, 74);
+
+        // Initial conditions for animation
+        opacity: 0;
+        transform: scale(0.5);
+        
+        h3 {
+            margin-bottom: 0.6em;
+        }
     }
 }
 

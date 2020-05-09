@@ -12,7 +12,7 @@ function SWTools() {
     // Apply animation effect on sw-tool pack containers
     useEffect(() => {
         Array.from(document.getElementsByClassName("sw-tool-pack")).forEach((element, index) => {
-            element.style.animation = "flipInHoriz 750ms ease-in " + (index * 75) + "ms forwards"
+            element.style.animation = "flipInHoriz 1s ease-out " + (index * 100) + "ms forwards"
         })
     }, [])
 
@@ -22,11 +22,11 @@ function SWTools() {
             {swTools.map(({ id, title, items }, index) => {
                 return (
                     <div key={id} className="sw-tool-pack" style={{backgroundColor: bgColours[index]}}>
-                        <h3 className="sw-tool-pack-header">{title}</h3>
+                        <h3>{title}</h3>
                         {/* Each list of software tools mapped within each container */}
                         {items.map(element => {
                             return (
-                                <p className="sw-tool-item">{element}</p>
+                                <p>{element}</p>
                             )
                         })}
                     </div>

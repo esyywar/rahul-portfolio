@@ -41,6 +41,7 @@ html, body {
     transition: background-color 500ms;
 
     .resume-window {
+        margin-top: 1em;
         grid-row: 2 / 12;
         grid-column: 2 / 12;
         width: 100%;
@@ -48,6 +49,10 @@ html, body {
         color: whitesmoke;
         text-align: center;
         font-family: 'Roboto', sans-serif;
+
+        .page-title {
+            margin-top: 1em;
+        }
     }
 }
 

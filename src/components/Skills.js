@@ -54,23 +54,23 @@ function Skills(props) {
             btnColour: "primary",
             faIcon: "plug",
             wndName: windows.HWTOOLS,
-            wndTitle: "Hardware"
+            wndTitle: "Hardware Tools"
         },
         {
             id: 1,
-            Component: CodeLangs,
-            btnColour: "deep-orange",
-            faIcon: "keyboard",
-            wndName: windows.PLANGS,
-            wndTitle: "Coding"
-        },
-        {
-            id: 2,
             Component: SWTools,
             btnColour: "amber",
             faIcon: "tools",
             wndName: windows.SWTOOLS,
             wndTitle: "Software Tools"
+        },
+        {
+            id: 2,
+            Component: CodeLangs,
+            btnColour: "deep-orange",
+            faIcon: "keyboard",
+            wndName: windows.PLANGS,
+            wndTitle: "Progamming"
         }
     ]
 
