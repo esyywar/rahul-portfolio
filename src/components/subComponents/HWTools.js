@@ -12,7 +12,6 @@ function HWTools() {
 
     // Animate the hw-tool-packs on render
     useEffect(() => {
-        console.log('animation called')
         Array.from(document.getElementsByClassName("hw-tool-pack")).forEach((element, index) => {
             element.style.animation = "growBig 300ms ease-in " + (index * 100) + "ms forwards"
         })
@@ -23,7 +22,7 @@ function HWTools() {
         <div className="hardware-page">
             {hwTools.map(({ id, title, items}, index) => {
                 return (
-                    <div id={id} className="hw-tool-pack" style={{backgroundColor: bgColours[index]}}>
+                    <div key={id} className="hw-tool-pack" style={{backgroundColor: bgColours[index]}}>
                         <h3>{title}</h3>
                         {items.map((element, index) => {
                             return (

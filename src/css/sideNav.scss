@@ -18,10 +18,10 @@ $skills-bg: #C18AF8;
 .grid-container .navigation {
 
     #burger-icon {
-        z-index: 2;
+        z-index: 4;
         position: absolute;
-        top: 1em;
-        left: 1em;
+        top: 1.2em;
+        left: 1.2em;
         padding: 3px;
         cursor: pointer;
         border: 2px solid white;
@@ -52,7 +52,7 @@ $skills-bg: #C18AF8;
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 3;
         background-color:rgb(221, 219, 219); //rgb(123, 123, 126);
 
         height: 100%;

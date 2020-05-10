@@ -24,9 +24,9 @@ function SWTools() {
                     <div key={id} className="sw-tool-pack" style={{backgroundColor: bgColours[index]}}>
                         <h3>{title}</h3>
                         {/* Each list of software tools mapped within each container */}
-                        {items.map(element => {
+                        {items.map((element, index) => {
                             return (
-                                <p>{element}</p>
+                                <p key={index}>{element}</p>
                             )
                         })}
                     </div>

@@ -1,0 +1,75 @@
+/**************** GOOGLE FONT IMPORTS *****************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.education-page {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.education-page .page-title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+.education-page .edu-item-container {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 2em;
+  width: 80%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+}
+
+.education-page .edu-item-container .school-and-study {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-column: 1 / 8;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: left;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.96);
+  border-radius: 1em;
+  padding: 0.7em 1em;
+  font-size: 15px;
+}
+
+.education-page .edu-item-container .school-and-study p {
+  margin: 0.2em 0;
+}
+
+.education-page .edu-item-container .image-container {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 6;
+  grid-row: 2 / 8;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  border-radius: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.education-page .edu-item-container .image-container img {
+  width: auto;
+  height: 100%;
+}
+/*# sourceMappingURL=education.css.map */
