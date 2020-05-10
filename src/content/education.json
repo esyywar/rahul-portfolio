@@ -1,13 +1,13 @@
 [
     {
         "id": "0",
-        "major": "Systems and Computing Engineering",
+        "major": "Systems and Computing",
         "degree": "Master of Applied Science",
         "abbrevDegree": "MASc.",
         "institution": "University of Guelph",
         "current": true,
-        "startDate": "5/30/2019",
-        "endDate": "1/1/2019",
+        "startDate": "May 2019",
+        "endDate": "Dec 2020",
         "photo": "uofg-engg-complex.jpg",
         "GPA": "",
         "allocades": []
@@ -19,8 +19,8 @@
         "abbrevDegree": "B.Eng (Co-op)",
         "institution": "University of Guelph",
         "current": false,
-        "startDate": "9/1/2014",
-        "endDate": "4/1/2019",
+        "startDate": "Sept 2014",
+        "endDate": "Apr 2019",
         "photo": "uofg-engg-complex.jpg",
         "GPA": "82.5",
         "allocades": ["Honours Graduate", "Entrance Scholarship ($3000)"]
@@ -30,8 +30,8 @@
         "degree": "High School",
         "institution": "Bayview Secondary School",
         "current": false,
-        "startDate": "9/1/2010",
-        "endDate": "6/1/2014",
+        "startDate": "Sept 2010",
+        "endDate": "June 2019",
         "photo": "bayview-secondary.jpg",
         "GPA": "87",
         "allocades": ["Honours Graduate"]

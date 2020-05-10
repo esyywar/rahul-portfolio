@@ -23,8 +23,10 @@
 
 .education-page .edu-item-container {
   font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   margin-top: 2em;
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: -ms-grid;
   display: grid;
@@ -32,6 +34,10 @@
       grid-template-columns: repeat(8, 1fr);
   -ms-grid-rows: (1fr)[8];
       grid-template-rows: repeat(8, 1fr);
+}
+
+.education-page .edu-item-container p {
+  padding: 0.3em 0;
 }
 
 .education-page .edu-item-container .school-and-study {
@@ -48,28 +54,42 @@
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.96);
   border-radius: 1em;
-  padding: 0.7em 1em;
-  font-size: 15px;
-}
-
-.education-page .edu-item-container .school-and-study p {
-  margin: 0.2em 0;
+  padding: 0.5em 1em;
 }
 
 .education-page .edu-item-container .image-container {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
   grid-row: 2 / 8;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / 9;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-column: 2 / 8;
+  -ms-grid-column-align: center;
+      justify-self: center;
   border-radius: 2em;
-  width: 100%;
+  width: 110%;
   height: 100%;
 }
 
 .education-page .edu-item-container .image-container img {
   width: auto;
   height: 100%;
+}
+
+.education-page .edu-item-container .dates-and-major {
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 2;
+  grid-row: 7 / 9;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 7;
+  grid-column: 2 / 9;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: right;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.96);
+  border-radius: 1em;
+  padding: 0.5em;
 }
 /*# sourceMappingURL=education.css.map */

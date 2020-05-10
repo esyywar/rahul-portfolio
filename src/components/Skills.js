@@ -18,7 +18,6 @@ import 'mdbreact/dist/css/mdb.css'
 function Skills(props) {
 
     /************ STATE MANAGEMENT FROM REDUX STORE **************/
-
     const dispatch = useDispatch()
 
     // Change background colour on render
@@ -46,7 +45,6 @@ function Skills(props) {
 
 
     /************ DATA ARRAY OF SUB-COMPONENTS TO BE LINKED **************/
-
     const skillComponents = [
         {
             id: 0,
