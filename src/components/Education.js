@@ -6,7 +6,6 @@ import { bgClrSwitch } from '../actions/bgClrSwitch'
 import education from '../content/education.json'
 
 import '../css/education.css'
-import { act } from 'react-dom/test-utils'
 
 
 function Education(props) {
@@ -58,6 +57,10 @@ function Education(props) {
 
             {/* Render the currently active education card */}
             {renderActiveElement(activeElement)}
+
+            {/* Display next and previous arrows only if elements exist in each direction */}
+            {(activeElement > 0) && <span className="prev-arrow" onClick={() => setActiveElement(activeElement - 1)}>&#10094;</span>}
+            {(activeElement + 1 < education.length) && <span className="next-arrow" onClick={() => setActiveElement(activeElement + 1)}>&#10095;</span>}
         </div>
     )
 }
