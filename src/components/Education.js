@@ -24,6 +24,38 @@ function Education(props) {
 
     /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
 
+    function dateDisplay(eduItem)
+    {
+        if (eduItem.current)
+        {
+            return (
+                <p style={{color: "green"}}>{eduItem.startDate + " - Present"}</p>
+            )
+        }
+        else
+        {
+            return (
+                <p>{eduItem.startDate + " - " + eduItem.endDate}</p>
+            )
+        }
+    }
+
+    function displayDegree(eduItem)
+    {
+        if (eduItem.abbrevDegree)
+        {
+            return (
+                <p>{eduItem.degree + " - " + eduItem.abbrevDegree}</p>
+            )
+        }
+        else
+        {
+            return (
+                <p>{eduItem.degree}</p>
+            )
+        }
+    }
+
     function renderActiveElement(activeElement) {
         const eduItem = education[activeElement]
         const backImg = require(`../img/education/${eduItem.photo}`)
@@ -31,9 +63,11 @@ function Education(props) {
         return (
                 <div className="edu-item-container">
 
-                <div className="school-and-study">
+                <div className="school-and-date">
                     <p>{eduItem.institution}</p>
-                    <p>{eduItem.degree}</p>
+
+                    {/* Show date differently depending on if current or not */}
+                    {dateDisplay(eduItem)}
                 </div>
 
                 {/* Show image in center of the page */}
@@ -42,9 +76,10 @@ function Education(props) {
                 </div>
 
                 {/* Show dates and major */}
-                <div className="dates-and-major">
-                    <p>{eduItem.major}</p>
-                    <p>{eduItem.startDate + " - " + ((eduItem.current) ? "Present" : eduItem.endDate)}</p>
+                <div className="degree-and-major">
+                    {displayDegree(eduItem)}
+                    {eduItem.major && <p>{eduItem.major}</p>}
+                    {eduItem.allocades && <p style={{color: "orange"}}>{eduItem.allocades[0]}</p>}
                 </div>
             </div>
         )

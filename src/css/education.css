@@ -70,13 +70,13 @@
   padding: 0.3em 0;
 }
 
-.education-page .edu-item-container .school-and-study {
+.education-page .edu-item-container .school-and-date {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-  grid-column: 1 / 8;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / 7;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -106,13 +106,13 @@
   height: 100%;
 }
 
-.education-page .edu-item-container .dates-and-major {
+.education-page .edu-item-container .degree-and-major {
   -ms-grid-row: 7;
   -ms-grid-row-span: 2;
   grid-row: 7 / 9;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 7;
-  grid-column: 2 / 9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
