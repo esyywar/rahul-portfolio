@@ -95,7 +95,6 @@ function Education(props) {
         // Make current element exit and set up for next animation
         document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
         setTimeout(() => {
-            console.log('delayed call')
             setActiveElement(activeElement + 1)
             document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
         }, 300)

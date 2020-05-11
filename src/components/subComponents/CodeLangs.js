@@ -7,6 +7,13 @@ function CodeLangs() {
     // Read programming languages from contents JSON
     const progLangs = techSkills.programmingLangs
 
+    // Text colours for each programing language field - keys of this object are possible values from techSkills.JSON
+    const textClrs = {
+        embedded: "#AA0000",
+        webDev: "#00008B",
+        general: "#134D13"
+    }
+
     // Apply animations on component mount
     useEffect(() => {
         // Make language items to fly from left
@@ -30,15 +37,15 @@ function CodeLangs() {
     return (
         <div className="code-langs-list">
             <div className="lang-column">
-                {progLangs.map(({ id, language }) => {
+                {progLangs.map(({ id, language, field }) => {
                     return (
-                        <div key={id} className="lang-item">{language}</div>
+                        <div key={id} style={{color: textClrs[field]}} className="lang-item">{language}</div>
                     )
                 })}
             </div>
 
             <div className="skill-bar-column">
-                {progLangs.map(({ id }) => {
+                {progLangs.map(({ id, field }) => {
                     return (
                         <div key={id} className="empty-skill-bar">
                             <div className="skill-bar-fill"></div>

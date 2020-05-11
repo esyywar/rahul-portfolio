@@ -20,36 +20,43 @@
         {
             "id": 0,
             "language": "C/C++",
+            "field": "embedded",
             "proficiency": "90%"
         },
         {
             "id": 1,
             "language": "NI LabVIEW",
+            "field": "embedded",
             "proficiency": "90%"
         },
         {
             "id": 2,
             "language": "NI TestStand",
+            "field": "embedded",
             "proficiency": "75%"
         },
         {
             "id": 3,
             "language": "Javascript",
-            "proficiency": "65%"
+            "field": "webDev",
+            "proficiency": "75%"
         },
         {
             "id": 4,
             "language": "CSS3",
+            "field": "webDev",
             "proficiency": "80%"
         },
         {
             "id": 5,
             "language": "HTML5",
+            "field": "webDev",
             "proficiency": "95%"
         },
         {
             "id": 6,
             "language": "Python 3",
+            "field": "general",
             "proficiency": "55%"
         }
     ],
