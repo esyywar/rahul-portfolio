@@ -64,7 +64,7 @@ function Education(props) {
         const backImg = require(`../img/education/${eduItem.photo}`)
 
         return (
-                <div className="edu-item-container">
+                <div id="edu-item-container">
 
                 <div className="school-and-date">
                     <p>{eduItem.institution}</p>
@@ -88,7 +88,26 @@ function Education(props) {
         )
     }
 
+
     /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
+
+    function nextArrowClick() {
+        // Make current element exit and set up for next animation
+        document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
+        setTimeout(() => {
+            console.log('delayed call')
+            setActiveElement(activeElement + 1)
+            document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
+        }, 300)
+    }
+
+    function prevArrowClick() {
+        document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
+        setTimeout(() => {
+            setActiveElement(activeElement - 1)
+            document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
+        }, 300)   
+    }
 
 
     return (
@@ -99,8 +118,8 @@ function Education(props) {
             {renderEduItem(activeElement)}
 
             {/* Display next and previous arrows only if elements exist in each direction */}
-            {(activeElement > 0) && <span className="prev-arrow" onClick={() => setActiveElement(activeElement - 1)}>&#10094;</span>}
-            {(activeElement + 1 < education.length) && <span className="next-arrow" onClick={() => setActiveElement(activeElement + 1)}>&#10095;</span>}
+            {(activeElement > 0) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
+            {(activeElement + 1 < education.length) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
         </div>
     )
 }
