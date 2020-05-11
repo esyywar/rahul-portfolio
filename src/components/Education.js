@@ -24,12 +24,13 @@ function Education(props) {
 
     /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
 
+    // Called yb 'renderEduItem' to display date
     function dateDisplay(eduItem)
     {
         if (eduItem.current)
         {
             return (
-                <p style={{color: "green"}}>{eduItem.startDate + " - Present"}</p>
+                <p style={{color: "#2cf54e"}}>{eduItem.startDate + " - Present"}</p>
             )
         }
         else
@@ -40,6 +41,7 @@ function Education(props) {
         }
     }
 
+    // Called by 'renderEduItem' to show degree field
     function displayDegree(eduItem)
     {
         if (eduItem.abbrevDegree)
@@ -56,7 +58,8 @@ function Education(props) {
         }
     }
 
-    function renderActiveElement(activeElement) {
+    // Renders the active education element to DOM
+    function renderEduItem(activeElement) {
         const eduItem = education[activeElement]
         const backImg = require(`../img/education/${eduItem.photo}`)
 
@@ -85,13 +88,15 @@ function Education(props) {
         )
     }
 
+    /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
+
 
     return (
         <div className="education-page">
             <h1 className="page-title">Education</h1>
 
             {/* Render the currently active education card */}
-            {renderActiveElement(activeElement)}
+            {renderEduItem(activeElement)}
 
             {/* Display next and previous arrows only if elements exist in each direction */}
             {(activeElement > 0) && <span className="prev-arrow" onClick={() => setActiveElement(activeElement - 1)}>&#10094;</span>}

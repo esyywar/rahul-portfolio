@@ -64,20 +64,33 @@
             background-color: rgba(0, 0, 0, 0.96);
             border-radius: 1em;
             padding: 0.5em 1em;
+
+            //Animation effect on first render
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideFromLeft 500ms ease-in 500ms forwards;
         }
 
         /* Container for image in center */
         .image-container {
             grid-row: 2 / 8;
-            grid-column: 2 / 8;
+            grid-column: 1 / 9;
             justify-self: center;
             border-radius: 2em;
-            width: 110%;
+            width: 85%;
             height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
 
             img {
                 width: auto;
-                height: 100%;
+
+                // Initial conditions for animation
+                height: 0%;
+                animation: imageGrowHeight 1s ease-in-out forwards;
             }            
         }
 
@@ -91,6 +104,28 @@
             background-color: rgba(0, 0, 0, 0.96);
             border-radius: 1em;
             padding: 0.5em;
+
+            //Animation effect on first render
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideFromRight 500ms ease-in 500ms forwards;
         }
     }
 }
+
+
+/*************************** ANIMATIONS *********************/ 
+
+// Note: This element uses the slideFromRight and slideFromLeft animations defined in skills.scss
+
+@keyframes imageGrowHeight {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+
+
