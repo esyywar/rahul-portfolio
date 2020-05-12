@@ -20,9 +20,6 @@
 
 .skills-page .page-title {
   font-size: 2.5em;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
 }
 
 .skills-page .skills-content {

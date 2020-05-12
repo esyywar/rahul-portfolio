@@ -64,8 +64,7 @@ function Education(props) {
         const backImg = require(`../img/education/${eduItem.photo}`)
 
         return (
-                <div id="edu-item-container">
-
+            <div id="edu-item-container">
                 <div className="school-and-date">
                     <p>{eduItem.institution}</p>
 

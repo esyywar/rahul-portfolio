@@ -2,11 +2,11 @@
     {
         "id": 0,
         "employer": "University of Guelph",
-        "job-title": "Graduate Researcher & Teaching Assistant",
-        "current": false,
-        "start-date": "5/30/2019",
-        "end-date": "1/1/2019",
-        "photo": "img/workExp...TODO",
+        "jobTitle": "Teaching Assistant",
+        "current": true,
+        "startDate": "5/30/2019",
+        "endDate": "1/1/2019",
+        "photo": "aoml-photo.jpg",
         "city": "Guelph",
         "country": "Canada",
         "desciption": ""
@@ -14,11 +14,11 @@
     {
         "id": 1,
         "employer": "Creation Technologies",
-        "job-title": "Test Engineer",
+        "jobTitle": "Test Engineer",
         "current": false,
-        "start-date": "4/30/2018",
-        "end-date": "1/1/2019",
-        "photo": "img/workExp...TODO",
+        "startDate": "4/30/2018",
+        "endDate": "1/1/2019",
+        "photo": "creation-logo.jpg",
         "city": "Markham",
         "country": "Canada",
         "desciption": ""
@@ -26,11 +26,11 @@
     {
         "id": 2,
         "employer": "City of Toronto - Toronto Water",
-        "job-title": "IT Intern",
+        "jobTitle": "IT Intern",
         "current": false,
-        "start-date": "1/1/2017",
-        "end-date": "1/9/2017",
-        "photo": "img/workExp...TODO",
+        "startDate": "1/1/2017",
+        "endDate": "1/9/2017",
+        "photo": "city-of-toronto.jpg",
         "city": "Toronto",
         "country": "Canada",
         "desciption": ""

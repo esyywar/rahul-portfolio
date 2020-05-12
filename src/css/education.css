@@ -17,12 +17,6 @@
   /* Container for education item cards */
 }
 
-.education-page .page-title {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-}
-
 .education-page .prev-arrow, .education-page .next-arrow {
   cursor: pointer;
   position: fixed;

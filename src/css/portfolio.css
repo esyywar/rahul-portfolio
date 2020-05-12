@@ -27,6 +27,12 @@ html, body {
   transition: background-color 500ms;
 }
 
+.grid-container .page-title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
 .grid-container .resume-window {
   margin-top: 1em;
   -ms-grid-row: 2;
@@ -83,13 +89,13 @@ html, body {
   opacity: 0;
 }
 
-.grid-container .workexp-transition-enter {
+.grid-container .proexp-transition-enter {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
 }
 
-.grid-container .workexp-transition-enter-active {
+.grid-container .proexp-transition-enter-active {
   opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -97,7 +103,7 @@ html, body {
   transition: all 500ms;
 }
 
-.grid-container .workexp-transition-exit {
+.grid-container .proexp-transition-exit {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   opacity: 1;
@@ -105,7 +111,7 @@ html, body {
   transition: all 200ms;
 }
 
-.grid-container .workexp-transition-exit-active {
+.grid-container .proexp-transition-exit-active {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   opacity: 0;

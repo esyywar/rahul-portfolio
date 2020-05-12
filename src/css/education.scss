@@ -11,10 +11,6 @@
     flex-direction: column;
     align-items: center;
 
-    .page-title {
-        grid-row: 1 / 2;
-    }
-
     /* Next & previous buttons */
     .prev-arrow, .next-arrow {
         cursor: pointer;

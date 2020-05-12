@@ -40,6 +40,11 @@ html, body {
     // Background colour set by state and changes on routed component
     transition: background-color 500ms;
 
+    // Applied to page-titles rendered in each component
+    .page-title {
+        grid-row: 1 / 2;
+    }
+
     .resume-window {
         margin-top: 1em;
         grid-row: 2 / 12;
@@ -80,21 +85,21 @@ html, body {
     }   
 
     /******* WORK EXP / PROFESSIONAL PAGE ******/
-    .workexp-transition-enter {
+    .proexp-transition-enter {
         transform: translateX(100%);
         opacity: 0;
     }
-    .workexp-transition-enter-active {
+    .proexp-transition-enter-active {
         opacity: 1;
         transform: translateX(0);
         transition: all $transition-enter-time;
     }
-    .workexp-transition-exit {
+    .proexp-transition-exit {
         transform: translateX(0);
         opacity: 1;
         transition: all $transition-exit-time;
     }
-    .workexp-transition-exit-active {
+    .proexp-transition-exit-active {
         transform: scale(0.7);
         opacity: 0;
     }

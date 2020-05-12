@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 import SideNav from './SideNav'
 
 import Summary from './Summary'
-import WorkExp from './WorkExp'
+import Professional from './Professional'
 import Education from './Education'
 import Projects from './Projects'
 import Skills from './Skills'
@@ -31,7 +31,6 @@ function PortfolioMain() {
       isExact: true,
       Component: Summary,
       transitionClass: "summary-transition",
-      divClass: "summary",
       bgColour: "#FD8536"
     },
     {
@@ -40,9 +39,8 @@ function PortfolioMain() {
       text: "Professional Exp.",
       path: "/portfolio/workexp",
       isExact: false,
-      Component: WorkExp,
-      transitionClass: "workexp-transition",
-      divClass: "workexp",
+      Component: Professional,
+      transitionClass: "proexp-transition",
       bgColour: "#F16481"
     },
     {
@@ -53,7 +51,6 @@ function PortfolioMain() {
       isExact: false,
       Component: Education,
       transitionClass: "education-transition",
-      divClass: "education",
       bgColour: "#7BB2D9"
     },
     {
@@ -64,8 +61,7 @@ function PortfolioMain() {
       isExact: false,
       Component: Projects,
       transitionClass: "projects-transition",
-      divClass: "projects",
-      bgColour: "#74DE86"
+      bgColour: "#5DB76B"
     },
     {
       id: 4,
@@ -75,7 +71,6 @@ function PortfolioMain() {
       isExact: false,
       Component: Skills,
       transitionClass: "skills-transition",
-      divClass: "skills",
       bgColour: "#C18AF8"
     }
   ]
@@ -99,7 +94,7 @@ function PortfolioMain() {
                   classNames={transitionClass}
                   unmountOnExit
                 >
-                  <div className={`resume-window ${divClass}`}>
+                  <div className="resume-window">
                     <Component bgColour={bgColour}/>
                   </div>
                 </CSSTransition>
