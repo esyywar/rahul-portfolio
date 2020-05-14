@@ -1,5 +1,7 @@
 /**************** GOOGLE FONT IMPORTS *****************/
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+/**************** SASS VARIABLE COLOURS *****************/
+/**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
 .professional-exp-page {
   width: 100%;
   height: 100%;
@@ -30,28 +32,28 @@
       grid-template-columns: repeat(8, 1fr);
 }
 
-.professional-exp-page .pro-content-card .title-and-company {
+.professional-exp-page .pro-content-card .title-loc-and-company {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: #3B1F2B;
   width: 90%;
-  height: 120%;
-  margin-bottom: -20px;
+  height: 90%;
   z-index: 2;
   padding: 0.5em;
   border-radius: 1em;
 }
 
-.professional-exp-page .pro-content-card .title-and-company .employer {
-  color: green;
-  font-size: 1.6em;
+.professional-exp-page .pro-content-card .title-loc-and-company .employer {
+  color: #FABC2A;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
 }
 
-.professional-exp-page .pro-content-card .title-and-company .job-title {
+.professional-exp-page .pro-content-card .title-loc-and-company .job-title {
   color: white;
   font-weight: 600;
 }
@@ -74,7 +76,7 @@
   height: 100%;
 }
 
-.professional-exp-page .pro-content-card .description {
+.professional-exp-page .pro-content-card .date-and-description {
   -ms-grid-row: 6;
   -ms-grid-row-span: 3;
   grid-row: 6 / 9;
@@ -83,8 +85,12 @@
   grid-column: 1 / 9;
   width: 90%;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: #3B1F2B;
   border-radius: 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em;
+}
+
+.professional-exp-page .pro-content-card .date-and-description .date {
+  padding: 0.5em;
 }
 /*# sourceMappingURL=professional.css.map */

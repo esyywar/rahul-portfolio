@@ -9,6 +9,7 @@ $transition-exit-time: 200ms;
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 
 
@@ -204,7 +205,9 @@ $transition-exit-time: 200ms;
         width: 120px;
         padding: 8px 12px;
 
-        font-family: 'Archivo', sans-serif;
+        //font-family: 'Archivo', sans-serif;
+        font-family: 'Muli', sans-serif;
+        font-weight: 600;
         display: flex;
         flex-direction: column;
         align-items: center;

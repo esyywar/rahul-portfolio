@@ -35,7 +35,7 @@ function PortfolioMain() {
     },
     {
       id: 1,
-      name: "Work Experience",
+      name: "Professional Experience",
       text: "Professional Exp.",
       path: "/portfolio/workexp",
       isExact: false,

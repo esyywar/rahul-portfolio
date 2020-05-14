@@ -3,6 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 
+/**************** SASS VARIABLE COLOURS *****************/ 
+
+$text-bg-colour: #3B1F2B;
+
+
+/**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
+
 .professional-exp-page {
     width: 100%;
     height: 100%;
@@ -23,21 +30,21 @@
         grid-template-rows: repeat(8, 1fr);
         grid-template-columns: repeat(8, 1fr);
 
-        .title-and-company {
-            grid-row: 1 / 2;
+        .title-loc-and-company {
+            grid-row: 1 / 3;
             grid-column: 1 / 9;
 
-            background-color: rgba(0, 0, 0, 0.96);
+            background-color: $text-bg-colour;
             width: 90%;
-            height: 120%;
-            margin-bottom: -20px;
+            height: 90%;
             z-index: 2;
             padding: 0.5em;
             border-radius: 1em;
 
             .employer {
-                color: green;
-                font-size: 1.6em;
+                color: #FABC2A;
+                font-size: 1.2em;
+                margin-bottom: 0.3em;
             }
 
             .job-title {
@@ -59,14 +66,18 @@
             }
         }
 
-        .description {
+        .date-and-description {
             grid-row: 6 / 9;
             grid-column: 1 / 9;
             width: 90%;
             z-index: 2;
-            background-color: rgba(0, 0, 0, 0.96);
+            background-color: $text-bg-colour;
             border-radius: 1em;
-            padding: 0.5em 1em;
+            padding: 0.5em;
+
+            .date {
+                padding: 0.5em;
+            }
         }
     }
 }
