@@ -59,7 +59,7 @@
   width: 100%;
 }
 
-.skills-page .skills-content .menu-screen .btn-container button {
+.skills-page .skills-content .menu-screen .btn-container .menu-btn {
   font-family: 'VT323', monospace;
   font-weight: 300;
   font-size: 1.3em;

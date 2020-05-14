@@ -5,7 +5,7 @@
 
 /**************** SASS VARIABLE COLOURS *****************/ 
 
-$text-bg-colour: #31081F;
+$text-bg-colour: #3D155F;
 
 
 /**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
@@ -41,11 +41,12 @@ $text-bg-colour: #31081F;
     }
 
     #pro-content-card {
+        
         margin-top: 1.2em;
         height: 75%;
         width: 100%;
         font-family: 'Muli', sans-serif;
-        font-size: 17px;
+        font-size: 15px;
 
         display: grid;
         justify-items: center;
@@ -58,20 +59,27 @@ $text-bg-colour: #31081F;
 
             background-color: $text-bg-colour;
             width: 90%;
-            height: 90%;
+            height: 75%;
             z-index: 2;
             padding: 0.5em;
             border-radius: 1em;
 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            // Initial conditions for animation
+            transform: translate3d(-100%, 0, 0) skewX(30deg);
+            opacity: 0;
+            animation: lightSpeedInLeft ease-out 500ms forwards 500ms;
+
             .employer {
                 color: #FF570A;
                 font-size: 1.2em;
-                padding: 0.1em;
             }
 
             p {
-                color: white;
-                padding: 0.2em 0;
                 font-weight: 600;
             }
         }
@@ -81,7 +89,12 @@ $text-bg-colour: #31081F;
             grid-column: 2 / 8;
             width: 100%;
             border-radius: 2em;
-            box-shadow: 4px 4px 8px black;
+
+            // Initial conditions for animation
+            opacity: 0;
+            transform: scale(0.1) rotate(30deg);
+            transform-origin: center bottom;
+            animation: jackInTheBox ease-out 1s forwards;
 
             img {
                 width: auto;
@@ -98,9 +111,72 @@ $text-bg-colour: #31081F;
             border-radius: 1em;
             padding: 0.5em;
 
+            // Initial conditions for animation
+            transform: translate3d(100%, 0, 0) skewX(-30deg);
+            opacity: 0;
+            animation: lightSpeedInRight ease-out 500ms forwards 500ms;
+
             .date {
                 padding: 0.5em;
+                font-size: 1.2em;
             }
         }
+    }
+}
+
+
+/*********** ANIMATIONS (from animate.css at https://github.com/animate-css/animate.css) *************/ 
+
+@keyframes jackInTheBox {
+    from {
+      opacity: 0;
+      transform: scale(0.1) rotate(30deg);
+      transform-origin: center bottom;
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    70% {
+      transform: rotate(3deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+@keyframes lightSpeedInLeft {
+    from {
+        transform: translate3d(-100%, 0, 0) skewX(30deg);
+        opacity: 0;
+    }
+    60% {
+      transform: skewX(-20deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skewX(5deg);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+}
+
+@keyframes lightSpeedInRight {
+    from {
+      transform: translate3d(100%, 0, 0) skewX(-30deg);
+      opacity: 0;
+    }
+    60% {
+      transform: skewX(20deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skewX(-5deg);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
 }

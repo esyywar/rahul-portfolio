@@ -20,7 +20,7 @@ function Skills(props) {
     /************ STATE MANAGEMENT FROM REDUX STORE **************/
     const dispatch = useDispatch()
 
-    // Change background colour on render
+    // Change background colour on render and animate buttons to appear
     useEffect(() => {
         dispatch(bgClrSwitch(props.bgColour))
     }, [props.bgColour, dispatch])
@@ -127,7 +127,7 @@ function Skills(props) {
                     {skillComponents.map(({ id, btnColour, faIcon, wndTitle }) => {
                         return (
                             <div key={id} className="btn-container">
-                                <MDBBtn color={btnColour} onClick={() => handleBtnClick(id)}>
+                                <MDBBtn className="menu-btn" color={btnColour} onClick={() => handleBtnClick(id)}>
                                         <span><FontAwesomeIcon icon={faIcon} size="lg" /> {wndTitle}</span>
                                 </MDBBtn>
                             </div>

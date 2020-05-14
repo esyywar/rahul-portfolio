@@ -16,7 +16,7 @@ function ProExpCard(props) {
         else
         {
             return (
-                <p>{proExpItem.startDate + " - " + proExpItem.endDate}</p>
+                <p style={{color: "yellow"}}>{proExpItem.startDate + " - " + proExpItem.endDate}</p>
             )
         }
     }
