@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react'
 
+import ProExpCard from './subComponents/ProExpCard'
+
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
 
@@ -22,52 +24,24 @@ function Professional(props) {
     const [activeElement, setActiveElement] = useState(0)
 
 
-    /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
+    /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
 
-    // Called by 'makeProExpCard' to display date
-    function dateDisplay(proExpItem)
-    {
-        if (proExpItem.current)
-        {
-            return (
-                <p style={{color: "#2cf54e"}}>{proExpItem.startDate + " - Present"}</p>
-            )
-        }
-        else
-        {
-            return (
-                <p>{proExpItem.startDate + " - " + proExpItem.endDate}</p>
-            )
-        }
+    function nextArrowClick() {
+        // Make current element exit and set up for next animation
+        document.getElementById("pro-content-card").style.animation = "exitLeft 300ms ease-in forwards"
+        setTimeout(() => {
+            setActiveElement(activeElement + 1)
+            document.getElementById("pro-content-card").style.animation = "slideFromRight 300ms ease-in forwards"
+        }, 300)
     }
 
-
-    function makeProExpCard(activeElement)
-    {
-        const proExpItem = professional[activeElement]
-        const proCardImg = require(`../img/professional/${proExpItem.photo}`)
-
-        return (
-            <div className="pro-content-card">      
-                <div className="title-loc-and-company">
-                    <h4 className="employer">{proExpItem.employer}</h4>
-                    <p className="job-title">{proExpItem.jobTitle}</p>
-                    <p className="location">{`${proExpItem.city}, ${proExpItem.country}`}</p>
-                </div>
-
-                <div className="image-container">
-                    <img alt="office-building" src={proCardImg} />
-                </div>
-
-                <div className="date-and-description">
-                    <h4 className="date">{dateDisplay(proExpItem)}</h4>
-                    <p className="job-exp-desc">{proExpItem.description}</p>
-                </div>
-            </div>
-        )
+    function prevArrowClick() {
+        document.getElementById("pro-content-card").style.animation = "exitRight 300ms ease-in forwards"
+        setTimeout(() => {
+            setActiveElement(activeElement - 1)
+            document.getElementById("pro-content-card").style.animation = "slideFromLeft 300ms ease-in forwards"
+        }, 300)   
     }
-
-
 
 
 
@@ -76,7 +50,11 @@ function Professional(props) {
             <h1 className="page-title">Professional Experience</h1>
 
             {/* Render the active professional experience card */}
-            {makeProExpCard(activeElement)}
+            <ProExpCard proExpItem={professional[activeElement]} />
+
+            {/* Display next and previous arrows only if elements exist in each direction */}
+            {(activeElement > 0) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
+            {(activeElement + 1 < professional.length) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
         </div>
     )
 }
