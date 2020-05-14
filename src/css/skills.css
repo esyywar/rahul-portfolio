@@ -76,6 +76,10 @@
   font-size: 1.7em;
 }
 
+.skills-page .skills-footer .back-btn {
+  font-weight: 600;
+}
+
 .skills-page .slide-right {
   opacity: 0;
   -webkit-transform: translateX(100%);

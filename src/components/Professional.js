@@ -21,9 +21,10 @@ function Professional(props) {
             <h1 className="page-title">Professional Experience</h1>
 
             <div className="pro-content-card">
+                
                 <div className="title-and-company">
+                    <h4 className="employer">{professional[0].employer}</h4>
                     <p className="job-title">{professional[0].jobTitle}</p>
-                    <p className="employer">{professional[0].employer}</p>
                 </div>
 
                 <div className="image-container">

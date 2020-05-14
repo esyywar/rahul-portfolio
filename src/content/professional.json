@@ -2,7 +2,7 @@
     {
         "id": 0,
         "employer": "University of Guelph",
-        "jobTitle": "Teaching Assistant",
+        "jobTitle": "Teaching Assistant & Researcher",
         "current": true,
         "startDate": "5/30/2019",
         "endDate": "1/1/2019",
@@ -18,7 +18,7 @@
         "current": false,
         "startDate": "4/30/2018",
         "endDate": "1/1/2019",
-        "photo": "creation-logo.jpg",
+        "photo": "creation-office.jpg",
         "city": "Markham",
         "country": "Canada",
         "desciption": ""

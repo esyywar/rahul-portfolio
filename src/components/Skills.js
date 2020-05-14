@@ -86,7 +86,7 @@ function Skills(props) {
         else
         {
             return (
-                <MDBBtn size="lg" color="mdb-color" className="slide-right" onClick={backToMenu}>Back to Menu</MDBBtn>
+                <MDBBtn size="lg" color="mdb-color" className="back-btn slide-right" onClick={backToMenu}>Back to Menu</MDBBtn>
             )
         }
     }
