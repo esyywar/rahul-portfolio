@@ -43,6 +43,7 @@ html, body {
     // Applied to page-titles rendered in each component
     .page-title {
         grid-row: 1 / 2;
+        z-index: 2;
     }
 
     .resume-window {

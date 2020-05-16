@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 import SideNav from './SideNav'
 
-import Summary from './Summary'
+import Welcome from './Welcome'
 import Professional from './Professional'
 import Education from './Education'
 import Projects from './Projects'
@@ -29,7 +29,7 @@ function PortfolioMain() {
       text: "Welcome",
       path: "/portfolio",
       isExact: true,
-      Component: Summary,
+      Component: Welcome,
       transitionClass: "summary-transition",
       bgColour: "#FD8536"
     },
