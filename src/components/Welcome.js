@@ -29,7 +29,8 @@ function Welcome(props) {
             itemDelay: 200,
             text: "Electrical Circuit Design.",
             htmlId: "type-target-1",
-            listItem: true
+            listItem: true,
+            color: "red"
         },
         {
             id: 1,
@@ -37,7 +38,8 @@ function Welcome(props) {
             itemDelay: 200,
             text: "Embedded Sytems Dev.",
             htmlId: "type-target-2",
-            listItem: true
+            listItem: true,
+            color: "blue"
         },
         {
             id: 3,
@@ -45,7 +47,8 @@ function Welcome(props) {
             itemDelay: 200,
             text: "UI/UX Design.",
             htmlId: "type-target-3",
-            listItem: true
+            listItem: true,
+            color: "green"
         },
         {
             id: 4,
@@ -74,7 +77,7 @@ function Welcome(props) {
     function typeWriteAnim(htmlId, text, charIdx, delay) {
         try {
             // Place character at the destination
-            if (text.length > 0)
+            if (text.length > document.getElementById(htmlId).innerHTML.length)
             {
                 document.getElementById(htmlId).innerHTML += text.charAt(charIdx)
             }
@@ -82,7 +85,8 @@ function Welcome(props) {
             // Increment charIdx and recurse if more characters to display
             if (++charIdx < text.length)
             {
-                setTimeout(() => typeWriteAnim(htmlId, text, charIdx, delay), delay)
+                let id = setTimeout(() => typeWriteAnim(htmlId, text, charIdx, delay), delay)
+                timeoutIds.push(id)
             }
         }
         catch {
@@ -97,6 +101,7 @@ function Welcome(props) {
     }
 
     function typeAnimDriver(callback) {
+
         // 1. Check that the html elements are rendered and animation request is set
         if ((document.getElementById(typeWriteItems[0].htmlId) != null) && doTypeAnim)
         {
@@ -134,6 +139,7 @@ function Welcome(props) {
                                     <li 
                                         key={element.id} 
                                         id={element.htmlId}
+                                        style={{color: element.color}}
                                     >
                                         {!doTypeAnim && element.text}
                                     </li>
