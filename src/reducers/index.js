@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
-import isNightMode from './isNightMode'
+import isTypeAnim from './isTypeAnim'
 import bgColour from './bgColour'
 import sideNavOpen from './sideNavOpen'
 
 const rootReducer = combineReducers({
-    isNightMode,
+    isTypeAnim,
     bgColour,
     sideNavOpen
 })

@@ -1,49 +1,112 @@
 import React, { useEffect } from 'react'
 
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setTypeAnim } from '../actions/setTypeAnim'
 
 import '../css/welcome.css'
 
 
 function Welcome(props) {
-    const dispatch = useDispatch()
+    /************* REDUX STORE MANAGEMENT *******************/
 
-    // Text to display with typewriter animation
-    const textTypeAnim = "Feel free to contact me on any social platforms :)"
+    const doTypeAnim = useSelector(state => state.isTypeAnim)
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(bgClrSwitch(props.bgColour))
-
-        // Type writer animation call
-        typeWriteAnim(textTypeAnim, 0, 40)
     }, [props.bgColour, dispatch])
 
 
     /********** TYPEWRITER ANIMATION *******************/
 
-    function typeWriteAnim(text, charIdx, delay) {
-        // Place character at the destination
-        if (text.length > 0)
+    // Text to display with typewriter animation
+    const typeWriteItems = [
         {
-            document.getElementById("type-target").innerHTML += text.charAt(charIdx)
+            id: 0,
+            charDelay: 40,
+            itemDelay: 300,
+            text: "My name is Rahul and I am a systems and computing engineer with a passion for electrical and embedded system design.",
+            htmlId: "type-target-1"
+        },
+        {
+            id: 1,
+            charDelay: 40,
+            itemDelay: 300,
+            text: "Have a look around to learn more about my projects and background.",
+            htmlId: "type-target-2"
+        },
+        {
+            id: 2,
+            charDelay: 40,
+            itemDelay: 300,
+            text: "Feel free to contact me on any social platforms :)",
+            htmlId: "type-target-3"
         }
-        
-        // Increment charIdx and recurse if more characters to display
-        if (++charIdx < text.length)
+    ]
+
+    // Used to store and clear timeout functions for type write effect
+    var activeTimeouts
+
+    function typeWriteAnim(htmlId, text, charIdx, delay) {
+        try {
+            // Place character at the destination
+            if (text.length > 0)
+            {
+                document.getElementById(htmlId).innerHTML += text.charAt(charIdx)
+            }
+            
+            // Increment charIdx and recurse if more characters to display
+            if (++charIdx < text.length)
+            {
+                setTimeout(() => typeWriteAnim(htmlId, text, charIdx, delay), delay)
+            }
+        }
+        catch {
+            dispatch(setTypeAnim(false))
+            for (let i = 0; i < 5; i++)
+            {
+                window.clearTimeout(i)
+            }
+            return
+        }
+
+    }
+
+    function typeAnimDriver(callback) {
+        // 1. Check that the html elements are rendered and animation request is set
+        if ((document.getElementById(typeWriteItems[0].htmlId) != null) && doTypeAnim)
         {
-            setTimeout(() => typeWriteAnim(text, charIdx, delay), delay)
+            // 2. Check that html element is currently empty (otherwise this function has already been triggered)
+            if (document.getElementById(typeWriteItems[0].htmlId).innerHTML === "")
+            {
+                var typeWriteDelay = 0;
+                for (let i = 0; i < typeWriteItems.length; i++)
+                {
+                    let element = typeWriteItems[i]
+                    setTimeout(() => typeWriteAnim(element.htmlId, element.text, 0, element.charDelay), typeWriteDelay)
+                    typeWriteDelay += element.text.length * element.charDelay + element.itemDelay;
+                }
+
+                setTimeout(() => callback(), typeWriteDelay)
+            }
         }
     }
+
 
     return (
         <div className="intro">
             <h1 className="page-title">Welcome</h1>
             <div className="intro-container">
                 <div className="intro-desc">
-                    <p>My name is Rahul and I am a systems and computing engineer with a passion for electrical and embedded system design.</p>
-                    <p>Have a look around to learn more about my projects and background.</p>
-                    <p id="type-target"></p>
+                    {/* Map paragraphs that will be filled by typewrite animation */}
+                    {typeWriteItems.map((element) => {
+                        return (
+                        <p key={element.id} id={element.htmlId} className="intro-desc-para">{!doTypeAnim && element.text}</p>
+                        )
+                    })}
+                    {doTypeAnim && typeAnimDriver(() => dispatch(setTypeAnim(false)))}
                 </div>
             </div>
         </div>
