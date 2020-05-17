@@ -22,16 +22,59 @@
         justify-content: center;
 
  
-            .desc-list {
-                padding: 0.1em 0;
-            }         
-            .desc-paras {
-                margin-top: 1em;
+        .desc-list {
+            padding: 0.1em 0;
+        }         
+        .desc-paras {
+            margin-top: 0.5em;
 
-                p {
-                    padding: 0.6em 0;
-                }
+            p {
+                padding: 0.6em 0;
             }
+        }
 
+        // Swipe up arrow
+        #swipe-arrow-container {
+            position: fixed;
+            bottom: 3%;
+
+            // Initial conditions for entrance animation
+            opacity: 0;
+            transform: translateY(100%);
+            animation: slideFromBtm 500ms linear 300ms forwards;
+            
+            .swipe-arrow
+            {
+                margin-top: -0.2em;
+                font-size: 1.5em;
+                transform: rotate(90deg);
+            }
+        }
     }
 }
+
+
+/******************* ANIMATIONS ******************/ 
+
+@keyframes slideFromBtm {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes swipeBounce {
+    0%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+

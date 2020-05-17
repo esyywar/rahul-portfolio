@@ -31,10 +31,79 @@
 }
 
 .intro .intro-container .desc-paras {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .intro .intro-container .desc-paras p {
   padding: 0.6em 0;
+}
+
+.intro .intro-container #swipe-arrow-container {
+  position: fixed;
+  bottom: 3%;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-animation: slideFromBtm 500ms linear 300ms forwards;
+          animation: slideFromBtm 500ms linear 300ms forwards;
+}
+
+.intro .intro-container #swipe-arrow-container .swipe-arrow {
+  margin-top: -0.2em;
+  font-size: 1.5em;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/******************* ANIMATIONS ******************/
+@-webkit-keyframes slideFromBtm {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideFromBtm {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes swipeBounce {
+  0%, 100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes swipeBounce {
+  0%, 100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
 }
 /*# sourceMappingURL=welcome.css.map */

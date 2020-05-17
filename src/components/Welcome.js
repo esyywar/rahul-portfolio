@@ -27,7 +27,7 @@ function Welcome(props) {
             id: 0,
             charDelay: 40,
             itemDelay: 200,
-            text: "Electrical Circuit Design.",
+            text: "Electrical Circuit Design",
             htmlId: "type-target-1",
             listItem: true,
             color: "red"
@@ -36,7 +36,7 @@ function Welcome(props) {
             id: 1,
             charDelay: 40,
             itemDelay: 200,
-            text: "Embedded Sytems Dev.",
+            text: "Embedded Sytems Dev",
             htmlId: "type-target-2",
             listItem: true,
             color: "blue"
@@ -45,7 +45,7 @@ function Welcome(props) {
             id: 3,
             charDelay: 40,
             itemDelay: 200,
-            text: "UI/UX Design.",
+            text: "UI/UX Design",
             htmlId: "type-target-3",
             listItem: true,
             color: "green"
@@ -54,16 +54,25 @@ function Welcome(props) {
             id: 4,
             charDelay: 40,
             itemDelay: 200,
-            text: "Have a look around to learn more about my projects and background.",
+            text: "Website Builder",
             htmlId: "type-target-4",
-            listItem: false
+            listItem: true,
+            color: "black"
         },
         {
             id: 5,
             charDelay: 40,
             itemDelay: 200,
-            text: "Feel free to contact me on any social platforms :)",
+            text: "Have a look around to learn more about my projects and background.",
             htmlId: "type-target-5",
+            listItem: false
+        },
+        {
+            id: 6,
+            charDelay: 40,
+            itemDelay: 200,
+            text: "Feel free to contact me on any social platforms :)",
+            htmlId: "type-target-6",
             listItem: false
         }
     ]
@@ -124,9 +133,38 @@ function Welcome(props) {
     }
 
 
+    /************** MOBILE CHECK FUNCTION FOR SWIPE ARROW **********************/
+
+    // On load show "enter" or "swipe" depending on user device
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
+    function showSwipeArrow(isDisplay) {
+        if (isDisplay) {
+            // Apply bounce animation after entrance animation time    
+            let id = setTimeout(() => {
+                try {
+                    document.getElementById("swipe-arrow-container").style.animation = "swipeBounce 2s linear infinite alternate-reverse"
+                }
+                catch { 
+                    clearTimeout(id) 
+                }
+            }, 1000)
+
+            return (
+                <div id="swipe-arrow-container">
+                    <p>Swipe Up!</p>
+                    <div className="swipe-arrow">&#10095;</div>
+                </div>
+            )
+        }
+    }
+
+
     return (
         <div className="intro">
-            <h1 className="page-title">Welcome</h1>
+            <h1 className="page-title">RAHUL ESWAR</h1>
             <div className="intro-container">
                     {/* Typewriter animated list items */}
                     <ul className="desc-list">
@@ -170,6 +208,9 @@ function Welcome(props) {
 
                     {/* Call animation driver if first render - callback to change animation state */}
                     {doTypeAnim && typeAnimDriver(() => dispatch(setTypeAnim(false)))}
+
+                    {/* Swipe up arrow to display for mobile devices */}
+                    {showSwipeArrow(isMobileDevice())}
             </div>
         </div>
         
