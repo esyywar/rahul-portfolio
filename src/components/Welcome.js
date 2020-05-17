@@ -19,35 +19,57 @@ function Welcome(props) {
     }, [props.bgColour, dispatch])
 
 
-    /********** TYPEWRITER ANIMATION *******************/
+    /********** TYPEWRITER ANIMATION CONTENT *******************/
 
-    // Text to display with typewriter animation
+    // Text to display with typewriter animation - Place all list items at start, paragraphs at end
     const typeWriteItems = [
         {
             id: 0,
             charDelay: 40,
-            itemDelay: 300,
-            text: "My name is Rahul and I am a systems and computing engineer with a passion for electrical and embedded system design.",
-            htmlId: "type-target-1"
+            itemDelay: 200,
+            text: "Electrical Circuit Design.",
+            htmlId: "type-target-1",
+            listItem: true
         },
         {
             id: 1,
             charDelay: 40,
-            itemDelay: 300,
-            text: "Have a look around to learn more about my projects and background.",
-            htmlId: "type-target-2"
+            itemDelay: 200,
+            text: "Embedded Sytems Dev.",
+            htmlId: "type-target-2",
+            listItem: true
         },
         {
-            id: 2,
+            id: 3,
             charDelay: 40,
-            itemDelay: 300,
+            itemDelay: 200,
+            text: "UI/UX Design.",
+            htmlId: "type-target-3",
+            listItem: true
+        },
+        {
+            id: 4,
+            charDelay: 40,
+            itemDelay: 200,
+            text: "Have a look around to learn more about my projects and background.",
+            htmlId: "type-target-4",
+            listItem: false
+        },
+        {
+            id: 5,
+            charDelay: 40,
+            itemDelay: 200,
             text: "Feel free to contact me on any social platforms :)",
-            htmlId: "type-target-3"
+            htmlId: "type-target-5",
+            listItem: false
         }
     ]
 
+
+    /*************** TYPEWRITER ANIMATION FUNCTIONS ****************/
+
     // Used to store and clear timeout functions for type write effect
-    var activeTimeouts
+    var timeoutIds = []
 
     function typeWriteAnim(htmlId, text, charIdx, delay) {
         try {
@@ -65,9 +87,9 @@ function Welcome(props) {
         }
         catch {
             dispatch(setTypeAnim(false))
-            for (let i = 0; i < 5; i++)
+            for (let i = 0; i < timeoutIds.length; i++)
             {
-                window.clearTimeout(i)
+                window.clearTimeout(timeoutIds[i])
             }
             return
         }
@@ -85,10 +107,12 @@ function Welcome(props) {
                 for (let i = 0; i < typeWriteItems.length; i++)
                 {
                     let element = typeWriteItems[i]
-                    setTimeout(() => typeWriteAnim(element.htmlId, element.text, 0, element.charDelay), typeWriteDelay)
+                    let id = setTimeout(() => typeWriteAnim(element.htmlId, element.text, 0, element.charDelay), typeWriteDelay)
+                    timeoutIds.push(id)
                     typeWriteDelay += element.text.length * element.charDelay + element.itemDelay;
                 }
 
+                // 3. When all animations complete, fire callback (set animation request OFF in redux store)
                 setTimeout(() => callback(), typeWriteDelay)
             }
         }
@@ -99,15 +123,47 @@ function Welcome(props) {
         <div className="intro">
             <h1 className="page-title">Welcome</h1>
             <div className="intro-container">
-                <div className="intro-desc">
-                    {/* Map paragraphs that will be filled by typewrite animation */}
-                    {typeWriteItems.map((element) => {
-                        return (
-                        <p key={element.id} id={element.htmlId} className="intro-desc-para">{!doTypeAnim && element.text}</p>
-                        )
-                    })}
+                    {/* Typewriter animated list items */}
+                    <ul className="desc-list">
+                        {typeWriteItems
+                            .filter((element) => {
+                                return element.listItem
+                            })
+                            .map((element) => {
+                                return (
+                                    <li 
+                                        key={element.id} 
+                                        id={element.htmlId}
+                                    >
+                                        {!doTypeAnim && element.text}
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    
+                    {/* Typewriter animated paragraph items */}
+                    <div className="desc-paras">
+                        {typeWriteItems
+                            .filter((element) => {
+                                return !element.listItem
+                            })
+                            .map((element) => {
+                                return (
+                                    <p 
+                                        key={element.id} 
+                                        id={element.htmlId} 
+                                        className={element.listItem ? "intro-desc-list" : "intro-desc-para"}
+                                    >
+                                        {!doTypeAnim && element.text}
+                                    </p>
+                                )
+                            })
+                        }
+                    </div>
+
+                    {/* Call animation driver if first render - callback to change animation state */}
                     {doTypeAnim && typeAnimDriver(() => dispatch(setTypeAnim(false)))}
-                </div>
             </div>
         </div>
         

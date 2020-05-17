@@ -26,7 +26,15 @@
           justify-content: center;
 }
 
-.intro .intro-container .intro-desc p {
+.intro .intro-container .desc-list {
+  padding: 0.1em 0;
+}
+
+.intro .intro-container .desc-paras {
+  margin-top: 1em;
+}
+
+.intro .intro-container .desc-paras p {
   padding: 0.6em 0;
 }
 /*# sourceMappingURL=welcome.css.map */

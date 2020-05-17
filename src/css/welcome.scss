@@ -13,7 +13,6 @@
     .intro-container {
         height: 80%;
         text-align: center;
-        //font-family: 'Muli', sans-serif;
         font-family: 'VT323', monospace;
         font-size: 28px;
 
@@ -22,10 +21,17 @@
         align-items: center;
         justify-content: center;
 
-        .intro-desc {            
-            p {
-                padding: 0.6em 0;
+ 
+            .desc-list {
+                padding: 0.1em 0;
+            }         
+            .desc-paras {
+                margin-top: 1em;
+
+                p {
+                    padding: 0.6em 0;
+                }
             }
-        }
+
     }
 }
