@@ -4,6 +4,7 @@ import EduCard from './subComponents/EduCard'
 
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setActiveComp } from '../actions/setActiveComp'
 
 import education from '../content/education.json'
 

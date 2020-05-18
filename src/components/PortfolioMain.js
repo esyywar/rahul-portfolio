@@ -19,6 +19,7 @@ import '../css/portfolio.css'
 
 function PortfolioMain() {
   // Read background colour will be updated on click (changes with routes)
+  const activeComp = useSelector(state => state.activeComp)
   const bgColour = useSelector(state => state.bgColour)
 
   // Routes to pages which will be mapped
@@ -74,7 +75,18 @@ function PortfolioMain() {
       bgColour: "#C18AF8"
     }
   ]
+
+
+  /**************** DETECTING SWIPE EVENTS *****************/
+  var initX, initY, endX, endY
+
+  function handleSwipe(event) {
+    console.log(event)
+  }
+
+  document.addEventListener("touchend", handleSwipe)
   
+
 
   return (
       <Router>
@@ -85,8 +97,8 @@ function PortfolioMain() {
           <SideNav navLinks={routes} />
 
           {/* Mapping out components rendered by react rransitions group */}
-          {routes.map(({ path, isExact, Component, transitionClass, divClass, bgColour }) => (
-            <Route key={path} exact={isExact} path={path}>
+          {routes.map(({ id, path, isExact, Component, transitionClass, bgColour }) => (
+            <Route key={id} exact={isExact} path={path}>
               {({ match }) => (
                 <CSSTransition
                   in={match != null}
@@ -95,7 +107,7 @@ function PortfolioMain() {
                   unmountOnExit
                 >
                   <div className="resume-window">
-                    <Component bgColour={bgColour}/>
+                    <Component key={id} bgColour={bgColour}/>
                   </div>
                 </CSSTransition>
               )}

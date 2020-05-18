@@ -4,6 +4,7 @@ import ProExpCard from './subComponents/ProExpCard'
 
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setActiveComp } from '../actions/setActiveComp'
 
 import professional from '../content/professional.json'
 

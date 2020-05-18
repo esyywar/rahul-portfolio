@@ -54,7 +54,7 @@ function Welcome(props) {
             id: 4,
             charDelay: 40,
             itemDelay: 200,
-            text: "Website Builder",
+            text: "Front End Web Dev",
             htmlId: "type-target-4",
             listItem: true,
             color: "black"
@@ -163,7 +163,7 @@ function Welcome(props) {
 
 
     return (
-        <div className="intro">
+        <div id="intro-page">
             <h1 className="page-title">RAHUL ESWAR</h1>
             <div className="intro-container">
                     {/* Typewriter animated list items */}
@@ -213,7 +213,6 @@ function Welcome(props) {
                     {showSwipeArrow(isMobileDevice())}
             </div>
         </div>
-        
     )
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setActiveComp } from '../actions/setActiveComp'
 
 
 function Projects(props) {

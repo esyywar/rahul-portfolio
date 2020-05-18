@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 /**************** WELCOME PAGE STYLE ***********************/
-.intro {
+#intro-page {
   height: 100%;
 }
 
-.intro .intro-container {
+#intro-page .intro-container {
   height: 80%;
   text-align: center;
   font-family: 'VT323', monospace;
@@ -26,19 +26,19 @@
           justify-content: center;
 }
 
-.intro .intro-container .desc-list {
+#intro-page .intro-container .desc-list {
   padding: 0.1em 0;
 }
 
-.intro .intro-container .desc-paras {
+#intro-page .intro-container .desc-paras {
   margin-top: 0.5em;
 }
 
-.intro .intro-container .desc-paras p {
+#intro-page .intro-container .desc-paras p {
   padding: 0.6em 0;
 }
 
-.intro .intro-container #swipe-arrow-container {
+#intro-page .intro-container #swipe-arrow-container {
   position: fixed;
   bottom: 3%;
   opacity: 0;
@@ -48,7 +48,7 @@
           animation: slideFromBtm 500ms linear 300ms forwards;
 }
 
-.intro .intro-container #swipe-arrow-container .swipe-arrow {
+#intro-page .intro-container #swipe-arrow-container .swipe-arrow {
   margin-top: -0.2em;
   font-size: 1.5em;
   -webkit-transform: rotate(90deg);

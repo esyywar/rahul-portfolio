@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
 import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setActiveComp } from '../actions/setActiveComp'
 
 import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
