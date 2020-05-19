@@ -76,6 +76,52 @@ function PortfolioMain() {
 
   /**************** DETECTING SWIPE EVENTS *****************/
 
+  document.addEventListener("touchstart", handleTouchStart)
+  document.addEventListener("touchend", handleTouchEnd)
+  var startX, startY, startTime, moveX, moveY, deltaTime
+
+  // Store starting touch position and time
+  function handleTouchStart(event) {
+    startX = event.touches[0].clientX
+    startY = event.touches[0].clientY
+    startTime = event.timeStamp
+
+    // Add event listener for touch move
+    document.addEventListener("touchmove", handleTouchMove)
+  }
+
+  // Track position of touch movement
+  function handleTouchMove(event) {
+    moveX = event.touches[0].clientX - startX
+    moveY = event.touches[0].clientY - startY
+    deltaTime = startTime - event.timeStamp
+  }
+
+  // Compare final position with start to determine if swipe occured
+  function handleTouchEnd() {
+    // Remove touch event listener
+    document.removeEventListener("touchmove", handleTouchMove)
+
+    // Check for swipe
+    if (Math.abs(window.screen.width / moveX) > 4 && deltaTime < 1000)
+    {
+      vertSwipeHandle()
+      return
+    }
+    else if (Math.abs(window.screen.height / moveY) > 4 && deltaTime < 1000)
+    { 
+      horizSwipeHandle()
+    }
+  }
+
+  function horizSwipeHandle() {
+    console.log('horiz swipe recorded')
+  }
+
+  // Called for up or down swipes
+  function vertSwipeHandle() {
+    console.log("vert swipe recorded")
+  }
   
 
   /**************** STATE VARIABLES *********************/
