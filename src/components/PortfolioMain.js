@@ -18,10 +18,7 @@ import '../css/portfolio.css'
 
 
 function PortfolioMain() {
-  // Read background colour will be updated on click (changes with routes)
-  const activeComp = useSelector(state => state.activeComp)
 
-  
   // Routes to pages which will be mapped
   const portfolioPages = [
     {
@@ -81,11 +78,19 @@ function PortfolioMain() {
 
   
 
+  /**************** STATE VARIABLES *********************/
+
+  // Set state of active component (default -1)
+  const activeComp = useSelector(state => state.activeComp)
+
+  // Background colour (default white)
+  const bgColour = (portfolioPages[activeComp]) ? (portfolioPages[activeComp].bgColour) : "FFFFFF"
+
 
   return (
       <Router>
         {/* Bg colour switched depending on active component */}
-        <div className="grid-container" style={{backgroundColor: portfolioPages[activeComp].bgColour}}>
+        <div className="grid-container" style={{backgroundColor: bgColour}}>
 
           {/* Render side nav and top nav bar */}
           <SideNav navLinks={portfolioPages} />
