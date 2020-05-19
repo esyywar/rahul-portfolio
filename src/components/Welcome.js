@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { bgClrSwitch } from '../actions/bgClrSwitch'
+import { setActiveComp } from '../actions/setActiveComp'
 import { setTypeAnim } from '../actions/setTypeAnim'
 
 import '../css/welcome.css'
@@ -15,8 +15,8 @@ function Welcome(props) {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(bgClrSwitch(props.bgColour))
-    }, [props.bgColour, dispatch])
+        dispatch(setActiveComp(props.id))
+    }, [props.id, dispatch])
 
 
     /********** TYPEWRITER ANIMATION CONTENT *******************/
@@ -83,6 +83,7 @@ function Welcome(props) {
     // Used to store and clear timeout functions for type write effect
     var timeoutIds = []
 
+    // Apply the typewriter animation
     function typeWriteAnim(htmlId, text, charIdx, delay) {
         try {
             // Place character at the destination
@@ -109,15 +110,17 @@ function Welcome(props) {
 
     }
 
+    // Call this function to drive the typeWriter animation performed by function above - Give callback as arguement
     function typeAnimDriver(callback) {
+        var typeWriteDelay = 0;
 
-        // 1. Check that the html elements are rendered and animation request is set
+        // 2. Check that the html elements are rendered and animation request is set
         if ((document.getElementById(typeWriteItems[0].htmlId) != null) && doTypeAnim)
         {
-            // 2. Check that html element is currently empty (otherwise this function has already been triggered)
+            // 3. Check that html element is currently empty (otherwise this function has already been triggered)
             if (document.getElementById(typeWriteItems[0].htmlId).innerHTML === "")
             {
-                var typeWriteDelay = 0;
+                
                 for (let i = 0; i < typeWriteItems.length; i++)
                 {
                     let element = typeWriteItems[i]
@@ -125,10 +128,10 @@ function Welcome(props) {
                     timeoutIds.push(id)
                     typeWriteDelay += element.text.length * element.charDelay + element.itemDelay;
                 }
-
-                // 3. When all animations complete, fire callback (set animation request OFF in redux store)
-                setTimeout(() => callback(), typeWriteDelay)
             }
+
+            // 4. When all animations complete, fire callback (set animation request OFF in redux store)
+            setTimeout(() => callback(), typeWriteDelay)
         }
     }
 
@@ -140,6 +143,7 @@ function Welcome(props) {
         return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     };
 
+    // Conditional render of swipe arrow depending on if mobile client platform
     function showSwipeArrow(isDisplay) {
         if (isDisplay) {
             // Apply bounce animation after entrance animation time    

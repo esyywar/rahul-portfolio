@@ -1,5 +1,6 @@
 //set active component
-const activeComp = (state = 0, action) => {
+// NOTE: Have to make initial value not that of screen originally rendered (Welcome.js) so envoke CSS entrance transition
+const activeComp = (state = 1, action) => {
     switch (action.type)
     {
         case "COMP_SWITCH":

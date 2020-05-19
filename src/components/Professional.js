@@ -3,7 +3,6 @@ import React, { useState, useEffect} from 'react'
 import ProExpCard from './subComponents/ProExpCard'
 
 import { useDispatch } from 'react-redux'
-import { bgClrSwitch } from '../actions/bgClrSwitch'
 import { setActiveComp } from '../actions/setActiveComp'
 
 import professional from '../content/professional.json'
@@ -17,8 +16,8 @@ function Professional(props) {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(bgClrSwitch(props.bgColour))
-    }, [props.bgColour, dispatch])
+        dispatch(setActiveComp(props.id))
+    }, [props.id, dispatch])
 
 
     /************ LOCAL STATE INITIALIZATION ******************/

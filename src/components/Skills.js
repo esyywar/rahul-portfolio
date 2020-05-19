@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
-import { bgClrSwitch } from '../actions/bgClrSwitch'
 import { setActiveComp } from '../actions/setActiveComp'
 
 import CodeLangs from './subComponents/CodeLangs'
@@ -23,8 +22,8 @@ function Skills(props) {
 
     // Change background colour on render and animate buttons to appear
     useEffect(() => {
-        dispatch(bgClrSwitch(props.bgColour))
-    }, [props.bgColour, dispatch])
+        dispatch(setActiveComp(props.id))
+    }, [props.id, dispatch])
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
