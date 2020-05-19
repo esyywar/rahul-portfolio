@@ -76,6 +76,7 @@ function PortfolioMain() {
 
   /**************** DETECTING SWIPE EVENTS *****************/
 
+  // Touch event listeners attached
   document.addEventListener("touchstart", handleTouchStart)
   document.addEventListener("touchend", handleTouchEnd)
   var startX, startY, startTime, moveX, moveY, deltaTime
@@ -94,7 +95,8 @@ function PortfolioMain() {
   function handleTouchMove(event) {
     moveX = event.touches[0].clientX - startX
     moveY = event.touches[0].clientY - startY
-    deltaTime = startTime - event.timeStamp
+    deltaTime = event.timeStamp - startTime
+    
   }
 
   // Compare final position with start to determine if swipe occured
@@ -103,17 +105,21 @@ function PortfolioMain() {
     document.removeEventListener("touchmove", handleTouchMove)
 
     // Check for swipe
-    if (Math.abs(window.screen.width / moveX) > 4 && deltaTime < 1000)
+    if (deltaTime < 500)
     {
-      vertSwipeHandle()
-      return
-    }
-    else if (Math.abs(window.screen.height / moveY) > 4 && deltaTime < 1000)
-    { 
-      horizSwipeHandle()
+      if (Math.abs(window.screen.width / moveX) < 3)
+      {
+        horizSwipeHandle()
+        return
+      }
+      else if (Math.abs(window.screen.height / moveY) < 5)
+      { 
+        vertSwipeHandle()
+      }
     }
   }
 
+  // Check if swiped left or right and handle event
   function horizSwipeHandle() {
     if (moveX > 0)
     {
@@ -125,7 +131,7 @@ function PortfolioMain() {
     }
   }
 
-  // Called for up or down swipes
+  // Check if swiped up or down and handle event
   function vertSwipeHandle() {
     if (moveY > 0) 
     {
