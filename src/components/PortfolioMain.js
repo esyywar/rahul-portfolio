@@ -115,12 +115,26 @@ function PortfolioMain() {
   }
 
   function horizSwipeHandle() {
-    console.log('horiz swipe recorded')
+    if (moveX > 0)
+    {
+      console.log("Swiped left")
+    }
+    else
+    {
+      console.log("Swiped right")
+    }
   }
 
   // Called for up or down swipes
   function vertSwipeHandle() {
-    console.log("vert swipe recorded")
+    if (moveY > 0) 
+    {
+      console.log("Swiped up")
+    }
+    else
+    {
+      console.log("Swiped down")
+    }
   }
   
 

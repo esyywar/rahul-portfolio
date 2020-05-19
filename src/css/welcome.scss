@@ -9,9 +9,19 @@
 #intro-page {
     height: 100%;
 
+    .name-header {
+        font-size: 40px;
+    }
+
+    hr {
+        background-color: white;
+        height: 2px;
+        border: 1px solid white;
+        border-radius: 3px;
+    }
 
     .intro-container {
-        height: 80%;
+        height: 70%;
         text-align: center;
         font-family: 'VT323', monospace;
         font-size: 28px;
@@ -26,10 +36,10 @@
             padding: 0.1em 0;
         }         
         .desc-paras {
-            margin-top: 0.5em;
+            margin-top: 0.4em;
 
             p {
-                padding: 0.6em 0;
+                padding: 0.5em 0;
             }
         }
 

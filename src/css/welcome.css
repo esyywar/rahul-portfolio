@@ -6,8 +6,19 @@
   height: 100%;
 }
 
+#intro-page .name-header {
+  font-size: 40px;
+}
+
+#intro-page hr {
+  background-color: white;
+  height: 2px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
 #intro-page .intro-container {
-  height: 80%;
+  height: 70%;
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 28px;
@@ -31,11 +42,11 @@
 }
 
 #intro-page .intro-container .desc-paras {
-  margin-top: 0.5em;
+  margin-top: 0.4em;
 }
 
 #intro-page .intro-container .desc-paras p {
-  padding: 0.6em 0;
+  padding: 0.5em 0;
 }
 
 #intro-page .intro-container #swipe-arrow-container {

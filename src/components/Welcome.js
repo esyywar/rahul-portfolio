@@ -168,7 +168,7 @@ function Welcome(props) {
 
     return (
         <div id="intro-page">
-            <h1 className="page-title">RAHUL ESWAR</h1>
+            <h1 className="page-title name-header">RAHUL ESWAR</h1><hr />
             <div className="intro-container">
                     {/* Typewriter animated list items */}
                     <ul className="desc-list">
