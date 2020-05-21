@@ -1,5 +1,5 @@
 // Set active component
-const activeComp = (state = 0, action) => {
+const activeComp = (state = 2, action) => {
     switch (action.type)
     {
         case "SET_COMP":

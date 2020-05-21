@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
@@ -16,6 +16,7 @@ import Projects from './Projects'
 import Skills from './Skills'
 
 import '../css/portfolio.css'
+import { setActiveComp } from '../actions/setActiveComp'
 
 
 function PortfolioMain() {
@@ -77,11 +78,23 @@ function PortfolioMain() {
   // Set state of active component
   const activeComp = useSelector(state => state.activeComp)
 
+  // Error checking active comp
+  useEffect(() => {
+    if (activeComp < 0) 
+    { 
+      dispatch(setActiveComp(0)) 
+    }
+    else if (activeComp >= portfolioPages.length)
+    {
+      dispatch(setActiveComp(portfolioPages.length - 1))
+    }
+  }, [activeComp, dispatch])
+
   // State indicating if touch event listeners are set
   const isTouchEvent = useSelector(state => state.isTouchEvent)
 
   // Background colour (default white)
-  const bgColour = portfolioPages[activeComp].bgColour
+  const bgColour = (portfolioPages[activeComp]) && portfolioPages[activeComp].bgColour
 
 
   /**************** DETECTING SWIPE EVENTS *****************/
@@ -115,7 +128,6 @@ function PortfolioMain() {
     moveX = event.touches[0].clientX - startX
     moveY = event.touches[0].clientY - startY
     deltaTime = event.timeStamp - startTime
-    
   }
 
   // Compare final position with start to determine if swipe occured
@@ -154,47 +166,39 @@ function PortfolioMain() {
   function vertSwipeHandle() {
     if (moveY > 0) 
     {
-      console.log(activeComp)
       // Slide up to previous component
-      if (activeComp > 0)
-      {
-        dispatch(prevComp())
-      }
+      dispatch(prevComp())
     }
     else if (moveY < 0)
     {
-      console.log(activeComp)
       // Slide down to next component
-      if (activeComp < portfolioPages.length - 1)
-      {
-        dispatch(nextComp())
-      }
+      dispatch(nextComp())
     }
   }
 
 
   return (
-      <div className="grid-container" style={{backgroundColor: bgColour}}>
+    <div className="grid-container" style={{backgroundColor: bgColour}}>
 
-        {/* Render side nav and top nav bar */}
-        <SideNav navLinks={portfolioPages} />
-        
-        {/* Mapping components which change on state change */}
-        {portfolioPages.map(({ id, Component, transitionClass }) => {
-          return (
-            <div key={id} className="resume-window">
-              <CSSTransition 
-                in={activeComp === id} 
-                timeout={500} 
-                classNames={transitionClass}
-                unmountOnExit
-              >
-                <Component id={id} />
-              </CSSTransition>
-            </div>
-          )
-        })}
-      </div>
+      {/* Render side nav and top nav bar */}
+      <SideNav navLinks={portfolioPages} />
+      
+      {/* Mapping components which change on state change */}
+      {portfolioPages.map(({ id, Component, transitionClass }) => {
+        return (
+          <div key={id} className="resume-window">
+            <CSSTransition 
+              in={activeComp === id} 
+              timeout={500} 
+              classNames={transitionClass}
+              unmountOnExit
+            >
+              <Component id={id} />
+            </CSSTransition>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 

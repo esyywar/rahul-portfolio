@@ -73,13 +73,11 @@
       -ms-flex-align: center;
           align-items: center;
   overflow: visible;
-  opacity: 1;
+  opacity: 0;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
-  -webkit-animation: slideInRight ease-in 750ms 0.8s;
-          animation: slideInRight ease-in 750ms 0.8s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-animation: slideInRight ease-in 750ms forwards 0.8s;
+          animation: slideInRight ease-in 750ms forwards 0.8s;
 }
 
 .title-page #title-content .profile-block {
