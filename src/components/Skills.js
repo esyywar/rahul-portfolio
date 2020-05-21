@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react'
-
-import { useDispatch } from 'react-redux'
-import { setActiveComp } from '../actions/setActiveComp'
+import React, { useState } from 'react'
 
 import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
@@ -16,15 +13,6 @@ import 'mdbreact/dist/css/mdb.css'
 
 
 function Skills(props) {
-
-    /************ STATE MANAGEMENT FROM REDUX STORE **************/
-    const dispatch = useDispatch()
-
-    // Change background colour on render and animate buttons to appear
-    useEffect(() => {
-        dispatch(setActiveComp(props.id))
-    }, [props.id, dispatch])
-
 
     /************ LOCAL STATE INITIALIZATION ******************/
 

@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 
 import '../css/title.css'
 
+
 function Title() {
     // Number of bars for animation
     const numBars = 14;
@@ -70,6 +71,7 @@ function Title() {
                     <p>Background in Biomedical Engineering with a passion for electrical design and embedded systems. Experienced working on electronics of medical devices and researching micro-electromechanical systems.</p>
                     <h4>Toronto, Canada</h4>
                 </div>
+
                 <button className="entry-button" onClick={() => enterSite()}>
                     <h4>{isMobileDevice() ? "Swipe " : "Click "} To Enter!  <span><FontAwesomeIcon icon={faArrowRight} /></span></h4>
                 </button>

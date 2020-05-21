@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setActiveComp } from '../actions/setActiveComp'
 import { setTypeAnim } from '../actions/setTypeAnim'
 
 import '../css/welcome.css'
@@ -13,10 +12,6 @@ function Welcome(props) {
     const doTypeAnim = useSelector(state => state.isTypeAnim)
 
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(setActiveComp(props.id))
-    }, [props.id, dispatch])
 
 
     /********** TYPEWRITER ANIMATION CONTENT *******************/
@@ -112,6 +107,7 @@ function Welcome(props) {
 
     // Call this function to drive the typeWriter animation performed by function above - Give callback as arguement
     function typeAnimDriver(callback) {
+        console.log('called')
         var typeWriteDelay = 0;
 
         // 2. Check that the html elements are rendered and animation request is set

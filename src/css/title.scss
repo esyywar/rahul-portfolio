@@ -70,9 +70,12 @@ $borderBlue: #A1C8F7;
         flex-direction: column;
         align-items: center;
         overflow: visible;  // to allow for box shadow
-        opacity: 0;
-        transform: translateX(20px);  // initial transform and opacity for animation
-        animation: slideInRight ease-in 750ms forwards 0.8s;
+
+        // Intial conditions for animation
+        opacity: 1;
+        transform: translateX(20px);
+        animation: slideInRight ease-in 750ms 0.8s;
+        animation-fill-mode: forwards;
 
         .profile-block {
             font-family: 'Ubuntu Mono', monospace;

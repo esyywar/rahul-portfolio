@@ -21,25 +21,25 @@
             "id": 0,
             "language": "C/C++",
             "field": "embedded",
-            "proficiency": "90%"
+            "proficiency": "80%"
         },
         {
             "id": 1,
             "language": "NI LabVIEW",
             "field": "embedded",
-            "proficiency": "90%"
+            "proficiency": "80%"
         },
         {
             "id": 2,
             "language": "NI TestStand",
             "field": "embedded",
-            "proficiency": "75%"
+            "proficiency": "65%"
         },
         {
             "id": 3,
             "language": "Javascript",
             "field": "webDev",
-            "proficiency": "75%"
+            "proficiency": "70%"
         },
         {
             "id": 4,

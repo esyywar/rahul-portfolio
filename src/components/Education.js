@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import EduCard from './subComponents/EduCard'
-
-import { useDispatch } from 'react-redux'
-import { setActiveComp } from '../actions/setActiveComp'
 
 import education from '../content/education.json'
 
@@ -11,14 +8,6 @@ import '../css/education.css'
 
 
 function Education(props) {
-
-    /************ STATE MANAGEMENT FROM REDUX STORE **************/
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(setActiveComp(props.id))
-    }, [props.id, dispatch])
-
 
     /************ LOCAL STATE INITIALIZATION ******************/
     const [activeElement, setActiveElement] = useState(0)

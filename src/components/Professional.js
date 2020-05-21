@@ -1,9 +1,6 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState} from 'react'
 
 import ProExpCard from './subComponents/ProExpCard'
-
-import { useDispatch } from 'react-redux'
-import { setActiveComp } from '../actions/setActiveComp'
 
 import professional from '../content/professional.json'
 
@@ -11,14 +8,6 @@ import '../css/professional.css'
 
 
 function Professional(props) {
-
-    /************ STATE MANAGEMENT FROM REDUX STORE **************/
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(setActiveComp(props.id))
-    }, [props.id, dispatch])
-
 
     /************ LOCAL STATE INITIALIZATION ******************/
     const [activeElement, setActiveElement] = useState(0)

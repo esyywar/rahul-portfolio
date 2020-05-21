@@ -1,10 +1,13 @@
 // Set active component
-// NOTE: Must have initial value not that of screen originally rendered (Welcome.js) to envoke CSS entrance transition
-const activeComp = (state = -1, action) => {
+const activeComp = (state = 0, action) => {
     switch (action.type)
     {
-        case "COMP_SWITCH":
+        case "SET_COMP":
             return action.payload
+        case "NEXT_COMP":
+            return state + 1
+        case "PREV_COMP":
+            return state - 1
         default:
             return state
     }

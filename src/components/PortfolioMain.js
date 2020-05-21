@@ -1,10 +1,11 @@
-import React from 'react'
-
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { nextComp } from '../actions/nextComp'
+import {prevComp } from '../actions/prevComp'
+import { touchEventToggle } from '../actions/touchEventToggle'
 
 import SideNav from './SideNav'
 
@@ -15,6 +16,7 @@ import Projects from './Projects'
 import Skills from './Skills'
 
 import '../css/portfolio.css'
+import { setActiveComp } from '../actions/setActiveComp'
 
 
 function PortfolioMain() {
@@ -25,7 +27,6 @@ function PortfolioMain() {
       id: 0,
       name: "Main Page",
       text: "Welcome",
-      path: "/portfolio",
       isExact: true,
       Component: Welcome,
       transitionClass: "summary-transition",
@@ -35,7 +36,6 @@ function PortfolioMain() {
       id: 1,
       name: "Professional Experience",
       text: "Professional Exp.",
-      path: "/portfolio/workexp",
       isExact: false,
       Component: Professional,
       transitionClass: "proexp-transition",
@@ -45,7 +45,6 @@ function PortfolioMain() {
       id: 2,
       name: "Education",
       text: "Education",
-      path: "/portfolio/edu",
       isExact: false,
       Component: Education,
       transitionClass: "education-transition",
@@ -55,7 +54,6 @@ function PortfolioMain() {
       id: 3,
       name: "Projects",
       text: "Projects",
-      path: "/portfolio/projects",
       isExact: false,
       Component: Projects,
       transitionClass: "projects-transition",
@@ -65,7 +63,6 @@ function PortfolioMain() {
       id: 4,
       name: "Skills",
       text: "Technical Skills",
-      path: "/portfolio/techSkills",
       isExact: false,
       Component: Skills,
       transitionClass: "skills-transition",
@@ -74,11 +71,34 @@ function PortfolioMain() {
   ]
 
 
+  /**************** STATE VARIABLES *********************/
+
+  const dispatch = useDispatch()
+
+  // Set state of active component
+  const activeComp = useSelector(state => state.activeComp)
+
+  // State indicating if touch event listeners are set
+  const isTouchEvent = useSelector(state => state.isTouchEvent)
+
+  // Background colour (default white)
+  const bgColour = portfolioPages[activeComp].bgColour
+
+  useEffect(() => {
+    console.log("BOOM")
+  }, [activeComp])
+
+
   /**************** DETECTING SWIPE EVENTS *****************/
 
   // Touch event listeners attached
-  document.addEventListener("touchstart", handleTouchStart)
-  document.addEventListener("touchend", handleTouchEnd)
+  if (!isTouchEvent)
+  {
+    document.addEventListener("touchstart", handleTouchStart)
+    document.addEventListener("touchend", handleTouchEnd)
+    dispatch(touchEventToggle(true))
+  }
+
   var startX, startY, startTime, moveX, moveY, deltaTime
 
   // Store starting touch position and time
@@ -86,6 +106,10 @@ function PortfolioMain() {
     startX = event.touches[0].clientX
     startY = event.touches[0].clientY
     startTime = event.timeStamp
+
+    // Reset movement trackers
+    moveX = 0
+    moveY = 0
 
     // Add event listener for touch move
     document.addEventListener("touchmove", handleTouchMove)
@@ -107,12 +131,12 @@ function PortfolioMain() {
     // Check for swipe
     if (deltaTime < 500)
     {
-      if (Math.abs(window.screen.width / moveX) < 3)
+      if (Math.abs(window.screen.width / moveX) < 4)
       {
         horizSwipeHandle()
         return
       }
-      else if (Math.abs(window.screen.height / moveY) < 5)
+      else if (Math.abs(window.screen.height / moveY) < 6)
       { 
         vertSwipeHandle()
       }
@@ -123,11 +147,11 @@ function PortfolioMain() {
   function horizSwipeHandle() {
     if (moveX > 0)
     {
-      console.log("Swiped left")
-    }
-    else
-    {
       console.log("Swiped right")
+    }
+    else if (moveX < 0)
+    {
+      console.log("Swiped left")
     }
   }
 
@@ -135,52 +159,47 @@ function PortfolioMain() {
   function vertSwipeHandle() {
     if (moveY > 0) 
     {
-      console.log("Swiped up")
+      // Slide up to previous component
+      if (activeComp > 0)
+      {
+        let newComp = activeComp - 1
+        console.log('going to prev component number: ' + newComp)
+      }
     }
-    else
+    else if (moveY < 0)
     {
-      console.log("Swiped down")
+      // Slide down to next component
+      if (activeComp < portfolioPages.length - 1)
+      {
+        let newComp = activeComp + 1
+        console.log('going to next component number: ' + (newComp))
+      }
     }
   }
-  
-
-  /**************** STATE VARIABLES *********************/
-
-  // Set state of active component (default -1)
-  const activeComp = useSelector(state => state.activeComp)
-
-  // Background colour (default white)
-  const bgColour = (portfolioPages[activeComp]) ? (portfolioPages[activeComp].bgColour) : "FFFFFF"
 
 
   return (
-      <Router>
-        {/* Bg colour switched depending on active component */}
-        <div className="grid-container" style={{backgroundColor: bgColour}}>
+      <div className="grid-container" style={{backgroundColor: bgColour}}>
 
-          {/* Render side nav and top nav bar */}
-          <SideNav navLinks={portfolioPages} />
-
-          {/* Mapping out components rendered by react rransitions group */}
-          {portfolioPages.map(({ id, path, isExact, Component, transitionClass, bgColour }) => (
-            <Route key={id} exact={isExact} path={path}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={500}
-                  classNames={transitionClass}
-                  unmountOnExit
-                >
-                  <div className="resume-window">
-                    <Component id={id} />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
-
-        </div>
-      </Router>
+        {/* Render side nav and top nav bar */}
+        <SideNav navLinks={portfolioPages} />
+        
+        {/* Mapping components which change on state change */}
+        {portfolioPages.map(({ id, Component, transitionClass }) => {
+          return (
+            <div key={id} className="resume-window">
+              <CSSTransition 
+                in={activeComp === id} 
+                timeout={500} 
+                classNames={transitionClass}
+                unmountOnExit
+              >
+                <Component id={id} />
+              </CSSTransition>
+            </div>
+          )
+        })}
+      </div>
   )
 }
 

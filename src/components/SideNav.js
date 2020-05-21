@@ -3,8 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { sideNavToggle } from '../actions/sideNavToggle'
 import { sideNavSet } from '../actions/sideNavSet'
-
-import { NavLink } from 'react-router-dom'
+import { setActiveComp } from '../actions/setActiveComp'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -14,13 +13,15 @@ import '../css/sideNav.css'
 function SideNav(props) {    
     const dispatch = useDispatch()
 
+    /************** NAVIGATION MENU FUNCTINALITY ****************/
+
     // Ref will be used for side nav for tracking if user clicks outside the nav
     const navRef = useRef()
 
     // Read state to determine if sideNav open or closed
     let isSideNavOpen = useSelector(state => state.sideNavOpen)
 
-    function handleClick(e)
+    function handleScreenClick(e)
     {
         if (!navRef.current.contains(e.target))
         {
@@ -52,7 +53,7 @@ function SideNav(props) {
             })
 
             // Set event listener for click -> close nav if user clicks away from nav
-            document.addEventListener("mousedown", handleClick)
+            document.addEventListener("mousedown", handleScreenClick)
         }
         else
         {
@@ -75,12 +76,20 @@ function SideNav(props) {
 
         return (isSideNavOpen => {
             // Callback function removes event listener for user click
-            if (!isSideNavOpen) document.removeEventListener("mousedown", handleClick)
+            if (!isSideNavOpen) document.removeEventListener("mousedown", handleScreenClick)
         })
 
         // Removing here warning for useEffect dependency on handleClick which must be kept outside useEffect scope
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSideNavOpen])
+
+
+    /****************** NAVIGATION LINK CLICK HANDLING ********************/
+
+    function handleLinkClick(linkId) {
+        dispatch(setActiveComp(linkId))
+        dispatch(sideNavSet(false))
+    }
 
     
     return (
@@ -122,9 +131,7 @@ function SideNav(props) {
                     {props.navLinks.map(({ id, text, path }) => {
                         return (
                             <div key={id} className="nav-link-container">
-                                <NavLink to={path} className="nav-link" onClick={() => dispatch(sideNavSet(false))}>
-                                    {text}
-                                </NavLink>
+                                <h4 to={path} className="nav-link" onClick={() => handleLinkClick(id)}>{text}</h4>
                             </div>
                         )
                     })}
