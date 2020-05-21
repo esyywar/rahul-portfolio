@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
@@ -16,7 +16,6 @@ import Projects from './Projects'
 import Skills from './Skills'
 
 import '../css/portfolio.css'
-import { setActiveComp } from '../actions/setActiveComp'
 
 
 function PortfolioMain() {
@@ -83,10 +82,6 @@ function PortfolioMain() {
 
   // Background colour (default white)
   const bgColour = portfolioPages[activeComp].bgColour
-
-  useEffect(() => {
-    console.log("BOOM")
-  }, [activeComp])
 
 
   /**************** DETECTING SWIPE EVENTS *****************/
@@ -159,20 +154,20 @@ function PortfolioMain() {
   function vertSwipeHandle() {
     if (moveY > 0) 
     {
+      console.log(activeComp)
       // Slide up to previous component
       if (activeComp > 0)
       {
-        let newComp = activeComp - 1
-        console.log('going to prev component number: ' + newComp)
+        dispatch(prevComp())
       }
     }
     else if (moveY < 0)
     {
+      console.log(activeComp)
       // Slide down to next component
       if (activeComp < portfolioPages.length - 1)
       {
-        let newComp = activeComp + 1
-        console.log('going to next component number: ' + (newComp))
+        dispatch(nextComp())
       }
     }
   }

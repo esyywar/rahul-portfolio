@@ -107,7 +107,6 @@ function Welcome(props) {
 
     // Call this function to drive the typeWriter animation performed by function above - Give callback as arguement
     function typeAnimDriver(callback) {
-        console.log('called')
         var typeWriteDelay = 0;
 
         // 2. Check that the html elements are rendered and animation request is set
