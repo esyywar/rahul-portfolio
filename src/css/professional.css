@@ -20,7 +20,7 @@
 
 .professional-exp-page .prev-arrow, .professional-exp-page .next-arrow {
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 50%;
   color: white;
   font-weight: bold;
@@ -32,6 +32,9 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 0;
+  -webkit-animation: appearIn 500ms ease 500ms forwards;
+          animation: appearIn 500ms ease 500ms forwards;
 }
 
 .professional-exp-page .next-arrow {

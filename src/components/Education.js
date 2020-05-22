@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { useSelector } from 'react-redux'
+
 import EduCard from './subComponents/EduCard'
 
 import education from '../content/education.json'
@@ -8,6 +10,11 @@ import '../css/education.css'
 
 
 function Education(props) {
+
+    /************ STATE FROM REDUX STORE **********************/
+
+    const activeComp = useSelector(state => state.activeComp)
+
 
     /************ LOCAL STATE INITIALIZATION ******************/
     const [activeElement, setActiveElement] = useState(0)
@@ -41,8 +48,8 @@ function Education(props) {
             <EduCard eduItem={education[activeElement]}/>
 
             {/* Display next and previous arrows only if elements exist in each direction */}
-            {(activeElement > 0) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
-            {(activeElement + 1 < education.length) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
+            {(activeElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
+            {(activeElement + 1 < education.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
         </div>
     )
 }

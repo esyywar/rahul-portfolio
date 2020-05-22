@@ -166,3 +166,15 @@ html, body {
     }
 }
 
+
+/******************* BASIC ANIMATIONS ******************/ 
+
+@keyframes appearIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+

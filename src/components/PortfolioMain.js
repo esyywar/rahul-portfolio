@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 import { useDispatch, useSelector } from 'react-redux'
 import { nextComp } from '../actions/nextComp'
 import {prevComp } from '../actions/prevComp'
-import { touchEventToggle } from '../actions/touchEventToggle'
+import { touchEventSet } from '../actions/touchEventSet'
 
 import SideNav from './SideNav'
 
@@ -88,7 +88,7 @@ function PortfolioMain() {
     {
       dispatch(setActiveComp(portfolioPages.length - 1))
     }
-  }, [activeComp, dispatch])
+  }, [activeComp, portfolioPages.length, dispatch])
 
   // State indicating if touch event listeners are set
   const isTouchEvent = useSelector(state => state.isTouchEvent)
@@ -104,7 +104,7 @@ function PortfolioMain() {
   {
     document.addEventListener("touchstart", handleTouchStart)
     document.addEventListener("touchend", handleTouchEnd)
-    dispatch(touchEventToggle(true))
+    dispatch(touchEventSet(true))
   }
 
   var startX, startY, startTime, moveX, moveY, deltaTime
@@ -135,7 +135,7 @@ function PortfolioMain() {
     // Remove touch event listener
     document.removeEventListener("touchmove", handleTouchMove)
 
-    // Check for swipe
+    // Check for swipe - If detected, remove event listeners and call handler
     if (deltaTime < 500)
     {
       if (Math.abs(window.screen.width / moveX) < 4)
@@ -148,7 +148,10 @@ function PortfolioMain() {
         vertSwipeHandle()
       }
     }
-  }
+  }  
+
+
+  /****************** SWIPE EVENT HANDLERS ********************/
 
   // Check if swiped left or right and handle event
   function horizSwipeHandle() {
@@ -166,12 +169,10 @@ function PortfolioMain() {
   function vertSwipeHandle() {
     if (moveY > 0) 
     {
-      // Slide up to previous component
       dispatch(prevComp())
     }
     else if (moveY < 0)
     {
-      // Slide down to next component
       dispatch(nextComp())
     }
   }

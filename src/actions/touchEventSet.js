@@ -1,7 +1,7 @@
 // toggling of touch screen event listeners are set
-export const touchEventToggle = (status) => {
+export const touchEventSet = (status) => {
     return {
-        type: "TOUCH_TOGGLE",
+        type: "TOUCH_EVENT_SET",
         payload: status
     }
 }

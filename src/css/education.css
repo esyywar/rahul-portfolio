@@ -31,6 +31,9 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 0;
+  -webkit-animation: appearIn 500ms ease 500ms forwards;
+          animation: appearIn 500ms ease 500ms forwards;
 }
 
 .education-page .next-arrow {

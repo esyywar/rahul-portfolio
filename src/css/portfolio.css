@@ -201,4 +201,22 @@ html, body {
           transform: scale(0.7);
   opacity: 0;
 }
+
+/******************* BASIC ANIMATIONS ******************/
+@-webkit-keyframes appearIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appearIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=portfolio.css.map */
