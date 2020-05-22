@@ -78,7 +78,7 @@ function SideNav(props) {
             if (!isSideNavOpen) document.removeEventListener("mousedown", handleScreenClick)
         })
 
-        // Removing here warning for useEffect dependency on handleClick which must be kept outside useEffect scope
+        // Removing here warning for useEffect dependency on handleScreenClick which must be kept outside useEffect scope
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSideNavOpen])
 

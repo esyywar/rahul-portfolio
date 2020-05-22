@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
@@ -15,7 +15,6 @@ import Projects from './Projects'
 import Skills from './Skills'
 
 import '../css/portfolio.css'
-import { setActiveComp } from '../actions/setActiveComp'
 
 
 function PortfolioMain() {
@@ -80,36 +79,10 @@ function PortfolioMain() {
   // State indicating if touch event listeners are set
   const isTouchEvent = useSelector(state => state.isTouchEvent)
 
-
-  /*************** USE EFFECT ERROR CHECKING ********************/
-
-    // Error checking active comp
-    useEffect(() => {
-      // Rest horizontal swipe flags
-      dispatch(resetSwipeL())
-      dispatch(resetSwipeR())
-
-      // Error check activeComp
-      if (activeComp < 0) 
-      { 
-        dispatch(setActiveComp(0)) 
-      }
-      else if (activeComp >= portfolioPages.length)
-      {
-        dispatch(setActiveComp(portfolioPages.length - 1))
-      }
-    }, [activeComp, portfolioPages.length, dispatch])
+  const bgColour = portfolioPages[activeComp] ? portfolioPages[activeComp].bgColour : "FFFFFF"
 
 
   /**************** DETECTING SWIPE EVENTS *****************/
-
-  // Touch event listeners attached
-  if (!isTouchEvent)
-  {
-    document.addEventListener("touchstart", handleTouchStart)
-    document.addEventListener("touchend", handleTouchEnd)
-    dispatch(touchEventSet(true))
-  }
 
   var startX, startY, startTime, moveX, moveY, deltaTime
 
@@ -154,6 +127,14 @@ function PortfolioMain() {
     }
   }  
 
+  // Touch event listeners attached
+  if (!isTouchEvent)
+  {
+    document.addEventListener("touchstart", handleTouchStart)
+    document.addEventListener("touchend", handleTouchEnd)
+    dispatch(touchEventSet(true))
+  }
+
 
   /****************** SWIPE EVENT HANDLERS ********************/
 
@@ -171,19 +152,47 @@ function PortfolioMain() {
 
   // Check if swiped up or down and handle event
   function vertSwipeHandle() {
+    console.log(activeComp)
     if (moveY > 0) 
     {
-      dispatch(prevComp())
+      if (activeComp > 0)
+      {
+        dispatch(prevComp())
+      }
     }
     else if (moveY < 0)
     {
-      dispatch(nextComp())
+      if (activeComp < portfolioPages.length - 1)
+      {
+        dispatch(nextComp())
+      }
     }
   }
 
 
+  /********************* USE EFFECTS ********************/
+
+  // Error checking active comp
+  useEffect(() => {
+    // Rest horizontal swipe flags
+    dispatch(resetSwipeL())
+    dispatch(resetSwipeR())
+  }, [activeComp, dispatch])
+
+  // Update the event listeners when handler function environment changes (happens with activeComp state change)
+  useEffect(() => {
+    document.addEventListener("touchstart", handleTouchStart)
+    document.addEventListener("touchend", handleTouchEnd)
+
+    return () => {
+      document.removeEventListener("touchstart", handleTouchStart)
+      document.removeEventListener("touchend", handleTouchEnd)
+    }
+  }, [handleTouchStart, handleTouchEnd])
+
+
   return (
-    <div className="grid-container" style={{backgroundColor: portfolioPages[activeComp].bgColour}}>
+    <div className="grid-container" style={{backgroundColor: bgColour}}>
 
       {/* Render side nav and top nav bar */}
       <SideNav navLinks={portfolioPages} />
