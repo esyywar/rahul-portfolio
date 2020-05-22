@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 
 import { CSSTransition } from 'react-transition-group'
 
@@ -86,7 +86,8 @@ function PortfolioMain() {
 
   var startX, startY, startTime, moveX, moveY, deltaTime
 
-  // Store starting touch position and time
+  // Store starting touch position and time 
+  // eslint-disable-next-line
   function handleTouchStart(event) {
     startX = event.touches[0].clientX
     startY = event.touches[0].clientY
@@ -100,14 +101,8 @@ function PortfolioMain() {
     document.addEventListener("touchmove", handleTouchMove)
   }
 
-  // Track position of touch movement
-  function handleTouchMove(event) {
-    moveX = event.touches[0].clientX - startX
-    moveY = event.touches[0].clientY - startY
-    deltaTime = event.timeStamp - startTime
-  }
-
-  // Compare final position with start to determine if swipe occured
+  // Compare final position with start to determine if swipe occured 
+  // eslint-disable-next-line
   function handleTouchEnd() {
     // Remove touch event listener
     document.removeEventListener("touchmove", handleTouchMove)
@@ -126,6 +121,13 @@ function PortfolioMain() {
       }
     }
   }  
+
+  // Track position of touch movement
+  function handleTouchMove(event) {
+    moveX = event.touches[0].clientX - startX
+    moveY = event.touches[0].clientY - startY
+    deltaTime = event.timeStamp - startTime
+  }
 
   // Touch event listeners attached
   if (!isTouchEvent)
