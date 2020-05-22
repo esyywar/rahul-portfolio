@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import EduCard from './subComponents/EduCard'
 
@@ -13,7 +14,12 @@ function Education(props) {
 
     /************ STATE FROM REDUX STORE **********************/
 
+    const dispatch = useDispatch()
+
     const activeComp = useSelector(state => state.activeComp)
+
+    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
+    const isRightSwipe = useSelector(state => state.swipeRightEv)
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
@@ -23,20 +29,41 @@ function Education(props) {
     /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
 
     function nextArrowClick() {
-        // Make current element exit and set up for next animation
-        document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
-        setTimeout(() => {
-            setActiveElement(activeElement + 1)
-            document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
-        }, 300)
+        if (activeElement < education.length - 1)
+        {
+            // Make current element exit and set up for next animation
+            document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
+            setTimeout(() => {
+                setActiveElement(activeElement + 1)
+                document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
+            }, 300)
+        }
     }
 
     function prevArrowClick() {
-        document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
-        setTimeout(() => {
-            setActiveElement(activeElement - 1)
-            document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
-        }, 300)   
+        if (activeElement > 0)
+        {
+            document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
+            setTimeout(() => {
+                setActiveElement(activeElement - 1)
+                document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
+            }, 300)  
+        } 
+    }
+
+
+    /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
+
+    if (isLeftSwipe)
+    {
+        dispatch(resetSwipeL())
+        nextArrowClick()        
+    }
+
+    if (isRightSwipe)
+    {
+        dispatch(resetSwipeR())
+        prevArrowClick()        
     }
 
 

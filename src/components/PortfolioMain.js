@@ -3,9 +3,8 @@ import React, { useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { nextComp } from '../actions/nextComp'
-import {prevComp } from '../actions/prevComp'
-import { touchEventSet } from '../actions/touchEventSet'
+import { nextComp, prevComp } from '../actions/setActiveComp'
+import { touchEventSet, setSwipeL, setSwipeR, resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import SideNav from './SideNav'
 
@@ -78,23 +77,28 @@ function PortfolioMain() {
   // Set state of active component
   const activeComp = useSelector(state => state.activeComp)
 
-  // Error checking active comp
-  useEffect(() => {
-    if (activeComp < 0) 
-    { 
-      dispatch(setActiveComp(0)) 
-    }
-    else if (activeComp >= portfolioPages.length)
-    {
-      dispatch(setActiveComp(portfolioPages.length - 1))
-    }
-  }, [activeComp, portfolioPages.length, dispatch])
-
   // State indicating if touch event listeners are set
   const isTouchEvent = useSelector(state => state.isTouchEvent)
 
-  // Background colour (default white)
-  const bgColour = (portfolioPages[activeComp]) && portfolioPages[activeComp].bgColour
+
+  /*************** USE EFFECT ERROR CHECKING ********************/
+
+    // Error checking active comp
+    useEffect(() => {
+      // Rest horizontal swipe flags
+      dispatch(resetSwipeL())
+      dispatch(resetSwipeR())
+
+      // Error check activeComp
+      if (activeComp < 0) 
+      { 
+        dispatch(setActiveComp(0)) 
+      }
+      else if (activeComp >= portfolioPages.length)
+      {
+        dispatch(setActiveComp(portfolioPages.length - 1))
+      }
+    }, [activeComp, portfolioPages.length, dispatch])
 
 
   /**************** DETECTING SWIPE EVENTS *****************/
@@ -157,11 +161,11 @@ function PortfolioMain() {
   function horizSwipeHandle() {
     if (moveX > 0)
     {
-      console.log("Swiped right")
+      dispatch(setSwipeR())
     }
     else if (moveX < 0)
     {
-      console.log("Swiped left")
+      dispatch(setSwipeL())
     }
   }
 
@@ -179,7 +183,7 @@ function PortfolioMain() {
 
 
   return (
-    <div className="grid-container" style={{backgroundColor: bgColour}}>
+    <div className="grid-container" style={{backgroundColor: portfolioPages[activeComp].bgColour}}>
 
       {/* Render side nav and top nav bar */}
       <SideNav navLinks={portfolioPages} />

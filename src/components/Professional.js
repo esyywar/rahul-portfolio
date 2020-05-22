@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import ProExpCard from './subComponents/ProExpCard'
 
@@ -10,10 +11,14 @@ import '../css/professional.css'
 
 
 function Professional(props) {
-
     /************ STATE FROM REDUX STORE *****************/
 
+    const dispatch = useDispatch()
+
     const activeComp = useSelector(state => state.activeComp)
+
+    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
+    const isRightSwipe = useSelector(state => state.swipeRightEv)
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
@@ -23,22 +28,41 @@ function Professional(props) {
     /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
 
     function nextArrowClick() {
-        // Make current element exit and set up for next animation
-        document.getElementById("pro-content-card").style.animation = "exitLeft 300ms ease-in forwards"
-        setTimeout(() => {
-            setActiveElement(activeElement + 1)
-            document.getElementById("pro-content-card").style.animation = "slideFromRight 300ms ease-in forwards"
-        }, 300)
+        if (activeElement < professional.length - 1)
+        {
+            // Make current element exit and set up for next animation
+            document.getElementById("pro-content-card").style.animation = "exitLeft 300ms ease-in forwards"
+            setTimeout(() => {
+                setActiveElement(activeElement + 1)
+                document.getElementById("pro-content-card").style.animation = "slideFromRight 300ms ease-in forwards"
+            }, 300)
+        }
     }
 
     function prevArrowClick() {
-        document.getElementById("pro-content-card").style.animation = "exitRight 300ms ease-in forwards"
-        setTimeout(() => {
-            setActiveElement(activeElement - 1)
-            document.getElementById("pro-content-card").style.animation = "slideFromLeft 300ms ease-in forwards"
-        }, 300)   
+        if (activeElement > 0)
+        {
+            document.getElementById("pro-content-card").style.animation = "exitRight 300ms ease-in forwards"
+            setTimeout(() => {
+                setActiveElement(activeElement - 1)
+                document.getElementById("pro-content-card").style.animation = "slideFromLeft 300ms ease-in forwards"
+            }, 300)   
+        }
     }
 
+    /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
+
+    if (isLeftSwipe)
+    {
+        dispatch(resetSwipeL())
+        nextArrowClick()        
+    }
+
+    if (isRightSwipe)
+    {
+        dispatch(resetSwipeR())
+        prevArrowClick()        
+    }
 
 
     return (
@@ -50,7 +74,7 @@ function Professional(props) {
 
             {/* Display next and previous arrows only if elements exist in each direction */}
             {(activeElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
-            {(activeElement + 1 < professional.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
+            {(activeElement < professional.length - 1 && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { sideNavToggle } from '../actions/sideNavToggle'
-import { sideNavSet } from '../actions/sideNavSet'
+import { sideNavSet, sideNavToggle } from '../actions/setSideNav'
 import { setActiveComp } from '../actions/setActiveComp'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
