@@ -16,6 +16,7 @@ function Education(props) {
 
     const dispatch = useDispatch()
 
+    // Used in this component to show/remove side arrows on component change
     const activeComp = useSelector(state => state.activeComp)
 
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)

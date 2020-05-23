@@ -154,7 +154,6 @@ function PortfolioMain() {
 
   // Check if swiped up or down and handle event
   function vertSwipeHandle() {
-    console.log(activeComp)
     if (moveY > 0) 
     {
       if (activeComp > 0)
