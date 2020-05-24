@@ -40,12 +40,6 @@ html, body {
     // Background colour set by state and changes on routed component
     transition: background-color 500ms;
 
-    // Applied to page-titles rendered in each component
-    .page-title {
-        grid-row: 1 / 2;
-        z-index: 2;
-    }
-
     .resume-window {
         margin-top: 1em;
         grid-row: 2 / 12;
@@ -57,7 +51,7 @@ html, body {
         font-family: 'Roboto', sans-serif;
 
         .page-title {
-            margin-top: 1em;
+            margin-top: 0.5em;
         }
     }
 }

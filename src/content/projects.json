@@ -6,7 +6,7 @@
         "photo": "",
         "open-source": true,
         "link": "",
-        "tags": ["LabVIEW", "Embedded", "UI/UX Design", "Automation"],
+        "tags": ["LabVIEW", "UI/UX Design"],
         "description": "TODO"
     },
     {
@@ -15,7 +15,7 @@
         "date": "May 2020",
         "open-source": true,
         "link": "TODO",
-        "tags": [],
+        "tags": ["React-JS", "Web-Dev", "Javscript"],
         "description": ""
     },
     {
@@ -55,7 +55,7 @@
         "photo": "img/...TODO",
         "open-source": false,
         "link": "",
-        "tags": ["Web-Dev", "UI/UX Design", "React-JS", "Javscript"],
+        "tags": ["Web-Dev", "React-JS", "Javscript"],
         "description": ""
     },
     {
@@ -75,7 +75,7 @@
         "photo": "TODO",
         "open-source": false,
         "link": "",
-        "tags": ["LabVIEW", "Embedded", "UI/UX Design", "Automation"],
+        "tags": ["LabVIEW", "Embedded", "UI/UX Design"],
         "description": "TODO"
     }
 ]

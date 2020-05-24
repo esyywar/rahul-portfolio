@@ -9,8 +9,14 @@
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(8, 1fr);
 
+    // Additional styling for this class in portfolio.css
     .page-title {
         grid-column: 1 / 9;
+    }
+
+    .proj-counter {
+        grid-column: 1 / 9;
+        grid-row: 2 / 3;
     }
 
 
@@ -18,16 +24,23 @@
         width: 100%;
         grid-row: 7 / 9;
         grid-column: 1 / 9;
+        align-self: end;
 
         display: flex;
         flex-flow: row wrap;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+
+        .tag-prompt {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+
 
         .tag-item {
             display: block;
             padding: 0.4em;
-            margin: 0.2em;
+            margin: 0.1em;
             background-color: black;
             border-radius: 0.8em;
             

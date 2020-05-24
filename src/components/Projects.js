@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import ProjTag from './subComponents/ProjTag'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
@@ -20,9 +22,6 @@ function Projects(props) {
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
-    // List of tags selected to filter projects
-    const [tagList, setTagList] = useState([])
-
 
     /************* TAGS FROM PROJECTS *******************/
 
@@ -38,6 +37,21 @@ function Projects(props) {
             }
         })
     })    
+
+    // Initialize tag-list to all unique tags in projects
+    const [tagList, setTagList] = useState(projTags)
+
+
+    /*********** COUNT NUMBER PROJECTS WITH ACTIVE TAGS **************/
+
+    var projCnt = 0
+
+    projects.forEach((element) => {
+        if (element.tags.some((element) => tagList.includes(element)))
+        {
+            projCnt++
+        }
+    })
 
 
     /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
@@ -55,17 +69,46 @@ function Projects(props) {
     }
 
 
+    function removeLast() {
+        let newList = [...tagList]
+        newList.pop()
+        setTagList(newList)
+    }
+
+    // Toggle the tag's being included in the tagList
+    function tagToggle(tag) {
+        let newList = [...tagList]
+        if (tagList.includes(tag))
+        {
+            newList = tagList.filter((element) => element !== tag)
+        }
+        else 
+        {
+            newList.push(tag)
+        }
+        setTagList(newList)
+    }
+
+
     return (
         <div className="projects-page">
             <h1 className="page-title">Projects</h1>
 
+            <div className="proj-counter">
+                <h4>{projCnt}</h4>
+            </div>
+
             {/* Listing all tag items selectable by user */}
             <div className="tags-list">
+                <h4 className="tag-prompt">Click on tags to filter projects!</h4>
                 {projTags.map((element, index) => {
                     return (
-                        <div key={index} className="tag-item">
-                            <p>{element}</p>
-                        </div>
+                        <ProjTag
+                            key={index}
+                            active={tagList.includes(element)} 
+                            tag={element} 
+                            onClick={tagToggle}
+                        />
                     )
                 })}
             </div>

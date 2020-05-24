@@ -27,13 +27,6 @@ html, body {
   transition: background-color 500ms;
 }
 
-.grid-container .page-title {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  z-index: 2;
-}
-
 .grid-container .resume-window {
   margin-top: 1em;
   -ms-grid-row: 2;
@@ -50,7 +43,7 @@ html, body {
 }
 
 .grid-container .resume-window .page-title {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/

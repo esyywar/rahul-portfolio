@@ -197,6 +197,8 @@ function PortfolioMain() {
 
       {/* Render side nav and top nav bar */}
       <SideNav navLinks={portfolioPages} />
+
+      {/* Display page-title for chosen component */}
       
       {/* Mapping components which change on state change */}
       {portfolioPages.map(({ id, Component, transitionClass }) => {
