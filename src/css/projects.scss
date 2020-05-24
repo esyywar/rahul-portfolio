@@ -37,14 +37,33 @@
         }
 
 
+        // Tag-items for user to filter
         .tag-item {
             display: block;
             padding: 0.4em;
             margin: 0.1em;
-            background-color: black;
             border-radius: 0.8em;
-            
             font-size: 14px;
+            transition: all 300ms;
+        }
+
+        // unselected tags
+        .tag-inactive {
+            background-color: rgb(85, 84, 84);
+        }
+
+        // style for active selected tags
+        .tag-active {
+            background-color: orange;
+            color: black;
+
+            p {
+                &:before {
+                    content: "✕";
+                    color: red;
+                    margin-right: 0.2em;
+                }
+            }
         }
     }
 }

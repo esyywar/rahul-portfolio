@@ -9,15 +9,11 @@ function EduCard(props) {
     {
         if (eduItem.current)
         {
-            return (
-                <p style={{color: "#2cf54e"}}>{eduItem.startDate + " - Present"}</p>
-            )
+            return <p style={{color: "#2cf54e"}}>{eduItem.startDate + " - Present"}</p>
         }
         else
         {
-            return (
-                <p>{eduItem.startDate + " - " + eduItem.endDate}</p>
-            )
+            return <p>{eduItem.startDate + " - " + eduItem.endDate}</p>
         }
     }
 
@@ -26,15 +22,11 @@ function EduCard(props) {
     {
         if (eduItem.abbrevDegree)
         {
-            return (
-                <p>{eduItem.degree + " - " + eduItem.abbrevDegree}</p>
-            )
+            return <p>{eduItem.degree + " - " + eduItem.abbrevDegree}</p>
         }
         else
         {
-            return (
-                <p>{eduItem.degree}</p>
-            )
+            return <p>{eduItem.degree}</p>
         }
     }
 

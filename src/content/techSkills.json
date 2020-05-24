@@ -19,42 +19,48 @@
     "programmingLangs": [
         {
             "id": 0,
-            "language": "C/C++",
+            "language": "C",
             "field": "embedded",
-            "proficiency": "80%"
+            "proficiency": "85%"
         },
         {
             "id": 1,
+            "language": "C++",
+            "field": "embedded",
+            "proficiency": "75%"
+        },
+        {
+            "id": 2,
             "language": "NI LabVIEW",
             "field": "embedded",
             "proficiency": "80%"
         },
         {
-            "id": 2,
+            "id": 3,
             "language": "NI TestStand",
             "field": "embedded",
             "proficiency": "65%"
         },
         {
-            "id": 3,
+            "id": 4,
             "language": "Javascript",
             "field": "webDev",
             "proficiency": "70%"
         },
         {
-            "id": 4,
+            "id": 5,
             "language": "CSS3",
             "field": "webDev",
             "proficiency": "80%"
         },
         {
-            "id": 5,
+            "id": 6,
             "language": "HTML5",
             "field": "webDev",
             "proficiency": "95%"
         },
         {
-            "id": 6,
+            "id": 7,
             "language": "Python 3",
             "field": "general",
             "proficiency": "45%"

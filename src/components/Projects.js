@@ -39,19 +39,27 @@ function Projects(props) {
     })    
 
     // Initialize tag-list to all unique tags in projects
-    const [tagList, setTagList] = useState(projTags)
+    const [tagList, setTagList] = useState([])
 
 
     /*********** COUNT NUMBER PROJECTS WITH ACTIVE TAGS **************/
 
     var projCnt = 0
 
-    projects.forEach((element) => {
-        if (element.tags.some((element) => tagList.includes(element)))
-        {
-            projCnt++
-        }
-    })
+    // If any tags are used to filter -> show only relevant projects. Otherwise, show all
+    if (tagList.length === 0)
+    {
+        projCnt = projects.length
+    }
+    else
+    {
+        projects.forEach((element) => {
+            if (element.tags.some((element) => tagList.includes(element)))
+            {
+                projCnt++
+            }
+        })
+    }
 
 
     /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
@@ -68,12 +76,6 @@ function Projects(props) {
         // Right swipe action here    
     }
 
-
-    function removeLast() {
-        let newList = [...tagList]
-        newList.pop()
-        setTagList(newList)
-    }
 
     // Toggle the tag's being included in the tagList
     function tagToggle(tag) {
