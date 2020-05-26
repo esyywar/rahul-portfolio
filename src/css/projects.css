@@ -255,6 +255,7 @@
 }
 
 .projects-page .tags-list .tag-active p:before {
+  font-size: 0.8em;
   content: "✕";
   color: red;
   margin-right: 0.2em;

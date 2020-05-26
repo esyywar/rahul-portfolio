@@ -51,7 +51,7 @@
             // Initial conditions for entrance animation
             opacity: 0;
             transform: translateY(100%);
-            animation: slideFromBtm 500ms linear 300ms forwards;
+            animation: slideFromBtm 500ms linear 500ms forwards;
             
             .swipe-arrow
             {

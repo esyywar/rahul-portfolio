@@ -77,7 +77,7 @@ function PortfolioMain() {
   const activeComp = useSelector(state => state.activeComp)
 
   // State indicating if touch event listeners are set
-  const isTouchEvent = useSelector(state => state.isTouchEvent)
+  const isTouchEvListener = useSelector(state => state.isTouchEvListener)
 
   const bgColour = portfolioPages[activeComp] ? portfolioPages[activeComp].bgColour : "FFFFFF"
 
@@ -130,7 +130,7 @@ function PortfolioMain() {
   }
 
   // Touch event listeners attached
-  if (!isTouchEvent)
+  if (!isTouchEvListener)
   {
     document.addEventListener("touchstart", handleTouchStart)
     document.addEventListener("touchend", handleTouchEnd)
@@ -154,6 +154,10 @@ function PortfolioMain() {
 
   // Check if swiped up or down and handle event
   function vertSwipeHandle() {
+    /* Reset horizontal swipes before changing components */
+    dispatch(resetSwipeL())
+    dispatch(resetSwipeR())
+
     if (moveY > 0) 
     {
       if (activeComp > 0)
@@ -172,13 +176,6 @@ function PortfolioMain() {
 
 
   /********************* USE EFFECTS ********************/
-
-  // Error checking active comp
-  useEffect(() => {
-    // Rest horizontal swipe flags
-    dispatch(resetSwipeL())
-    dispatch(resetSwipeR())
-  }, [activeComp, dispatch])
 
   // Update the event listeners when handler function environment changes (happens with activeComp state change)
   useEffect(() => {

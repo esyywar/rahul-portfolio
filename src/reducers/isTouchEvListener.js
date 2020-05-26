@@ -1,4 +1,4 @@
-const isTouchEvent = (state = false, action) => {
+const isTouchEvListener = (state = false, action) => {
     switch (action.type)
     {
         case "TOUCH_EVENT_SET":
@@ -8,4 +8,4 @@ const isTouchEvent = (state = false, action) => {
     }
 }
 
-export default isTouchEvent
+export default isTouchEvListener

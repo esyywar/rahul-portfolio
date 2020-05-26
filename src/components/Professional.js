@@ -30,23 +30,32 @@ function Professional(props) {
     function nextArrowClick() {
         if (cardElement < professional.length - 1)
         {
-            // Make current element exit and set up for next animation
-            document.getElementById("pro-content-card").style.animation = "exitLeft 300ms ease-in forwards"
-            setTimeout(() => {
-                setCardElement(cardElement + 1)
-                document.getElementById("pro-content-card").style.animation = "slideFromRight 300ms ease-in forwards"
-            }, 300)
+            try {
+                // Make current element exit and set up for next animation
+                document.getElementById("pro-content-card").style.animation = "exitLeft 300ms ease-in forwards"
+                setTimeout(() => {
+                    setCardElement(cardElement + 1)
+                    document.getElementById("pro-content-card").style.animation = "slideFromRight 300ms ease-in forwards"
+                }, 300)
+            } catch (error) {
+                console.log(error.message)
+            }
+
         }
     }
 
     function prevArrowClick() {
         if (cardElement > 0)
         {
-            document.getElementById("pro-content-card").style.animation = "exitRight 300ms ease-in forwards"
-            setTimeout(() => {
-                setCardElement(cardElement - 1)
-                document.getElementById("pro-content-card").style.animation = "slideFromLeft 300ms ease-in forwards"
-            }, 300)   
+            try {
+                document.getElementById("pro-content-card").style.animation = "exitRight 300ms ease-in forwards"
+                setTimeout(() => {
+                    setCardElement(cardElement - 1)
+                    document.getElementById("pro-content-card").style.animation = "slideFromLeft 300ms ease-in forwards"
+                }, 300)   
+            } catch (error) {
+                console.log(error.message)
+            }
         }
     }
 

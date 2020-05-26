@@ -205,6 +205,7 @@ $active-tag-clr: orange;
 
             p {
                 &:before {
+                    font-size: 0.8em;
                     content: "✕";
                     color: red;
                     margin-right: 0.2em;

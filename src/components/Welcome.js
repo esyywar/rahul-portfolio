@@ -11,6 +11,9 @@ function Welcome(props) {
 
     const doTypeAnim = useSelector(state => state.isTypeAnim)
 
+    // Used in this component to show/remove swipe up arrow on component change
+    const activeComp = useSelector(state => state.activeComp)
+
     const dispatch = useDispatch()
 
 
@@ -209,7 +212,7 @@ function Welcome(props) {
                     {doTypeAnim && typeAnimDriver(() => dispatch(setTypeAnim(false)))}
 
                     {/* Swipe up arrow to display for mobile devices */}
-                    {showSwipeArrow(isMobileDevice())}
+                    {(activeComp === props.id) && showSwipeArrow(isMobileDevice())}
             </div>
         </div>
     )
