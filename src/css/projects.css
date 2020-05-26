@@ -62,7 +62,7 @@
   left: 0.5em;
 }
 
-.projects-page .proj-card {
+.projects-page #proj-card {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -87,9 +87,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: visible;
 }
 
-.projects-page .proj-card .title-and-date {
+.projects-page #proj-card .title-and-date {
+  width: 90%;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
@@ -102,19 +104,20 @@
   padding: 0.5em;
   color: #2F3C7E;
   background-color: #FBEAEB;
+  border: 2px solid black;
 }
 
-.projects-page .proj-card .title-and-date .title {
-  font-size: 1.2em;
+.projects-page #proj-card .title-and-date .title {
+  font-size: 1.1em;
 }
 
-.projects-page .proj-card .title-and-date .date {
+.projects-page #proj-card .title-and-date .date {
   font-family: 'Oswald', sans-serif;
   font-size: 1.2em;
   margin-top: 0.2em;
 }
 
-.projects-page .proj-card .tags-and-brief {
+.projects-page #proj-card .tags-and-brief {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -122,11 +125,12 @@
   -ms-grid-row-span: 2;
   grid-row: 6 / 8;
   z-index: 2;
-  width: 90%;
+  width: 110%;
   height: 100%;
   border-radius: 10px;
   color: #2F3C7E;
   background-color: #FBEAEB;
+  border: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,12 +143,16 @@
           align-items: center;
 }
 
-.projects-page .proj-card .tags-and-brief .brief-desc {
+.projects-page #proj-card .tags-and-brief .brief-container {
   width: 100%;
   height: 60%;
 }
 
-.projects-page .proj-card .tags-and-brief .proj-tags {
+.projects-page #proj-card .tags-and-brief .brief-container .brief-desc {
+  padding: 1em;
+}
+
+.projects-page #proj-card .tags-and-brief .proj-tags {
   justify-self: flex-end;
   height: 40%;
   display: -webkit-box;
@@ -162,7 +170,7 @@
           justify-content: flex-end;
 }
 
-.projects-page .proj-card .tags-and-brief .proj-tags .proj-item-tag {
+.projects-page #proj-card .tags-and-brief .proj-tags .proj-item-tag {
   background-color: black;
   color: white;
   font-size: 0.75em;
@@ -170,12 +178,12 @@
   padding: 0.4em;
 }
 
-.projects-page .proj-card .tags-and-brief .proj-tags .proj-git-link {
+.projects-page #proj-card .tags-and-brief .proj-tags .proj-git-link {
   cursor: pointer;
   background-color: #8888f1;
 }
 
-.projects-page .proj-card .image-container {
+.projects-page #proj-card .image-container {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -187,7 +195,7 @@
   z-index: 1;
 }
 
-.projects-page .proj-card .image-container img {
+.projects-page #proj-card .image-container img {
   width: auto;
   height: 100%;
 }

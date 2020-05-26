@@ -6,15 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function ProjCard(props) {
     const projItem = props.projItem
 
+    /* If project is open-source, indicate with a tag linked to repo */
     function openSrcLink(projItem) 
     {
         if (projItem.openSrc)
         {
             return (
                 <a href={projItem.link} target="_blank" rel="noopener noreferrer" > 
-                    <span className="proj-item-tag proj-git-link">
+                    <p className="proj-item-tag proj-git-link">
                         Open Source!<FontAwesomeIcon icon={["fab", "github"]} />
-                    </span>
+                    </p>
                 </a>
             )
         }
@@ -22,7 +23,7 @@ function ProjCard(props) {
 
 
     return (
-        <div className="proj-card">
+        <div id="proj-card">
             <div className="title-and-date">
                 <h4 className="title">{projItem.title}</h4>
                 <p className="date">{projItem.date}</p>
@@ -33,8 +34,8 @@ function ProjCard(props) {
             </div>
 
             <div className="tags-and-brief">
-                <div className="brief-desc">
-                    
+                <div className="brief-container">
+                    <p className="brief-desc">TODO TODO</p>
                 </div>
 
                 {/* List tags associated with active project item */}
