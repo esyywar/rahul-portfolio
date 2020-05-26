@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*************** GOOGLE FONT IMPORTS ***************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+/***************** SASS VARIABLES ******************/
+/************* PROJECT COMPONENT STYLE *************/
 .projects-page {
   width: 100%;
   height: 100%;
@@ -8,6 +13,10 @@
       grid-template-rows: repeat(8, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
+  /* Additional styling for this class in portfolio.css */
+  /* Next & previous buttons */
+  /* Active project item card style*/
+  /* list of tags to filter projects appearing bottom of page */
 }
 
 .projects-page .page-title {
@@ -23,6 +32,164 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
+}
+
+.projects-page .prev-arrow, .projects-page .next-arrow {
+  cursor: pointer;
+  position: fixed;
+  top: 45%;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  -webkit-animation: appearIn 500ms ease 500ms forwards;
+          animation: appearIn 500ms ease 500ms forwards;
+}
+
+.projects-page .next-arrow {
+  right: 0.5em;
+  border-radius: 3px 0 0 3px;
+}
+
+.projects-page .prev-arrow {
+  left: 0.5em;
+}
+
+.projects-page .proj-card {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 7;
+  grid-row: 2 / 9;
+  width: 85%;
+  height: 80%;
+  -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects-page .proj-card .title-and-date {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  z-index: 2;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.5em;
+  color: #2F3C7E;
+  background-color: #FBEAEB;
+}
+
+.projects-page .proj-card .title-and-date .title {
+  font-size: 1.2em;
+}
+
+.projects-page .proj-card .title-and-date .date {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  margin-top: 0.2em;
+}
+
+.projects-page .proj-card .tags-and-brief {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  grid-row: 6 / 8;
+  z-index: 2;
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+  color: #2F3C7E;
+  background-color: #FBEAEB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects-page .proj-card .tags-and-brief .brief-desc {
+  width: 100%;
+  height: 60%;
+}
+
+.projects-page .proj-card .tags-and-brief .proj-tags {
+  justify-self: flex-end;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.projects-page .proj-card .tags-and-brief .proj-tags .proj-item-tag {
+  background-color: black;
+  color: white;
+  font-size: 0.75em;
+  margin: 0.2em;
+  padding: 0.4em;
+}
+
+.projects-page .proj-card .tags-and-brief .proj-tags .proj-git-link {
+  cursor: pointer;
+  background-color: #8888f1;
+}
+
+.projects-page .proj-card .image-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 5;
+  grid-row: 2 / 7;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.projects-page .proj-card .image-container img {
+  width: auto;
+  height: 100%;
 }
 
 .projects-page .tags-list {
@@ -48,14 +215,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* tag-items for user to filter */
+  /* unselected tags */
+  /* style for active selected tags */
 }
 
 .projects-page .tags-list .tag-prompt {
   width: 100%;
+  color: black;
   margin-bottom: 1em;
 }
 
 .projects-page .tags-list .tag-item {
+  font-weight: 600;
+  color: black;
   display: block;
   padding: 0.4em;
   margin: 0.1em;
@@ -66,12 +239,11 @@
 }
 
 .projects-page .tags-list .tag-inactive {
-  background-color: #555454;
+  background-color: #AF7749;
 }
 
 .projects-page .tags-list .tag-active {
   background-color: orange;
-  color: black;
 }
 
 .projects-page .tags-list .tag-active p:before {

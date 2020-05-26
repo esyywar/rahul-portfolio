@@ -24,29 +24,29 @@ function Education(props) {
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
-    const [activeElement, setActiveElement] = useState(0)
+    const [cardElement, setCardElement] = useState(0)
 
 
     /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
 
     function nextArrowClick() {
-        if (activeElement < education.length - 1)
+        if (cardElement < education.length - 1)
         {
             // Make current element exit and set up for next animation
             document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
             setTimeout(() => {
-                setActiveElement(activeElement + 1)
+                setCardElement(cardElement + 1)
                 document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
             }, 300)
         }
     }
 
     function prevArrowClick() {
-        if (activeElement > 0)
+        if (cardElement > 0)
         {
             document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
             setTimeout(() => {
-                setActiveElement(activeElement - 1)
+                setCardElement(cardElement - 1)
                 document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
             }, 300)  
         } 
@@ -73,11 +73,11 @@ function Education(props) {
             <h1 className="page-title">Education</h1>
 
             {/* Render the currently active education card */}
-            <EduCard eduItem={education[activeElement]}/>
+            <EduCard eduItem={education[cardElement]}/>
 
             {/* Display next and previous arrows only if elements exist in each direction */}
-            {(activeElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
-            {(activeElement + 1 < education.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
+            {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
+            {(cardElement + 1 < education.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
         </div>
     )
 }

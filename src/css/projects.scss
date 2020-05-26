@@ -1,15 +1,27 @@
+/*************** GOOGLE FONT IMPORTS ***************/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 
+/***************** SASS VARIABLES ******************/
+
+$projCard-bg-clr: #FBEAEB;
+$projCard-text-clr: #2F3C7E;
+$inactive-tag-clr: #AF7749;
+$active-tag-clr: orange;
+
+
+/************* PROJECT COMPONENT STYLE *************/
 
 .projects-page {
     width: 100%;
     height: 100%;
-    
     display: grid;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(8, 1fr);
 
-    // Additional styling for this class in portfolio.css
+    /* Additional styling for this class in portfolio.css */
     .page-title {
         grid-column: 1 / 9;
     }
@@ -19,7 +31,131 @@
         grid-row: 2 / 3;
     }
 
+    /* Next & previous buttons */
+    .prev-arrow, .next-arrow {
+        cursor: pointer;
+        position: fixed;
+        top: 45%;
+        color: white;
+        font-weight: bold;
+        font-size: 40px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
 
+        // Initial conditions for animation
+        opacity: 0;
+        animation: appearIn 500ms ease 500ms forwards;
+    }
+    
+    .next-arrow {
+        right: 0.5em;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    .prev-arrow {
+        left: 0.5em;
+    }
+
+    /* Active project item card style*/
+    .proj-card {
+        grid-column: 1 / 9;
+        grid-row: 2 / 9;
+        width: 85%;
+        height: 80%;
+        align-self: start;
+        justify-self: center;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        .title-and-date {
+            grid-row: 1 / 3;
+            grid-column: 1 / 9;
+            z-index: 2;
+            text-align: center;
+            border-radius: 5px;
+            padding: 0.5em;
+            color: $projCard-text-clr;
+            background-color: $projCard-bg-clr;
+
+            .title {
+                font-size: 1.2em;
+            }
+
+            .date {
+                font-family: 'Oswald', sans-serif;
+                font-size: 1.2em;
+                margin-top: 0.2em;
+            }
+        }
+
+        .tags-and-brief {
+            grid-column: 1 / 9;
+            grid-row: 6 / 8;
+            z-index: 2;
+            width: 90%;
+            height: 100%;
+            border-radius: 10px;
+            color: $projCard-text-clr;
+            background-color: $projCard-bg-clr;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .brief-desc {
+                width: 100%;
+                height: 60%;
+            }
+
+            .proj-tags {
+                justify-self: flex-end;
+                height: 40%;
+
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: flex-end;
+
+
+                .proj-item-tag {
+                    background-color: black;
+                    color: white;
+                    font-size: 0.75em;
+                    margin: 0.2em;
+                    padding: 0.4em;
+                }
+
+                .proj-git-link {
+                    cursor: pointer;
+                    background-color: rgb(136, 136, 241);
+                }
+            }
+        }
+
+        .image-container {
+            grid-column: 1 / 9;
+            grid-row: 2 / 7;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+
+
+    /* list of tags to filter projects appearing bottom of page */
     .tags-list {
         width: 100%;
         grid-row: 7 / 9;
@@ -33,12 +169,14 @@
 
         .tag-prompt {
             width: 100%;
+            color:black;
             margin-bottom: 1em;
         }
 
-
-        // Tag-items for user to filter
+        /* tag-items for user to filter */
         .tag-item {
+            font-weight: 600;
+            color: black;
             display: block;
             padding: 0.4em;
             margin: 0.1em;
@@ -47,15 +185,14 @@
             transition: all 300ms;
         }
 
-        // unselected tags
+        /* unselected tags */
         .tag-inactive {
-            background-color: rgb(85, 84, 84);
+            background-color: $inactive-tag-clr;
         }
 
-        // style for active selected tags
+        /* style for active selected tags */
         .tag-active {
-            background-color: orange;
-            color: black;
+            background-color: $active-tag-clr;
 
             p {
                 &:before {

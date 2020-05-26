@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import ProjTag from './subComponents/ProjTag'
+import ProjCard from './subComponents/ProjCard'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
@@ -23,6 +24,15 @@ function Projects(props) {
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
 
+    /**************** LOCAL STATE *****************/
+
+    // Initialize tag-list to all unique tags in projects
+    const [tagList, setTagList] = useState([])
+
+    // Active project card element
+    const [cardElement, setCardElement] = useState(0)
+
+
     /************* TAGS FROM PROJECTS *******************/
 
     // Get all unique tags from projects
@@ -36,10 +46,24 @@ function Projects(props) {
                 projTags.push(element)
             }
         })
-    })    
+    })
 
-    // Initialize tag-list to all unique tags in projects
-    const [tagList, setTagList] = useState([])
+
+    /**************** TOGGLING THE ACTIVE TAGS ******************/
+
+    // Toggle the tag's being included in the tagList
+    function tagToggle(tag) {
+        let newList = [...tagList]
+        if (tagList.includes(tag))
+        {
+            newList = tagList.filter((element) => element !== tag)
+        }
+        else 
+        {
+            newList.push(tag)
+        }
+        setTagList(newList)
+    }
 
 
     /*********** COUNT NUMBER PROJECTS WITH ACTIVE TAGS **************/
@@ -62,7 +86,37 @@ function Projects(props) {
     }
 
 
-    /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
+    /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
+
+    function nextArrowClick() {
+        /* TODO
+
+        if (cardElement < projects.length - 1)
+        {
+            // Make current element exit and set up for next animation
+            document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
+            setTimeout(() => {
+                setCardElement(cardElement + 1)
+                document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
+            }, 300)
+        }*/
+    }
+
+    function prevArrowClick() {
+        /* TODO
+
+        if (cardElement > 0)
+        {
+            document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
+            setTimeout(() => {
+                setCardElement(cardElement - 1)
+                document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
+            }, 300)  
+        } */
+    }
+
+
+    /*************** FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
 
     if (isLeftSwipe)
     {
@@ -77,32 +131,20 @@ function Projects(props) {
     }
 
 
-    // Toggle the tag's being included in the tagList
-    function tagToggle(tag) {
-        let newList = [...tagList]
-        if (tagList.includes(tag))
-        {
-            newList = tagList.filter((element) => element !== tag)
-        }
-        else 
-        {
-            newList.push(tag)
-        }
-        setTagList(newList)
-    }
-
-
     return (
         <div className="projects-page">
             <h1 className="page-title">Projects</h1>
 
-            <div className="proj-counter">
-                <h4>{projCnt}</h4>
-            </div>
+            {/* Render the active project item card */}
+            <ProjCard projItem={projects[0]} />
+
+            {/* Display next and previous arrows only if elements exist in each direction */}
+            {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
+            {(cardElement + 1 < projects.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
 
             {/* Listing all tag items selectable by user */}
             <div className="tags-list">
-                <h4 className="tag-prompt">Click on tags to filter projects!</h4>
+                <p className="tag-prompt">Click on tags to filter projects!</p>
                 {projTags.map((element, index) => {
                     return (
                         <ProjTag
@@ -114,8 +156,6 @@ function Projects(props) {
                     )
                 })}
             </div>
-
-
         </div>
     )
 }

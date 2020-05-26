@@ -1,11 +1,11 @@
 [
     {
         "id": "0",
-        "title": "Digital Microfluidics Control",
+        "title": "Digital Microfluidics Controller",
         "date": "June 2020",
-        "photo": "",
-        "open-source": true,
-        "link": "",
+        "photo": "rahulscorner_screenshot.jpg",
+        "openSrc": true,
+        "link": "boom LINK",
         "tags": ["LabVIEW", "UI/UX Design"],
         "description": "TODO"
     },
@@ -13,7 +13,7 @@
         "id": "1",
         "title": "This Portfolio Website!",
         "date": "May 2020",
-        "open-source": true,
+        "openSrc": true,
         "link": "TODO",
         "tags": ["React-JS", "Web-Dev", "Javscript"],
         "description": ""
@@ -23,7 +23,7 @@
         "title": "Sudoku Solver",
         "date": "Apr 2020",
         "photo": "img/...TODO",
-        "open-source": true,
+        "openSrc": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
         "tags": ["C/C++", "UI/UX Design"],
         "description": ""
@@ -33,7 +33,7 @@
         "title": "ARM Cortex M4 Drivers",
         "date": "Mar 2020",
         "photo": "img/...TODO",
-        "open-source": true,
+        "openSrc": true,
         "link": "TODO",
         "tags": ["C/C++", "Embedded", "Bare-Metal"],
         "description": ""
@@ -43,7 +43,7 @@
         "title": "LED Light Strip Controller",
         "date": "Jan 2020",
         "photo": "img/projects/TODO",
-        "open-source": true,
+        "openSrc": true,
         "link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
         "tags": ["C/C++", "Embedded"],
         "description": ""
@@ -53,7 +53,7 @@
         "title": "Literature Blog - rahulscorner.me",
         "date": "Dec 2019",
         "photo": "img/...TODO",
-        "open-source": false,
+        "openSrc": false,
         "link": "",
         "tags": ["Web-Dev", "React-JS", "Javscript"],
         "description": ""
@@ -63,7 +63,7 @@
         "title": "Rubikloud Retail Return Customer Predictions",
         "date": "12/1/2019",
         "photo": "img/projects/TODO",
-        "open-source": false,
+        "openSrc": false,
         "link": "",
         "tags": ["Python", "Machine Learning"],
         "description": ""
@@ -73,7 +73,7 @@
         "title": "OTTOGROW Hydropnics Grower",
         "date": "Apr 2019",
         "photo": "TODO",
-        "open-source": false,
+        "openSrc": false,
         "link": "",
         "tags": ["LabVIEW", "Embedded", "UI/UX Design"],
         "description": "TODO"

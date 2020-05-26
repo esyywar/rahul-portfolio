@@ -75,7 +75,7 @@
         {
             "id": 1,
             "title": "Embedded",
-            "items": ["Keil uVision", "STM32CubeIDE", "FreeRTOS", "CMSIS & HAL", "GNU/GDB"]
+            "items": ["Keil uVision", "FreeRTOS", "QP RTEF", "ARM CMSIS & HAL", "GNU/GDB"]
         },
         {
             "id": 2,
