@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
@@ -16,19 +16,19 @@ function Skills(props) {
 
     /************ LOCAL STATE INITIALIZATION ******************/
 
-    // Enum for active window state
-    const windows = {
+    /* Enum for active window state */
+    const skillComps = {
         MENU: "MENU",
         HWTOOLS: "HWTOOLS",
         PLANGS: "PLANGS",
         SWTOOLS: "SWTOOLS"
     }
-    Object.freeze(windows)
+    Object.freeze(skillComps)
 
-    // State of active window switching between skill components
-    const [activeWnd, setActiveWnd] = useState(windows.MENU)
+    /* State of active window switching between skill components */
+    const [activeWnd, setActiveWnd] = useState(skillComps.MENU)
 
-    // State of page title to be displayed
+    /* State of page title to be displayed */
     const [pageTitle, setPageTitle] = useState("Technical Skills")
 
 
@@ -39,7 +39,7 @@ function Skills(props) {
             Component: HWTools,
             btnColour: "primary",
             faIcon: "plug",
-            wndName: windows.HWTOOLS,
+            wndName: skillComps.HWTOOLS,
             wndTitle: "Hardware Tools"
         },
         {
@@ -47,7 +47,7 @@ function Skills(props) {
             Component: SWTools,
             btnColour: "amber",
             faIcon: "tools",
-            wndName: windows.SWTOOLS,
+            wndName: skillComps.SWTOOLS,
             wndTitle: "Software Tools"
         },
         {
@@ -55,15 +55,24 @@ function Skills(props) {
             Component: CodeLangs,
             btnColour: "deep-orange",
             faIcon: "keyboard",
-            wndName: windows.PLANGS,
+            wndName: skillComps.PLANGS,
             wndTitle: "Progamming"
         }
     ]
 
 
+    /********************** ENTRANCE ANIMATION ***********************/
+
+    useEffect(() => {
+        Array.from(document.getElementsByClassName("menu-btn")).forEach((element, index) => {
+            element.style.animation = "slideFromBtm 300ms ease-in " + (300 + index * 100) + "ms forwards"
+        })
+    }, [])
+
+
     /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
 
-    // Render back button or user prompt depending on active window state
+    /* Render back button or user prompt depending on active window state */
     function skillsFooter(activeWnd) {
         if (activeWnd === "MENU")
         {
@@ -79,7 +88,7 @@ function Skills(props) {
         }
     }
 
-    // Handle user clicking on menu button
+    /* Handle user clicking on menu button */
     function handleBtnClick(id) {
         var clickedSkill = skillComponents.find(element => element.id === id)
         setActiveWnd(clickedSkill.wndName)
@@ -87,7 +96,7 @@ function Skills(props) {
     }
 
     function backToMenu() {
-        setActiveWnd(windows.MENU)
+        setActiveWnd(skillComps.MENU)
         setPageTitle("Technical Skills")
     }
 

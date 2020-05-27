@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import ProjTag from './subComponents/ProjTag'
 import ProjCard from './subComponents/ProjCard'
@@ -49,14 +49,26 @@ function Projects(props) {
     })
 
 
+    /************** ON LOAD ANIMATION FOR TAGS ***************/
+
+    /* Classname is used in ProjCard.js */
+    useEffect(() => {
+        Array.from(document.getElementsByClassName("tag-item")).forEach((element, index) => {
+            element.style.animation = "slideFromRight 300ms ease-in " + (500 + index * 75) + "ms forwards"
+        })
+    }, [])
+
+
     /**************** TOGGLING THE ACTIVE TAGS ******************/
 
     /* Toggle the tag's being included in the tagList */
     function tagToggle(tag) {
         let newList = [...tagList]
+
         if (tagList.includes(tag))
         {
-            newList = tagList.filter((element) => element !== tag)
+            /* Removing the tag from the list */
+            newList = tagList.filter(element => element !== tag)
         }
         else 
         {
@@ -66,7 +78,7 @@ function Projects(props) {
     }
 
 
-    /*********** COUNT NUMBER PROJECTS WITH ACTIVE TAGS **************/
+    /*********** FILTER PROJECTS TO SHOW ONLY THOSE WITH SELECTED TAGS **************/
 
     var filtProjList
 
@@ -77,10 +89,15 @@ function Projects(props) {
     }
     else
     {
-        filtProjList = projects.filter((element) => {
-            return element.tags.some(tagItem => tagList.includes(tagItem))
-        })
+        filtProjList = projects.filter(element => 
+            element.tags.some(tagItem => tagList.includes(tagItem))
+        )
     }
+
+    useEffect(() => {
+        console.log('effect run')
+        setCardElement(0)
+    }, [tagList])
 
 
     /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
@@ -123,7 +140,6 @@ function Projects(props) {
     {
         dispatch(resetSwipeL())
         nextArrowClick()
-
     }
 
     if (isRightSwipe)
@@ -146,7 +162,6 @@ function Projects(props) {
 
             {/* Listing all tag items selectable by user */}
             <div className="tags-list">
-                <p className="tag-prompt">Click on tags to filter projects!</p>
                 {projTags.map((element, index) => {
                     return (
                         <ProjTag

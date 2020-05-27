@@ -14,7 +14,7 @@ function ProjCard(props) {
             return (
                 <a href={projItem.link} target="_blank" rel="noopener noreferrer" > 
                     <p className="proj-item-tag proj-git-link">
-                        Open Source!<FontAwesomeIcon icon={["fab", "github"]} />
+                        Open Source<FontAwesomeIcon style={{marginLeft: "5px"}} icon={["fab", "github"]} />
                     </p>
                 </a>
             )
@@ -33,9 +33,9 @@ function ProjCard(props) {
                 <img alt="final-product" src={require(`../../img/projects/${projItem.photo}`)} />
             </div>
 
-            <div className="tags-and-brief">
-                <div className="brief-container">
-                    <p className="brief-desc">TODO TODO</p>
+            <div className="tags-and-prompt">
+                <div className="prompt-container">
+                    <p className="detail-prompt">Tap for more detail!</p>
                 </div>
 
                 {/* List tags associated with active project item */}

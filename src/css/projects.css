@@ -40,8 +40,8 @@
       -ms-user-select: none;
           user-select: none;
   opacity: 0;
-  -webkit-animation: appearIn 500ms ease 500ms forwards;
-          animation: appearIn 500ms ease 500ms forwards;
+  -webkit-animation: appearIn 500ms ease 300ms forwards;
+          animation: appearIn 500ms ease 300ms forwards;
 }
 
 .projects-page .next-arrow {
@@ -61,7 +61,7 @@
   -ms-grid-row-span: 7;
   grid-row: 2 / 9;
   width: 85%;
-  height: 85%;
+  height: 88%;
   -ms-grid-row-align: start;
       align-self: start;
   -ms-grid-column-align: center;
@@ -96,6 +96,11 @@
   color: #2F3C7E;
   background-color: #FBEAEB;
   border: 2px solid black;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-animation: slideFromBtm 700ms ease-out 300ms forwards;
+          animation: slideFromBtm 700ms ease-out 300ms forwards;
 }
 
 .projects-page #proj-card .title-and-date .title {
@@ -105,10 +110,12 @@
 .projects-page #proj-card .title-and-date .date {
   font-family: 'Oswald', sans-serif;
   font-size: 1.2em;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
+  text-transform: uppercase;
+  color: #8b0c12;
 }
 
-.projects-page #proj-card .tags-and-brief {
+.projects-page #proj-card .tags-and-prompt {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -117,7 +124,7 @@
   grid-row: 6 / 8;
   z-index: 2;
   width: 110%;
-  height: 100%;
+  height: 80%;
   border-radius: 10px;
   color: #2F3C7E;
   background-color: #FBEAEB;
@@ -132,18 +139,35 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-animation: slideFromTop 700ms ease-out 300ms forwards;
+          animation: slideFromTop 700ms ease-out 300ms forwards;
 }
 
-.projects-page #proj-card .tags-and-brief .brief-container {
+.projects-page #proj-card .tags-and-prompt .prompt-container {
   width: 100%;
-  height: 60%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.projects-page #proj-card .tags-and-brief .brief-container .brief-desc {
-  padding: 1em;
+.projects-page #proj-card .tags-and-prompt .prompt-container .detail-prompt {
+  font-size: 1.2em;
 }
 
-.projects-page #proj-card .tags-and-brief .proj-card-tags {
+.projects-page #proj-card .tags-and-prompt .proj-card-tags {
   justify-self: flex-end;
   height: 40%;
   display: -webkit-box;
@@ -161,15 +185,15 @@
           justify-content: flex-end;
 }
 
-.projects-page #proj-card .tags-and-brief .proj-card-tags .proj-item-tag {
+.projects-page #proj-card .tags-and-prompt .proj-card-tags .proj-item-tag {
   background-color: black;
   color: white;
-  font-size: 0.75em;
+  font-size: 0.8em;
   margin: 0.2em;
   padding: 0.4em;
 }
 
-.projects-page #proj-card .tags-and-brief .proj-card-tags .proj-git-link {
+.projects-page #proj-card .tags-and-prompt .proj-card-tags .proj-git-link {
   cursor: pointer;
   background-color: #8888f1;
 }
@@ -181,9 +205,23 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 5;
   grid-row: 2 / 7;
-  width: 100%;
-  height: 100%;
   z-index: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Initial conditions for animation */
+  height: 0;
+  opacity: 0;
+  -webkit-animation: growHeight 500ms ease-out 700ms forwards;
+          animation: growHeight 500ms ease-out 700ms forwards;
 }
 
 .projects-page #proj-card .image-container img {
@@ -219,29 +257,26 @@
   /* style for active selected tags */
 }
 
-.projects-page .tags-list .tag-prompt {
-  width: 100%;
-  color: black;
-  margin-bottom: 0.4em;
-}
-
 .projects-page .tags-list .tag-item {
-  font-weight: 600;
-  color: black;
   display: block;
-  padding: 0.3em;
+  padding: 0.4em;
   margin: 0.1em;
   border-radius: 0.8em;
   font-size: 13px;
   -webkit-transition: all 300ms;
   transition: all 300ms;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .projects-page .tags-list .tag-inactive {
-  background-color: #AF7749;
+  color: white;
+  background-color: #46187a;
 }
 
 .projects-page .tags-list .tag-active {
+  color: black;
   background-color: orange;
 }
 
@@ -250,5 +285,157 @@
   content: "✕";
   color: red;
   margin-right: 0.2em;
+}
+
+/********************** ANIMATIONS *********************/
+@-webkit-keyframes slideFromBtm {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideFromBtm {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideFromTop {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes growHeight {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@keyframes growHeight {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes flipInHoriz {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInHoriz {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+  }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=projects.css.map */

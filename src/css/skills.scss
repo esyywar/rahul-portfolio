@@ -57,6 +57,10 @@ $transition-exit-time: 200ms;
                     font-family: 'VT323', monospace;
                     font-weight: 300;
                     font-size: 1.3em;
+
+                    // Initial conditions for animation
+                    opacity: 0;
+                    transform: translateY(100%);
                 }
             }
         }
@@ -65,7 +69,13 @@ $transition-exit-time: 200ms;
     .skills-footer {
         font-family: 'VT323', monospace;
         grid-row: 8 / span 1; 
+        align-self: start;
         width: 80%;
+
+        // Initial conditions for animation
+        opacity: 0;
+        transform: translateY(100%);
+        animation: slideFromBtm 300ms ease-in 600ms forwards;
 
         p {
             font-size: 1.7em;
@@ -249,6 +259,17 @@ $transition-exit-time: 200ms;
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes slideFromBtm {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

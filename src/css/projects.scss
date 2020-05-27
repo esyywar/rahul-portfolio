@@ -8,7 +8,7 @@
 
 $projCard-bg-clr: #FBEAEB;
 $projCard-text-clr: #2F3C7E;
-$inactive-tag-clr: #AF7749;
+$inactive-tag-clr: rgb(70, 24, 122);
 $active-tag-clr: orange;
 
 
@@ -40,7 +40,7 @@ $active-tag-clr: orange;
 
         // Initial conditions for animation
         opacity: 0;
-        animation: appearIn 500ms ease 500ms forwards;
+        animation: appearIn 500ms ease 300ms forwards;
     }
     
     .next-arrow {
@@ -57,7 +57,7 @@ $active-tag-clr: orange;
         grid-column: 1 / 9;
         grid-row: 2 / 9;
         width: 85%;
-        height: 85%;
+        height: 88%;
         align-self: start;
         justify-self: center;
 
@@ -84,6 +84,11 @@ $active-tag-clr: orange;
             background-color: $projCard-bg-clr;
             border: 2px solid black;
 
+            // Initial conditions for animation
+            opacity: 0;
+            transform: translateY(100%);
+            animation: slideFromBtm 700ms ease-out 300ms forwards;
+
             .title {
                 font-size: 1.1em;
             }
@@ -91,16 +96,18 @@ $active-tag-clr: orange;
             .date {
                 font-family: 'Oswald', sans-serif;
                 font-size: 1.2em;
-                margin-top: 0.2em;
+                margin-top: 0.3em;
+                text-transform: uppercase;
+                color: rgb(139, 12, 18);
             }
         }
 
-        .tags-and-brief {
+        .tags-and-prompt {
             grid-column: 1 / 9;
             grid-row: 6 / 8;
             z-index: 2;
             width: 110%;
-            height: 100%;
+            height: 80%;
             border-radius: 10px;
             color: $projCard-text-clr;
             background-color: $projCard-bg-clr;
@@ -109,13 +116,22 @@ $active-tag-clr: orange;
             display: flex;
             flex-direction: column;
             align-items: center;
-            
-            .brief-container {
-                width: 100%;
-                height: 60%;
 
-                .brief-desc {
-                    padding: 1em;
+            // Initial conditions for animation
+            opacity: 0;
+            transform: translateY(-100%);
+            animation: slideFromTop 700ms ease-out 300ms forwards;
+            
+            .prompt-container {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+
+                .detail-prompt {
+                    font-size: 1.2em;
                 }
             }
 
@@ -132,7 +148,7 @@ $active-tag-clr: orange;
                 .proj-item-tag {
                     background-color: black;
                     color: white;
-                    font-size: 0.75em;
+                    font-size: 0.8em;
                     margin: 0.2em;
                     padding: 0.4em;
                 }
@@ -147,9 +163,17 @@ $active-tag-clr: orange;
         .image-container {
             grid-column: 1 / 9;
             grid-row: 2 / 7;
-            width: 100%;
-            height: 100%;
             z-index: 1;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            /* Initial conditions for animation */
+            height: 0;
+            opacity: 0;
+            animation: growHeight 500ms ease-out 700ms forwards;
 
             img {
                 width: auto;
@@ -171,31 +195,29 @@ $active-tag-clr: orange;
         justify-content: center;
         align-items: center;
 
-        .tag-prompt {
-            width: 100%;
-            color:black;
-            margin-bottom: 0.4em;
-        }
-
         /* tag-items for user to filter */
         .tag-item {
-            font-weight: 600;
-            color: black;
             display: block;
-            padding: 0.3em;
+            padding: 0.4em;
             margin: 0.1em;
             border-radius: 0.8em;
             font-size: 13px;
             transition: all 300ms;
+
+            // Initial conditions for animation
+            opacity: 0;
+            transform: translateX(100%);
         }
 
         /* unselected tags */
         .tag-inactive {
+            color: white;
             background-color: $inactive-tag-clr;
         }
 
         /* style for active selected tags */
         .tag-active {
+            color: black;
             background-color: $active-tag-clr;
 
             p {
@@ -207,5 +229,78 @@ $active-tag-clr: orange;
                 }
             }
         }
+    }
+}
+
+
+/********************** ANIMATIONS *********************/ 
+
+@keyframes slideFromBtm {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes growHeight {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+// From animate.css
+@keyframes flipInHoriz {
+    from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    to {
+        transform: perspective(400px);
+        opacity: 1;
     }
 }

@@ -21,7 +21,7 @@
     },
     {
         "id": "2",
-        "title": "Sudoku Solver",
+        "title": "Win32 Sudoku Solver",
         "date": "Apr 2020",
         "photo": "sudoku_solver.jpg",
         "openSrc": true,
@@ -36,7 +36,7 @@
         "photo": "stm32_drivers_screenshot.jpg",
         "openSrc": true,
         "link": "TODO",
-        "tags": ["C/C++", "Embedded", "Bare-Metal"],
+        "tags": ["C/C++", "Embedded"],
         "description": ""
     },
     {
