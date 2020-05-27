@@ -26,11 +26,6 @@ $active-tag-clr: orange;
         grid-column: 1 / 9;
     }
 
-    .proj-counter {
-        grid-column: 1 / 9;
-        grid-row: 2 / 3;
-    }
-
     /* Next & previous buttons */
     .prev-arrow, .next-arrow {
         cursor: pointer;
@@ -62,7 +57,7 @@ $active-tag-clr: orange;
         grid-column: 1 / 9;
         grid-row: 2 / 9;
         width: 85%;
-        height: 80%;
+        height: 85%;
         align-self: start;
         justify-self: center;
 
@@ -124,7 +119,7 @@ $active-tag-clr: orange;
                 }
             }
 
-            .proj-tags {
+            .proj-card-tags {
                 justify-self: flex-end;
                 height: 40%;
 
@@ -179,7 +174,7 @@ $active-tag-clr: orange;
         .tag-prompt {
             width: 100%;
             color:black;
-            margin-bottom: 1em;
+            margin-bottom: 0.4em;
         }
 
         /* tag-items for user to filter */
@@ -187,10 +182,10 @@ $active-tag-clr: orange;
             font-weight: 600;
             color: black;
             display: block;
-            padding: 0.4em;
+            padding: 0.3em;
             margin: 0.1em;
             border-radius: 0.8em;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 300ms;
         }
 

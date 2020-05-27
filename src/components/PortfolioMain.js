@@ -19,7 +19,7 @@ import '../css/portfolio.css'
 
 function PortfolioMain() {
 
-  // Routes to pages which will be mapped
+  /* Components to map inside CSS Transition */
   const portfolioPages = [
     {
       id: 0,
@@ -73,10 +73,10 @@ function PortfolioMain() {
 
   const dispatch = useDispatch()
 
-  // Set state of active component
+  /* Set state of active component */
   const activeComp = useSelector(state => state.activeComp)
 
-  // State indicating if touch event listeners are set
+  /* State indicating if touch event listeners are set */
   const isTouchEvListener = useSelector(state => state.isTouchEvListener)
 
   const bgColour = portfolioPages[activeComp] ? portfolioPages[activeComp].bgColour : "FFFFFF"
@@ -86,28 +86,28 @@ function PortfolioMain() {
 
   var startX, startY, startTime, moveX, moveY, deltaTime
 
-  // Store starting touch position and time 
+  /* Store starting touch position and time */
   // eslint-disable-next-line
   function handleTouchStart(event) {
     startX = event.touches[0].clientX
     startY = event.touches[0].clientY
     startTime = event.timeStamp
 
-    // Reset movement trackers
+    /* Reset movement trackers */
     moveX = 0
     moveY = 0
 
-    // Add event listener for touch move
+    /* Add event listener for touch move */
     document.addEventListener("touchmove", handleTouchMove)
   }
 
-  // Compare final position with start to determine if swipe occured 
+  /* Compare final position with start to determine if swipe occured */
   // eslint-disable-next-line
   function handleTouchEnd() {
-    // Remove touch event listener
+    /* Remove touch event listener */
     document.removeEventListener("touchmove", handleTouchMove)
 
-    // Check for swipe - If detected, remove event listeners and call handler
+    /* Check for swipe - If detected, remove event listeners and call handler */
     if (deltaTime < 500)
     {
       if (Math.abs(window.screen.width / moveX) < 4)
@@ -122,14 +122,14 @@ function PortfolioMain() {
     }
   }  
 
-  // Track position of touch movement
+  /* Track position of touch movement */
   function handleTouchMove(event) {
     moveX = event.touches[0].clientX - startX
     moveY = event.touches[0].clientY - startY
     deltaTime = event.timeStamp - startTime
   }
 
-  // Touch event listeners attached
+  /* Touch event listeners attached */
   if (!isTouchEvListener)
   {
     document.addEventListener("touchstart", handleTouchStart)
@@ -140,7 +140,7 @@ function PortfolioMain() {
 
   /****************** SWIPE EVENT HANDLERS ********************/
 
-  // Check if swiped left or right and handle event
+  /* Check if swiped left or right and handle event */
   function horizSwipeHandle() {
     if (moveX > 0)
     {
@@ -152,7 +152,7 @@ function PortfolioMain() {
     }
   }
 
-  // Check if swiped up or down and handle event
+  /* Check if swiped up or down and handle event */
   function vertSwipeHandle() {
     /* Reset horizontal swipes before changing components */
     dispatch(resetSwipeL())
@@ -177,7 +177,7 @@ function PortfolioMain() {
 
   /********************* USE EFFECTS ********************/
 
-  // Update the event listeners when handler function environment changes (happens with activeComp state change)
+  /* Update the event listeners when handler function environment changes (happens with activeComp state change) */
   useEffect(() => {
     document.addEventListener("touchstart", handleTouchStart)
     document.addEventListener("touchend", handleTouchEnd)

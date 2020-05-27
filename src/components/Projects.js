@@ -68,20 +68,17 @@ function Projects(props) {
 
     /*********** COUNT NUMBER PROJECTS WITH ACTIVE TAGS **************/
 
-    var projCnt = 0
+    var filtProjList
 
     /* If any tags are used to filter -> show only relevant projects. Otherwise, show all */
     if (tagList.length === 0)
     {
-        projCnt = projects.length
+        filtProjList = projects
     }
     else
     {
-        projects.forEach((element) => {
-            if (element.tags.some((element) => tagList.includes(element)))
-            {
-                projCnt++
-            }
+        filtProjList = projects.filter((element) => {
+            return element.tags.some(tagItem => tagList.includes(tagItem))
         })
     }
 
@@ -89,7 +86,7 @@ function Projects(props) {
     /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
 
     function nextArrowClick() {
-        if (cardElement < projects.length - 1)
+        if (cardElement < filtProjList.length - 1)
         {
             try {
                 // Make current element exit and set up for next animation
@@ -125,13 +122,14 @@ function Projects(props) {
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        // Left swipe action here
+        nextArrowClick()
+
     }
 
     if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        // Right swipe action here    
+        prevArrowClick()    
     }
 
 
@@ -140,11 +138,11 @@ function Projects(props) {
             <h1 className="page-title">Projects</h1>
 
             {/* Render the active project item card */}
-            <ProjCard projItem={projects[cardElement]} />
+            <ProjCard projItem={filtProjList[cardElement]} />
 
             {/* Display next and previous arrows only if elements exist in each direction */}
             {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
-            {(cardElement + 1 < projects.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
+            {(cardElement + 1 < filtProjList.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
 
             {/* Listing all tag items selectable by user */}
             <div className="tags-list">

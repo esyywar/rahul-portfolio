@@ -39,7 +39,7 @@ function ProjCard(props) {
                 </div>
 
                 {/* List tags associated with active project item */}
-                <div className="proj-tags">
+                <div className="proj-card-tags">
                     {/* Render open source link if project is tagged as open-source */}
                     {openSrcLink(projItem)}
 
