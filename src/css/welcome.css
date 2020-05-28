@@ -4,6 +4,7 @@
 /**************** WELCOME PAGE STYLE ***********************/
 #intro-page {
   height: 100%;
+  width: 100%;
 }
 
 #intro-page .name-header {
@@ -20,9 +21,10 @@
 
 #intro-page .intro-container {
   height: 75%;
+  width: 100%;
   text-align: center;
   font-family: 'VT323', monospace;
-  font-size: 28px;
+  font-size: 26px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

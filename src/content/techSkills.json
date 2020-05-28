@@ -2,7 +2,7 @@
     "hardwareTools": [
         {
             "id": 0,
-            "title": "Electrical",
+            "title": "Testing",
             "items": ["Oscilloscope", "DMM", "Function Generator"]
         },
         {

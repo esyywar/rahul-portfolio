@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { sideNavToggle } from '../actions/setSideNav'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import EduCard from './subComponents/EduCard'
@@ -19,11 +20,14 @@ function Education(props) {
     // Used in this component to show/remove side arrows on component change
     const activeComp = useSelector(state => state.activeComp)
 
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
+
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
+
     const [cardElement, setCardElement] = useState(0)
 
 
@@ -61,18 +65,32 @@ function Education(props) {
     }
 
 
-    /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
+    /********* FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
 
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        nextArrowClick()        
+        if (sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else
+        {
+            nextArrowClick() 
+        }      
     }
 
     if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        prevArrowClick()        
+        if (cardElement === 0 && !sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else 
+        {
+            prevArrowClick()  
+        }   
     }
 
 

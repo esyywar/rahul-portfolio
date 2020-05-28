@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
+import SkillsMenu from './subComponents/SkillsMenu'
 import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
 import HWTools from './subComponents/HWTools'
 
 import { MDBBtn } from "mdbreact";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../css/skills.css'
 import 'mdbreact/dist/css/mdb.css' 
@@ -61,15 +60,6 @@ function Skills(props) {
     ]
 
 
-    /********************** ENTRANCE ANIMATION ***********************/
-
-    useEffect(() => {
-        Array.from(document.getElementsByClassName("menu-btn")).forEach((element, index) => {
-            element.style.animation = "slideFromBtm 300ms ease-in " + (300 + index * 100) + "ms forwards"
-        })
-    }, [])
-
-
     /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
 
     /* Render back button or user prompt depending on active window state */
@@ -118,19 +108,7 @@ function Skills(props) {
                 })}
 
                 {/* Render menu screen if active window is menu */}
-                {(activeWnd === "MENU") && (
-                <div className="menu-screen">
-                    {/* Mapping buttons to skill components on menu screen */}
-                    {skillComponents.map(({ id, btnColour, faIcon, wndTitle }) => {
-                        return (
-                            <div key={id} className="btn-container">
-                                <MDBBtn className="menu-btn" color={btnColour} onClick={() => handleBtnClick(id)}>
-                                        <span><FontAwesomeIcon icon={faIcon} size="lg" /> {wndTitle}</span>
-                                </MDBBtn>
-                            </div>
-                        )
-                    })}
-                </div>)}
+                {(activeWnd === "MENU") && <SkillsMenu comps={skillComponents} onClick={handleBtnClick} />}
             </div>
 
             <div className="skills-footer">

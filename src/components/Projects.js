@@ -4,6 +4,7 @@ import ProjTag from './subComponents/ProjTag'
 import ProjCard from './subComponents/ProjCard'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { sideNavToggle } from '../actions/setSideNav'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import projects from '../content/projects.json'
@@ -19,6 +20,8 @@ function Projects(props) {
 
     /* Used in this component to show/remove side arrows on component change */
     const activeComp = useSelector(state => state.activeComp)
+
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
 
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
@@ -74,6 +77,9 @@ function Projects(props) {
         {
             newList.push(tag)
         }
+
+        /* Set card element back to first element */
+        setCardElement(0)
         setTagList(newList)
     }
 
@@ -93,11 +99,6 @@ function Projects(props) {
             element.tags.some(tagItem => tagList.includes(tagItem))
         )
     }
-
-    useEffect(() => {
-        console.log('effect run')
-        setCardElement(0)
-    }, [tagList])
 
 
     /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
@@ -139,13 +140,27 @@ function Projects(props) {
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        nextArrowClick()
+        if (sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else
+        {
+            nextArrowClick() 
+        } 
     }
 
     if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        prevArrowClick()    
+        if (cardElement === 0 && !sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else 
+        {
+            prevArrowClick()  
+        }     
     }
 
 

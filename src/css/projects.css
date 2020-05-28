@@ -28,7 +28,7 @@
 .projects-page .prev-arrow, .projects-page .next-arrow {
   cursor: pointer;
   position: fixed;
-  top: 45%;
+  top: 42%;
   color: white;
   font-weight: bold;
   font-size: 40px;
@@ -40,8 +40,8 @@
       -ms-user-select: none;
           user-select: none;
   opacity: 0;
-  -webkit-animation: appearIn 500ms ease 300ms forwards;
-          animation: appearIn 500ms ease 300ms forwards;
+  -webkit-animation: appearIn 500ms ease 500ms forwards;
+          animation: appearIn 500ms ease 500ms forwards;
 }
 
 .projects-page .next-arrow {

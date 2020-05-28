@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { sideNavToggle } from '../actions/setSideNav'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import ProExpCard from './subComponents/ProExpCard'
@@ -16,6 +17,8 @@ function Professional(props) {
     const dispatch = useDispatch()
 
     const activeComp = useSelector(state => state.activeComp)
+
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
 
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
@@ -64,13 +67,27 @@ function Professional(props) {
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        nextArrowClick()        
+        if (sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else
+        {
+            nextArrowClick() 
+        }        
     }
 
     if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        prevArrowClick()        
+        if (cardElement === 0 && !sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
+        else
+        {
+            prevArrowClick() 
+        }     
     }
 
 

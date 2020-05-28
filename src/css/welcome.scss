@@ -8,6 +8,7 @@
 
 #intro-page {
     height: 100%;
+    width: 100%;
 
     .name-header {
         font-size: 40px;
@@ -23,9 +24,10 @@
 
     .intro-container {
         height: 75%;
+        width: 100%;
         text-align: center;
         font-family: 'VT323', monospace;
-        font-size: 28px;
+        font-size: 26px;
 
         display: flex;
         flex-direction: column;

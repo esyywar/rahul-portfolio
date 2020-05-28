@@ -30,7 +30,7 @@ $active-tag-clr: orange;
     .prev-arrow, .next-arrow {
         cursor: pointer;
         position: fixed;
-        top: 45%;
+        top: 42%;
         color: white;
         font-weight: bold;
         font-size: 40px;
@@ -40,7 +40,7 @@ $active-tag-clr: orange;
 
         // Initial conditions for animation
         opacity: 0;
-        animation: appearIn 500ms ease 300ms forwards;
+        animation: appearIn 500ms ease 500ms forwards;
     }
     
     .next-arrow {

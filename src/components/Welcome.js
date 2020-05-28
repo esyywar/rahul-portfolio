@@ -3,18 +3,27 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTypeAnim } from '../actions/setTypeAnim'
 
+import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
+import { sideNavToggle } from '../actions/setSideNav'
+
 import '../css/welcome.css'
 
 
 function Welcome(props) {
     /************* REDUX STORE MANAGEMENT *******************/
 
+    const dispatch = useDispatch()
+
     const doTypeAnim = useSelector(state => state.isTypeAnim)
+
+    /* Is the side navigation open */
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
+
+    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
+    const isRightSwipe = useSelector(state => state.swipeRightEv)
 
     // Used in this component to show/remove swipe up arrow on component change
     const activeComp = useSelector(state => state.activeComp)
-
-    const dispatch = useDispatch()
 
 
     /********** TYPEWRITER ANIMATION CONTENT *******************/
@@ -61,7 +70,7 @@ function Welcome(props) {
             id: 5,
             charDelay: 40,
             itemDelay: 200,
-            text: "Have a look around to learn more about my projects and background.",
+            text: "Passionate about electrical and embedded systems engineering.... I also dabble in web technologies!",
             htmlId: "type-target-5",
             listItem: false
         },
@@ -69,7 +78,7 @@ function Welcome(props) {
             id: 6,
             charDelay: 40,
             itemDelay: 200,
-            text: "Feel free to contact me on any social platforms :)",
+            text: "Have a look around to learn more about my projects and background.",
             htmlId: "type-target-6",
             listItem: false
         }
@@ -161,6 +170,21 @@ function Welcome(props) {
                 </div>
             )
         }
+    }
+
+
+    /*************************** TOGGLE NAV ON SIDE SWIPES ***************************/
+
+    if (isLeftSwipe && sideNavOpen)
+    {
+        dispatch(resetSwipeL())
+        dispatch(sideNavToggle())
+    }
+
+    if (isRightSwipe && !sideNavOpen)
+    {
+        dispatch(resetSwipeR())
+        dispatch(sideNavToggle())
     }
 
 
