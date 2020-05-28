@@ -288,6 +288,31 @@
 }
 
 /********************** ANIMATIONS *********************/
+@-webkit-keyframes fallBack {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+@keyframes fallBack {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
 @-webkit-keyframes slideFromBtm {
   from {
     opacity: 0;
@@ -300,6 +325,7 @@
             transform: translateY(0);
   }
 }
+
 @keyframes slideFromBtm {
   from {
     opacity: 0;

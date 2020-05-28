@@ -65,7 +65,7 @@ function Education(props) {
     }
 
 
-    /********* FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
+    /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
 
     if (isLeftSwipe)
     {

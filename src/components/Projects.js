@@ -62,28 +62,6 @@ function Projects(props) {
     }, [])
 
 
-    /**************** TOGGLING THE ACTIVE TAGS ******************/
-
-    /* Toggle the tag's being included in the tagList */
-    function tagToggle(tag) {
-        let newList = [...tagList]
-
-        if (tagList.includes(tag))
-        {
-            /* Removing the tag from the list */
-            newList = tagList.filter(element => element !== tag)
-        }
-        else 
-        {
-            newList.push(tag)
-        }
-
-        /* Set card element back to first element */
-        setCardElement(0)
-        setTagList(newList)
-    }
-
-
     /*********** FILTER PROJECTS TO SHOW ONLY THOSE WITH SELECTED TAGS **************/
 
     var filtProjList
@@ -98,6 +76,46 @@ function Projects(props) {
         filtProjList = projects.filter(element => 
             element.tags.some(tagItem => tagList.includes(tagItem))
         )
+    }
+
+
+    /**************** TOGGLING THE ACTIVE TAGS ******************/
+
+    /* Toggle the tag's being included in the tagList */
+    function tagToggle(tag) {
+        let newTagList = [...tagList]
+
+        if (tagList.includes(tag))
+        {
+            /* Removing the tag from the list */
+            newTagList = tagList.filter(element => element !== tag)
+        }
+        else 
+        {
+            newTagList.push(tag)
+        }
+
+        /* If the first element changes with new list, call a transition animation */
+        let newFirstProj = (projects.filter(element => element.tags.some(tagItem => newTagList.includes(tagItem))))[0]
+        newFirstProj = (newFirstProj) ? newFirstProj : projects[0] 
+        if (newFirstProj !== filtProjList[cardElement])
+        {
+            return projCardTrans(newTagList)
+        }
+
+        setCardElement(0)
+        setTagList(newTagList)
+    }
+
+    /* If project card changes with tag change, use this transition animation */
+    function projCardTrans(newTagList) {
+        document.getElementById("proj-card").style.animation = "fallBack 500ms ease forwards"
+
+        setTimeout(() => {
+            setCardElement(0)
+            setTagList(newTagList)
+            document.getElementById("proj-card").style.animation = "slideFromRight 300ms ease forwards"
+        }, 500)
     }
 
 
@@ -135,7 +153,7 @@ function Projects(props) {
     }
 
 
-    /*************** FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
+    /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
 
     if (isLeftSwipe)
     {

@@ -178,13 +178,19 @@ function Welcome(props) {
     if (isLeftSwipe && sideNavOpen)
     {
         dispatch(resetSwipeL())
-        dispatch(sideNavToggle())
+        if (sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        } 
     }
 
     if (isRightSwipe && !sideNavOpen)
     {
         dispatch(resetSwipeR())
-        dispatch(sideNavToggle())
+        if (!sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
     }
 
 

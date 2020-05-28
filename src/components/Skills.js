@@ -5,6 +5,10 @@ import CodeLangs from './subComponents/CodeLangs'
 import SWTools from './subComponents/SWTools'
 import HWTools from './subComponents/HWTools'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
+import { sideNavToggle } from '../actions/setSideNav'
+
 import { MDBBtn } from "mdbreact";
 
 import '../css/skills.css'
@@ -14,6 +18,8 @@ import 'mdbreact/dist/css/mdb.css'
 function Skills(props) {
 
     /************ LOCAL STATE INITIALIZATION ******************/
+
+    const dispatch = useDispatch()
 
     /* Enum for active window state */
     const skillComps = {
@@ -29,6 +35,12 @@ function Skills(props) {
 
     /* State of page title to be displayed */
     const [pageTitle, setPageTitle] = useState("Technical Skills")
+
+    /* Is the side navigation open */
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
+
+    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
+    const isRightSwipe = useSelector(state => state.swipeRightEv)
 
 
     /************ DATA ARRAY OF SUB-COMPONENTS TO BE LINKED **************/
@@ -88,6 +100,27 @@ function Skills(props) {
     function backToMenu() {
         setActiveWnd(skillComps.MENU)
         setPageTitle("Technical Skills")
+    }
+
+
+    /*************************** TOGGLE NAV ON SIDE SWIPES ***************************/
+
+    if (isLeftSwipe && sideNavOpen)
+    {
+        dispatch(resetSwipeL())
+        if (sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        } 
+    }
+
+    if (isRightSwipe && !sideNavOpen)
+    {
+        dispatch(resetSwipeR())
+        if (!sideNavOpen)
+        {
+            dispatch(sideNavToggle())
+        }
     }
 
 

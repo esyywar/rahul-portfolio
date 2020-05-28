@@ -235,6 +235,17 @@ $active-tag-clr: orange;
 
 /********************** ANIMATIONS *********************/ 
 
+@keyframes fallBack {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
 @keyframes slideFromBtm {
     from {
         opacity: 0;
