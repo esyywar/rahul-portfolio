@@ -17,9 +17,7 @@ import 'mdbreact/dist/css/mdb.css'
 
 function Skills(props) {
 
-    /************ LOCAL STATE INITIALIZATION ******************/
-
-    const dispatch = useDispatch()
+    /************ DATA ARRAY OF SUB-COMPONENTS TO BE LINKED **************/
 
     /* Enum for active window state */
     const skillComps = {
@@ -30,20 +28,6 @@ function Skills(props) {
     }
     Object.freeze(skillComps)
 
-    /* State of active window switching between skill components */
-    const [activeWnd, setActiveWnd] = useState(skillComps.MENU)
-
-    /* State of page title to be displayed */
-    const [pageTitle, setPageTitle] = useState("Technical Skills")
-
-    /* Is the side navigation open */
-    const sideNavOpen = useSelector(state => state.sideNavOpen)
-
-    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
-    const isRightSwipe = useSelector(state => state.swipeRightEv)
-
-
-    /************ DATA ARRAY OF SUB-COMPONENTS TO BE LINKED **************/
     const skillComponents = [
         {
             id: 0,
@@ -72,7 +56,32 @@ function Skills(props) {
     ]
 
 
+    /************ LOCAL STATE INITIALIZATION ******************/
+
+    const dispatch = useDispatch()
+
+    /* State of active window switching between skill components */
+    const [activeWnd, setActiveWnd] = useState(skillComps.MENU)
+
+    /* Is the side navigation open */
+    const sideNavOpen = useSelector(state => state.sideNavOpen)
+
+    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
+    const isRightSwipe = useSelector(state => state.swipeRightEv)
+
+
     /************** CONDITIONAL RENDERING BY STATE FUNCTIONS ***************/
+
+    /* Get page title from activeWnd */
+    const pageTitle = getPageTitle()
+
+    function getPageTitle() {
+        if (skillComponents.some(element => element.wndName === activeWnd))
+        {
+            return ((skillComponents.find((element => element.wndName === activeWnd))).wndTitle)
+        }
+        return "Technical Skills"
+    }
 
     /* Render back button or user prompt depending on active window state */
     function skillsFooter(activeWnd) {
@@ -94,12 +103,10 @@ function Skills(props) {
     function handleBtnClick(id) {
         var clickedSkill = skillComponents.find(element => element.id === id)
         setActiveWnd(clickedSkill.wndName)
-        setPageTitle(clickedSkill.wndTitle)
     }
 
     function backToMenu() {
         setActiveWnd(skillComps.MENU)
-        setPageTitle("Technical Skills")
     }
 
 
