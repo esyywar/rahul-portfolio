@@ -115,7 +115,7 @@
   color: #8b0c12;
 }
 
-.projects-page #proj-card .tags-and-prompt {
+.projects-page #proj-card .tags-and-desc {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
@@ -146,7 +146,7 @@
           animation: slideFromTop 700ms ease-out 300ms forwards;
 }
 
-.projects-page #proj-card .tags-and-prompt .prompt-container {
+.projects-page #proj-card .tags-and-desc .prompt-container {
   width: 100%;
   height: 50%;
   display: -webkit-box;
@@ -163,11 +163,13 @@
           align-items: center;
 }
 
-.projects-page #proj-card .tags-and-prompt .prompt-container .detail-prompt {
+.projects-page #proj-card .tags-and-desc .prompt-container .detail-prompt {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
   font-size: 1.2em;
 }
 
-.projects-page #proj-card .tags-and-prompt .proj-card-tags {
+.projects-page #proj-card .tags-and-desc .proj-card-tags {
   justify-self: flex-end;
   height: 40%;
   display: -webkit-box;
@@ -185,7 +187,7 @@
           justify-content: flex-end;
 }
 
-.projects-page #proj-card .tags-and-prompt .proj-card-tags .proj-item-tag {
+.projects-page #proj-card .tags-and-desc .proj-card-tags .proj-item-tag {
   background-color: black;
   color: white;
   font-size: 0.8em;
@@ -193,7 +195,7 @@
   padding: 0.4em;
 }
 
-.projects-page #proj-card .tags-and-prompt .proj-card-tags .proj-git-link {
+.projects-page #proj-card .tags-and-desc .proj-card-tags .proj-git-link {
   cursor: pointer;
   background-color: #8888f1;
 }

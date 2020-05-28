@@ -102,7 +102,7 @@ $active-tag-clr: orange;
             }
         }
 
-        .tags-and-prompt {
+        .tags-and-desc {
             grid-column: 1 / 9;
             grid-row: 6 / 8;
             z-index: 2;
@@ -131,6 +131,8 @@ $active-tag-clr: orange;
                 align-items: center;
 
                 .detail-prompt {
+                    font-family: 'Oswald', sans-serif;
+                    text-transform: uppercase;
                     font-size: 1.2em;
                 }
             }

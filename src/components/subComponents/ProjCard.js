@@ -21,6 +21,10 @@ function ProjCard(props) {
         }
     }
 
+    function detailExpand() {
+        console.log('details expand hit')
+    }
+
 
     return (
         <div id="proj-card">
@@ -33,9 +37,15 @@ function ProjCard(props) {
                 <img alt="final-product" src={require(`../../img/projects/${projItem.photo}`)} />
             </div>
 
-            <div className="tags-and-prompt">
+            <div className="tags-and-desc">
+
+                <div className="proj-desc">
+                    {/* TODO - Hold descriptions for project */}
+                </div>
+
+                {/* This prompt only shown for mobile platforms to expand details */}
                 <div className="prompt-container">
-                    <p className="detail-prompt">Tap for more detail!</p>
+                    <p className="detail-prompt" onClick={detailExpand}>Tap for more detail!</p>
                 </div>
 
                 {/* List tags associated with active project item */}
