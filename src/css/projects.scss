@@ -216,7 +216,6 @@ $tag-list-trans-in-time: 400ms;
     /* list of tags to filter projects appearing bottom of page */
     .tags-list {
         width: 100%;
-        height: 100%;
         grid-row: 11 / 13;
         grid-column: 1 / 9;
         align-self: end;
@@ -235,7 +234,7 @@ $tag-list-trans-in-time: 400ms;
             padding: 0.4em;
             margin: 0.1em;
             border-radius: 0.8em;
-            font-size: 13px;
+            font-size: 14px;
             transition: all 300ms;
         }
 

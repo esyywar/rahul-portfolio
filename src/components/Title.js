@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import { useSelector, useDispatch } from 'react-redux'
+import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,17 +12,28 @@ import '../css/title.css'
 
 
 function Title() {
-    // Number of bars for animation
-    const numBars = 14;
+
+    /***************** STATE MANAGEMENT *******************/
+
+    const dispatch = useDispatch()
 
     const [doRedirect, setRedirect] = useState(false)
 
-    // On load show "enter" or "swipe" depending on user device
+    const isSwipeLeft = useSelector(state => state.swipeLeftEv)
+    const isSwipeRight = useSelector(state => state.swipeRightEv)
+
+
+    /**************** ENTER MAIN SITE BAR ANIMATION *******************/
+
+    /* Number of bars for animation */
+    const numBars = 14;
+
+    /* On load show "enter" or "swipe" depending on user device */
     function isMobileDevice() {
         return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     };
 
-    // Calling this function will create the number of bars given in props
+    /* Calling this function will create the number of bars given in props */
     function makeBars(numBars) {
         var bars = []
         for (let i = 1; i < numBars + 1; i++) {
@@ -30,7 +44,7 @@ function Title() {
         return bars
     }
 
-    // Calling will start the bars animation
+    /* Calling will start the bars animation */
     function barAnimation() {
         document.getElementById("title-content").style.animation = "slideOutLeft linear 200ms forwards"
         document.getElementById("background").style.animationPlayState = "paused"
@@ -43,11 +57,21 @@ function Title() {
         }
     }
 
-    // Bar function called and page redirected after
-    function enterSite(e) {
+    /* Bar function called and page redirected after */
+    function enterSite() {
         barAnimation();
 
         setTimeout(() => setRedirect(true), numBars * 50 + 600)
+    }
+
+
+    /******************* HANDLING SWIPE EVENTS (TO ENTER SITE) ********************/
+
+    if (isSwipeLeft || isSwipeRight)
+    {
+        dispatch(resetSwipeL())
+        dispatch(resetSwipeR())
+        enterSite()
     }
 
     
