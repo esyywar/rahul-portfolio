@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 
 import techSkills from '../../content/techSkills.json'
 
@@ -10,7 +10,7 @@ function SWTools() {
     const bgColours = ["#9859BE", "#230C33", "#724CF9", "#564592"]
 
     // Apply animation effect on sw-tool pack containers
-    useEffect(() => {
+    useLayoutEffect(() => {
         Array.from(document.getElementsByClassName("sw-tool-pack")).forEach((element, index) => {
             element.style.animation = "flipInHoriz 1s ease-out " + (index * 100) + "ms forwards"
         })

@@ -1,3 +1,29 @@
+/********* VERTICAL SWIPE EVENT SET STATES ***************/
+
+export const swipeUpEv = (state = false, action) => {
+    switch(action.type)
+    {
+        case "SWIPE_U_SET":
+            return true
+        case "SWIPE_U_RESET":
+            return false
+        default:
+            return state
+    }
+}
+
+export const swipeDownEv = (state = false, action) => {
+    switch (action.type)
+    {
+        case "SWIPE_D_SET":
+            return true
+        case "SWIPE_D_RESET":
+            return false
+        default:
+            return state
+    }
+}
+
 /********* HORIZONTAL SWIPE EVENT SET STATES ***************/
 
 export const swipeRightEv = (state = false, action) => {

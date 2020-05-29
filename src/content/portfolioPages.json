@@ -1,0 +1,47 @@
+[
+    {
+      "id": 0,
+      "name": "Main Page",
+      "text": "Welcome",
+      "isExact": true,
+      "Component": "Welcome",
+      "transitionClass": "summary-transition",
+      "bgColour": "#FD8536"
+    },
+    {
+      "id": 1,
+      "name": "Professional Experience",
+      "text": "Professional Exp.",
+      "isExact": false,
+      "Component": "Professional",
+      "transitionClass": "proexp-transition",
+      "bgColour": "#F16481"
+    },
+    {
+      "id": 2,
+      "name": "Education",
+      "text": "Education",
+      "isExact": false,
+      "Component": "Education",
+      "transitionClass": "education-transition",
+      "bgColour": "#7BB2D9"
+    },
+    {
+      "id": 3,
+      "name": "Projects",
+      "text": "Projects",
+      "isExact": false,
+      "Component": "Projects",
+      "transitionClass": "projects-transition",
+      "bgColour": "#5DB76B"
+    },
+    {
+      "id": 4,
+      "name": "Skills",
+      "text": "Technical Skills",
+      "isExact": false,
+      "Component": "Skills",
+      "transitionClass": "skills-transition",
+      "bgColour": "#C18AF8"
+    }
+  ]

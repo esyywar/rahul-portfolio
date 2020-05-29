@@ -4,15 +4,17 @@ import isTypeAnim from './isTypeAnim'
 import activeComp from './activeComp'
 import sideNavOpen from './sideNavOpen'
 import isTouchEvListener from './isTouchEvListener'
-import {swipeLeftEv, swipeRightEv} from './horizSwipeEv'
+import {swipeUpEv, swipeDownEv, swipeLeftEv, swipeRightEv} from './horizSwipeEv'
 
 const rootReducer = combineReducers({
     isTypeAnim,
     activeComp,
     sideNavOpen,
     isTouchEvListener,
-    swipeLeftEv,
-    swipeRightEv
+    swipeUpEv,
+    swipeDownEv,
+    swipeRightEv,
+    swipeLeftEv
 })
 
 export default rootReducer

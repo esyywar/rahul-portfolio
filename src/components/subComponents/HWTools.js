@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 
 import techSkills from '../../content/techSkills.json'
 
@@ -11,7 +11,7 @@ function HWTools() {
     const bgColours = ["#D2D7DF", "#CDFFF9", "#BDBBB0"]
 
     // Animate the hw-tool-packs on render
-    useEffect(() => {
+    useLayoutEffect(() => {
         Array.from(document.getElementsByClassName("hw-tool-pack")).forEach((element, index) => {
             element.style.animation = "growBig 300ms ease-in " + (index * 100) + "ms forwards"
         })

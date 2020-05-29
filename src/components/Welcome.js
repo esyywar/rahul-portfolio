@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { setTypeAnim } from '../actions/setTypeAnim'
@@ -142,6 +142,15 @@ function Welcome(props) {
         }
     }
 
+    /* Call typewriter animation only after all elements rendered */
+    useLayoutEffect(() => {
+        if (doTypeAnim)
+        {
+            typeAnimDriver(() => dispatch(setTypeAnim(false)))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
 
     /************** MOBILE CHECK FUNCTION FOR SWIPE ARROW **********************/
 
@@ -198,51 +207,50 @@ function Welcome(props) {
         <div id="intro-page">
             <h1 className="page-title name-header">RAHUL ESWAR</h1><hr />
             <div className="intro-container">
-                    {/* Typewriter animated list items */}
-                    <ul className="desc-list">
-                        {typeWriteItems
-                            .filter((element) => {
-                                return element.listItem
-                            })
-                            .map((element) => {
-                                return (
-                                    <li 
-                                        key={element.id} 
-                                        id={element.htmlId}
-                                        style={{color: element.color}}
-                                    >
-                                        {!doTypeAnim && element.text}
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                    
-                    {/* Typewriter animated paragraph items */}
-                    <div className="desc-paras">
-                        {typeWriteItems
-                            .filter((element) => {
-                                return !element.listItem
-                            })
-                            .map((element) => {
-                                return (
-                                    <p 
-                                        key={element.id} 
-                                        id={element.htmlId} 
-                                        className={element.listItem ? "intro-desc-list" : "intro-desc-para"}
-                                    >
-                                        {!doTypeAnim && element.text}
-                                    </p>
-                                )
-                            })
-                        }
-                    </div>
+                {/* Typewriter animated list items */}
+                <ul className="desc-list">
+                    {typeWriteItems
+                        .filter((element) => {
+                            return element.listItem
+                        })
+                        .map((element) => {
+                            return (
+                                <li 
+                                    key={element.id} 
+                                    id={element.htmlId}
+                                    style={{color: element.color}}
+                                >
+                                    {!doTypeAnim && element.text}
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+                
+                {/* Typewriter animated paragraph items */}
+                <div className="desc-paras">
+                    {typeWriteItems
+                        .filter((element) => {
+                            return !element.listItem
+                        })
+                        .map((element) => {
+                            return (
+                                <p 
+                                    key={element.id} 
+                                    id={element.htmlId} 
+                                    className={element.listItem ? "intro-desc-list" : "intro-desc-para"}
+                                >
+                                    {!doTypeAnim && element.text}
+                                </p>
+                            )
+                        })
+                    }
+                </div>
 
-                    {/* Call animation driver if first render - callback to change animation state */}
-                    {doTypeAnim && typeAnimDriver(() => dispatch(setTypeAnim(false)))}
+                {/* Call animation driver if first render - callback to change animation state */}
 
-                    {/* Swipe up arrow to display for mobile devices */}
-                    {(activeComp === props.id) && showSwipeArrow(isMobileDevice())}
+                {/* Swipe up arrow to display for mobile devices */}
+                {(activeComp === props.id) && showSwipeArrow(isMobileDevice())}
             </div>
         </div>
     )
