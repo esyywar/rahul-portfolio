@@ -32,8 +32,8 @@ function Welcome(props) {
     const typeWriteItems = [
         {
             id: 0,
-            charDelay: 40,
-            itemDelay: 200,
+            charDelay: 30,
+            itemDelay: 300,
             text: "Electrical Circuit Design",
             htmlId: "type-target-1",
             listItem: true,
@@ -41,8 +41,8 @@ function Welcome(props) {
         },
         {
             id: 1,
-            charDelay: 40,
-            itemDelay: 200,
+            charDelay: 30,
+            itemDelay: 300,
             text: "Embedded Sytems Dev",
             htmlId: "type-target-2",
             listItem: true,
@@ -50,8 +50,8 @@ function Welcome(props) {
         },
         {
             id: 3,
-            charDelay: 40,
-            itemDelay: 200,
+            charDelay: 30,
+            itemDelay: 300,
             text: "UI/UX Design",
             htmlId: "type-target-3",
             listItem: true,
@@ -59,8 +59,8 @@ function Welcome(props) {
         },
         {
             id: 4,
-            charDelay: 40,
-            itemDelay: 200,
+            charDelay: 30,
+            itemDelay: 300,
             text: "Front End Web Dev",
             htmlId: "type-target-4",
             listItem: true,
@@ -68,7 +68,7 @@ function Welcome(props) {
         },
         {
             id: 5,
-            charDelay: 40,
+            charDelay: 45,
             itemDelay: 200,
             text: "Passionate about electrical and embedded systems engineering.... I also dabble in web technologies!",
             htmlId: "type-target-5",
@@ -76,7 +76,7 @@ function Welcome(props) {
         },
         {
             id: 6,
-            charDelay: 40,
+            charDelay: 45,
             itemDelay: 200,
             text: "Have a look around to learn more about my projects and background.",
             htmlId: "type-target-6",

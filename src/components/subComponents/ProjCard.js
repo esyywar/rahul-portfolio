@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function ProjCard(props) {
+
+    const [mobileDescOpen, setMobileDesc] = useState(false)
+
     const projItem = props.projItem
 
-    /* If project is open-source, indicate with a tag linked to repo */
+    
+    /*********************** CONDITIONAL RENDERING *********************/
+
     function openSrcLink(projItem) 
     {
         if (projItem.openSrc)
@@ -21,8 +26,19 @@ function ProjCard(props) {
         }
     }
 
-    function detailExpand() {
-        console.log('details expand hit')
+    function detailSection() {
+        if (mobileDescOpen)
+        {
+            return (
+                <div>Nonsense</div>
+            )
+        }
+        else
+        {
+            return (
+                <p className="detail-prompt" onClick={() => setMobileDesc(true)}>Tap for more detail!</p>
+            )
+        }
     }
 
 
@@ -38,14 +54,17 @@ function ProjCard(props) {
             </div>
 
             <div className="tags-and-desc">
+                {/* Close button for collapsing short-desc section on mobile */}
+                {mobileDescOpen && <span className="desc-close-btn" onClick={() => setMobileDesc(false)}>✕</span>}
+                
 
                 <div className="proj-desc">
                     {/* TODO - Hold descriptions for project */}
                 </div>
 
                 {/* This prompt only shown for mobile platforms to expand details */}
-                <div className="prompt-container">
-                    <p className="detail-prompt" onClick={detailExpand}>Tap for more detail!</p>
+                <div className="desc-container">
+                    {detailSection()}
                 </div>
 
                 {/* List tags associated with active project item */}
@@ -59,13 +78,7 @@ function ProjCard(props) {
                         )
                     })}
                 </div>
-            </div>
-
-            {/* For mobile, details show only on click */}
-            <div className="details">
-                
-            </div>
-            
+            </div>            
         </div>
     )
 }
