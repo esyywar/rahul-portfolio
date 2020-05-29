@@ -205,6 +205,8 @@
 }
 
 .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   background-color: black;
   color: white;
   font-size: 0.8em;
@@ -213,6 +215,11 @@
 }
 
 .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-git-link {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.projects-page #proj-card #tags-and-desc .proj-card-tags .proj-git-link p {
   cursor: pointer;
   background-color: #8888f1;
 }
@@ -258,14 +265,17 @@
 
 .projects-page .tags-list {
   width: 100%;
-  -ms-grid-row: 12;
-  -ms-grid-row-span: 1;
-  grid-row: 12 / 13;
+  height: 100%;
+  -ms-grid-row: 11;
+  -ms-grid-row-span: 2;
+  grid-row: 11 / 13;
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
   -ms-flex-item-align: end;
       align-self: end;
+  /* BUG HERE - tags at top of page not clickable ... need this z-index to make it work */
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

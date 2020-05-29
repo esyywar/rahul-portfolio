@@ -204,7 +204,7 @@ function Projects(props) {
             <CSSTransition
                 in = {!mobileDescOpen}
                 timeout = {500}
-                classNames="tag-list-trans"
+                classNames = "tag-list-trans"
                 unmountOnExit
             >
                 <ProjTagList 

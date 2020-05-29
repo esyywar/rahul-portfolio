@@ -15,8 +15,8 @@ function ProjCard(props) {
         if (projItem.openSrc)
         {
             return (
-                <a href={projItem.link} target="_blank" rel="noopener noreferrer" > 
-                    <p className="proj-item-tag proj-git-link">
+                <a className="proj-git-link" href={projItem.link} target="_blank" rel="noopener noreferrer" > 
+                    <p className="proj-item-tag">
                         Open Source<FontAwesomeIcon style={{marginLeft: "5px"}} icon={["fab", "github"]} />
                     </p>
                 </a>

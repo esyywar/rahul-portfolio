@@ -163,6 +163,7 @@ $tag-list-trans-in-time: 400ms;
 
 
                 .proj-item-tag {
+                    align-self: flex-end;
                     background-color: black;
                     color: white;
                     font-size: 0.8em;
@@ -171,8 +172,12 @@ $tag-list-trans-in-time: 400ms;
                 }
 
                 .proj-git-link {
-                    cursor: pointer;
-                    background-color: rgb(136, 136, 241);
+                    align-self: flex-end;
+
+                    p {
+                        cursor: pointer;
+                        background-color: rgb(136, 136, 241);
+                    }
                 }
             }
         }
@@ -211,9 +216,13 @@ $tag-list-trans-in-time: 400ms;
     /* list of tags to filter projects appearing bottom of page */
     .tags-list {
         width: 100%;
-        grid-row: 12 / 13;
+        height: 100%;
+        grid-row: 11 / 13;
         grid-column: 1 / 9;
         align-self: end;
+
+        /* BUG HERE - tags at top of page not clickable ... need this z-index to make it work */ 
+        z-index: 2;
 
         display: flex;
         flex-flow: row wrap;
