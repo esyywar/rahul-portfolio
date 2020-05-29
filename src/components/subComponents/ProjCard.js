@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function ProjCard(props) {
 
-    const [mobileDescOpen, setMobileDesc] = useState(false)
-
     const projItem = props.projItem
 
     
-    /*********************** CONDITIONAL RENDERING *********************/
+    /******************* CONDITIONAL RENDER OF OPEN SOURCE TAG *********************/
 
     function openSrcLink(projItem) 
     {
@@ -26,8 +24,11 @@ function ProjCard(props) {
         }
     }
 
+
+    /*************** TOGGLINE OF DESCRIPTION SECTION ****************/
+
     function detailSection() {
-        if (mobileDescOpen)
+        if (props.isMobileDesc)
         {
             return (
                 <div>Nonsense</div>
@@ -36,7 +37,7 @@ function ProjCard(props) {
         else
         {
             return (
-                <p className="detail-prompt" onClick={() => setMobileDesc(true)}>Tap for more detail!</p>
+                <p className="detail-prompt">Tap for more detail!</p>
             )
         }
     }
@@ -53,10 +54,13 @@ function ProjCard(props) {
                 <img alt="final-product" src={require(`../../img/projects/${projItem.photo}`)} />
             </div>
 
-            <div className="tags-and-desc">
+            <div 
+                id="tags-and-desc" 
+                className={(props.isMobileDesc) ? "desc-open" : "desc-closed"} 
+                onClick={() => props.mobileDescTog()}
+            >
                 {/* Close button for collapsing short-desc section on mobile */}
-                {mobileDescOpen && <span className="desc-close-btn" onClick={() => setMobileDesc(false)}>✕</span>}
-                
+                {props.isMobileDesc && <span className="desc-close-btn"> ✕ </span>}
 
                 <div className="proj-desc">
                     {/* TODO - Hold descriptions for project */}

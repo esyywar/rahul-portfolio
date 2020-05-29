@@ -11,6 +11,9 @@ $projCard-text-clr: #2F3C7E;
 $inactive-tag-clr: rgb(70, 24, 122);
 $active-tag-clr: orange;
 
+$tag-list-trans-out-time: 300ms;
+$tag-list-trans-in-time: 400ms;
+
 
 /************* PROJECT COMPONENT STYLE *************/
 
@@ -103,12 +106,12 @@ $active-tag-clr: orange;
             }
         }
 
-        .tags-and-desc {
+        #tags-and-desc {
             grid-column: 1 / 9;
             grid-row: 6 / 8;
             z-index: 2;
             width: 110%;
-            height: 90%;
+            transition: height 300ms;
             border-radius: 10px;
             color: $projCard-text-clr;
             background-color: $projCard-bg-clr;
@@ -174,6 +177,14 @@ $active-tag-clr: orange;
             }
         }
 
+        /* Serparate styles for when details section expanded or minimized (for mobile) */
+        .desc-open {
+            height: 180%;
+        }
+        .desc-closed {
+            height: 90%;
+        }
+
         .image-container {
             grid-column: 1 / 9;
             grid-row: 2 / 7;
@@ -217,10 +228,6 @@ $active-tag-clr: orange;
             border-radius: 0.8em;
             font-size: 13px;
             transition: all 300ms;
-
-            // Initial conditions for animation
-            opacity: 0;
-            transform: translateX(100%);
         }
 
         /* unselected tags */
@@ -243,6 +250,56 @@ $active-tag-clr: orange;
                 }
             }
         }
+    }
+}
+
+
+/****************** CSS TRANSITION FOR PROJ-TAGS COMPONENT ***********/ 
+
+.tag-list-trans-enter {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all $tag-list-trans-in-time;
+}
+.tag-list-trans-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $tag-list-trans-in-time;
+}
+.tag-list-trans-exit {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $tag-list-trans-out-time;
+    ;
+}
+.tag-list-trans-exit-active {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all $tag-list-trans-out-time;
+}
+
+
+/****************** ANIMATIONS FOR DETAIL SECTION *****************/
+
+@keyframes expandDetails {
+    from {
+        height: 90%;
+        opacity: 1;
+    }
+    to {
+        height: 180%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideExitBtm {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
     }
 }
 

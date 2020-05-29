@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import ProjTag from './subComponents/ProjTag'
+import { CSSTransition } from 'react-transition-group'
+
+import ProjTagList from './subComponents/ProjTagList'
 import ProjCard from './subComponents/ProjCard'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -26,6 +28,9 @@ function Projects(props) {
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
+    /* Toggling is desc-open on mobile devices */
+    const [mobileDescOpen, setMobileDesc] = useState(false)
+
 
     /**************** LOCAL STATE *****************/
 
@@ -50,16 +55,6 @@ function Projects(props) {
             }
         })
     })
-
-
-    /************** ON LOAD ANIMATION FOR TAGS ***************/
-
-    /* Classname is used in ProjCard.js */
-    useEffect(() => {
-        Array.from(document.getElementsByClassName("tag-item")).forEach((element, index) => {
-            element.style.animation = "slideFromRight 300ms ease-in " + (500 + index * 75) + "ms forwards"
-        })
-    }, [])
 
 
     /*********** FILTER PROJECTS TO SHOW ONLY THOSE WITH SELECTED TAGS **************/
@@ -153,6 +148,14 @@ function Projects(props) {
     }
 
 
+    /**************** TOGGLE PROJ-CARD SHORT DESCRIPTION ON MOBILES ***************/
+
+    function handleDescToggle()
+    {
+        setMobileDesc(!mobileDescOpen)
+    }
+
+
     /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
 
     if (isLeftSwipe)
@@ -187,25 +190,29 @@ function Projects(props) {
             <h1 className="page-title">Projects</h1>
 
             {/* Render the active project item card */}
-            <ProjCard projItem={filtProjList[cardElement]} />
+            <ProjCard 
+                projItem={filtProjList[cardElement]} 
+                isMobileDesc={mobileDescOpen} 
+                mobileDescTog = {handleDescToggle}
+            />
 
             {/* Display next and previous arrows only if elements exist in each direction */}
             {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
             {(cardElement + 1 < filtProjList.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
 
             {/* Listing all tag items selectable by user */}
-            <div className="tags-list">
-                {projTags.map((element, index) => {
-                    return (
-                        <ProjTag
-                            key={index}
-                            active={tagList.includes(element)} 
-                            tag={element} 
-                            onClick={tagToggle}
-                        />
-                    )
-                })}
-            </div>
+            <CSSTransition
+                in = {!mobileDescOpen}
+                timeout = {500}
+                classNames="tag-list-trans"
+                unmountOnExit
+            >
+                <ProjTagList 
+                    projTags = {projTags}
+                    activeTags = {tagList}
+                    tagToggleFunc = {tagToggle}
+                />
+            </CSSTransition>
         </div>
     )
 }
