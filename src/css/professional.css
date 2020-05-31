@@ -55,11 +55,12 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 9;
-  grid-row: 4 / 13;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 10;
+  grid-row: 3 / 13;
   font-family: 'Muli', sans-serif;
-  font-size: 15px;
+  color: black;
+  font-size: 18px;
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -76,12 +77,15 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  background-color: #3D155F;
+  -ms-flex-item-align: end;
+      align-self: end;
+  background-color: whitesmoke;
   width: 90%;
   height: 75%;
   z-index: 2;
-  padding: 0.5em;
+  padding: 0.2em 0.4em;
   border-radius: 1em;
+  border: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,11 +106,12 @@
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company .employer {
-  color: #FF570A;
+  color: #F08700;
   font-size: 1.2em;
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company p {
+  padding: 0.2em;
   font-weight: 600;
 }
 
@@ -142,9 +147,10 @@
   grid-column: 1 / 9;
   width: 90%;
   z-index: 2;
-  background-color: #3D155F;
+  background-color: whitesmoke;
   border-radius: 1em;
-  padding: 0.5em;
+  padding: 0.4em;
+  border: 2px solid black;
   -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
           transform: translate3d(100%, 0, 0) skewX(-30deg);
   opacity: 0;

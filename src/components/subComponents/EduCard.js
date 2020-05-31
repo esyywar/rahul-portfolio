@@ -4,7 +4,7 @@ import React from 'react'
 function EduCard(props) {
     const eduItem = props.eduItem
 
-    // To display date
+    /* To display date */
     function dateDisplay(eduItem)
     {
         if (eduItem.current)
@@ -17,7 +17,7 @@ function EduCard(props) {
         }
     }
 
-    // To show degree field
+    /* To show degree field */
     function displayDegree(eduItem)
     {
         if (eduItem.abbrevDegree)

@@ -10,13 +10,13 @@ function ProExpCard(props) {
         if (proExpItem.current)
         {
             return (
-                <p style={{color: "#2cf54e"}}>{proExpItem.startDate + " - Present"}</p>
+                <p style={{color: "#08AF24"}}>{proExpItem.startDate + " - Present"}</p>
             )
         }
         else
         {
             return (
-                <p style={{color: "yellow"}}>{proExpItem.startDate + " - " + proExpItem.endDate}</p>
+                <p style={{color: "#084C61"}}>{proExpItem.startDate + " - " + proExpItem.endDate}</p>
             )
         }
     }
@@ -24,7 +24,7 @@ function ProExpCard(props) {
     return (
         <div id="pro-content-card">      
             <div className="title-loc-and-company">
-                <h4 className="employer">{proExpItem.employer}</h4>
+                <p className="employer">{proExpItem.employer}</p>
                 <p className="job-title">{proExpItem.jobTitle}</p>
                 <p className="location">{`${proExpItem.city}, ${proExpItem.country}`}</p>
             </div>

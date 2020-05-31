@@ -6,7 +6,7 @@
         "photo": "rahulscorner_screenshot.jpg",
         "openSrc": true,
         "link": "boom LINK",
-        "tags": ["LabVIEW", "UI/UX Design"],
+        "tags": ["LabVIEW", "GUI"],
         "description": "TODO"
     },
     {
@@ -26,7 +26,7 @@
         "photo": "sudoku_solver.jpg",
         "openSrc": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
-        "tags": ["C/C++", "UI/UX Design"],
+        "tags": ["C/C++", "GUI"],
         "description": ""
     },
     {
@@ -69,11 +69,11 @@
     },
     {
         "id": "7",
-        "title": "OTTOGROW Hydropnics Grower",
+        "title": "OTTOGROW Hydroponics Grower",
         "date": "Apr 2019",
         "photo": "ottogrow_gui.jpg",
         "openSrc": false,
-        "tags": ["LabVIEW", "Embedded", "UI/UX Design"],
+        "tags": ["LabVIEW", "Embedded", "GUI"],
         "description": "TODO"
     }
 ]

@@ -5,7 +5,7 @@
 
 /**************** SASS VARIABLE COLOURS *****************/ 
 
-$text-bg-colour: #3D155F;
+$text-bg-colour: whitesmoke; //#3D155F;
 
 
 /**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
@@ -51,9 +51,10 @@ $text-bg-colour: #3D155F;
 
     #pro-content-card {
         grid-column: 1 / 9;
-        grid-row: 4 / 13;
+        grid-row: 3 / 13;
         font-family: 'Muli', sans-serif;
-        font-size: 15px;
+        color: black;
+        font-size: 18px;
 
         display: grid;
         justify-items: center;
@@ -63,13 +64,15 @@ $text-bg-colour: #3D155F;
         .title-loc-and-company {
             grid-row: 1 / 3;
             grid-column: 1 / 9;
+            align-self: end;
 
             background-color: $text-bg-colour;
             width: 90%;
             height: 75%;
             z-index: 2;
-            padding: 0.5em;
+            padding: 0.2em 0.4em;
             border-radius: 1em;
+            border: 2px solid black;
 
             display: flex;
             flex-direction: column;
@@ -82,11 +85,12 @@ $text-bg-colour: #3D155F;
             animation: lightSpeedInLeft ease-out 500ms forwards 500ms;
 
             .employer {
-                color: #FF570A;
+                color: #F08700;
                 font-size: 1.2em;
             }
 
             p {
+                padding: 0.2em;
                 font-weight: 600;
             }
         }
@@ -116,7 +120,8 @@ $text-bg-colour: #3D155F;
             z-index: 2;
             background-color: $text-bg-colour;
             border-radius: 1em;
-            padding: 0.5em;
+            padding: 0.4em;
+            border: 2px solid black;
 
             // Initial conditions for animation
             transform: translate3d(100%, 0, 0) skewX(-30deg);

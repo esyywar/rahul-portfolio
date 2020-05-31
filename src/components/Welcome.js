@@ -52,7 +52,7 @@ function Welcome(props) {
             id: 3,
             charDelay: 30,
             itemDelay: 300,
-            text: "UI/UX Design",
+            text: "Front End Web Dev",
             htmlId: "type-target-3",
             listItem: true,
             color: "green"
@@ -61,7 +61,7 @@ function Welcome(props) {
             id: 4,
             charDelay: 30,
             itemDelay: 300,
-            text: "Front End Web Dev",
+            text: "Application Dev",
             htmlId: "type-target-4",
             listItem: true,
             color: "black"
