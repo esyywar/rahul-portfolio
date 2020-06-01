@@ -5,7 +5,7 @@
 
 /**************** SASS VARIABLE COLOURS *****************/ 
 
-$text-bg-colour: whitesmoke; //#3D155F;
+$text-bg-colour: whitesmoke;
 
 
 /**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
@@ -191,4 +191,14 @@ $text-bg-colour: whitesmoke; //#3D155F;
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+}
+
+
+/********************* MEDIA QUERIES ********************/
+
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+  .grid-container .resume-window {
+      grid-column: 4 / 13;
+  }
 }

@@ -14,35 +14,34 @@
     flex-direction: column;
     align-items: center;
 
-    .name-header {
-        font-size: 35px;
-        margin-bottom: 0.2em;
-    }
-
-    hr {
-        background-color: white;
-        height: 2px;
-        width: 100%;
-        max-width: 310px;
-        margin: 0 auto;
-        border: 1px solid white;
-        border-radius: 3px;
-    }
-
     .intro-container {
-        height: 75%;
-        width: 100%;
-        max-width: 420px;
+        height: 90%;
+        max-width: 400px;
         text-align: center;
         font-family: 'VT323', monospace;
         font-size: 23px;
-
+    
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
- 
+        .name-header {
+            font-family: 'Muli', 'sans-serif';
+            font-size: 32px;
+        }
+
+        hr {
+            background-color: white;
+            height: 2px;
+            width: 100%;
+            max-width: 310px;
+            margin: 0 auto;
+            border: 1px solid white;
+            border-radius: 3px;
+            margin-bottom: 1em;
+        }
+
         .desc-list {
             padding: 0.1em 0;
         }         
@@ -104,18 +103,18 @@
 
 /* Moto GS size mobile screens */
 @media only screen and (min-width: 360px) {
-    #intro-page {
+    #intro-page .intro-container {
         .name-header {
             font-size: 36px;
-        }
-
-        .intro-container {
-            font-size: 24px;
         }
     }
 }
 
-/* Large mobile screens */
-@media only screen and (min-width: 425px) {
-
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+    #intro-page .intro-container {
+        hr {
+            margin-bottom: 2em;
+        }
+    }
 }

@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { sideNavToggle } from '../actions/setSideNav'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
+import { isMobileScrWidth } from '../util/mobileCheck'
+
 import projects from '../content/projects.json'
 
 import '../css/projects.css'
@@ -157,11 +159,6 @@ function Projects(props) {
 
 
     /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
-
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
 
     if (isLeftSwipe)
     {

@@ -11,6 +11,8 @@ import { sideNavToggle } from '../actions/setSideNav'
 
 import { MDBBtn } from "mdbreact";
 
+import { isMobileScrWidth } from '../util/mobileCheck'
+
 import '../css/skills.css'
 import 'mdbreact/dist/css/mdb.css' 
 
@@ -111,11 +113,6 @@ function Skills(props) {
 
 
     /*************************** TOGGLE NAV ON SIDE SWIPES ***************************/
-
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
 
     if (isLeftSwipe)
     {

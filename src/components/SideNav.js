@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { sideNavSet, sideNavToggle } from '../actions/setSideNav'
 import { setActiveComp } from '../actions/setActiveComp'
 
+import { isMobileScrWidth } from '../util/mobileCheck'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import '../css/sideNav.css'
@@ -13,11 +15,6 @@ function SideNav(props) {
     const dispatch = useDispatch()
 
     /************** LEAVE NAV OPEN IF SCREEN WIDTH > 1024PX ****************/
-
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
 
     useEffect(() => {
         /* Open nav when window size large enough - attach to resize event listener */
@@ -29,7 +26,7 @@ function SideNav(props) {
         window.addEventListener("resize", handleResize)
 
         return () => { window.removeEventListener("resize", handleResize) }
-    }, [])
+    }, [dispatch])
 
     /************** NAVIGATION MENU FUNCTINALITY ****************/
 
@@ -104,11 +101,6 @@ function SideNav(props) {
 
     /****************** NAVIGATION LINK CLICK HANDLING ********************/
 
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
-
     /* Linked to onClick event only for screen sizes < 1024px */
     function handleLinkClick(linkId) {
         dispatch(setActiveComp(linkId))
@@ -123,7 +115,7 @@ function SideNav(props) {
     return (
         <div className="navigation" ref={navRef}>
             {/* burger menu icon for opening side nav - dispatch state change on click */}
-            <div id="burger-icon" className="burger-change" onClick={() => dispatch(sideNavToggle())}>
+            <div id="burger-icon" className="burger-change" onClick={handleBurgerClick}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>

@@ -296,4 +296,14 @@
     opacity: 1;
   }
 }
+
+/********************* MEDIA QUERIES ********************/
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+  .grid-container .resume-window {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4 / 13;
+  }
+}
 /*# sourceMappingURL=professional.css.map */

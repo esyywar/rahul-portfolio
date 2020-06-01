@@ -6,6 +6,8 @@ import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import ProExpCard from './subComponents/ProExpCard'
 
+import { isMobileScrWidth } from '../util/mobileCheck'
+
 import professional from '../content/professional.json'
 
 import '../css/professional.css'
@@ -63,11 +65,6 @@ function Professional(props) {
     }
 
     /********* FIRE ARROW CLICKS IF SWIPES RECORDED ***************/
-
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
 
     if (isLeftSwipe)
     {

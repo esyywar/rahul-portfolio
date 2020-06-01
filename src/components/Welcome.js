@@ -6,6 +6,8 @@ import { setTypeAnim } from '../actions/setTypeAnim'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 import { sideNavToggle } from '../actions/setSideNav'
 
+import { isMobileScrWidth, isMobileDevice } from '../util/mobileCheck'
+
 import '../css/welcome.css'
 
 
@@ -154,11 +156,6 @@ function Welcome(props) {
 
     /************** MOBILE CHECK FUNCTION FOR SWIPE ARROW **********************/
 
-    /* On load show "enter" or "swipe" depending on user device */
-    function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    };
-
     // Conditional render of swipe arrow depending on if mobile client platform
     function showSwipeArrow(isDisplay) {
         if (isDisplay) {
@@ -184,11 +181,6 @@ function Welcome(props) {
 
     /*************************** TOGGLE NAV ON SIDE SWIPES ***************************/
 
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
-
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
@@ -210,8 +202,9 @@ function Welcome(props) {
 
     return (
         <div id="intro-page">
-            <h1 className="page-title name-header">RAHUL ESWAR</h1><hr />
             <div className="intro-container">
+                <h1 className="name-header">RAHUL ESWAR</h1><hr />
+
                 {/* Typewriter animated list items */}
                 <ul className="desc-list">
                     {typeWriteItems
@@ -251,8 +244,6 @@ function Welcome(props) {
                         })
                     }
                 </div>
-
-                {/* Call animation driver if first render - callback to change animation state */}
 
                 {/* Swipe up arrow to display for mobile devices */}
                 {(activeComp === props.id) && showSwipeArrow(isMobileDevice())}

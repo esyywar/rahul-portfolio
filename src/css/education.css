@@ -144,6 +144,7 @@
 }
 
 /*************************** ANIMATIONS *********************/
+/* Note: This element uses the slideFromRight and slideFromLeft animations defined in skills.scss */
 @-webkit-keyframes imageGrowHeight {
   from {
     height: 0%;

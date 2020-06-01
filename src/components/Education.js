@@ -6,6 +6,8 @@ import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import EduCard from './subComponents/EduCard'
 
+import { isMobileScrWidth } from '../util/mobileCheck'
+
 import education from '../content/education.json'
 
 import '../css/education.css'
@@ -66,11 +68,6 @@ function Education(props) {
 
 
     /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
-
-    /* Checking window screen width */
-    function isMobileScrWidth() {
-        return (window.screen.width < 1024)
-    }
 
     if (isLeftSwipe)
     {

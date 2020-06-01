@@ -178,6 +178,7 @@ html, body {
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
     .grid-container .resume-window {
+        grid-row: 2 / 11;
         grid-column: 4 / 13;
     }
 }

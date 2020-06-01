@@ -17,25 +17,9 @@
           align-items: center;
 }
 
-#intro-page .name-header {
-  font-size: 35px;
-  margin-bottom: 0.2em;
-}
-
-#intro-page hr {
-  background-color: white;
-  height: 2px;
-  width: 100%;
-  max-width: 310px;
-  margin: 0 auto;
-  border: 1px solid white;
-  border-radius: 3px;
-}
-
 #intro-page .intro-container {
-  height: 75%;
-  width: 100%;
-  max-width: 420px;
+  height: 90%;
+  max-width: 400px;
   text-align: center;
   font-family: 'VT323', monospace;
   font-size: 23px;
@@ -52,6 +36,22 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+#intro-page .intro-container .name-header {
+  font-family: 'Muli', 'sans-serif';
+  font-size: 32px;
+}
+
+#intro-page .intro-container hr {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  max-width: 310px;
+  margin: 0 auto;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin-bottom: 1em;
 }
 
 #intro-page .intro-container .desc-list {
@@ -138,13 +138,15 @@
 /********************* MEDIA QUERIES *******************/
 /* Moto GS size mobile screens */
 @media only screen and (min-width: 360px) {
-  #intro-page .name-header {
+  #intro-page .intro-container .name-header {
     font-size: 36px;
-  }
-  #intro-page .intro-container {
-    font-size: 24px;
   }
 }
 
-/* Large mobile screens */
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+  #intro-page .intro-container hr {
+    margin-bottom: 2em;
+  }
+}
 /*# sourceMappingURL=welcome.css.map */
