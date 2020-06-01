@@ -112,19 +112,24 @@ function Skills(props) {
 
     /*************************** TOGGLE NAV ON SIDE SWIPES ***************************/
 
-    if (isLeftSwipe && sideNavOpen)
+    /* Checking window screen width */
+    function isMobileScrWidth() {
+        return (window.screen.width < 1024)
+    }
+
+    if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        if (sideNavOpen)
+        if (sideNavOpen && isMobileScrWidth())
         {
             dispatch(sideNavToggle())
         } 
     }
 
-    if (isRightSwipe && !sideNavOpen)
+    if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        if (!sideNavOpen)
+        if (!sideNavOpen && isMobileScrWidth())
         {
             dispatch(sideNavToggle())
         }

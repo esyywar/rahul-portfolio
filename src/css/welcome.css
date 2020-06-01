@@ -5,16 +5,29 @@
 #intro-page {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #intro-page .name-header {
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 0.2em;
 }
 
 #intro-page hr {
   background-color: white;
   height: 2px;
+  width: 100%;
+  max-width: 310px;
+  margin: 0 auto;
   border: 1px solid white;
   border-radius: 3px;
 }
@@ -22,9 +35,10 @@
 #intro-page .intro-container {
   height: 75%;
   width: 100%;
+  max-width: 420px;
   text-align: center;
   font-family: 'VT323', monospace;
-  font-size: 26px;
+  font-size: 23px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,4 +134,17 @@
             transform: translateY(5px);
   }
 }
+
+/********************* MEDIA QUERIES *******************/
+/* Moto GS size mobile screens */
+@media only screen and (min-width: 360px) {
+  #intro-page .name-header {
+    font-size: 36px;
+  }
+  #intro-page .intro-container {
+    font-size: 24px;
+  }
+}
+
+/* Large mobile screens */
 /*# sourceMappingURL=welcome.css.map */

@@ -16,6 +16,11 @@ $skills-bg: #C18AF8;
 
 
 .grid-container .navigation {
+    grid-row: 1 / 13;
+    grid-column: 1 / 10;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
 
     #burger-icon {
         z-index: 4;
@@ -45,15 +50,16 @@ $skills-bg: #C18AF8;
     .side-nav-border {
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
-        border-right: 2px solid whitesmoke;
+        border-right: 3px solid whitesmoke;
     }
 
     #side-nav {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         z-index: 3;
-        background-color:rgb(221, 219, 219); //rgb(123, 123, 126);
+        background-color:rgb(187, 185, 185);
+        box-shadow: 6px 0 8px rgba(0, 0, 0, 0.4);
 
         height: 100%;
         width: 0;
@@ -187,5 +193,55 @@ $skills-bg: #C18AF8;
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+
+/**************************** MEDIA QUERIES *******************************/
+
+/* Large mobile screens */
+@media only screen and (min-width: 425px) {
+    .grid-container .navigation {
+        grid-column: 1 / 8;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .grid-container .navigation {
+        grid-column: 1 / 7;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .grid-container .navigation {
+        grid-column: 1 / 6;
+    }
+}
+
+/* Tablet devices */
+@media only screen and (min-width: 700px) {
+    .grid-container .navigation {
+        grid-column: 1 / 5;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .grid-container .navigation {
+        grid-column: 1 / 4;
+    }
+}
+
+/* Laptops - fix the navbar to side now without toggling */
+@media only screen and (min-width: 1024px) {
+    .grid-container .navigation {
+        grid-column: 1 / 4;
+
+        #burger-icon {
+            display: none;
+        }
+        
+        #side-nav {
+            width: 100%;
+        }
     }
 }

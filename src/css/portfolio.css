@@ -212,4 +212,14 @@ html, body {
     opacity: 1;
   }
 }
+
+/***************** MEDIA QUERIES *****************/
+/* Laptops - fix the navbar and content side by side */
+@media only screen and (min-width: 1024px) {
+  .grid-container .resume-window {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-column: 4 / 13;
+  }
+}
 /*# sourceMappingURL=portfolio.css.map */

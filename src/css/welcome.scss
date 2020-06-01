@@ -10,14 +10,21 @@
     height: 100%;
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .name-header {
-        font-size: 40px;
+        font-size: 35px;
         margin-bottom: 0.2em;
     }
 
     hr {
         background-color: white;
         height: 2px;
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
         border: 1px solid white;
         border-radius: 3px;
     }
@@ -25,9 +32,10 @@
     .intro-container {
         height: 75%;
         width: 100%;
+        max-width: 420px;
         text-align: center;
         font-family: 'VT323', monospace;
-        font-size: 26px;
+        font-size: 23px;
 
         display: flex;
         flex-direction: column;
@@ -91,3 +99,23 @@
     }
 }
 
+
+/********************* MEDIA QUERIES *******************/
+
+/* Moto GS size mobile screens */
+@media only screen and (min-width: 360px) {
+    #intro-page {
+        .name-header {
+            font-size: 36px;
+        }
+
+        .intro-container {
+            font-size: 24px;
+        }
+    }
+}
+
+/* Large mobile screens */
+@media only screen and (min-width: 425px) {
+
+}

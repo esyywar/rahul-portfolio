@@ -12,6 +12,25 @@ import '../css/sideNav.css'
 function SideNav(props) {    
     const dispatch = useDispatch()
 
+    /************** LEAVE NAV OPEN IF SCREEN WIDTH > 1024PX ****************/
+
+    /* Checking window screen width */
+    function isMobileScrWidth() {
+        return (window.screen.width < 1024)
+    }
+
+    useEffect(() => {
+        /* Open nav when window size large enough - attach to resize event listener */
+        function handleResize() {
+            if (!isMobileScrWidth()) { dispatch(sideNavSet(true)) }
+        }
+        handleResize()
+
+        window.addEventListener("resize", handleResize)
+
+        return () => { window.removeEventListener("resize", handleResize) }
+    }, [])
+
     /************** NAVIGATION MENU FUNCTINALITY ****************/
 
     // Ref will be used for side nav for tracking if user clicks outside the nav
@@ -22,7 +41,7 @@ function SideNav(props) {
 
     function handleScreenClick(e)
     {
-        if (!navRef.current.contains(e.target))
+        if (!navRef.current.contains(e.target) && isMobileScrWidth())
         {
             dispatch(sideNavToggle())
         }
@@ -34,7 +53,7 @@ function SideNav(props) {
         if (isSideNavOpen)
         {
             // Give width to the side nabigation bar
-            document.getElementById("side-nav").style.width = "12em"
+            document.getElementById("side-nav").style.width = "100%"
             document.getElementById("side-nav").classList.add("side-nav-border")
 
             // Animate the burger icon, horizontal rule
@@ -85,9 +104,19 @@ function SideNav(props) {
 
     /****************** NAVIGATION LINK CLICK HANDLING ********************/
 
+    /* Checking window screen width */
+    function isMobileScrWidth() {
+        return (window.screen.width < 1024)
+    }
+
+    /* Linked to onClick event only for screen sizes < 1024px */
     function handleLinkClick(linkId) {
         dispatch(setActiveComp(linkId))
-        dispatch(sideNavSet(false))
+        if (isMobileScrWidth()) { dispatch(sideNavSet(false)) }
+    }
+
+    function handleBurgerClick() {
+        if (isMobileScrWidth()) { dispatch(sideNavToggle()) }
     }
 
     

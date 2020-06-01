@@ -1,6 +1,18 @@
 /************************* COLOUR SELECTIONS ***************/
 /*************************** FONT SELECTIONS ****************/
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+.grid-container .navigation {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 12;
+  grid-row: 1 / 13;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 9;
+  grid-column: 1 / 10;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
 .grid-container .navigation #burger-icon {
   z-index: 4;
   position: absolute;
@@ -29,15 +41,17 @@
 .grid-container .navigation .side-nav-border {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  border-right: 2px solid whitesmoke;
+  border-right: 3px solid whitesmoke;
 }
 
 .grid-container .navigation #side-nav {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 3;
-  background-color: #dddbdb;
+  background-color: #bbb9b9;
+  -webkit-box-shadow: 6px 0 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 6px 0 8px rgba(0, 0, 0, 0.4);
   height: 100%;
   width: 0;
   -webkit-transition: all 250ms linear;
@@ -217,6 +231,64 @@
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+/**************************** MEDIA QUERIES *******************************/
+/* Large mobile screens */
+@media only screen and (min-width: 425px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1 / 8;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1 / 7;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / 6;
+  }
+}
+
+/* Tablet devices */
+@media only screen and (min-width: 700px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+  }
+}
+
+/* Laptops - fix the navbar to side now without toggling */
+@media only screen and (min-width: 1024px) {
+  .grid-container .navigation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+  }
+  .grid-container .navigation #burger-icon {
+    display: none;
+  }
+  .grid-container .navigation #side-nav {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=sideNav.css.map */

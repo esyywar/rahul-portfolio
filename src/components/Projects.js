@@ -158,10 +158,15 @@ function Projects(props) {
 
     /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
 
+    /* Checking window screen width */
+    function isMobileScrWidth() {
+        return (window.screen.width < 1024)
+    }
+
     if (isLeftSwipe)
     {
         dispatch(resetSwipeL())
-        if (sideNavOpen)
+        if (sideNavOpen && isMobileScrWidth())
         {
             dispatch(sideNavToggle())
         }
@@ -174,7 +179,7 @@ function Projects(props) {
     if (isRightSwipe)
     {
         dispatch(resetSwipeR())
-        if (cardElement === 0 && !sideNavOpen)
+        if (cardElement === 0 && !sideNavOpen && isMobileScrWidth())
         {
             dispatch(sideNavToggle())
         }
