@@ -40,10 +40,10 @@ function Education(props) {
         {
             try {
                 // Make current element exit and set up for next animation
-                document.getElementById("edu-item-container").style.animation = "exitLeft 300ms ease-in forwards"
+                document.getElementById("edu-card").style.animation = "exitLeft 300ms ease-in forwards"
                 setTimeout(() => {
                     setCardElement(cardElement + 1)
-                    document.getElementById("edu-item-container").style.animation = "slideFromRight 300ms ease-in forwards"
+                    document.getElementById("edu-card").style.animation = "slideFromRight 300ms ease-in forwards"
                 }, 300)
             } catch (error) {
                 console.log(error.message)
@@ -55,10 +55,10 @@ function Education(props) {
         if (cardElement > 0)
         {
             try {
-                document.getElementById("edu-item-container").style.animation = "exitRight 300ms ease-in forwards"
+                document.getElementById("edu-card").style.animation = "exitRight 300ms ease-in forwards"
                 setTimeout(() => {
                     setCardElement(cardElement - 1)
-                    document.getElementById("edu-item-container").style.animation = "slideFromLeft 300ms ease-in forwards"
+                    document.getElementById("edu-card").style.animation = "slideFromLeft 300ms ease-in forwards"
                 }, 300)  
             } catch (error) {
                 console.log(error.message)

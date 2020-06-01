@@ -55,7 +55,7 @@ $text-bg-colour: whitesmoke;
 
     #pro-content-card {
         grid-column: 1 / 9;
-        grid-row: 3 / 13;
+        grid-row: 4 / 13;
         font-family: 'Muli', sans-serif;
         color: black;
         font-size: 16px;
@@ -73,7 +73,7 @@ $text-bg-colour: whitesmoke;
 
             background-color: $text-bg-colour;
             width: 90%;
-            height: 70%;
+            height: 85%;
             z-index: 2;
             padding: 0.2em 0.4em;
             border-radius: 1em;
@@ -91,7 +91,6 @@ $text-bg-colour: whitesmoke;
 
             .employer {
                 color: #F08700;
-                font-size: 1.2em;
             }
 
             p {
@@ -104,7 +103,7 @@ $text-bg-colour: whitesmoke;
             grid-row: 2 / 7;
             grid-column: 2 / 8;
             width: 100%;
-            max-width: 430px;
+            max-width: 410px;
             border-radius: 2em;
 
             // Initial conditions for animation
@@ -202,6 +201,13 @@ $text-bg-colour: whitesmoke;
 
 
 /********************* MEDIA QUERIES ********************/
+
+/* Large mobile screens */
+@media only screen and (min-width: 425px) {
+  .professional-exp-page #pro-content-card {
+    grid-row: 3 / 13;
+  }
+}
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {

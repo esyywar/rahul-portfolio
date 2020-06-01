@@ -38,7 +38,7 @@
     }
 
     /* Container for education item cards */
-    #edu-item-container {
+    #edu-card {
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
         font-size: 16px;
@@ -79,6 +79,7 @@
             border-radius: 2em;
             width: 85%;
             height: 100%;
+            max-width: 410px;
 
             display: flex;
             flex-direction: column;
@@ -146,6 +147,48 @@
     to {
         opacity: 0;
         transform: translateX(100px);
+    }
+}
+
+
+/***************** MEDIA QUERIES *****************/
+
+@media only screen and (min-width: 550px) {
+    .education-page #edu-card {
+        .school-and-date {
+            grid-column: 1 / 6;
+
+        }
+
+        .degree-and-major {
+            grid-column: 4 / 9;
+        }
+    }
+}
+
+@media only screen and (min-width: 620px) {
+    .education-page #edu-card {
+        .school-and-date {
+            grid-column: 1 / 5;
+
+        }
+
+        .degree-and-major {
+            grid-column: 5 / 9;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .education-page #edu-card {
+        .school-and-date {
+            grid-column: 2 / 6;
+
+        }
+
+        .degree-and-major {
+            grid-column: 4 / 8;
+        }
     }
 }
 

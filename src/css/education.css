@@ -45,7 +45,7 @@
   left: 0.5em;
 }
 
-.education-page #edu-item-container {
+.education-page #edu-card {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -63,11 +63,11 @@
   /* Text box appearing at bottom right */
 }
 
-.education-page #edu-item-container p {
+.education-page #edu-card p {
   padding: 0.3em 0;
 }
 
-.education-page #edu-item-container .school-and-date {
+.education-page #edu-card .school-and-date {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
@@ -89,7 +89,7 @@
           animation: slideFromLeft 500ms ease-in 500ms forwards;
 }
 
-.education-page #edu-item-container .image-container {
+.education-page #edu-card .image-container {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
   grid-row: 2 / 8;
@@ -100,6 +100,7 @@
   border-radius: 2em;
   width: 85%;
   height: 100%;
+  max-width: 410px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,14 +115,14 @@
       justify-content: space-around;
 }
 
-.education-page #edu-item-container .image-container img {
+.education-page #edu-card .image-container img {
   width: auto;
   height: 0%;
   -webkit-animation: imageGrowHeight 1s ease-in-out forwards;
           animation: imageGrowHeight 1s ease-in-out forwards;
 }
 
-.education-page #edu-item-container .degree-and-major {
+.education-page #edu-card .degree-and-major {
   -ms-grid-row: 7;
   -ms-grid-row-span: 2;
   grid-row: 7 / 9;
@@ -211,6 +212,46 @@
     opacity: 0;
     -webkit-transform: translateX(100px);
             transform: translateX(100px);
+  }
+}
+
+/***************** MEDIA QUERIES *****************/
+@media only screen and (min-width: 550px) {
+  .education-page #edu-card .school-and-date {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1 / 6;
+  }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 5;
+    grid-column: 4 / 9;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  .education-page #edu-card .school-and-date {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / 5;
+  }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 4;
+    grid-column: 5 / 9;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .education-page #edu-card .school-and-date {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2 / 6;
+  }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 4;
+    grid-column: 4 / 8;
   }
 }
 /*# sourceMappingURL=education.css.map */

@@ -31,7 +31,7 @@ function EduCard(props) {
     }
 
     return (
-        <div id="edu-item-container">
+        <div id="edu-card">
             <div className="school-and-date">
                 <p>{eduItem.institution}</p>
 

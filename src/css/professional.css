@@ -60,9 +60,9 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 10;
-  grid-row: 3 / 13;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 9;
+  grid-row: 4 / 13;
   font-family: 'Muli', sans-serif;
   color: black;
   font-size: 16px;
@@ -87,7 +87,7 @@
   max-width: 460px;
   background-color: whitesmoke;
   width: 90%;
-  height: 70%;
+  height: 85%;
   z-index: 2;
   padding: 0.2em 0.4em;
   border-radius: 1em;
@@ -113,7 +113,6 @@
 
 .professional-exp-page #pro-content-card .title-loc-and-company .employer {
   color: #F08700;
-  font-size: 1.2em;
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company p {
@@ -129,7 +128,7 @@
   -ms-grid-column-span: 6;
   grid-column: 2 / 8;
   width: 100%;
-  max-width: 430px;
+  max-width: 410px;
   border-radius: 2em;
   opacity: 0;
   -webkit-transform: scale(0.1) rotate(30deg);
@@ -306,6 +305,15 @@
 }
 
 /********************* MEDIA QUERIES ********************/
+/* Large mobile screens */
+@media only screen and (min-width: 425px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
+  }
+}
+
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   .grid-container .resume-window {
