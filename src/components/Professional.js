@@ -95,7 +95,7 @@ function Professional(props) {
 
     return (
         <div className="professional-exp-page">
-            <h1 className="page-title">Professional Experience</h1>
+            <h1 className="page-title pro-exp-title">Professional Experience</h1>
 
             {/* Render the active professional experience card */}
             <ProExpCard proExpItem={professional[cardElement]} />
