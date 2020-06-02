@@ -152,6 +152,7 @@ function Projects(props) {
 
     /**************** TOGGLE PROJ-CARD SHORT DESCRIPTION ON MOBILES ***************/
 
+    /* Toggle state which enables filter-tags to show and expansion of detail section */
     function handleDescToggle()
     {
         setMobileDesc(!mobileDescOpen)

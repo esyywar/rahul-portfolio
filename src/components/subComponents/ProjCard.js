@@ -66,7 +66,7 @@ function ProjCard(props) {
                     {/* TODO - Hold descriptions for project */}
                 </div>
 
-                {/* This prompt only shown for mobile platforms to expand details */}
+                {/* Expandable section to show project details */}
                 <div className="desc-container">
                     {detailSection()}
                 </div>

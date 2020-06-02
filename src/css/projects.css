@@ -13,6 +13,7 @@
       grid-template-rows: repeat(12, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
   /* Additional styling for this class in portfolio.css */
   /* Next & previous buttons */
   /* Active project item card style*/
@@ -63,12 +64,10 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 10;
   grid-row: 2 / 12;
-  width: 85%;
+  width: 100%;
   height: 100%;
   -ms-grid-row-align: start;
       align-self: start;
-  -ms-grid-column-align: center;
-      justify-self: center;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   display: -ms-grid;
@@ -86,15 +85,19 @@
 }
 
 .projects-page #proj-card .title-and-date {
-  width: 90%;
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
+  grid-row: 2 / 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
+  width: 85%;
+  max-width: 430px;
   z-index: 2;
   text-align: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   border-radius: 5px;
   padding: 0.5em;
   color: #2F3C7E;
@@ -127,7 +130,8 @@
   -ms-grid-row-span: 2;
   grid-row: 6 / 8;
   z-index: 2;
-  width: 110%;
+  width: 95%;
+  max-width: 450px;
   -webkit-transition: height 300ms;
   transition: height 300ms;
   border-radius: 10px;
@@ -189,6 +193,7 @@
 .projects-page #proj-card #tags-and-desc .proj-card-tags {
   justify-self: flex-end;
   height: 40%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,9 +204,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
@@ -209,7 +214,7 @@
       align-self: flex-end;
   background-color: black;
   color: white;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin: 0.2em;
   padding: 0.4em;
 }
@@ -229,18 +234,20 @@
 }
 
 .projects-page #proj-card .desc-closed {
-  height: 90%;
+  height: 80%;
 }
 
 .projects-page #proj-card .image-container {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / 9;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 5;
-  grid-row: 2 / 7;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-column: 2 / 8;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 4;
+  grid-row: 3 / 7;
   z-index: 1;
   width: 100%;
+  max-width: 410px;
+  border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,6 +272,7 @@
 
 .projects-page .tags-list {
   width: 100%;
+  max-width: 450px;
   -ms-grid-row: 11;
   -ms-grid-row-span: 2;
   grid-row: 11 / 13;
@@ -576,6 +584,17 @@
     -webkit-transform: perspective(400px);
             transform: perspective(400px);
     opacity: 1;
+  }
+}
+
+/************************ MEDIA QUERIES *************************/
+/* For large mobile screens */
+@media only screen and (min-width: 425px) {
+  .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
+    font-size: 0.8em;
+  }
+  .projects-page #proj-card .desc-closed {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=projects.css.map */
