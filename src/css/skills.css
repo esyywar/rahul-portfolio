@@ -117,13 +117,13 @@
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 .skills-page .skills-content .code-langs-list {
   height: 100%;
-  width: 100%;
-  max-width: 700px;
+  max-width: 450px;
   display: -ms-grid;
   display: grid;
   margin: 0 auto;
-  -ms-grid-columns: 7.5em minmax(auto, 500px);
-      grid-template-columns: 7.5em minmax(auto, 500px);
+  -ms-grid-columns: 7.5em minmax(auto, 300px);
+      grid-template-columns: 7.5em minmax(auto, 300px);
+  grid-column-gap: 10px;
 }
 
 .skills-page .skills-content .code-langs-list .lang-column {

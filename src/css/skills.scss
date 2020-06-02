@@ -108,11 +108,11 @@ $transition-exit-time: 200ms;
 
 .skills-page .skills-content .code-langs-list {
     height: 100%;
-    width: 100%;
-    max-width: 700px;
+    max-width: 450px;
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 7.5em minmax(auto, 500px);
+    grid-template-columns: 7.5em minmax(auto, 300px);
+    grid-column-gap: 10px;
 
     .lang-column {
         grid-column: 1 / 2;
