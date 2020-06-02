@@ -31,32 +31,6 @@ $tag-list-trans-in-time: 400ms;
         grid-column: 1 / 9;
     }
 
-    /* Next & previous buttons */
-    .prev-arrow, .next-arrow {
-        cursor: pointer;
-        position: fixed;
-        top: 42%;
-        color: white;
-        font-weight: bold;
-        font-size: 40px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-
-        // Initial conditions for animation
-        opacity: 0;
-        animation: appearIn 500ms ease 500ms forwards;
-    }
-    
-    .next-arrow {
-        right: 0.5em;
-        border-radius: 3px 0 0 3px;
-    }
-    
-    .prev-arrow {
-        left: 0.5em;
-    }
-
     /* Active project item card style*/
     #proj-card {
         grid-column: 1 / 9;

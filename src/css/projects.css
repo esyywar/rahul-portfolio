@@ -15,7 +15,6 @@
       grid-template-columns: repeat(8, 1fr);
   justify-items: center;
   /* Additional styling for this class in portfolio.css */
-  /* Next & previous buttons */
   /* Active project item card style*/
   /* list of tags to filter projects appearing bottom of page */
 }
@@ -27,34 +26,6 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-}
-
-.projects-page .prev-arrow, .projects-page .next-arrow {
-  cursor: pointer;
-  position: fixed;
-  top: 42%;
-  color: white;
-  font-weight: bold;
-  font-size: 40px;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  opacity: 0;
-  -webkit-animation: appearIn 500ms ease 500ms forwards;
-          animation: appearIn 500ms ease 500ms forwards;
-}
-
-.projects-page .next-arrow {
-  right: 0.5em;
-  border-radius: 3px 0 0 3px;
-}
-
-.projects-page .prev-arrow {
-  left: 0.5em;
 }
 
 .projects-page #proj-card {

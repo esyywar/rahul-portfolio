@@ -40,11 +40,39 @@ html, body {
   color: whitesmoke;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  /* Horizontal scroll arrows on pages: Pro Exp, Education, Projects */
 }
 
 .grid-container .resume-window .page-title {
   margin-top: 0.5em;
   z-index: 2;
+}
+
+.grid-container .resume-window .prev-arrow, .grid-container .resume-window .next-arrow {
+  cursor: pointer;
+  position: fixed;
+  top: 42%;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  -webkit-animation: appearIn 500ms ease 500ms forwards;
+          animation: appearIn 500ms ease 500ms forwards;
+}
+
+.grid-container .resume-window .next-arrow {
+  right: 10px;
+}
+
+.grid-container .resume-window .prev-arrow {
+  left: 10px;
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/
@@ -215,6 +243,16 @@ html, body {
 }
 
 /***************** MEDIA QUERIES *****************/
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .grid-container .resume-window .next-arrow {
+    right: 40px;
+  }
+  .grid-container .resume-window .prev-arrow {
+    left: 40px;
+  }
+}
+
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
   .grid-container .resume-window {
@@ -224,6 +262,13 @@ html, body {
     -ms-grid-column: 4;
     -ms-grid-column-span: 9;
     grid-column: 4 / 13;
+    height: 110%;
+  }
+  .grid-container .resume-window .next-arrow {
+    right: 50px;
+  }
+  .grid-container .resume-window .prev-arrow {
+    left: 30%;
   }
 }
 /*# sourceMappingURL=portfolio.css.map */

@@ -54,6 +54,31 @@ html, body {
             margin-top: 0.5em;
             z-index: 2;
         }
+
+        /* Horizontal scroll arrows on pages: Pro Exp, Education, Projects */
+        .prev-arrow, .next-arrow {
+            cursor: pointer;
+            position: fixed;
+            top: 42%;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+
+            // Initial conditions for animation
+            opacity: 0;
+            animation: appearIn 500ms ease 500ms forwards;
+        }
+    
+        .next-arrow {
+            right: 10px;
+        }
+        
+        .prev-arrow {
+            left: 10px;
+        }
     }
 }
 
@@ -176,11 +201,33 @@ html, body {
 
 /***************** MEDIA QUERIES *****************/
 
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    .grid-container .resume-window {
+        .next-arrow {
+            right: 40px;
+        }
+        .prev-arrow {
+            left: 40px;
+        }
+
+    }
+}
+
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
     .grid-container .resume-window {
         grid-row: 2 / 11;
         grid-column: 4 / 13;
+        height: 110%;
+        
+        .next-arrow {
+            right: 50px;
+        }
+
+        .prev-arrow {
+            left: 30%;
+        }
     }
 }
 
