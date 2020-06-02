@@ -33,7 +33,7 @@ $transition-exit-time: 200ms;
         grid-row: 2 / 7;
         margin-top: 3em;
         height: 100%;
-        width: 90%;
+        width: 100%;
 
         // For menu screen component
         .menu-screen {
@@ -219,12 +219,13 @@ $transition-exit-time: 200ms;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    font-size: 14px;
 
     .hw-tool-pack {
-        height: 130px;
-        width: 120px;
-        padding: 8px 12px;
+        height: 9.3em;;
+        padding: 4px 6px;
+        margin: 0 4px;
 
         font-family: 'Muli', sans-serif;
         font-weight: 600;
@@ -241,6 +242,7 @@ $transition-exit-time: 200ms;
         transform: scale(0.5);
         
         h3 {
+            color: rgb(34, 14, 211);
             margin-bottom: 0.6em;
         }
     }
@@ -332,30 +334,68 @@ $transition-exit-time: 200ms;
 }
 
 
-/********************* MEDIA QEUERIES **********************/ 
+/********************* MEDIA QUERIES **********************/ 
 
-/* For large mobile screens */
+/* Small mobile screens */
+@media only screen and (min-width: 325px) {
+    /* hardware skills */
+    .skills-page .skills-content .hardware-page .hw-tool-pack {
+        padding: 4px 8px;
+    }
+}
+
+/* Large mobile screens */
 @media only screen and (min-width: 425px) {
 
-    /* For software tools */
-    .skills-page .skills-content .sw-tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        width: 90%;
+    /* software tools */
+    .skills-page .skills-content {
+        .hardware-page .hw-tool-pack {
+            padding: 4px 14px;
+        }
+    
+        .sw-tools-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            width: 90%;
+        }
     }
 }
 
 /* For large mobile screens */
 @media only screen and (min-width: 575px) {
-    /* For software tools */
-    .skills-page .skills-content .sw-tools-grid {
-        width: 85%;
+    .skills-page .skills-content {
+        /* For hardware */ 
+        .hardware-page {
+            font-size: 16px;
+
+            .hw-tool-pack {
+                h3 {
+                    text-transform: uppercase;
+                }
+           }
+        }
+
+        /* For software tools */
+        .sw-tools-grid {
+            width: 85%;
+        }
     }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-    /* For software tools */
-    .skills-page .skills-content .sw-tools-grid {
-        font-size: 18px;
+    .skills-page .skills-content {
+        /* For hardware */
+        .hardware-page {
+            font-size: 17px;
+
+            .hw-tool-pack {
+                padding: 8px 14px;
+            }
+        }
+
+        /* For software tools */
+        .sw-tools-grid {
+            font-size: 18px;
+        }
     }
 }
