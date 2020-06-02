@@ -22,13 +22,16 @@ function SWTools() {
             {swTools.map(({ id, title, items }, index) => {
                 return (
                     <div key={id} className="sw-tool-pack" style={{backgroundColor: bgColours[index]}}>
-                        <h3>{title}</h3>
-                        {/* Each list of software tools mapped within each container */}
-                        {items.map((element, index) => {
-                            return (
-                                <p key={index}>{element}</p>
-                            )
-                        })}
+                        <div className="tool-pack-title">{title}</div>
+                        
+                        <div className="tool-pack-items">
+                            {/* Each list of software tools mapped within each container */}
+                            {items.map((element, index) => {
+                                return (
+                                    <p key={index}>{element}</p>
+                                )
+                            })}
+                        </div>
                     </div>
                 )
             })}

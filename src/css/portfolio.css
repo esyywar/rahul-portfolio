@@ -44,6 +44,7 @@ html, body {
 
 .grid-container .resume-window .page-title {
   margin-top: 0.5em;
+  z-index: 2;
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/

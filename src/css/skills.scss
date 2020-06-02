@@ -33,8 +33,7 @@ $transition-exit-time: 200ms;
         grid-row: 2 / 7;
         margin-top: 3em;
         height: 100%;
-        width: 100%;
-        overflow: visible;
+        width: 90%;
 
         // For menu screen component
         .menu-screen {
@@ -66,7 +65,7 @@ $transition-exit-time: 200ms;
         font-family: 'VT323', monospace;
         grid-row: 8 / span 1; 
         align-self: start;
-        width: 80%;
+        width: 100%;
 
         // Initial conditions for animation
         opacity: 0;
@@ -172,15 +171,21 @@ $transition-exit-time: 200ms;
 .skills-page .skills-content .sw-tools-grid {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     grid-gap: 1em;
+    font-size: 15px;
 
     .sw-tool-pack {
+        width: 100%;
+        height: 80%;
+        max-height: 200px;
+        margin: auto 0;
+
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
         border-radius: 0.5em;
         padding: 0.5em 0;
         font-family: 'Oswald', sans-serif;
@@ -189,8 +194,18 @@ $transition-exit-time: 200ms;
         transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
         opacity: 0;
 
-        h3 {
+        .tool-pack-title {
+            height: 20%;
+            justify-self: flex-start;
             color: #FFBF00;
+        }
+
+        .tool-pack-items {
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
         }
     }
 }
@@ -313,5 +328,34 @@ $transition-exit-time: 200ms;
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+
+/********************* MEDIA QEUERIES **********************/ 
+
+/* For large mobile screens */
+@media only screen and (min-width: 425px) {
+
+    /* For software tools */
+    .skills-page .skills-content .sw-tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        width: 90%;
+    }
+}
+
+/* For large mobile screens */
+@media only screen and (min-width: 575px) {
+    /* For software tools */
+    .skills-page .skills-content .sw-tools-grid {
+        width: 85%;
+    }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+    /* For software tools */
+    .skills-page .skills-content .sw-tools-grid {
+        font-size: 18px;
     }
 }
