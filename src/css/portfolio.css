@@ -7,6 +7,16 @@
 html, body {
   margin: 0px;
   padding: 0px;
+  /* apply to elements to prevent highlighting on click */
+}
+
+html .no-select, body .no-select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/

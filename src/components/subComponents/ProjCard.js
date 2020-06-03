@@ -68,7 +68,7 @@ function ProjCard(props) {
                 </div>
 
                 {/* Expandable section to show project details */}
-                <div className="desc-container" onClick={() => props.mobileDescTog()}>
+                <div className="desc-container no-select" onClick={() => props.mobileDescTog()}>
                     {detailSection()}
                 </div>
 
