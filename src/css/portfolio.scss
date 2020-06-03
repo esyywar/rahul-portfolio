@@ -59,13 +59,14 @@ html, body {
         .prev-arrow, .next-arrow {
             cursor: pointer;
             position: fixed;
-            top: 42%;
+            top: 50%;
             color: white;
             font-weight: bold;
             font-size: 40px;
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             user-select: none;
+            transition: color transform 200ms;
 
             // Initial conditions for animation
             opacity: 0;
@@ -224,9 +225,12 @@ html, body {
         .next-arrow {
             right: 50px;
         }
-
         .prev-arrow {
             left: 30%;
+        }
+        .next-arrow:hover, .prev-arrow:hover {
+            color: yellow;
+            transform: scale(1.2);
         }
     }
 }

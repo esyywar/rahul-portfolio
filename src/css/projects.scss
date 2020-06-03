@@ -9,7 +9,9 @@
 $projCard-bg-clr: #FBEAEB;
 $projCard-text-clr: #2F3C7E;
 $inactive-tag-clr: rgb(70, 24, 122);
+$inactive-tag-hover-clr: rgb(100, 45, 163);
 $active-tag-clr: orange;
+$active-tag-hover-clr: rgb(255, 178, 34);
 
 $tag-list-trans-out-time: 300ms;
 $tag-list-trans-in-time: 400ms;
@@ -24,6 +26,11 @@ $tag-list-trans-in-time: 400ms;
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(8, 1fr);
     justify-items: center;
+
+    /* Arrow position differs from other pages */
+    .prev-arrow, .next-arrow {
+        top: 42% !important;
+    }
 
     /* Additional styling for this class in portfolio.css */
     .page-title {
@@ -106,6 +113,7 @@ $tag-list-trans-in-time: 400ms;
 
             // Close button for short description (mobile platforms)
             .desc-close-btn {
+                cursor: pointer;
                 font-size: 1.2em;
                 align-self: flex-start;
                 margin-top: 5px;
@@ -115,6 +123,7 @@ $tag-list-trans-in-time: 400ms;
             }
             
             .desc-container {
+                cursor: pointer;
                 width: 100%;
                 height: 50%;
                 display: flex;
@@ -211,6 +220,7 @@ $tag-list-trans-in-time: 400ms;
 
         /* tag-items for user to filter */
         .tag-item {
+            cursor: pointer;
             display: block;
             padding: 0.4em;
             margin: 0.1em;
@@ -223,12 +233,20 @@ $tag-list-trans-in-time: 400ms;
         .tag-inactive {
             color: white;
             background-color: $inactive-tag-clr;
+
+            &:hover {
+                background-color: $inactive-tag-hover-clr;
+            }
         }
 
         /* style for active selected tags */
         .tag-active {
             color: black;
             background-color: $active-tag-clr;
+
+            &:hover {
+                background-color: $active-tag-hover-clr;
+            }
 
             p {
                 &:before {
@@ -388,6 +406,31 @@ $tag-list-trans-in-time: 400ms;
 
         .desc-closed {
             height: 100%;
+        }
+    }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+    .projects-page #proj-card {
+        .title-and-date {
+            grid-row: 2;
+        }
+
+        #tags-and-desc {
+            grid-row: 6 / 8;
+            margin-top: 15px;
+        }
+
+        .desc-closed {
+            height: 100%;
+        }
+        .desc-open {
+            height: 160%;
+        }
+
+        .image-container {
+            grid-row: 3 / 7;
         }
     }
 }

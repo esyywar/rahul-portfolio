@@ -51,7 +51,7 @@ html, body {
 .grid-container .resume-window .prev-arrow, .grid-container .resume-window .next-arrow {
   cursor: pointer;
   position: fixed;
-  top: 42%;
+  top: 50%;
   color: white;
   font-weight: bold;
   font-size: 40px;
@@ -62,6 +62,8 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: color transform 200ms;
+  transition: color transform 200ms;
   opacity: 0;
   -webkit-animation: appearIn 500ms ease 500ms forwards;
           animation: appearIn 500ms ease 500ms forwards;
@@ -269,6 +271,11 @@ html, body {
   }
   .grid-container .resume-window .prev-arrow {
     left: 30%;
+  }
+  .grid-container .resume-window .next-arrow:hover, .grid-container .resume-window .prev-arrow:hover {
+    color: yellow;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 /*# sourceMappingURL=portfolio.css.map */

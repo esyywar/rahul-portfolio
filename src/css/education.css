@@ -225,4 +225,18 @@
     grid-column: 4 / 8;
   }
 }
+
+/* Laptops */
+@media only screen and (min-width: 700px) {
+  .education-page #edu-card .school-and-date {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+    grid-column: 3 / 6;
+  }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4 / 7;
+  }
+}
 /*# sourceMappingURL=education.css.map */

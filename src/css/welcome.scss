@@ -44,9 +44,11 @@
 
         .desc-list {
             padding: 0.1em 0;
+            max-width: 310px;
         }         
         .desc-paras {
             margin-top: 0.4em;
+            max-width: 310px;
 
             p {
                 padding: 0.5em 0;
@@ -65,7 +67,9 @@
             
             .swipe-arrow
             {
+                cursor: pointer;
                 margin-top: -0.2em;
+                padding: 0 1em;
                 font-size: 1.5em;
                 transform: rotate(90deg);
             }

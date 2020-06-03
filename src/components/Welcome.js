@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTypeAnim } from '../actions/setTypeAnim'
 
+import { nextComp } from '../actions/setActiveComp'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 import { sideNavToggle } from '../actions/setSideNav'
 
@@ -157,25 +158,23 @@ function Welcome(props) {
     /************** MOBILE CHECK FUNCTION FOR SWIPE ARROW **********************/
 
     // Conditional render of swipe arrow depending on if mobile client platform
-    function showSwipeArrow(isDisplay) {
-        if (isDisplay) {
-            // Apply bounce animation after entrance animation time    
-            let id = setTimeout(() => {
-                try {
-                    document.getElementById("swipe-arrow-container").style.animation = "swipeBounce 2s linear infinite alternate-reverse"
-                }
-                catch { 
-                    clearTimeout(id) 
-                }
-            }, 1000)
+    function showSwipeArrow() {
+        // Apply bounce animation after entrance animation time    
+        let id = setTimeout(() => {
+            try {
+                document.getElementById("swipe-arrow-container").style.animation = "swipeBounce 2s linear infinite alternate-reverse"
+            }
+            catch { 
+                clearTimeout(id) 
+            }
+        }, 1000)
 
-            return (
-                <div id="swipe-arrow-container">
-                    <p>Swipe Up!</p>
-                    <div className="swipe-arrow">&#10095;</div>
-                </div>
-            )
-        }
+        return (
+            <div id="swipe-arrow-container">
+                {isMobileDevice() && <p>Swipe Up!</p>}
+                <div className="swipe-arrow" onClick={() => dispatch(nextComp())}>&#10095;</div>
+            </div>
+        )
     }
 
 
@@ -246,7 +245,7 @@ function Welcome(props) {
                 </div>
 
                 {/* Swipe up arrow to display for mobile devices */}
-                {(activeComp === props.id) && showSwipeArrow(isMobileDevice())}
+                {(activeComp === props.id) && showSwipeArrow()}
             </div>
         </div>
     )

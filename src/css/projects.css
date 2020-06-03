@@ -14,9 +14,14 @@
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
   justify-items: center;
+  /* Arrow position differs from other pages */
   /* Additional styling for this class in portfolio.css */
   /* Active project item card style*/
   /* list of tags to filter projects appearing bottom of page */
+}
+
+.projects-page .prev-arrow, .projects-page .next-arrow {
+  top: 42% !important;
 }
 
 .projects-page .page-title {
@@ -129,6 +134,7 @@
 }
 
 .projects-page #proj-card #tags-and-desc .desc-close-btn {
+  cursor: pointer;
   font-size: 1.2em;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -139,6 +145,7 @@
 }
 
 .projects-page #proj-card #tags-and-desc .desc-container {
+  cursor: pointer;
   width: 100%;
   height: 50%;
   display: -webkit-box;
@@ -273,6 +280,7 @@
 }
 
 .projects-page .tags-list .tag-item {
+  cursor: pointer;
   display: block;
   padding: 0.4em;
   margin: 0.1em;
@@ -287,9 +295,17 @@
   background-color: #46187a;
 }
 
+.projects-page .tags-list .tag-inactive:hover {
+  background-color: #642da3;
+}
+
 .projects-page .tags-list .tag-active {
   color: black;
   background-color: orange;
+}
+
+.projects-page .tags-list .tag-active:hover {
+  background-color: #ffb222;
 }
 
 .projects-page .tags-list .tag-active p:before {
@@ -566,6 +582,31 @@
   }
   .projects-page #proj-card .desc-closed {
     height: 100%;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) {
+  .projects-page #proj-card .title-and-date {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  .projects-page #proj-card #tags-and-desc {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    grid-row: 6 / 8;
+    margin-top: 15px;
+  }
+  .projects-page #proj-card .desc-closed {
+    height: 100%;
+  }
+  .projects-page #proj-card .desc-open {
+    height: 160%;
+  }
+  .projects-page #proj-card .image-container {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 4;
+    grid-row: 3 / 7;
   }
 }
 /*# sourceMappingURL=projects.css.map */

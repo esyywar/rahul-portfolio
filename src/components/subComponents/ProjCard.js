@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { isMobileDevice } from '../../util/mobileCheck'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -37,7 +39,7 @@ function ProjCard(props) {
         else
         {
             return (
-                <p className="detail-prompt">Tap for more detail!</p>
+                <p className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"} for more detail!</p>
             )
         }
     }
@@ -57,17 +59,16 @@ function ProjCard(props) {
             <div 
                 id="tags-and-desc" 
                 className={(props.isMobileDesc) ? "desc-open" : "desc-closed"} 
-                onClick={() => props.mobileDescTog()}
             >
                 {/* Close button for collapsing short-desc section on mobile */}
-                {props.isMobileDesc && <span className="desc-close-btn"> ✕ </span>}
+                {props.isMobileDesc && <span className="desc-close-btn" onClick={() => props.mobileDescTog()}> ✕ </span>}
 
                 <div className="proj-desc">
                     {/* TODO - Hold descriptions for project */}
                 </div>
 
                 {/* Expandable section to show project details */}
-                <div className="desc-container">
+                <div className="desc-container" onClick={() => props.mobileDescTog()}>
                     {detailSection()}
                 </div>
 

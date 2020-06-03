@@ -106,8 +106,8 @@
           transform: scale(0.1) rotate(30deg);
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
-  -webkit-animation: jackInTheBox ease-out 1s forwards;
-          animation: jackInTheBox ease-out 1s forwards;
+  -webkit-animation: jackInTheBox ease-in 1s forwards;
+          animation: jackInTheBox ease-in 1s forwards;
 }
 
 .professional-exp-page #pro-content-card .image-container img {
@@ -287,10 +287,8 @@
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-  .grid-container .resume-window {
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 9;
-    grid-column: 4 / 13;
+  .professional-exp-page #pro-content-card {
+    font-size: 21px;
   }
 }
 /*# sourceMappingURL=professional.css.map */

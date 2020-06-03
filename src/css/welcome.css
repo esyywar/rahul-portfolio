@@ -56,10 +56,12 @@
 
 #intro-page .intro-container .desc-list {
   padding: 0.1em 0;
+  max-width: 310px;
 }
 
 #intro-page .intro-container .desc-paras {
   margin-top: 0.4em;
+  max-width: 310px;
 }
 
 #intro-page .intro-container .desc-paras p {
@@ -77,7 +79,9 @@
 }
 
 #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
+  cursor: pointer;
   margin-top: -0.2em;
+  padding: 0 1em;
   font-size: 1.5em;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
