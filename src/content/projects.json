@@ -31,7 +31,7 @@
         "openSrc": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
         "tags": ["C/C++", "GUI"],
-        "shortDesc": ["Watch a DFS back-tracking algorithm at work as it solves a sudoku!", 
+        "shortDesc": ["Watch a DFS back-tracking algorithm at work as it solves a sudoku in real-time!", 
             "Built in C with Win32 API for maximum efficiency and lightweight file size.",
             "This program applies event driven programming and multithreading."],
         "fullDesc": ["A super lightweight application to visualize the DFS back-tracking algorithm at work! The user can provide a sudoku puzzle (or load from application's local memory), set the solving speed and watch the process. Developed in C and Win32, this project allowed me to deeply understand event driven programming and the basics of multithreading."]
@@ -68,7 +68,7 @@
         "openSrc": false,
         "tags": ["Web-Dev", "React-JS", "Javscript"],
         "shortDesc": ["My personal blog website about the books which have shaped my life!",
-            "Built with React, React-Router, SASS.",
+            "Built with React, React-Router and SASS.",
             "Features light and dark modes!"],
         "fullDesc": ["My personal blog where I share articles and recommendations of books that have shaped my life! Built using React (with hooks), React-Router, React-Helmet and SASS. The site features light and dark modes. An earlier version built with PHP7 and vanilla JS is available at my github."]
     },

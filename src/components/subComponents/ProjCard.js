@@ -12,7 +12,7 @@ function ProjCard(props) {
     const projItem = props.projItem
     
     /* Description is an array of sentences to be mapped as html paragraphs */
-    const description = (isMobileDevice()) ? projItem.shortDesc : projItem.fullDesc
+    const description = (window.screen.width < 768) ? projItem.shortDesc : projItem.fullDesc
 
 
     /******************* CONDITIONAL RENDER OF OPEN SOURCE TAG *********************/
@@ -48,7 +48,7 @@ function ProjCard(props) {
             return (
                 <div className="proj-desc-preview">
                     {/* Display preview text from first sentence of description */}
-                    <span className="prev-text">{getPreviewText(projDesc[0])}</span>
+                    <span className="prev-text">{getPreviewText(description)}</span>
                     <span className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"}</span>
                 </div>
             )
