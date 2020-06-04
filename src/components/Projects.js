@@ -31,7 +31,7 @@ function Projects(props) {
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
     /* Toggling is desc-open on mobile devices */
-    const [mobileDescOpen, setMobileDesc] = useState(false)
+    const [isDescOpen, setDescOpen] = useState(false)
 
 
     /**************** LOCAL STATE *****************/
@@ -155,7 +155,7 @@ function Projects(props) {
     /* Toggle state which enables filter-tags to show and expansion of detail section */
     function handleDescToggle()
     {
-        setMobileDesc(!mobileDescOpen)
+        setDescOpen(!isDescOpen)
     }
 
 
@@ -195,7 +195,7 @@ function Projects(props) {
             {/* Render the active project item card */}
             <ProjCard 
                 projItem={filtProjList[cardElement]} 
-                isMobileDesc={mobileDescOpen} 
+                isDescOpen={isDescOpen} 
                 mobileDescTog = {handleDescToggle}
             />
 
@@ -205,7 +205,7 @@ function Projects(props) {
 
             {/* Listing all tag items selectable by user */}
             <CSSTransition
-                in = {!mobileDescOpen}
+                in = {!isDescOpen}
                 timeout = {500}
                 classNames = "tag-list-trans"
                 unmountOnExit

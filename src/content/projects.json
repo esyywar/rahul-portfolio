@@ -5,9 +5,11 @@
         "date": "June 2020",
         "photo": "rahulscorner_screenshot.jpg",
         "openSrc": true,
-        "link": "boom LINK",
+        "link": "https://github.com/esyywar/Digital-Microfluidic-Control",
         "tags": ["LabVIEW", "GUI", "Embedded"],
-        "description": "Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the development of this technology. Thus, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating experiments on the chip."
+        "shortDesc": ["A 4-layer PCB and user-friendly LabVIEW GUI for moving milk droplets with high voltage electric fields.",
+            "I developed and tested this digital microfluidic device for my research experiments."],
+        "fullDesc": ["Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the development of this technology. Thus, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating experiments on the chip."]
     },
     {
         "id": "1",
@@ -15,9 +17,11 @@
         "date": "May 2020",
         "photo": "portfolio_site_code_snippet.jpg",
         "openSrc": true,
-        "link": "TODO",
+        "link": "https://github.com/esyywar/rahul-portfolio",
         "tags": ["React-JS", "Web-Dev", "Javscript"],
-        "description": "Created with mobile first design, this site was built with React, Redux, React-Router, React-Transition-Group and SASS. Using purely functional components, I dug into React Hooks and Redux store management. This site was a joy to build and I hope you enjoy viewing it half as much as I did making it!"
+        "shortDesc": ["This site features mobile first design and was built using React (with hooks), Redux, React-Router, React-Transition-Group and SASS.", 
+            "I hope you enjoy visiting this site half as much as I did making it!"],
+        "fullDesc": ["Created with mobile first design, this site was built with React, Redux, React-Router, React-Transition-Group and SASS. Using purely functional components, I dug into React Hooks and Redux store management. This site was a joy to build and I hope you enjoy viewing it half as much as I did making it!"]
     },
     {
         "id": "2",
@@ -27,7 +31,10 @@
         "openSrc": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
         "tags": ["C/C++", "GUI"],
-        "description": "A super lightweight application to visualize the DFS back-tracking algorithm at work! The user can provide a sudoku puzzle (or load from application's local memory), set the solving speed and watch the process. Developed in C and Win32, this project allowed me to deeply understand event driven programming and the basics of multithreading."
+        "shortDesc": ["Watch a DFS back-tracking algorithm at work as it solves a sudoku!", 
+            "Built in C with Win32 API for maximum efficiency and lightweight file size.",
+            "This program applies event driven programming and multithreading."],
+        "fullDesc": ["A super lightweight application to visualize the DFS back-tracking algorithm at work! The user can provide a sudoku puzzle (or load from application's local memory), set the solving speed and watch the process. Developed in C and Win32, this project allowed me to deeply understand event driven programming and the basics of multithreading."]
     },
     {
         "id": "3",
@@ -35,9 +42,11 @@
         "date": "Mar 2020",
         "photo": "stm32_drivers_screenshot.jpg",
         "openSrc": true,
-        "link": "TODO",
+        "link": "https://github.com/esyywar/stm32f446xx",
         "tags": ["C/C++", "Embedded"],
-        "description": "I undertook this project to strengthen my understanding of the ARM Cortex M architecture and digital communication protocols. Drivers for IRQ configuration, GPIO pins, SPI, I2C, UART/USART and the System Timer have been programmed and tested on a STM32F446RE based development board."
+        "shortDesc": ["Bare-metal programming of various peripheral APIs including IRQ configuration SPI, I2C, UART/USART and Timers.",
+             "The APIs have been tested on a STM32F446RE based development board."],
+        "fullDesc": ["I undertook this project to strengthen my understanding of the ARM Cortex M architecture and digital communication protocols. Drivers for IRQ configuration, GPIO pins, SPI, I2C, UART/USART and the System Timer have been programmed and tested on a STM32F446RE based development board."]
     },
     {
         "id": "4",
@@ -47,7 +56,9 @@
         "openSrc": true,
         "link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
         "tags": ["C/C++", "Embedded"],
-        "description": "Decorative LED light strip controller built with an Arduino Nano controller on a custom 2 layer PCB. User can switch between the following 3 modes on button press: static colour, pattern display and music visualizer. Parameters including colour, brightness and sensitivity are tunable with potentiometers."
+        "shortDesc": ["Built the firmware and PCB hardware for a multi-function decorative LED light strip controller.",
+            "User can switch between modes with button press and set parameters (e.g. colour, brightness) with potentiometers."],
+        "fullDesc": ["Decorative LED light strip controller built with an Arduino Nano controller on a custom 2 layer PCB. User can switch between the following 3 modes on button press: static colour, pattern display and music visualizer. Parameters including colour, brightness and sensitivity are tunable with potentiometers."]
     },
     {
         "id": "5",
@@ -56,16 +67,21 @@
         "photo": "rahulscorner_screenshot.jpg",
         "openSrc": false,
         "tags": ["Web-Dev", "React-JS", "Javscript"],
-        "description": "My personal blog where I share articles and recommendations of books that have shaped my life! Built using React (with hooks), React-Router, React-Helmet and SASS. The site features light and dark modes. An earlier version built with PHP7 and vanilla JS is available at my github."
+        "shortDesc": ["My personal blog website about the books which have shaped my life!",
+            "Built with React, React-Router, SASS.",
+            "Features light and dark modes!"],
+        "fullDesc": ["My personal blog where I share articles and recommendations of books that have shaped my life! Built using React (with hooks), React-Router, React-Helmet and SASS. The site features light and dark modes. An earlier version built with PHP7 and vanilla JS is available at my github."]
     },
     {
         "id": "6",
-        "title": "Rubikloud - Retail Customer Predictions",
+        "title": "Rubikloud - Retail Predictions",
         "date": "Dec 2019",
         "photo": "rubikloud_proj_roc_curve.jpg",
         "openSrc": false,
         "tags": ["Python", "Machine Learning"],
-        "description": "The final project in my introductory machine learning course. Given a dataset of over 1 million anonimized retail transactions, I was tasked with predicting each customer's likelihood to purchase from a top 5 brand during a 3 month period. Evaluated on the test data, a random forest model produced the best ROC curve with average AUC of 0.946."
+        "shortDesc": ["The task was to take a dataset of transactions and predict each customer's likelihood of purchasing from a top 5 brand.",
+        "Experimenting with Scikit-Learn resulted in a random-forest classifier achieving a 0.946 AUC on test data."],
+        "fullDesc": ["The final project in my introductory machine learning course. Given a dataset of over 1 million anonimized retail transactions, I was tasked with predicting each customer's likelihood to purchase from a top 5 brand during a 3 month period. Evaluated on the test data, a random forest model produced the best ROC curve with average AUC of 0.946."]
     },
     {
         "id": "7",
@@ -74,6 +90,8 @@
         "photo": "ottogrow_gui.jpg",
         "openSrc": false,
         "tags": ["LabVIEW", "Embedded", "GUI"],
-        "description": "A complete hardware and software solution system for regulating nutrient ion concentration in hydroponic growing systems. Presented as my capstone engineering project, this device used a closed loop control system to keep nutrient concentrations in irrigation fluid within a user determined concentration range. Using an ISE sensor, solenoid valve actuation, Arduino microcontroller and LabVIEW UI."
+        "shortDesc": ["A complete hardware and software solution for regulating nutrient ion concentration in hydroponic growing systems.",
+            "Uses an Ion-Selective-Electrode sensor and user configrable set-points to autonomously control ion concentration."],
+        "fullDesc": ["A complete hardware and software solution for regulating nutrient ion concentration in hydroponic growing systems. Presented as my capstone engineering project, this device used a closed loop control system to keep nutrient concentrations in irrigation fluid within a user determined concentration range. Using an ISE sensor, solenoid valve actuation, Arduino microcontroller and LabVIEW UI."]
     }
 ]

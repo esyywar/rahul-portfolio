@@ -76,9 +76,10 @@
       align-self: start;
   border-radius: 5px;
   padding: 0.5em;
+  font-size: 1.1em;
   color: #2F3C7E;
   background-color: #FBEAEB;
-  border: 2px solid black;
+  border: 1px solid black;
   opacity: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
@@ -86,13 +87,8 @@
           animation: slideFromBtm 700ms ease-out 300ms forwards;
 }
 
-.projects-page #proj-card .title-and-date .title {
-  font-size: 1.1em;
-}
-
 .projects-page #proj-card .title-and-date .date {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.2em;
   margin-top: 0.3em;
   text-transform: uppercase;
   color: #8b0c12;
@@ -106,14 +102,14 @@
   -ms-grid-row-span: 2;
   grid-row: 6 / 8;
   z-index: 2;
-  width: 95%;
+  width: 98%;
   max-width: 450px;
   -webkit-transition: height 300ms;
   transition: height 300ms;
   border-radius: 10px;
   color: #2F3C7E;
   background-color: #FBEAEB;
-  border: 2px solid black;
+  border: 1px solid black;
   -ms-flex-item-align: start;
       align-self: start;
   display: -webkit-box;
@@ -131,23 +127,13 @@
           transform: translateY(-100%);
   -webkit-animation: slideFromTop 700ms ease-out 300ms forwards;
           animation: slideFromTop 700ms ease-out 300ms forwards;
-  /* Close button for short description (mobile platforms)
-            .desc-close-btn {
-                cursor: pointer;
-                font-size: 1.2em;
-                align-self: flex-start;
-                margin-top: 5px;
-                margin-left: 9px;
-                position: fixed;
-                color: red;
-            }*/
 }
 
 .projects-page #proj-card #tags-and-desc .desc-container {
   cursor: pointer;
   width: 100%;
   font-family: 'Muli', sans-serif;
-  font-size: 12px;
+  font-size: 0.8em;
   text-align: left;
   /* Fully displayed project description */
   /* Displayed for preview */
@@ -155,8 +141,12 @@
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-full {
   color: black;
-  padding: 1.5em;
-  line-height: 1.4em;
+  padding: 1em 1.5em;
+  line-height: 1.5em;
+}
+
+.projects-page #proj-card #tags-and-desc .desc-container .proj-desc-full p {
+  margin: 0.5em 0;
 }
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-preview {
@@ -176,8 +166,9 @@
 }
 
 .projects-page #proj-card #tags-and-desc .proj-card-tags {
+  font-size: 0.8em;
   display: block;
-  margin: auto 0 0.3em 0;
+  margin: auto 0 0.5em 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,9 +190,8 @@
       align-self: flex-end;
   background-color: black;
   color: white;
-  font-size: 12px;
-  margin: 0.2em;
-  padding: 0.4em;
+  margin: 0.3em;
+  padding: 0.3em;
 }
 
 .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-git-link {
@@ -215,7 +205,7 @@
 }
 
 .projects-page #proj-card .desc-open {
-  height: 185%;
+  height: 180%;
 }
 
 .projects-page #proj-card .desc-closed {
@@ -294,7 +284,7 @@
   padding: 0.4em;
   margin: 0.1em;
   border-radius: 0.8em;
-  font-size: 13px;
+  font-size: 0.8em;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
@@ -576,23 +566,43 @@
 }
 
 /************************ MEDIA QUERIES *************************/
-/* For large mobile screens */
-@media only screen and (min-width: 425px) {
-  .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
-    font-size: 0.8em;
+/* Tall phones */
+@media only screen and (max-width: 425px) and (min-height: 640px) {
+  .projects-page #proj-card {
+    font-size: 16px;
   }
-  .projects-page #proj-card .desc-closed {
-    height: 100%;
+  .projects-page #proj-card .title-and-date {
+    font-size: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    height: 90%;
+  }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    font-size: 0.7em;
   }
 }
 
 /* Tall phones */
-@media only screen and (min-height: 800px) {
+@media only screen and (max-width: 425px) and (min-height: 700px) {
+  .projects-page #proj-card {
+    font-size: 17px;
+  }
   .projects-page #proj-card .title-and-date {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
-    height: 80%;
+    height: 90%;
+  }
+}
+
+/* For large mobile screens */
+@media only screen and (min-width: 425px) {
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    font-size: 0.8em;
+  }
+  .projects-page #proj-card .desc-closed {
+    height: 100%;
   }
 }
 

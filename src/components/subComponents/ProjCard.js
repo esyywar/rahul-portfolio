@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function ProjCard(props) {
 
     const projItem = props.projItem
+    
+    /* Description is an array of sentences to be mapped as html paragraphs */
+    const description = (isMobileDevice()) ? projItem.shortDesc : projItem.fullDesc
 
 
     /******************* CONDITIONAL RENDER OF OPEN SOURCE TAG *********************/
@@ -31,18 +34,21 @@ function ProjCard(props) {
 
     /*************** TOGGLINE OF DESCRIPTION SECTION ****************/
 
-    function detailSection(projItem) {
-        if (props.isMobileDesc)
+    function detailSection(projDesc) {
+        if (props.isDescOpen)
         {
             return (
-                <div className="proj-desc-full">{projItem.description}</div>
+                <div className="proj-desc-full">
+                    {projDesc.map((element, index) => <p key={index}>{element}</p>)}
+                </div>
             )
         }
         else
         {
             return (
                 <div className="proj-desc-preview">
-                    <span className="prev-text">{getPreviewText(projItem.description)}</span>
+                    {/* Display preview text from first sentence of description */}
+                    <span className="prev-text">{getPreviewText(projDesc[0])}</span>
                     <span className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"}</span>
                 </div>
             )
@@ -63,11 +69,11 @@ function ProjCard(props) {
 
             <div 
                 id="tags-and-desc" 
-                className={(props.isMobileDesc) ? "desc-open" : "desc-closed"} 
+                className={(props.isDescOpen) ? "desc-open" : "desc-closed"} 
             >
                 {/* Expandable section to show project details */}
                 <div className="desc-container no-select" onClick={() => props.mobileDescTog()}>
-                    {detailSection(projItem)}
+                    {detailSection(description)}
                 </div>
 
                 {/* List tags associated with active project item */}
