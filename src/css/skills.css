@@ -85,7 +85,8 @@
 }
 
 .skills-page .skills-footer .back-btn {
-  font-weight: 600;
+  font-family: 'Muli', 'sans-serif';
+  font-weight: 500;
 }
 
 .skills-page .slide-right {
@@ -530,6 +531,9 @@
   .skills-page .skills-content {
     /* For hardware */
     /* For software tools */
+  }
+  .skills-page .skills-content .skills-footer .back-btn {
+    font-size: 1.2em;
   }
   .skills-page .skills-content .hardware-page {
     font-size: 17px;

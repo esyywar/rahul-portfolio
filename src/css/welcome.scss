@@ -16,6 +16,7 @@
 
     .intro-container {
         height: 90%;
+        width: 100%;
         max-width: 400px;
         text-align: center;
         font-family: 'VT323', monospace;
@@ -34,7 +35,7 @@
         hr {
             background-color: white;
             height: 2px;
-            width: 100%;
+            width: 290px;
             max-width: 310px;
             margin: 0 auto;
             border: 1px solid white;
@@ -48,7 +49,7 @@
         }         
         .desc-paras {
             margin-top: 0.4em;
-            max-width: 310px;
+            max-width: 330px;
 
             p {
                 padding: 0.5em 0;
@@ -70,7 +71,7 @@
                 cursor: pointer;
                 margin-top: -0.2em;
                 padding: 0 1em;
-                font-size: 1.5em;
+                font-size: 35px;
                 transform: rotate(90deg);
             }
         }
@@ -98,7 +99,7 @@
     }
     50% {
         opacity: 1;
-        transform: translateY(5px);
+        transform: translateY(0.3em);
     }
 }
 
@@ -118,7 +119,29 @@
 @media only screen and (min-width: 1024px) {
     #intro-page .intro-container {
         hr {
+            width: 310px;
             margin-bottom: 2em;
+        }
+
+        .desc-list, .desc-paras {
+            font-size: 25px;
+        }
+
+        #swipe-arrow-container {
+            transition: all 100ms;
+
+            &:hover {
+                color: yellow;
+
+                .swipe-arrow {
+                    transform: rotate(90deg) scale(1.4);
+                }
+            }
+
+            .swipe-arrow {
+                transition: all 300ms;
+                font-size: 45px;
+            }
         }
     }
 }

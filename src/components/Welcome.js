@@ -63,7 +63,7 @@ function Welcome(props) {
         {
             id: 4,
             charDelay: 30,
-            itemDelay: 300,
+            itemDelay: 500,
             text: "Application Dev",
             htmlId: "type-target-4",
             listItem: true,
@@ -72,8 +72,8 @@ function Welcome(props) {
         {
             id: 5,
             charDelay: 45,
-            itemDelay: 200,
-            text: "Passionate about electrical and embedded systems engineering.... I also dabble in web technologies!",
+            itemDelay: 500,
+            text: "Passionate about electrical and embedded systems engineering. I also dabble in web technologies!",
             htmlId: "type-target-5",
             listItem: false
         },
@@ -117,17 +117,17 @@ function Welcome(props) {
             }
             return
         }
-
     }
 
-    // Call this function to drive the typeWriter animation performed by function above - Give callback as arguement
+    /* Call this function to drive the typeWriter animation performed by function above - Give callback as arguement */
     function typeAnimDriver(callback) {
-        var typeWriteDelay = 0;
+        /* Initial delay which will accumulate */
+        var typeWriteDelay = 800;
 
-        // 2. Check that the html elements are rendered and animation request is set
+        /* 2. Check that the html elements are rendered and animation request is set */
         if ((document.getElementById(typeWriteItems[0].htmlId) != null) && doTypeAnim)
         {
-            // 3. Check that html element is currently empty (otherwise this function has already been triggered)
+            /* 3. Check that html element is currently empty (otherwise this function has already been triggered) */
             if (document.getElementById(typeWriteItems[0].htmlId).innerHTML === "")
             {
                 
@@ -140,7 +140,7 @@ function Welcome(props) {
                 }
             }
 
-            // 4. When all animations complete, fire callback (set animation request OFF in redux store)
+            /* 4. When all animations complete, fire callback (set animation request OFF in redux store) */
             setTimeout(() => callback(), typeWriteDelay)
         }
     }
@@ -149,6 +149,7 @@ function Welcome(props) {
     useLayoutEffect(() => {
         if (doTypeAnim)
         {
+            /* Call type write animation with dispatch as callback */
             typeAnimDriver(() => dispatch(setTypeAnim(false)))
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

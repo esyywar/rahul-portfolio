@@ -7,7 +7,7 @@
         "openSrc": true,
         "link": "boom LINK",
         "tags": ["LabVIEW", "GUI", "Embedded"],
-        "description": "TODO"
+        "description": "Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the development of this technology. Thus, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating experiments on the chip."
     },
     {
         "id": "1",
@@ -17,7 +17,7 @@
         "openSrc": true,
         "link": "TODO",
         "tags": ["React-JS", "Web-Dev", "Javscript"],
-        "description": ""
+        "description": "Created with mobile first design, this site was built with React, Redux, React-Router, React-Transition-Group and SASS. Using purely functional components, I dug into React Hooks and Redux store management. This site was a joy to build and I hope you enjoy viewing it half as much as I did making it!"
     },
     {
         "id": "2",
@@ -27,7 +27,7 @@
         "openSrc": true,
         "link": "https://github.com/esyywar/sudoku-solve-GUI",
         "tags": ["C/C++", "GUI"],
-        "description": ""
+        "description": "A super lightweight application to visualize the DFS back-tracking algorithm at work! The user can provide a sudoku puzzle (or load from application's local memory), set the solving speed and watch the process. Developed in C and Win32, this project allowed me to deeply understand event driven programming and the basics of multithreading."
     },
     {
         "id": "3",
@@ -37,7 +37,7 @@
         "openSrc": true,
         "link": "TODO",
         "tags": ["C/C++", "Embedded"],
-        "description": ""
+        "description": "I undertook this project to strengthen my understanding of the ARM Cortex M architecture and digital communication protocols. Drivers for IRQ configuration, GPIO pins, SPI, I2C, UART/USART and the System Timer have been programmed and tested on a STM32F446RE based development board."
     },
     {
         "id": "4",
@@ -47,7 +47,7 @@
         "openSrc": true,
         "link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
         "tags": ["C/C++", "Embedded"],
-        "description": ""
+        "description": "Decorative LED light strip controller built with an Arduino Nano controller on a custom 2 layer PCB. User can switch between the following 3 modes on button press: static colour, pattern display and music visualizer. Parameters including colour, brightness and sensitivity are tunable with potentiometers."
     },
     {
         "id": "5",
@@ -56,7 +56,7 @@
         "photo": "rahulscorner_screenshot.jpg",
         "openSrc": false,
         "tags": ["Web-Dev", "React-JS", "Javscript"],
-        "description": ""
+        "description": "My personal blog where I share articles and recommendations of books that have shaped my life! Built using React (with hooks), React-Router, React-Helmet and SASS. The site features light and dark modes. An earlier version built with PHP7 and vanilla JS is available at my github."
     },
     {
         "id": "6",
@@ -65,7 +65,7 @@
         "photo": "rubikloud_proj_roc_curve.jpg",
         "openSrc": false,
         "tags": ["Python", "Machine Learning"],
-        "description": ""
+        "description": "The final project in my introductory machine learning course. Given a dataset of over 1 million anonimized retail transactions, I was tasked with predicting each customer's likelihood to purchase from a top 5 brand during a 3 month period. Evaluated on the test data, a random forest model produced the best ROC curve with average AUC of 0.946."
     },
     {
         "id": "7",
@@ -74,6 +74,6 @@
         "photo": "ottogrow_gui.jpg",
         "openSrc": false,
         "tags": ["LabVIEW", "Embedded", "GUI"],
-        "description": "TODO"
+        "description": "A complete hardware and software solution system for regulating nutrient ion concentration in hydroponic growing systems. Presented as my capstone engineering project, this device used a closed loop control system to keep nutrient concentrations in irrigation fluid within a user determined concentration range. Using an ISE sensor, solenoid valve actuation, Arduino microcontroller and LabVIEW UI."
     }
 ]

@@ -20,7 +20,7 @@ import '../css/portfolio.css'
 
 function PortfolioMain() {
 
-  /* Components to map inside CSS Transition (NOTE: key must match 'Component' value in portfolioPages.json)*/
+  /* Components to map inside CSS Transition (NOTE: key value must match 'Component' property value in portfolioPages.json)*/
   const components = {
     Welcome: Welcome,
     Professional: Professional,

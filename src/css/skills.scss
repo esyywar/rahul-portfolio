@@ -77,7 +77,8 @@ $transition-exit-time: 200ms;
         }
 
         .back-btn {
-            font-weight: 600;
+            font-family: 'Muli', 'sans-serif';
+            font-weight: 500;
         }
     }
 
@@ -384,6 +385,10 @@ $transition-exit-time: 200ms;
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     .skills-page .skills-content {
+        .skills-footer .back-btn {
+            font-size: 1.2em;
+        }
+
         /* For hardware */
         .hardware-page {
             font-size: 17px;

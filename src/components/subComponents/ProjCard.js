@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { isMobileDevice } from '../../util/mobileCheck'
+import { getPreviewText } from '../../util/getProjPreview'
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -9,7 +11,7 @@ function ProjCard(props) {
 
     const projItem = props.projItem
 
-    
+
     /******************* CONDITIONAL RENDER OF OPEN SOURCE TAG *********************/
 
     function openSrcLink(projItem) 
@@ -29,17 +31,20 @@ function ProjCard(props) {
 
     /*************** TOGGLINE OF DESCRIPTION SECTION ****************/
 
-    function detailSection() {
+    function detailSection(projItem) {
         if (props.isMobileDesc)
         {
             return (
-                <div>Nonsense</div>
+                <div className="proj-desc-full">{projItem.description}</div>
             )
         }
         else
         {
             return (
-                <p className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"} for more detail!</p>
+                <div className="proj-desc-preview">
+                    <span className="prev-text">{getPreviewText(projItem.description)}</span>
+                    <span className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"}</span>
+                </div>
             )
         }
     }
@@ -60,16 +65,9 @@ function ProjCard(props) {
                 id="tags-and-desc" 
                 className={(props.isMobileDesc) ? "desc-open" : "desc-closed"} 
             >
-                {/* Close button for collapsing short-desc section on mobile */}
-                {props.isMobileDesc && <span className="desc-close-btn" onClick={() => props.mobileDescTog()}> ✕ </span>}
-
-                <div className="proj-desc">
-                    {/* TODO - Hold descriptions for project */}
-                </div>
-
                 {/* Expandable section to show project details */}
                 <div className="desc-container no-select" onClick={() => props.mobileDescTog()}>
-                    {detailSection()}
+                    {detailSection(projItem)}
                 </div>
 
                 {/* List tags associated with active project item */}
