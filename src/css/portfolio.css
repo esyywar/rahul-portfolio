@@ -275,6 +275,7 @@ html .no-select, body .no-select {
     -ms-grid-column-span: 9;
     grid-column: 4 / 13;
     height: 110%;
+    overflow: visible;
   }
   .grid-container .resume-window .next-arrow {
     right: 50px;

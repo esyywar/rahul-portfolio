@@ -90,7 +90,7 @@ $tag-list-trans-in-time: 400ms;
             grid-row: 6 / 8;
             z-index: 2;
             width: 98%;
-            max-width: 450px;
+            max-width: 500px;
             transition: height 300ms;
             border-radius: 10px;
             color: $projCard-text-clr;
@@ -174,10 +174,10 @@ $tag-list-trans-in-time: 400ms;
 
         /* Serparate styles for when details section expanded or minimized (for mobile) */ 
         .desc-open {
-            height: 180%;
+            height: 12em;
         }
         .desc-closed {
-            height: 80%;
+            height: 6em;
         }
 
         .image-container {
@@ -394,7 +394,7 @@ $tag-list-trans-in-time: 400ms;
 /************************ MEDIA QUERIES *************************/
 
 /* Tall phones */
-@media only screen and (max-width: 425px) and (min-height: 640px) {
+@media only screen and (min-width: 425px) and (min-height: 640px) {
     .projects-page #proj-card {
         font-size: 16px;
 
@@ -411,7 +411,7 @@ $tag-list-trans-in-time: 400ms;
 }
 
 /* Tall phones */
-@media only screen and (max-width: 425px) and (min-height: 700px) {
+@media only screen and (min-width: 425px) and (min-height: 700px) {
     .projects-page #proj-card {
         font-size: 17px;
 
@@ -424,20 +424,25 @@ $tag-list-trans-in-time: 400ms;
 
 /* For large mobile screens */
 @media only screen and (min-width: 425px) {
-    .projects-page #proj-card {
-        #tags-and-desc .proj-card-tags {
-            font-size: 0.8em;
-        }
-
-        .desc-closed {
-            height: 100%;
-        }
+    .projects-page #proj-card #tags-and-desc .proj-card-tags {
+        font-size: 0.8em;
     }
 }
 
 /* Tablets */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
     .projects-page {
+        overflow: visible;
+
+        #proj-card {
+            .desc-closed {
+                height: 7em;
+            }
+            .desc-open {
+                height: 13.2em;
+            }
+        }
+
         .tags-list {
             font-size: 14px;
         }
@@ -447,7 +452,12 @@ $tag-list-trans-in-time: 400ms;
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     .projects-page {
+        overflow: visible;
+
         .tags-list {
+            .tag-item {
+                font-size: 1em;
+            }
             .tag-active:hover {
                 background-color: $active-tag-hover-clr;
             }
@@ -464,13 +474,11 @@ $tag-list-trans-in-time: 400ms;
             #tags-and-desc {
                 grid-row: 6 / 8;
                 margin-top: 15px;
+                max-width: 550px;
             }
-    
-            .desc-closed {
-                height: 100%;
-            }
+
             .desc-open {
-                height: 160%;
+                height: 14.2em;
             }
     
             .image-container {

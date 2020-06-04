@@ -40,7 +40,7 @@ function Welcome(props) {
             text: "Electrical Circuit Design",
             htmlId: "type-target-1",
             listItem: true,
-            color: "red"
+            color: "#EE0D0D"
         },
         {
             id: 1,
@@ -49,7 +49,7 @@ function Welcome(props) {
             text: "Embedded Sytems Dev",
             htmlId: "type-target-2",
             listItem: true,
-            color: "blue"
+            color: "#080AB1"
         },
         {
             id: 3,
@@ -58,7 +58,7 @@ function Welcome(props) {
             text: "Front End Web Dev",
             htmlId: "type-target-3",
             listItem: true,
-            color: "green"
+            color: "#098E0B"
         },
         {
             id: 4,

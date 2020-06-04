@@ -232,6 +232,7 @@ html, body {
         grid-row: 2 / 11;
         grid-column: 4 / 13;
         height: 110%;
+        overflow: visible;
         
         .next-arrow {
             right: 50px;

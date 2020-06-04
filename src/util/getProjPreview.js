@@ -2,7 +2,7 @@
 function getMaxStrLength() {
     if (window.screen.width >= 1024) 
     {
-        return 30
+        return 150
     }
     else if (window.screen.width >= 768)
     {

@@ -103,7 +103,7 @@
   grid-row: 6 / 8;
   z-index: 2;
   width: 98%;
-  max-width: 450px;
+  max-width: 500px;
   -webkit-transition: height 300ms;
   transition: height 300ms;
   border-radius: 10px;
@@ -205,11 +205,11 @@
 }
 
 .projects-page #proj-card .desc-open {
-  height: 180%;
+  height: 12em;
 }
 
 .projects-page #proj-card .desc-closed {
-  height: 80%;
+  height: 6em;
 }
 
 .projects-page #proj-card .image-container {
@@ -567,7 +567,7 @@
 
 /************************ MEDIA QUERIES *************************/
 /* Tall phones */
-@media only screen and (max-width: 425px) and (min-height: 640px) {
+@media only screen and (min-width: 425px) and (min-height: 640px) {
   .projects-page #proj-card {
     font-size: 16px;
   }
@@ -584,7 +584,7 @@
 }
 
 /* Tall phones */
-@media only screen and (max-width: 425px) and (min-height: 700px) {
+@media only screen and (min-width: 425px) and (min-height: 700px) {
   .projects-page #proj-card {
     font-size: 17px;
   }
@@ -601,13 +601,19 @@
   .projects-page #proj-card #tags-and-desc .proj-card-tags {
     font-size: 0.8em;
   }
-  .projects-page #proj-card .desc-closed {
-    height: 100%;
-  }
 }
 
 /* Tablets */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
+  .projects-page {
+    overflow: visible;
+  }
+  .projects-page #proj-card .desc-closed {
+    height: 7em;
+  }
+  .projects-page #proj-card .desc-open {
+    height: 13.2em;
+  }
   .projects-page .tags-list {
     font-size: 14px;
   }
@@ -615,6 +621,12 @@
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
+  .projects-page {
+    overflow: visible;
+  }
+  .projects-page .tags-list .tag-item {
+    font-size: 1em;
+  }
   .projects-page .tags-list .tag-active:hover {
     background-color: #ffb222;
   }
@@ -630,12 +642,10 @@
     -ms-grid-row-span: 2;
     grid-row: 6 / 8;
     margin-top: 15px;
-  }
-  .projects-page #proj-card .desc-closed {
-    height: 100%;
+    max-width: 550px;
   }
   .projects-page #proj-card .desc-open {
-    height: 160%;
+    height: 14.2em;
   }
   .projects-page #proj-card .image-container {
     -ms-grid-row: 3;
