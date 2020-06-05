@@ -200,7 +200,8 @@ $tag-list-trans-in-time: 400ms;
 
             img {
                 width: auto;
-                height: 100%;
+                height: auto;
+                max-height: 100%;
             }
         }
     }
@@ -394,14 +395,17 @@ $tag-list-trans-in-time: 400ms;
 /************************ MEDIA QUERIES *************************/
 
 /* Tall phones */
-@media only screen and (min-width: 425px) and (min-height: 640px) {
+@media only screen and (min-width: 320px) and (min-height: 640px) {
     .projects-page #proj-card {
         font-size: 16px;
 
         .title-and-date {
             font-size: 1em;
             grid-row: 2 / 3;
-            height: 90%;
+            
+            .date {
+                margin-top: 0.5em;
+            }
         }
 
         #tags-and-desc .proj-card-tags {
@@ -411,14 +415,9 @@ $tag-list-trans-in-time: 400ms;
 }
 
 /* Tall phones */
-@media only screen and (min-width: 425px) and (min-height: 700px) {
+@media only screen and (min-width: 320px) and (min-height: 700px) {
     .projects-page #proj-card {
         font-size: 17px;
-
-        .title-and-date {
-            grid-row: 2 / 3;
-            height: 90%;
-        }
     }
 }
 
@@ -483,6 +482,28 @@ $tag-list-trans-in-time: 400ms;
     
             .image-container {
                 grid-row: 3 / 7;
+            }
+        }
+    }
+}
+
+/* Large laptops */
+@media only screen and (min-width: 1400px) {
+    .projects-page {
+        .tags-list .tag-item {
+            font-size: 1.2em;
+        }
+
+        #proj-card {
+            font-size: 17px;
+
+            .title-and-date {
+                font-size: 1.2em;
+                grid-row: 2 / 3;
+                
+                .date {
+                    margin-top: 0.5em;
+                }
             }
         }
     }

@@ -8,8 +8,11 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 9;
   grid-column: 1 / 10;
+  -ms-grid-column-align: start;
+      justify-self: start;
   height: 100%;
   width: 100%;
+  max-width: 300px;
   overflow: visible;
 }
 

@@ -1,0 +1,15 @@
+body .has-hover .grid-container {
+    .navigation .side-nav-link-container .nav-link-container .nav-link:hover {
+        letter-spacing: 2px;
+        color: #F0A202;
+    }
+
+    #intro-page .intro-container #swipe-arrow-container:hover {
+        color: yellow;
+
+        .swipe-arrow {
+            transform: rotate(90deg) scale(1.4);
+        } 
+    }
+
+}

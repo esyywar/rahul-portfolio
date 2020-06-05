@@ -18,8 +18,10 @@ $skills-bg: #C18AF8;
 .grid-container .navigation {
     grid-row: 1 / 13;
     grid-column: 1 / 10;
+    justify-self: start;
     height: 100%;
     width: 100%;
+    max-width: 300px;
     overflow: visible;
 
     #burger-icon {

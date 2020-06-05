@@ -180,5 +180,20 @@
     }
 }
 
+/* Large laptops */
+@media only screen and (min-width: 1400px) {
+    .education-page #edu-card {
+        font-size: 18px;
+
+        .school-and-date {
+            grid-column: 4 / 6;
+        }
+
+        .degree-and-major {
+            grid-column: 4 / 6;
+        }
+    }
+}
+
 
 

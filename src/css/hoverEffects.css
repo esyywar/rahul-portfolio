@@ -1,0 +1,14 @@
+body .has-hover .grid-container .navigation .side-nav-link-container .nav-link-container .nav-link:hover {
+  letter-spacing: 2px;
+  color: #F0A202;
+}
+
+body .has-hover .grid-container #intro-page .intro-container #swipe-arrow-container:hover {
+  color: yellow;
+}
+
+body .has-hover .grid-container #intro-page .intro-container #swipe-arrow-container:hover .swipe-arrow {
+  -webkit-transform: rotate(90deg) scale(1.4);
+          transform: rotate(90deg) scale(1.4);
+}
+/*# sourceMappingURL=hoverEffects.css.map */

@@ -247,3 +247,20 @@ html, body {
     }
 }
 
+/* Large laptop */
+@media only screen and (min-width: 1345px) {
+    .grid-container .resume-window {
+        grid-row: 2 / 11;
+        grid-column: 3 / 13;
+        height: 110%;
+        overflow: visible;
+
+        .next-arrow {
+            right: 15%;
+        }
+        .prev-arrow {
+            left: 30%;
+        }
+    }
+}
+

@@ -134,12 +134,12 @@
                 color: yellow;
 
                 .swipe-arrow {
+                    transition: all 300ms;
                     transform: rotate(90deg) scale(1.4);
                 }
             }
 
             .swipe-arrow {
-                transition: all 300ms;
                 font-size: 45px;
             }
         }

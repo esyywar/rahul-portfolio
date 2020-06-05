@@ -239,4 +239,21 @@
     grid-column: 4 / 8;
   }
 }
+
+/* Large laptops */
+@media only screen and (min-width: 1400px) {
+  .education-page #edu-card {
+    font-size: 18px;
+  }
+  .education-page #edu-card .school-and-date {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 2;
+    grid-column: 4 / 6;
+  }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 2;
+    grid-column: 4 / 6;
+  }
+}
 /*# sourceMappingURL=education.css.map */
