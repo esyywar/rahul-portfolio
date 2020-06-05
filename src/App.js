@@ -9,7 +9,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { nextComp, prevComp } from './actions/setActiveComp'
 import { touchEventSet, setSwipeR, setSwipeL, resetSwipeR, resetSwipeL } from './actions/touchEventSet'
 
+import { watchForHover } from './util/toggleHoverAnim'
+
 import portfolioPages from './content/portfolioPages.json'
+
+import './css/hoverEffects.css'
 
 // To build font-awesome library
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -19,6 +23,12 @@ library.add(fab, faBook, faKeyboard, faPlug, faTools)
 
 
 function App() {
+
+  /**************** TOGGLING HOVER EFFECTS FOR DEVICE PLATFORM ****************/
+
+  useEffect(() => {
+    watchForHover()
+  }, [])
 
   /**************** STATE VARIABLES *********************/
 

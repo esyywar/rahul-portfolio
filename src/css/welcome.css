@@ -157,19 +157,6 @@
   #intro-page .intro-container .desc-list, #intro-page .intro-container .desc-paras {
     font-size: 25px;
   }
-  #intro-page .intro-container #swipe-arrow-container {
-    -webkit-transition: all 100ms;
-    transition: all 100ms;
-  }
-  #intro-page .intro-container #swipe-arrow-container:hover {
-    color: yellow;
-  }
-  #intro-page .intro-container #swipe-arrow-container:hover .swipe-arrow {
-    -webkit-transition: all 300ms;
-    transition: all 300ms;
-    -webkit-transform: rotate(90deg) scale(1.4);
-            transform: rotate(90deg) scale(1.4);
-  }
   #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
     font-size: 45px;
   }

@@ -127,21 +127,8 @@
             font-size: 25px;
         }
 
-        #swipe-arrow-container {
-            transition: all 100ms;
-
-            &:hover {
-                color: yellow;
-
-                .swipe-arrow {
-                    transition: all 300ms;
-                    transform: rotate(90deg) scale(1.4);
-                }
-            }
-
-            .swipe-arrow {
-                font-size: 45px;
-            }
+        #swipe-arrow-container .swipe-arrow {
+            font-size: 45px;
         }
     }
 }

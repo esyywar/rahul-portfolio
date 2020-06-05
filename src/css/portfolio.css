@@ -283,11 +283,6 @@ html .no-select, body .no-select {
   .grid-container .resume-window .prev-arrow {
     left: 30%;
   }
-  .grid-container .resume-window .next-arrow:hover, .grid-container .resume-window .prev-arrow:hover {
-    color: yellow;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
 }
 
 /* Large laptop */

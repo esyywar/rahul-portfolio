@@ -138,11 +138,6 @@
   transition: 300ms;
 }
 
-.grid-container .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
-  letter-spacing: 2px;
-  color: #F0A202;
-}
-
 /*************************** ANIMATION EFFECT FOR BURGER ICON *********************/
 /*Animation effect for burger to close button*/
 .grid-container .navigation .burger-change {

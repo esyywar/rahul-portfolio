@@ -1,15 +1,42 @@
-body .has-hover .grid-container {
-    .navigation .side-nav-link-container .nav-link-container .nav-link:hover {
-        letter-spacing: 2px;
-        color: #F0A202;
+/* This file holds all hover styles for the app - the class is applied in App.js depending on if mobile is touch or click interface */
+
+
+/**************** SASS VARIABLES *****************/
+
+$inactive-tag-hover-clr: rgb(100, 45, 163);
+$active-tag-hover-clr: rgb(255, 178, 34);
+
+
+/**************** HOVER CLASS AND STYLES ******************/
+
+.has-hover {
+    .grid-container {
+        /* Navigation component hover effects */
+        .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
+            transition: all 300ms;
+            letter-spacing: 2px;
+            color: #F0A202;
+        }
+
+        /* Welcome page hovers */
+        #intro-page .intro-container #swipe-arrow-container:hover {
+            transition: all 100ms;
+            color: yellow;
+
+            .swipe-arrow {
+                transition: all 300ms;
+                transform: rotate(90deg) scale(1.4);
+            } 
+        }
+
+        /* Projects page */ 
+        .projects-page .tags-list {
+            .tag-active:hover {
+                background-color: $active-tag-hover-clr;
+            }
+            .tag-inactive:hover {
+                background-color: $inactive-tag-hover-clr;
+            }
+        }
     }
-
-    #intro-page .intro-container #swipe-arrow-container:hover {
-        color: yellow;
-
-        .swipe-arrow {
-            transform: rotate(90deg) scale(1.4);
-        } 
-    }
-
 }
