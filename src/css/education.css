@@ -228,6 +228,9 @@
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
+  .education-page #edu-card {
+    font-size: 18px;
+  }
   .education-page #edu-card .school-and-date {
     -ms-grid-column: 2;
     -ms-grid-column-span: 3;

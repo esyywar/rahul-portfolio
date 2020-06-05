@@ -9,9 +9,9 @@
         "tags": ["LabVIEW", "GUI", "Embedded"],
         "shortDesc": ["A 4-layer PCB and user-friendly LabVIEW GUI for moving milk droplets with high voltage electric fields.",
             "I developed and tested this digital microfluidic device for my research experiments."],
-        "fullDesc": ["Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the development of this technology.",
-            "For my experiments handling droplets of milk, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating experiments on the chip.",
-            "This chip design will be implemented in experiments to demonstrate optical annealing for PCR and antiibiotic sensing in milk droplets."]
+        "fullDesc": ["Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the application and development of this technology.",
+            "For my experiments, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating high voltage sequences used to move droplets on the chip.",
+            "This chip design will be implemented in my experiments to demonstrate optical annealing for PCR and antibiotic sensing in milk droplets."]
     },
     {
         "id": "1",

@@ -40,8 +40,8 @@
 }
 
 #intro-page .intro-container .name-header {
+  font-size: 1.5em;
   font-family: 'Muli', 'sans-serif';
-  font-size: 32px;
 }
 
 #intro-page .intro-container hr {
@@ -141,15 +141,21 @@
 }
 
 /********************* MEDIA QUERIES *******************/
-/* Moto GS size mobile screens */
-@media only screen and (min-width: 360px) {
-  #intro-page .intro-container .name-header {
-    font-size: 36px;
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  #intro-page .intro-container {
+    font-size: 25px;
   }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
+  #intro-page .intro-container {
+    font-size: 27px;
+  }
+  #intro-page .intro-container .name-header {
+    font-size: 1.5em;
+  }
   #intro-page .intro-container hr {
     width: 310px;
     margin-bottom: 2em;

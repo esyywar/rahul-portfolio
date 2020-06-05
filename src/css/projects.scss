@@ -468,6 +468,7 @@ $tag-list-trans-in-time: 400ms;
         #proj-card {
             .title-and-date {
                 grid-row: 2;
+                font-size: 1.2em;
             }
     
             #tags-and-desc {
@@ -495,10 +496,9 @@ $tag-list-trans-in-time: 400ms;
         }
 
         #proj-card {
-            font-size: 17px;
-
+            font-size: 18px;
+            
             .title-and-date {
-                font-size: 1.2em;
                 grid-row: 2 / 3;
                 
                 .date {

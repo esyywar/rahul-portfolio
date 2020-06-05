@@ -28,8 +28,8 @@
         justify-content: center;
 
         .name-header {
+            font-size: 1.5em;
             font-family: 'Muli', 'sans-serif';
-            font-size: 32px;
         }
 
         hr {
@@ -66,8 +66,7 @@
             transform: translateY(100%);
             animation: slideFromBtm 500ms linear 500ms forwards;
             
-            .swipe-arrow
-            {
+            .swipe-arrow {
                 cursor: pointer;
                 margin-top: -0.2em;
                 padding: 0 1em;
@@ -106,18 +105,22 @@
 
 /********************* MEDIA QUERIES *******************/
 
-/* Moto GS size mobile screens */
-@media only screen and (min-width: 360px) {
+/* Tablets */
+@media only screen and (min-width: 768px) {
     #intro-page .intro-container {
-        .name-header {
-            font-size: 36px;
-        }
+        font-size: 25px; 
     }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     #intro-page .intro-container {
+        font-size: 27px;
+        
+        .name-header {
+            font-size: 1.5em;
+        }
+
         hr {
             width: 310px;
             margin-bottom: 2em;
