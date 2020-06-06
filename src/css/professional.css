@@ -11,7 +11,6 @@
       grid-template-rows: repeat(12, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
-  overflow: visible;
 }
 
 .professional-exp-page .page-title {
@@ -21,9 +20,6 @@
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
-}
-
-.professional-exp-page .pro-exp-title {
   overflow: visible;
 }
 
@@ -31,12 +27,16 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 9;
-  grid-row: 4 / 13;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 10;
+  grid-row: 3 / 13;
+  width: 100%;
+  height: 100%;
+  -ms-grid-row-align: center;
+      align-self: center;
   font-family: 'Muli', sans-serif;
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -44,6 +44,7 @@
       grid-template-rows: repeat(8, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
+  /* Classes conditionally applied for expandable detail section */
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company {
@@ -58,9 +59,8 @@
   max-width: 460px;
   background-color: whitesmoke;
   width: 90%;
-  height: 85%;
   z-index: 2;
-  padding: 0.2em 0.4em;
+  padding: 0.1em 0.4em;
   border-radius: 1em;
   border: 2px solid black;
   display: -webkit-box;
@@ -83,10 +83,12 @@
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company .employer {
+  font-size: 1.2em;
   color: #F08700;
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company p {
+  font-size: 1.1em;
   padding: 0.2em;
   font-weight: 600;
 }
@@ -115,20 +117,22 @@
   height: 100%;
 }
 
-.professional-exp-page #pro-content-card .date-and-description {
+.professional-exp-page #pro-content-card #date-and-description {
   -ms-grid-row: 6;
   -ms-grid-row-span: 3;
   grid-row: 6 / 9;
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  width: 90%;
-  max-width: 480px;
+  width: 98%;
+  max-width: 550px;
+  -webkit-transition: height 300ms;
+  transition: height 300ms;
   z-index: 2;
   background-color: whitesmoke;
   border-radius: 1em;
-  padding: 0.4em;
   border: 2px solid black;
+  font-size: 14px;
   -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
           transform: translate3d(100%, 0, 0) skewX(-30deg);
   opacity: 0;
@@ -136,9 +140,50 @@
           animation: lightSpeedInRight ease-out 500ms forwards 500ms;
 }
 
-.professional-exp-page #pro-content-card .date-and-description .date {
-  padding: 0.5em;
+.professional-exp-page #pro-content-card #date-and-description .date {
+  padding-top: 0.2em;
   font-size: 1.2em;
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container {
+  cursor: pointer;
+  text-align: left;
+  font-size: 1em;
+  /* Fully displayed job experience description */
+  /* Displayed for preview */
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-full {
+  padding: 0.7em 1.3em;
+  color: black;
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-full p {
+  margin-bottom: 0.5em;
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-preview {
+  padding: 0.7em 1.3em;
+  text-align: left;
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-preview .prev-text {
+  color: black;
+}
+
+.professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-preview .detail-prompt {
+  color: purple;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.professional-exp-page #pro-content-card .desc-open {
+  height: 14em;
+}
+
+.professional-exp-page #pro-content-card .desc-closed {
+  height: 6em;
 }
 
 /*********** ANIMATIONS (from animate.css at https://github.com/animate-css/animate.css) *************/
@@ -276,12 +321,36 @@
 }
 
 /********************* MEDIA QUERIES ********************/
+/* Mobiles */
+@media only screen and (min-width: 375px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 11.4em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 6em;
+  }
+}
+
 /* Large mobile screens */
 @media only screen and (min-width: 425px) {
   .professional-exp-page #pro-content-card {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 10;
-    grid-row: 3 / 13;
+    font-size: 15px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 12em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7em;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 17px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 14em;
   }
 }
 
@@ -289,6 +358,13 @@
 @media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card {
     font-size: 18px;
+  }
+}
+
+/* Large laptops */
+@media only screen and (min-width: 1440px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=professional.css.map */

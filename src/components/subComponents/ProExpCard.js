@@ -1,10 +1,19 @@
 import React from 'react'
 
+import { isMobileDevice } from '../../util/mobileCheck'
+import { getPreviewText } from '../../util/getProjPreview'
+
 
 function ProExpCard(props) {
+
     const proExpItem = props.proExpItem
 
-    // To display date
+    /* Description is an array of sentences to be mapped as html paragraphs */
+    const description = (window.screen.width < 768) ? proExpItem.shortDesc : proExpItem.fullDesc
+
+   
+    /******************* DATE DISPLAY ***********************/
+    
     function dateDisplay(proExpItem)
     {
         if (proExpItem.current)
@@ -21,21 +30,52 @@ function ProExpCard(props) {
         }
     }
 
+
+    /*************** TOGGLING OF JOB EXPERIENCE DESCRIPTION SECTION ****************/
+
+    function expandableDetail(proExpDesc, isOpen) {
+        if (isOpen)
+        {
+            return (
+                <div className="pro-exp-desc-full">
+                    {proExpDesc.map((element, index) => <p key={index}>{element}</p>)}
+                </div>
+            )
+        }
+        else
+        {
+            return (
+                <div className="pro-exp-desc-preview">
+                    {/* Display preview text from first sentence of description */}
+                    <span className="prev-text">{getPreviewText(proExpDesc)}</span>
+                    <span className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"}</span>
+                </div>
+            )
+        }
+    }
+
+
     return (
         <div id="pro-content-card">      
             <div className="title-loc-and-company">
-                <p className="employer">{proExpItem.employer}</p>
-                <p className="job-title">{proExpItem.jobTitle}</p>
-                <p className="location">{`${proExpItem.city}, ${proExpItem.country}`}</p>
+                <div>
+                    <p className="employer">{proExpItem.employer}</p>
+                    <p className="job-title">{proExpItem.jobTitle}</p>
+                    <p className="location">{`${proExpItem.city}, ${proExpItem.country}`}</p>
+                </div>
             </div>
 
             <div className="image-container">
                 <img alt="office-building" src={require(`../../img/professional/${proExpItem.photo}`)} />
             </div>
 
-            <div className="date-and-description">
+            <div id="date-and-description" className={(props.isDescOpen) ? "desc-open" : "desc-closed"}>
                 <h4 className="date">{dateDisplay(proExpItem)}</h4>
-                <p className="job-exp-desc">{proExpItem.description}</p>
+
+                <div className="desc-container no-select" onClick={() => props.expandDescToggle()}>
+                    {/* Expandable detail section is rendered here */}
+                    {expandableDetail(description, props.isDescOpen)}
+                </div>
             </div>
         </div>
     )

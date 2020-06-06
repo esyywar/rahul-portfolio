@@ -128,7 +128,7 @@ $tag-list-trans-in-time: 400ms;
                 /* Displayed for preview */
                 .proj-desc-preview { 
                     text-align: left;
-                    padding: 0.9em 1.5em;
+                    padding: 1em 1.5em;
                     
                     .prev-text {
                         color: black;
@@ -438,12 +438,12 @@ $tag-list-trans-in-time: 400ms;
                 height: 7em;
             }
             .desc-open {
-                height: 13.2em;
+                height: 16em;
             }
         }
 
-        .tags-list {
-            font-size: 14px;
+        .tags-list .tag-item {
+            font-size: 0.9em;
         }
     }
 }
@@ -456,12 +456,6 @@ $tag-list-trans-in-time: 400ms;
         .tags-list {
             .tag-item {
                 font-size: 1em;
-            }
-            .tag-active:hover {
-                background-color: $active-tag-hover-clr;
-            }
-            .tag-inactive:hover {
-                background-color: $inactive-tag-hover-clr;
             }
         }
 
@@ -496,8 +490,8 @@ $tag-list-trans-in-time: 400ms;
         }
 
         #proj-card {
-            font-size: 18px;
-            
+            font-size: 17px;
+
             .title-and-date {
                 grid-row: 2 / 3;
                 

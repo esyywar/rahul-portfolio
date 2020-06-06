@@ -151,7 +151,7 @@
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-preview {
   text-align: left;
-  padding: 0.9em 1.5em;
+  padding: 1em 1.5em;
 }
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-preview .prev-text {
@@ -609,10 +609,10 @@
     height: 7em;
   }
   .projects-page #proj-card .desc-open {
-    height: 13.2em;
+    height: 16em;
   }
-  .projects-page .tags-list {
-    font-size: 14px;
+  .projects-page .tags-list .tag-item {
+    font-size: 0.9em;
   }
 }
 
@@ -623,12 +623,6 @@
   }
   .projects-page .tags-list .tag-item {
     font-size: 1em;
-  }
-  .projects-page .tags-list .tag-active:hover {
-    background-color: #ffb222;
-  }
-  .projects-page .tags-list .tag-inactive:hover {
-    background-color: #642da3;
   }
   .projects-page #proj-card .title-and-date {
     -ms-grid-row: 2;
@@ -658,7 +652,7 @@
     font-size: 1.2em;
   }
   .projects-page #proj-card {
-    font-size: 18px;
+    font-size: 17px;
   }
   .projects-page #proj-card .title-and-date {
     -ms-grid-row: 2;

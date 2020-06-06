@@ -32,10 +32,10 @@ function ProjCard(props) {
     }
 
 
-    /*************** TOGGLINE OF DESCRIPTION SECTION ****************/
+    /*************** TOGGLING OF PROJECT DESCRIPTION SECTION ****************/
 
-    function detailSection(projDesc) {
-        if (props.isDescOpen)
+    function expandableDetail(projDesc, isOpen) {
+        if (isOpen)
         {
             return (
                 <div className="proj-desc-full">
@@ -48,7 +48,7 @@ function ProjCard(props) {
             return (
                 <div className="proj-desc-preview">
                     {/* Display preview text from first sentence of description */}
-                    <span className="prev-text">{getPreviewText(description)}</span>
+                    <span className="prev-text">{getPreviewText(projDesc)}</span>
                     <span className="detail-prompt">{(isMobileDevice()) ? "Tap" : "Click"}</span>
                 </div>
             )
@@ -67,13 +67,11 @@ function ProjCard(props) {
                 <img alt="final-product" src={require(`../../img/projects/${projItem.photo}`)} />
             </div>
 
-            <div 
-                id="tags-and-desc" 
-                className={(props.isDescOpen) ? "desc-open" : "desc-closed"} 
-            >
+            <div id="tags-and-desc" className={(props.isDescOpen) ? "desc-open" : "desc-closed"}>
+
                 {/* Expandable section to show project details */}
-                <div className="desc-container no-select" onClick={() => props.mobileDescTog()}>
-                    {detailSection(description)}
+                <div className="desc-container no-select" onClick={() => props.expandDescToggle()}>
+                    {expandableDetail(description, props.isDescOpen)}
                 </div>
 
                 {/* List tags associated with active project item */}

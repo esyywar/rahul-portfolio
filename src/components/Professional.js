@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { sideNavToggle } from '../actions/setSideNav'
@@ -27,7 +27,20 @@ function Professional(props) {
 
 
     /************ LOCAL STATE INITIALIZATION ******************/
+
+    /* Toggling the expandable detail section in child component 'ProExpCard' */
+    const [isDescOpen, setDescOpen] = useState(false)
+
     const [cardElement, setCardElement] = useState(0)
+
+
+    /**************** TOGGLE PRO-EXP-CARD EXPANDABLE DESCRIPTION ***************/
+
+    /* Toggle state which enables filter-tags to show and expansion of detail section */
+    function handleDescToggle()
+    {
+        setDescOpen(!isDescOpen)
+    }
 
 
     /******************* ANIMATION EFFECT ON ARROW CLICKS *********************/
@@ -98,7 +111,11 @@ function Professional(props) {
             <h1 className="page-title pro-exp-title">Professional Experience</h1>
 
             {/* Render the active professional experience card */}
-            <ProExpCard proExpItem={professional[cardElement]} />
+            <ProExpCard 
+                proExpItem = {professional[cardElement]} 
+                isDescOpen = {isDescOpen}
+                expandDescToggle = {handleDescToggle}
+            />
 
             {/* Display next and previous arrows only if elements exist in each direction */}
             {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}

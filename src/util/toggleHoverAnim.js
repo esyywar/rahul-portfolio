@@ -11,12 +11,10 @@ export function watchForHover() {
   
     function enableHover() {
       if (new Date() - lastTouchTime < 500) return
-      console.log('hovers added')
       document.body.classList.add('has-hover')
     }
   
     function disableHover() {
-      console.log('hovers removed')
       document.body.classList.remove('has-hover')
     }
   

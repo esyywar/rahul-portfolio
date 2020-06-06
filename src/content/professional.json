@@ -9,7 +9,11 @@
         "photo": "aoml-photo.jpg",
         "city": "Guelph",
         "country": "Canada",
-        "desciption": "This is a placeholder description"
+        "shortDesc": ["I am reseaching the development of a micro-sensor for antibiotic detection in milk.",
+            "As a teaching assistant I have led seminars, lab activities and occassional lectures."],
+        "fullDesc": ["I work as a researcher in the Applied Optics and Microsystems Laboratory under the supervision of Dr. Christopher Collier. My research is centered on the development of a novel microsensor for detecting antibiotics in milk.",
+            "I am working with high voltage electronics, micro-fabrication tools and optical equipment to develop the hardware and software of a microfluidic sensor.",
+            "I also work as a teaching assistant where I have led seminars, lab activities and delivered lectures on occasion."]
     },
     {
         "id": 1,
@@ -21,7 +25,11 @@
         "photo": "creation-office.jpg",
         "city": "Markham",
         "country": "Canada",
-        "desciption": "This is a placeholder description"
+        "shortDesc": ["In this role, I built hardware and software solutions for PCBA functional testing.",
+            "In 8 months, I designed and commissioned several test fixtures and workflow automation applications."],
+        "fullDesc": ["As a test engineer at Creation's PCBA manufacturing facility, I built hardware and software solutions for PCBA functional tests.",
+            "I worked extensively with OrCAD, LabVIEW and TestStand to design, debug and commission several test fixtures. I tested components not limited to stepper motor drivers, electrochemical sensors, DAC/ADCs and microcontrollers.",
+            "I also built applications for workflow automation using LabVIEW and Visual Basic."]
     },
     {
         "id": 2,
@@ -33,6 +41,10 @@
         "photo": "city-of-toronto.jpg",
         "city": "Toronto",
         "country": "Canada",
-        "desciption": "This is a placeholder description"
+        "shortDesc": ["I worked with a small team tasked with designing a new ERP system for several divisions of the municipality.",
+            "My contributions were documenting work flow processes, database maintainance and general IT support."],
+        "fullDesc": ["I worked within Toronto Water as part of their Enterprise Work Management Systems team. My team was responsible for designing and implementing a new ERP system across several divisions of the municipality.",
+            "My main responsibility was to document work flow processes which would be represented in the new ERP system.",
+            "Additional contributions included constructing the foundation of an SQL database for tracking assets in a GIS database and general IT support."]
     }
 ]

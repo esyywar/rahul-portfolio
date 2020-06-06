@@ -1,6 +1,6 @@
 /* Checking window screen width */
 export function isMobileScrWidth() {
-    return (window.screen.width < 1024)
+    return (window.screen.width < 1024 || window.innerWidth < 1024)
 }
 
 /* Check if mobile by screen orientation property */

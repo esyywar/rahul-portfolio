@@ -30,7 +30,7 @@ function Projects(props) {
     const isLeftSwipe = useSelector(state => state.swipeLeftEv)
     const isRightSwipe = useSelector(state => state.swipeRightEv)
 
-    /* Toggling is desc-open on mobile devices */
+    /* Toggling the expandable detail section in child component 'ProjCard' */
     const [isDescOpen, setDescOpen] = useState(false)
 
 
@@ -150,7 +150,7 @@ function Projects(props) {
     }
 
 
-    /**************** TOGGLE PROJ-CARD SHORT DESCRIPTION ON MOBILES ***************/
+    /**************** TOGGLE PROJ-CARD EXPANDABLE DESCRIPTION ***************/
 
     /* Toggle state which enables filter-tags to show and expansion of detail section */
     function handleDescToggle()
@@ -194,9 +194,9 @@ function Projects(props) {
 
             {/* Render the active project item card */}
             <ProjCard 
-                projItem={filtProjList[cardElement]} 
-                isDescOpen={isDescOpen} 
-                mobileDescTog = {handleDescToggle}
+                projItem = {filtProjList[cardElement]} 
+                isDescOpen = {isDescOpen} 
+                expandDescToggle = {handleDescToggle}
             />
 
             {/* Display next and previous arrows only if elements exist in each direction */}

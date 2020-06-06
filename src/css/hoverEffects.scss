@@ -38,5 +38,14 @@ $active-tag-hover-clr: rgb(255, 178, 34);
                 background-color: $inactive-tag-hover-clr;
             }
         }
+
+        /* Forward and previous arrows */ 
+        .resume-window {
+            .prev-arrow:hover, .next-arrow:hover {
+                transition: all 300ms;
+                color: yellow;
+                transform: scale(1.4);
+            }
+        }
     }
 }

@@ -28,12 +28,13 @@ function SideNav(props) {
         return () => { window.removeEventListener("resize", handleResize) }
     }, [dispatch])
 
+
     /************** NAVIGATION MENU FUNCTINALITY ****************/
 
-    // Ref will be used for side nav for tracking if user clicks outside the nav
+    /* Ref will be used for side nav for tracking if user clicks outside the nav */
     const navRef = useRef()
 
-    // Read state to determine if sideNav open or closed
+    /* Read state to determine if sideNav open or closed */
     let isSideNavOpen = useSelector(state => state.sideNavOpen)
 
     function handleScreenClick(e)
@@ -44,20 +45,20 @@ function SideNav(props) {
         }
     }
 
-    // useEffect to run on state change of nav open/close status
+    /* useEffect to run on state change of nav open/close status */
     useEffect(() => {
-        // Animate nav open/close and burger icon on change
+        /* Animate nav open/close and burger icon on change */
         if (isSideNavOpen)
         {
-            // Give width to the side nabigation bar
+            /* Give width to the side nabigation bar */
             document.getElementById("side-nav").style.width = "100%"
             document.getElementById("side-nav").classList.add("side-nav-border")
 
-            // Animate the burger icon, horizontal rule
+            /* Animate the burger icon, horizontal rule */
             document.getElementById("burger-icon").classList.add("burger-change")
             document.getElementById("nav-hr").style.animation = "hrFill 200ms ease 250ms forwards"
             
-            // Animate profile links to appear when nav opens
+            /* Animate profile links to appear when nav opens */
             Array.from(document.getElementsByClassName("profile-link")).forEach((element, index) => {
                 element.style.animation = "itemsAppear 400ms ease " + (250 + index * 100) + "ms forwards"
             })
@@ -107,8 +108,9 @@ function SideNav(props) {
         if (isMobileScrWidth()) { dispatch(sideNavSet(false)) }
     }
 
+    /* Burger icon only available for click when screen size >= 1024 px*/
     function handleBurgerClick() {
-        if (isMobileScrWidth()) { dispatch(sideNavToggle()) }
+        dispatch(sideNavToggle())
     }
 
     
