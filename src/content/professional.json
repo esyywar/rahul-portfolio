@@ -26,7 +26,7 @@
         "city": "Markham",
         "country": "Canada",
         "shortDesc": ["In this role, I built hardware and software solutions for PCBA functional testing.",
-            "In 8 months, I designed and commissioned several test fixtures and workflow automation applications."],
+            "In 8 months, I designed and commissioned several test fixtures and workflow applications."],
         "fullDesc": ["As a test engineer at Creation's PCBA manufacturing facility, I built hardware and software solutions for PCBA functional tests.",
             "I worked extensively with OrCAD, LabVIEW and TestStand to design, debug and commission several test fixtures. I tested components not limited to stepper motor drivers, electrochemical sensors, DAC/ADCs and microcontrollers.",
             "I also built applications for workflow automation using LabVIEW and Visual Basic."]
@@ -41,9 +41,9 @@
         "photo": "city-of-toronto.jpg",
         "city": "Toronto",
         "country": "Canada",
-        "shortDesc": ["I worked with a small team tasked with designing a new ERP system for several divisions of the municipality.",
+        "shortDesc": ["I worked with a small team tasked with designing a new ERP system for the municipality.",
             "My contributions were documenting work flow processes, database maintainance and general IT support."],
-        "fullDesc": ["I worked within Toronto Water as part of their Enterprise Work Management Systems team. My team was responsible for designing and implementing a new ERP system across several divisions of the municipality.",
+        "fullDesc": ["I worked within Toronto Water on their Enterprise Work Management Systems team. My team was responsible for designing and implementing a new ERP system for the municipality.",
             "My main responsibility was to document work flow processes which would be represented in the new ERP system.",
             "Additional contributions included constructing the foundation of an SQL database for tracking assets in a GIS database and general IT support."]
     }

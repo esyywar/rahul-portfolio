@@ -130,9 +130,10 @@
   transition: height 300ms;
   z-index: 2;
   background-color: whitesmoke;
-  border-radius: 1em;
+  border-radius: 10px;
   border: 2px solid black;
-  font-size: 14px;
+  font-size: 12px;
+  overflow: auto;
   -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
           transform: translate3d(100%, 0, 0) skewX(-30deg);
   opacity: 0;
@@ -147,14 +148,15 @@
 
 .professional-exp-page #pro-content-card #date-and-description .desc-container {
   cursor: pointer;
+  width: 100%;
   text-align: left;
-  font-size: 1em;
+  font-size: 1.1em;
   /* Fully displayed job experience description */
   /* Displayed for preview */
 }
 
 .professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-full {
-  padding: 0.7em 1.3em;
+  padding: 0.7em 1.2em;
   line-height: 1.5em;
   color: black;
 }
@@ -180,7 +182,7 @@
 }
 
 .professional-exp-page #pro-content-card .desc-open {
-  height: 14em;
+  height: 12em;
 }
 
 .professional-exp-page #pro-content-card .desc-closed {
@@ -322,20 +324,23 @@
 }
 
 /********************* MEDIA QUERIES ********************/
-/* Mobiles */
-@media only screen and (min-width: 375px) {
+/* Mobiles with med-screen height */
+@media only screen and (min-width: 375px) and (min-height: 580px) {
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 13px;
+  }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 11.4em;
+    height: 13.5em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
-    height: 6em;
+    height: 7em;
   }
 }
 
 /* Large mobile screens */
 @media only screen and (min-width: 425px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 15px;
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 14px;
   }
   .professional-exp-page #pro-content-card .desc-open {
     height: 12em;

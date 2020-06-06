@@ -6,7 +6,7 @@ function getMaxStrLength() {
     }
     else if (window.innerWidth >= 768)
     {
-        return 130
+        return 125
     }
     else if (window.innerWidth >= 425)
     {
@@ -16,13 +16,17 @@ function getMaxStrLength() {
     {
         return 70
     }
+    else if (window.innerWidth >= 360)
+    {
+        return 55
+    }
     else if (window.innerWidth >= 320)
     {
-        return 40
+        return 50
     }
     else 
     {
-        return 60
+        return 40
     }
 }
 

@@ -135,6 +135,7 @@
   font-family: 'Muli', sans-serif;
   font-size: 0.8em;
   text-align: left;
+  overflow: auto;
   /* Fully displayed project description */
   /* Displayed for preview */
 }
@@ -209,7 +210,7 @@
 }
 
 .projects-page #proj-card .desc-closed {
-  height: 6em;
+  height: 6.5em;
 }
 
 .projects-page #proj-card .image-container {

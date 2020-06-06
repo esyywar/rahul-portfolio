@@ -113,6 +113,7 @@ $tag-list-trans-in-time: 400ms;
                 font-family: 'Muli', sans-serif;
                 font-size: 0.8em;
                 text-align: left;
+                overflow: auto;
 
                 /* Fully displayed project description */
                 .proj-desc-full {
@@ -177,7 +178,7 @@ $tag-list-trans-in-time: 400ms;
             height: 12em;
         }
         .desc-closed {
-            height: 6em;
+            height: 6.5em;
         }
 
         .image-container {
