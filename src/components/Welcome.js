@@ -171,9 +171,9 @@ function Welcome(props) {
         }, 1000)
 
         return (
-            <div id="swipe-arrow-container">
-                {isMobileDevice() && <p>Swipe Up!</p>}
-                <div className="swipe-arrow" onClick={() => dispatch(nextComp())}>&#10095;</div>
+            <div id="swipe-arrow-container" onClick={() => dispatch(nextComp())}>
+                <p>{(isMobileDevice()) ? "Swipe Up!" : "Click Here!"}</p>
+                <div className="swipe-arrow">&#10095;</div>
             </div>
         )
     }

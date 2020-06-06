@@ -155,6 +155,7 @@
 
 .professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-full {
   padding: 0.7em 1.3em;
+  line-height: 1.5em;
   color: black;
 }
 
@@ -346,25 +347,22 @@
 
 /* Tablets */
 @media only screen and (min-width: 768px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 17px;
-  }
   .professional-exp-page #pro-content-card .desc-open {
     height: 14em;
   }
 }
 
-/* Laptops */
-@media only screen and (min-width: 1024px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 18px;
-  }
-}
-
 /* Large laptops */
 @media only screen and (min-width: 1440px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 20px;
+  .professional-exp-page #pro-content-card .desc-container .pro-exp-desc-full {
+    line-height: 1.5em;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 15em;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 16px;
+    max-width: 650px;
   }
 }
 /*# sourceMappingURL=professional.css.map */

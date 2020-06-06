@@ -490,7 +490,7 @@ $tag-list-trans-in-time: 400ms;
         }
 
         #proj-card {
-            font-size: 17px;
+            font-size: 19px;
 
             .title-and-date {
                 grid-row: 2 / 3;
@@ -498,6 +498,10 @@ $tag-list-trans-in-time: 400ms;
                 .date {
                     margin-top: 0.5em;
                 }
+            }
+
+            #tags-and-desc {
+                max-width: 650px;
             }
         }
     }

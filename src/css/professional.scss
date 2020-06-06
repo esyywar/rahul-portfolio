@@ -123,6 +123,7 @@ $text-bg-colour: whitesmoke;
         /* Fully displayed job experience description */
         .pro-exp-desc-full {
           padding: 0.7em 1.3em;
+          line-height: 1.5em;
           color: black;
 
           p {
@@ -249,27 +250,31 @@ $text-bg-colour: whitesmoke;
   }
 }
 
+
 /* Tablets */
 @media only screen and (min-width: 768px) {
   .professional-exp-page #pro-content-card {
-    font-size: 17px;
-
     .desc-open {
       height: 14em;
     }
   }
 }
 
-/* Laptops */
-@media only screen and (min-width: 1024px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 18px;
-  }
-}
 
 /* Large laptops */
 @media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card {
-    font-size: 20px;
+    .desc-container .pro-exp-desc-full {
+      line-height: 1.5em;
+    }
+
+    .desc-open {
+      height: 15em;
+    }
+
+    #date-and-description {
+      font-size: 16px;
+      max-width: 650px;
+    }  
   }
 }

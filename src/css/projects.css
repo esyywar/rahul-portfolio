@@ -652,7 +652,7 @@
     font-size: 1.2em;
   }
   .projects-page #proj-card {
-    font-size: 17px;
+    font-size: 19px;
   }
   .projects-page #proj-card .title-and-date {
     -ms-grid-row: 2;
@@ -661,6 +661,9 @@
   }
   .projects-page #proj-card .title-and-date .date {
     margin-top: 0.5em;
+  }
+  .projects-page #proj-card #tags-and-desc {
+    max-width: 650px;
   }
 }
 /*# sourceMappingURL=projects.css.map */

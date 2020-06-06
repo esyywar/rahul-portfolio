@@ -255,8 +255,7 @@ html .no-select, body .no-select {
 }
 
 /***************** MEDIA QUERIES *****************/
-/* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 560px) {
   .grid-container .resume-window .next-arrow {
     right: 40px;
   }
