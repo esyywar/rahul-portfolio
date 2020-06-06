@@ -260,21 +260,30 @@ $text-bg-colour: whitesmoke;
   }
 }
 
-
-/* Large laptops */
-@media only screen and (min-width: 1440px) {
+/* Laptops */
+@media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card {
-    .desc-container .pro-exp-desc-full {
-      line-height: 1.5em;
-    }
 
     .desc-open {
       height: 15em;
     }
+    .desc-closed {
+      height: 7.5em;
+    }
+  }
+}
+
+
+/* Large laptops */
+@media only screen and (min-width: 1440px) {
+  .professional-exp-page #pro-content-card {
 
     #date-and-description {
       font-size: 16px;
       max-width: 650px;
     }  
+    .desc-open {
+      height: 8em;
+    }
   }
 }

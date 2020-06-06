@@ -352,17 +352,24 @@
   }
 }
 
-/* Large laptops */
-@media only screen and (min-width: 1440px) {
-  .professional-exp-page #pro-content-card .desc-container .pro-exp-desc-full {
-    line-height: 1.5em;
-  }
+/* Laptops */
+@media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card .desc-open {
     height: 15em;
   }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7.5em;
+  }
+}
+
+/* Large laptops */
+@media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 16px;
     max-width: 650px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 8em;
   }
 }
 /*# sourceMappingURL=professional.css.map */

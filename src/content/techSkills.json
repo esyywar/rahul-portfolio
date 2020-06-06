@@ -85,7 +85,7 @@
         {
             "id": 3,
             "title": "Web Dev",
-            "items": ["React JS", "Redux", "SASS", "Bootstrap"]
+            "items": ["React JS", "Redux", "SASS", "Bootstrap", "Wordpress"]
         }
     ]
 }
