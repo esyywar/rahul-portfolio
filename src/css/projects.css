@@ -582,7 +582,7 @@
     margin-top: 0.5em;
   }
   .projects-page #proj-card #tags-and-desc .proj-card-tags {
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
 }
 
@@ -606,7 +606,7 @@
     overflow: visible;
   }
   .projects-page #proj-card .desc-closed {
-    height: 7em;
+    height: 8em;
   }
   .projects-page #proj-card .desc-open {
     height: 16em;

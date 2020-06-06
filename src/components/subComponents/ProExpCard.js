@@ -9,7 +9,7 @@ function ProExpCard(props) {
     const proExpItem = props.proExpItem
 
     /* Description is an array of sentences to be mapped as html paragraphs */
-    const description = (window.screen.width < 768) ? proExpItem.shortDesc : proExpItem.fullDesc
+    const description = (window.screen.width < 768 || window.innerWidth < 768) ? proExpItem.shortDesc : proExpItem.fullDesc
 
    
     /******************* DATE DISPLAY ***********************/

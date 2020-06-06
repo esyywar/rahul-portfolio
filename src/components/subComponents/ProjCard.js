@@ -12,7 +12,7 @@ function ProjCard(props) {
     const projItem = props.projItem
     
     /* Description is an array of sentences to be mapped as html paragraphs */
-    const description = (window.screen.width < 768) ? projItem.shortDesc : projItem.fullDesc
+    const description = (window.screen.width < 768 || window.innerWidth < 768) ? projItem.shortDesc : projItem.fullDesc
 
 
     /******************* CONDITIONAL RENDER OF OPEN SOURCE TAG *********************/

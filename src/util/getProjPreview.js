@@ -1,20 +1,24 @@
 /* Returns maximum character length of string allowable for the screen size */
 function getMaxStrLength() {
-    if (window.screen.width >= 1024) 
+    if (window.innerWidth >= 1024) 
     {
         return 140
     }
-    else if (window.screen.width >= 768)
+    else if (window.innerWidth >= 768)
     {
         return 130
     }
-    else if (window.screen.width >= 425)
+    else if (window.innerWidth >= 425)
     {
         return 80
     }
-    else if (window.screen.width >= 375)
+    else if (window.innerWidth >= 375)
     {
         return 70
+    }
+    else if (window.innerWidth >= 320)
+    {
+        return 40
     }
     else 
     {
