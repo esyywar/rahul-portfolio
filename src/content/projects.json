@@ -3,7 +3,7 @@
         "id": "0",
         "title": "Digital Microfluidics Controller",
         "date": "June 2020",
-        "photo": "rahulscorner_screenshot.jpg",
+        "photo": "dmf_pcb_pcbdesign_bg.jpg",
         "openSrc": true,
         "link": "https://github.com/esyywar/Digital-Microfluidic-Control",
         "tags": ["LabVIEW", "GUI", "Embedded"],

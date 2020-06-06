@@ -142,7 +142,7 @@
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-full {
   color: black;
-  padding: 1em 1.5em;
+  padding: 1em 1.5em 0 1.5em;
   line-height: 1.5em;
 }
 
