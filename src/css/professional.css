@@ -126,14 +126,23 @@
   grid-column: 1 / 9;
   width: 98%;
   max-width: 550px;
+  z-index: 2;
   -webkit-transition: height 300ms;
   transition: height 300ms;
-  z-index: 2;
   background-color: whitesmoke;
   border-radius: 10px;
   border: 2px solid black;
   font-size: 12px;
-  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
           transform: translate3d(100%, 0, 0) skewX(-30deg);
   opacity: 0;
@@ -142,8 +151,10 @@
 }
 
 .professional-exp-page #pro-content-card #date-and-description .date {
-  padding-top: 0.2em;
+  padding-top: 0.4em;
   font-size: 1.2em;
+  width: 100%;
+  min-height: 1.2em;
 }
 
 .professional-exp-page #pro-content-card #date-and-description .desc-container {
@@ -151,6 +162,7 @@
   width: 100%;
   text-align: left;
   font-size: 1.1em;
+  overflow: auto;
   /* Fully displayed job experience description */
   /* Displayed for preview */
 }
@@ -343,7 +355,7 @@
     font-size: 14px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 12em;
+    height: 11.8em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -360,7 +372,7 @@
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card .desc-open {
-    height: 15em;
+    height: 13.5em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7.5em;
@@ -369,11 +381,20 @@
 
 /* Large laptops */
 @media only screen and (min-width: 1440px) {
-  .professional-exp-page #pro-content-card #date-and-description {
+  .professional-exp-page #pro-content-card {
     font-size: 16px;
-    max-width: 650px;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 15px;
+    max-width: 850px;
+  }
+  .professional-exp-page #pro-content-card #date-and-description .date {
+    padding-top: 0.5em;
   }
   .professional-exp-page #pro-content-card .desc-open {
+    height: 16.4em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
     height: 8em;
   }
 }

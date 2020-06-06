@@ -1,16 +1,16 @@
 /* Returns maximum character length of string allowable for the screen size */
 function getMaxStrLength() {
-    if (window.innerWidth >= 1024) 
+    if (window.innerHeight >= 1440)
     {
         return 140
     }
+    else if (window.innerWidth >= 1024) 
+    {
+        return 120
+    }
     else if (window.innerWidth >= 768)
     {
-        return 125
-    }
-    else if (window.innerWidth >= 425)
-    {
-        return 80
+        return 110
     }
     else if (window.innerWidth >= 375)
     {
@@ -46,7 +46,7 @@ export function getPreviewText(arrStr) {
     output = output.substring(0, maxLength)
 
     /* Get last space character */
-    let n = output.lastIndexOf(" ")
+    let n = Math.max(output.lastIndexOf(" "), output.lastIndexOf("-"))
 
     /* Cut to end with last word and add ellipses */
     output = output.substring(0, n)

@@ -206,7 +206,7 @@
 }
 
 .projects-page #proj-card .desc-open {
-  height: 12em;
+  height: 12.1em;
 }
 
 .projects-page #proj-card .desc-closed {
@@ -251,7 +251,7 @@
 
 .projects-page .tags-list {
   width: 100%;
-  max-width: 450px;
+  max-width: 475px;
   -ms-grid-row: 11;
   -ms-grid-row-span: 2;
   grid-row: 11 / 13;
@@ -595,6 +595,13 @@
 }
 
 /* For large mobile screens */
+@media only screen and (min-width: 360px) {
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    font-size: 0.7em;
+  }
+}
+
+/* For large mobile screens */
 @media only screen and (min-width: 425px) {
   .projects-page #proj-card #tags-and-desc .proj-card-tags {
     font-size: 0.8em;
@@ -650,7 +657,7 @@
 /* Large laptops */
 @media only screen and (min-width: 1400px) {
   .projects-page .tags-list .tag-item {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .projects-page #proj-card {
     font-size: 19px;

@@ -98,13 +98,16 @@ $text-bg-colour: whitesmoke;
       grid-column: 1 / 9;
       width: 98%;
       max-width: 550px;
-      transition: height 300ms;
       z-index: 2;
+      transition: height 300ms;
       background-color: $text-bg-colour;
       border-radius: 10px;
       border: 2px solid black;
       font-size: 12px;
-      overflow: auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       // Initial conditions for animation
       transform: translate3d(100%, 0, 0) skewX(-30deg);
@@ -112,8 +115,10 @@ $text-bg-colour: whitesmoke;
       animation: lightSpeedInRight ease-out 500ms forwards 500ms;
 
       .date {
-        padding-top: 0.2em;
+        padding-top: 0.4em;
         font-size: 1.2em;
+        width: 100%;
+        min-height: 1.2em;
       }
 
       .desc-container {
@@ -121,6 +126,7 @@ $text-bg-colour: whitesmoke;
         width: 100%;
         text-align: left;
         font-size: 1.1em;
+        overflow: auto;
 
         /* Fully displayed job experience description */
         .pro-exp-desc-full {
@@ -249,7 +255,7 @@ $text-bg-colour: whitesmoke;
     }
 
     .desc-open {
-      height: 12em;
+      height: 11.8em;
     }
     .desc-closed {
       height: 7em;
@@ -272,7 +278,7 @@ $text-bg-colour: whitesmoke;
   .professional-exp-page #pro-content-card {
 
     .desc-open {
-      height: 15em;
+      height: 13.5em;
     }
     .desc-closed {
       height: 7.5em;
@@ -285,11 +291,20 @@ $text-bg-colour: whitesmoke;
 @media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card {
 
+    font-size: 16px;
+
     #date-and-description {
-      font-size: 16px;
-      max-width: 650px;
+      font-size: 15px;
+      max-width: 850px;
+
+      .date {
+        padding-top: 0.5em;
+      }
     }  
     .desc-open {
+      height: 16.4em;
+    }
+    .desc-closed {
       height: 8em;
     }
   }

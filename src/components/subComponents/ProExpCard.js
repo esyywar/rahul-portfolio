@@ -72,8 +72,8 @@ function ProExpCard(props) {
             <div id="date-and-description" className={(props.isDescOpen) ? "desc-open" : "desc-closed"}>
                 <h4 className="date">{dateDisplay(proExpItem)}</h4>
 
+                {/* Expandable detail section is rendered here */}
                 <div className="desc-container no-select" onClick={() => props.expandDescToggle()}>
-                    {/* Expandable detail section is rendered here */}
                     {expandableDetail(description, props.isDescOpen)}
                 </div>
             </div>
