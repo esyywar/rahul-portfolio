@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import SkillsMenu from './subComponents/SkillsMenu'
-import CodeLangs from './subComponents/CodeLangs'
+import CodeTable from './subComponents/CodeTable'
 import SWTools from './subComponents/SWTools'
 import HWTools from './subComponents/HWTools'
 
@@ -49,7 +49,7 @@ function Skills(props) {
         },
         {
             id: 2,
-            Component: CodeLangs,
+            Component: CodeTable,
             btnColour: "deep-orange",
             faIcon: "keyboard",
             wndName: skillComps.PLANGS,

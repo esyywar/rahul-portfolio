@@ -11,7 +11,7 @@
             "I developed and tested this digital microfluidic device for my research experiments."],
         "fullDesc": ["Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the application and development of this technology.",
             "For my experiments, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating high voltage sequences used to move droplets on the chip.",
-            "This chip design will be implemented in my experiments to demonstrate optical annealing for PCR and antibiotic sensing in milk droplets."]
+            "Design inspiration is from Gaudi Labs' OpenDrop!"]
     },
     {
         "id": "1",

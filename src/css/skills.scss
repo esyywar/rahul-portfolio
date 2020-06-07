@@ -4,6 +4,13 @@ $transition-enter-time: 400ms;
 $transition-exit-time: 200ms;
 
 
+/************************** SASS VARIABLES ***********************/
+
+$prog-icon-bg-clr: #FFD6EB;
+$exp-col-clr: #016301;
+$work-prof-col-clr: #2F1847;
+
+
 /************************ FONT IMPORTS *********************/
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
@@ -107,16 +114,26 @@ $transition-exit-time: 200ms;
 
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 
-.skills-page .skills-content .code-langs-list {
+.skills-page .skills-content .code-langs-table {
     height: 100%;
     max-width: 450px;
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 7.5em minmax(auto, 300px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(45px, 1fr));
     grid-column-gap: 10px;
+    font-size: 12px;
 
-    .lang-column {
+    .expertise-column {
         grid-column: 1 / 2;
+        color: $exp-col-clr;
+    }
+    .working-prof-column {
+        grid-column: 2 / 3;
+        color: $work-prof-col-clr;
+    }
+
+    .expertise-column, .working-prof-column {
         width: 100%;
         height: 100%;
         display: flex;
@@ -124,48 +141,45 @@ $transition-exit-time: 200ms;
         align-items: center;
         justify-content: space-around;
 
-        .lang-item {
-            font-family: 'VT323', monospace;
+        /* Table headers */ 
+        h3 {
             font-size: 1.5em;
-            width: 100%;
+        }
 
-            // Initial conditions for animation
+        /* Style for each icon item */ 
+        .prog-icon-container {
+            padding: 0.3em;
+            border-radius: 10px;
+            background-color: $prog-icon-bg-clr;
+            color: black;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                height: 2em;
+                width: auto;
+            }
+
+            span {
+                font-size: 1.5em;
+                font-family: 'VT323', monospace;
+                padding: 0 0.5em;
+            }
+        }
+
+        /* Set intial conditions for animation */ 
+        .exp-lang {
             opacity: 0;
             transform: translateX(-100%);
         }
-    }
-
-    .skill-bar-column {
-        grid-column: 2 / 3;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-
-        .empty-skill-bar {
-            width: 90%;
-            max-width: 500px;
-            height: 4px;
-            box-shadow: 5px 5px 15px green;
-            background-color: whitesmoke;
-            overflow: hidden;
-
-            // Initial conditions for animation
+        .work-prof-lang {
             opacity: 0;
             transform: translateX(100%);
-
-            .skill-bar-fill {
-                background-color: green;
-                height: 100%;
-                width: 0;
-                // NOTE: width and transition to fill bar up managed in CodeLang.js
-            }
         }
     }
 }
-
 
 /**************** SOFTWARE TOOLS COMPONENT ****************/
 
@@ -191,7 +205,7 @@ $transition-exit-time: 200ms;
         padding: 0.5em 0;
         font-family: 'Oswald', sans-serif;
 
-        // Initial conditions for animation applied in SWTools.js
+        /* Initial conditions for animation applied in SWTools.js */
         transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
         opacity: 0;
 
@@ -399,6 +413,10 @@ $transition-exit-time: 200ms;
                     height: 13em;
                     padding: 8px 14px;
                 }
+            }
+
+            .code-langs-table {
+                font-size: 15px;
             }
 
             /* For software tools  */
