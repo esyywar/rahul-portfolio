@@ -72,7 +72,7 @@ function Welcome(props) {
         {
             id: 5,
             charDelay: 45,
-            itemDelay: 500,
+            itemDelay: 400,
             text: "Passionate about electrical and embedded systems engineering. I also dabble in web technologies!",
             htmlId: "type-target-5",
             listItem: false
