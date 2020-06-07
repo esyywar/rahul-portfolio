@@ -37,7 +37,7 @@ function Skills(props) {
             btnColour: "primary",
             faIcon: "plug",
             wndName: skillComps.HWTOOLS,
-            wndTitle: "Hardware Tools"
+            wndTitle: "Hardware Expertise"
         },
         {
             id: 1,

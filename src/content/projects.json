@@ -107,7 +107,7 @@
         "shortDesc": ["A complete hardware and software solution for regulating nutrient ion concentration in hydroponic growing systems.",
             "Uses an Ion-Selective-Electrode sensor and user configrable set-points to autonomously control ion concentration."],
         "fullDesc": ["A complete hardware and software closed loop control system for regulating nutrient ion concentration in hydroponic (soil-less) growing systems.",
-            "Presented as my capstone engineering project, this device used a an Ion-Selective-Electrode sensor, water-level sensor and solenoid valves to maintain nutrient concentration within 200ppm of a user configured setpoint.",
+            "Presented as my capstone engineering project, this device used an Ion-Selective-Electrode sensor, water-level sensor and solenoid valves to maintain nutrient concentration within 200ppm of a user configured setpoint.",
             "The user could monitor data and modify control parameters from a LabVIEW GUI application."]
     }
 ]

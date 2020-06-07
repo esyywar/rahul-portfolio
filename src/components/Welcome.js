@@ -37,7 +37,7 @@ function Welcome(props) {
             id: 0,
             charDelay: 30,
             itemDelay: 300,
-            text: "Electrical Circuit Design",
+            text: "Test Engineer",
             htmlId: "type-target-1",
             listItem: true,
             color: "#EE0D0D"
@@ -55,7 +55,7 @@ function Welcome(props) {
             id: 3,
             charDelay: 30,
             itemDelay: 300,
-            text: "Front End Web Dev",
+            text: "Microsystems Researcher",
             htmlId: "type-target-3",
             listItem: true,
             color: "#098E0B"
@@ -64,7 +64,7 @@ function Welcome(props) {
             id: 4,
             charDelay: 30,
             itemDelay: 500,
-            text: "Application Dev",
+            text: "Front End Web Dev",
             htmlId: "type-target-4",
             listItem: true,
             color: "black"

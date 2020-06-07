@@ -3,13 +3,20 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
+import { isMobileDevice } from '../util/mobileCheck'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { Redirect } from 'react-router-dom'
 
+import { MDBBtn } from "mdbreact";
 
-function Title() {
+import 'mdbreact/dist/css/mdb.css' 
+import '../css/landing.css'
+
+
+function Landing() {
 
     /***************** STATE MANAGEMENT *******************/
 
@@ -26,11 +33,6 @@ function Title() {
     /* Number of bars for animation */
     const numBars = 14;
 
-    /* On load show "enter" or "swipe" depending on user device */
-    function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    };
-
     /* Calling this function will create the number of bars given in props */
     function makeBars(numBars) {
         var bars = []
@@ -44,8 +46,7 @@ function Title() {
 
     /* Calling will start the bars animation */
     function barAnimation() {
-        document.getElementById("title-content").style.animation = "slideOutLeft linear 200ms forwards"
-        document.getElementById("background").style.animationPlayState = "paused"
+        document.getElementById("landing-content").style.animation = "slideOutLeft linear 200ms forwards"
 
         var fillBars = document.getElementsByClassName("fill-bar")
 
@@ -74,13 +75,18 @@ function Title() {
 
     
     return (
-        <div className="title-page">
-            <div id="background">
-                {makeBars(numBars)}
+        <div className="landing-page">
+            {makeBars(numBars)}
+
+            <div className="bg-photo">
+                {/* Background photo placed here from css */}
             </div>
-            <div id="title-content">
+
+            {/* Naame-block, information and site entry button */}
+            <div id="landing-content">
                 <div className="profile-block">
                     <div className="name-block">
+                        {/* Left and right lines here used for hover effect */}
                         <div className="left-line">
                             <hr />
                         </div>
@@ -89,14 +95,16 @@ function Title() {
                             <hr />
                         </div>
                     </div>
-                    <h3>Systems and Computing Engineer</h3>
-                    <p>Background in Biomedical Engineering with a passion for electrical design and embedded systems. Experienced working on electronics of medical devices and researching micro-electromechanical systems.</p>
+                    <p>Test Engineer | Embedded Systems Dev | Researcher</p>
                     <h4>Toronto, Canada</h4>
                 </div>
 
-                <button className="entry-button" onClick={() => enterSite()}>
-                    <h4>{isMobileDevice() ? "Swipe " : "Click "} To Enter!  <span><FontAwesomeIcon icon={faArrowRight} /></span></h4>
-                </button>
+                <MDBBtn className="entry-btn" color="amber" onClick={enterSite}>
+                    <span>
+                        {isMobileDevice() ? "Swipe " : "Click "} To Enter!
+                        <FontAwesomeIcon className="arrow-icon" icon={faArrowRight} size="lg" />
+                    </span>
+                </MDBBtn>
                 
                 {// Redirect page when triggered by button press (and after delay)
                 (doRedirect && <Redirect exact from="/" to="/portfolio" />)}
@@ -105,4 +113,4 @@ function Title() {
     )
 }
 
-export default Title
+export default Landing

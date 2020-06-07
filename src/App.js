@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import Landing from './components/Landing'
 import PortfolioMain from './components/PortfolioMain'
-import Title from './components/Title'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { nextComp, prevComp } from './actions/setActiveComp'
@@ -18,8 +18,8 @@ import './css/hoverEffects.css'
 // To build font-awesome library
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faBook, faKeyboard, faPlug, faTools } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faBook, faKeyboard, faPlug, faTools)
+import { faArrowRight, faBook, faKeyboard, faPlug, faTools } from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faArrowRight, faBook, faKeyboard, faPlug, faTools)
 
 
 function App() {
@@ -152,7 +152,7 @@ function App() {
     <div>
       <Router>
         <Route exact path="/">
-          <Title />
+          <Landing />
         </Route>
         <Route exact path="/portfolio">
           <PortfolioMain />

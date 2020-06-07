@@ -10,6 +10,17 @@ $active-tag-hover-clr: rgb(255, 178, 34);
 /**************** HOVER CLASS AND STYLES ******************/
 
 .has-hover {
+    /* Hover effect on landing page */
+    .landing-page #landing-content .profile-block .name-block:hover {
+        .left-line, .right-line {
+            opacity: 1;
+            width: 15%;
+        }
+        .left-line hr, .right-line hr {
+            width: 100%;
+        }
+    }
+
     .grid-container {
         /* Navigation component hover effects */
         .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {

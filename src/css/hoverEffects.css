@@ -1,6 +1,19 @@
 /* This file holds all hover styles for the app - the class is applied in App.js depending on if mobile is touch or click interface */
 /**************** SASS VARIABLES *****************/
 /**************** HOVER CLASS AND STYLES ******************/
+.has-hover {
+  /* Hover effect on landing page */
+}
+
+.has-hover .landing-page #landing-content .profile-block .name-block:hover .left-line, .has-hover .landing-page #landing-content .profile-block .name-block:hover .right-line {
+  opacity: 1;
+  width: 15%;
+}
+
+.has-hover .landing-page #landing-content .profile-block .name-block:hover .left-line hr, .has-hover .landing-page #landing-content .profile-block .name-block:hover .right-line hr {
+  width: 100%;
+}
+
 .has-hover .grid-container {
   /* Navigation component hover effects */
   /* Welcome page hovers */
