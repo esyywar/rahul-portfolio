@@ -13,7 +13,7 @@
         {
             "id": 2,
             "title": "Peripherals",
-            "items": ["SPI", "I2C", "USART/UART", "ADC/DAC"]
+            "items": ["Stepper Motors", "HV Relays", "SPI", "I2C", "USART/UART", "ADC/DAC"]
         }
     ],
     "programmingLangs": [

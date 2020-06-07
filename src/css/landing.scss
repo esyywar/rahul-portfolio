@@ -98,7 +98,7 @@ $borderBlue: #A1C8F7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: color 500ms;  // for hover effect
+                transition: color 500ms;
 
                 .left-line, .right-line {
                     opacity: 0;
@@ -110,7 +110,7 @@ $borderBlue: #A1C8F7;
                         border: none;
                         background-color: $title-text-clr;
                         height: 0.2em;
-                        transition: width 500ms;  // for hover effect
+                        transition: width 500ms;
                     }
                 }
                 .left-line hr {
@@ -132,12 +132,21 @@ $borderBlue: #A1C8F7;
                 padding: 0.5em 1em;
                 line-height: 1.2em;
                 font-size: 1.1em;
+
+                .title-item {
+                    /* Initial condition for animation */
+                    opacity: 0;
+                }
             }
 
             /* Location */
-            h4 {
+            #location-item {
                 font-size: 1.5em;
                 padding: 0.5em;
+
+                /* Initial condition for animation */
+                transform: translateX(20px);
+                opacity: 0;
             }
 
         }
@@ -188,6 +197,15 @@ $borderBlue: #A1C8F7;
     to {
         opacity: 0;
         transform: translateX(-20px);
+    }
+}
+
+@keyframes fadeAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

@@ -58,7 +58,7 @@ function Welcome(props) {
             text: "Microsystems Researcher",
             htmlId: "type-target-3",
             listItem: true,
-            color: "#098E0B"
+            color: "#08610A"
         },
         {
             id: 4,

@@ -12,21 +12,8 @@ import '../css/sideNav.css'
 
 
 function SideNav(props) {    
+
     const dispatch = useDispatch()
-
-    /************** LEAVE NAV OPEN IF SCREEN WIDTH > 1024PX ****************/
-
-    useEffect(() => {
-        /* Open nav when window size large enough - attach to resize event listener */
-        function handleResize() {
-            if (!isMobileScrWidth()) { dispatch(sideNavSet(true)) }
-        }
-        handleResize()
-
-        window.addEventListener("resize", handleResize)
-
-        return () => { window.removeEventListener("resize", handleResize) }
-    }, [dispatch])
 
 
     /************** NAVIGATION MENU FUNCTINALITY ****************/
@@ -70,6 +57,7 @@ function SideNav(props) {
 
             // Set event listener for click -> close nav if user clicks away from nav
             document.addEventListener("mousedown", handleScreenClick)
+            document.addEventListener("touchstart", handleScreenClick)
         }
         else
         {
@@ -92,12 +80,31 @@ function SideNav(props) {
 
         return (isSideNavOpen => {
             // Callback function removes event listener for user click
-            if (!isSideNavOpen) document.removeEventListener("mousedown", handleScreenClick)
+            if (!isSideNavOpen) 
+            {
+                document.removeEventListener("mousedown", handleScreenClick)
+                document.removeEventListener("touchstart", handleScreenClick)
+            }
         })
 
         // Removing here warning for useEffect dependency on handleScreenClick which must be kept outside useEffect scope
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSideNavOpen])
+
+
+    /************** LEAVE NAV OPEN IF SCREEN WIDTH >= 1024PX ****************/
+
+    useEffect(() => {
+        /* Open nav when window size large enough - attach function to resize event listener */
+        function handleResize() {
+            if (!isMobileScrWidth()) { dispatch(sideNavSet(true)) }
+        }
+        handleResize()
+
+        window.addEventListener("resize", handleResize)
+
+        return () => { window.removeEventListener("resize", handleResize) }
+    }, [dispatch])
 
 
     /****************** NAVIGATION LINK CLICK HANDLING ********************/

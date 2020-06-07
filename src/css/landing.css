@@ -156,9 +156,18 @@
   font-size: 1.1em;
 }
 
-.landing-page #landing-content .profile-block h4 {
+.landing-page #landing-content .profile-block p .title-item {
+  /* Initial condition for animation */
+  opacity: 0;
+}
+
+.landing-page #landing-content .profile-block #location-item {
   font-size: 1.5em;
   padding: 0.5em;
+  /* Initial condition for animation */
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  opacity: 0;
 }
 
 .landing-page #landing-content .entry-btn {
@@ -244,6 +253,24 @@
     opacity: 0;
     -webkit-transform: translateX(-20px);
             transform: translateX(-20px);
+  }
+}
+
+@-webkit-keyframes fadeAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

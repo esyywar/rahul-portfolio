@@ -224,7 +224,7 @@ $transition-exit-time: 200ms;
     font-size: 14px;
 
     .hw-tool-pack {
-        height: 9.3em;;
+        height: 10em;
         padding: 4px 6px;
         margin: 0 4px;
 
@@ -382,6 +382,33 @@ $transition-exit-time: 200ms;
     }
 }
 
+/* Tablets */
+@media only screen and (min-width: 768px) {
+    .skills-page {
+        .skills-footer .back-btn {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .skills-content {
+            /* For hardware */
+            .hardware-page {
+                font-size: 18px;
+
+                .hw-tool-pack {
+                    height: 13em;
+                    padding: 8px 14px;
+                }
+            }
+
+            /* For software tools  */
+            .sw-tools-grid {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     .skills-page {
@@ -393,9 +420,10 @@ $transition-exit-time: 200ms;
         .skills-content {
             /* For hardware */
             .hardware-page {
-                font-size: 17px;
+                font-size: 19px;
 
                 .hw-tool-pack {
+                    //height: 0em;
                     padding: 8px 14px;
                 }
             }

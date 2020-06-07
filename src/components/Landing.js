@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
@@ -64,6 +64,24 @@ function Landing() {
     }
 
 
+    /***************** ANIMATING DESCRIPTOR TITLES ******************/
+
+    const titles = ["Test Engineer", "Embedded Systems Dev", "Researcher"]
+
+    useEffect(() => {
+        let delayTicks = 900
+
+        Array.from(document.getElementsByClassName("title-item")).forEach((element, index) => {
+            element.style.animation = "fadeAppear 500ms ease " + (index * 150 + delayTicks) + "ms forwards"
+        })
+
+        delayTicks += titles.length * 150
+
+        document.getElementById("location-item").style.animation = "slideInRight 300ms ease " + (delayTicks) + "ms forwards"
+    }, [titles])
+
+
+
     /******************* HANDLING SWIPE EVENTS (TO ENTER SITE) ********************/
 
     if (isSwipeLeft || isSwipeRight)
@@ -95,8 +113,18 @@ function Landing() {
                             <hr />
                         </div>
                     </div>
-                    <p>Test Engineer | Embedded Systems Dev | Researcher</p>
-                    <h4>Toronto, Canada</h4>
+                    
+                    {/* Mapping titles */}
+                    <p>
+                        {titles.map((element, index) => {
+                            let output = element + ((index < titles.length - 1) ? " | " : "")
+                            return (
+                                <span key={index} className="title-item">{output}</span>
+                            )
+                        })}
+                    </p>
+
+                    <h4 id="location-item">Toronto, Canada</h4>
                 </div>
 
                 <MDBBtn className="entry-btn" color="amber" onClick={enterSite}>

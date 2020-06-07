@@ -24,7 +24,6 @@ $active-tag-hover-clr: rgb(255, 178, 34);
     .grid-container {
         /* Navigation component hover effects */
         .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
-            transition: all 300ms;
             letter-spacing: 2px;
             color: #F0A202;
         }
