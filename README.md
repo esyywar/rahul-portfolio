@@ -2,7 +2,7 @@
 
 I have made this website to showcase my projects and experiences. The site is loaded with animations and designed with a mobile-first architecture. 
 
-Visit the live site at rahuleswar.com
+Visit the live site at [rahuleswar.com]
 
 
 ## Built With...
