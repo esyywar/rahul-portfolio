@@ -65,7 +65,7 @@ $tag-list-trans-in-time: 400ms;
             max-width: 430px;
             z-index: 2;
             text-align: center;
-            align-self: start;
+            align-self: center;
             border-radius: 5px;
             padding: 0.5em;
             font-size: 1.1em;
@@ -443,11 +443,39 @@ $tag-list-trans-in-time: 400ms;
         overflow: visible;
 
         #proj-card {
+            .title-and-date {
+                font-size: 1.3em;
+            }
+
             .desc-closed {
-                height: 8em;
+                height: 6.5em;
             }
             .desc-open {
-                height: 16em;
+                height: 13.5em;
+            }
+        }
+
+        .tags-list .tag-item {
+            font-size: 0.9em;
+        }
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 1000px) {
+    .projects-page {
+        overflow: visible;
+
+        #proj-card {
+            .title-and-date {
+                font-size: 1.3em;
+            }
+
+            .desc-closed {
+                height: 6.5em;
+            }
+            .desc-open {
+                height: 17em;
             }
         }
 

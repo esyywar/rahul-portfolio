@@ -54,8 +54,8 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  -ms-flex-item-align: end;
-      align-self: end;
+  -ms-flex-item-align: center;
+      align-self: center;
   max-width: 460px;
   background-color: whitesmoke;
   width: 90%;
@@ -365,7 +365,14 @@
 /* Tablets */
 @media only screen and (min-width: 768px) {
   .professional-exp-page #pro-content-card .desc-open {
-    height: 14.5em;
+    height: 13em;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 1000px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 18em;
   }
 }
 
