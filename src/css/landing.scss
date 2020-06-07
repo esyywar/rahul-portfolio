@@ -45,6 +45,10 @@ $borderBlue: #A1C8F7;
         background-image: url('../img/title/bw-motherboard.jpg');
         background-size: cover;
         background-position: center;
+
+        /* Initial condition for animation */ 
+        filter: brightness(30%) blur(12px);
+        animation: blurIn 1.2s ease forwards;
     }
         
     /* Applied to all horizontal bars shown on transition */
@@ -71,11 +75,15 @@ $borderBlue: #A1C8F7;
         border-radius: 45px;
         box-shadow: rgba(0, 0, 0, 0.8) 8px 8px 12px;
 
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        /* Initial conditions for animation */ 
+        transform: translateX(20px);
+        opacity: 0;
+        animation: slideInRight 500ms ease-in 400ms forwards;
 
         .profile-block {
             width: 100%;
@@ -153,24 +161,13 @@ $borderBlue: #A1C8F7;
 
 @keyframes blurIn {
     from {
-        filter: brightness(30%) blur(6px);
+        filter: brightness(30%) blur(12px);
     }
     to {
         filter: brightness(100%) blur(0);
     }
 }
 
-@keyframes breathe {
-    from {
-        transform: scale(1.0);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    to {
-        transform: scale(1.0);
-    }
-}
 
 @keyframes slideInRight {
     from {
