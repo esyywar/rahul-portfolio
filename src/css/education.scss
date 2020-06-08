@@ -141,6 +141,13 @@
     }
 }
 
+/* Large-mid size phones*/
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+    .education-page #edu-card {
+        font-size: 16px;
+    }
+}
+
 @media only screen and (min-width: 550px) {
     .education-page #edu-card {
         .school-and-date {

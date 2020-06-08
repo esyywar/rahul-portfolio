@@ -35,12 +35,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 #intro-page .intro-container .name-header {
+  margin-top: 1em;
   font-size: 1.5em;
   font-family: 'Muli', 'sans-serif';
 }
@@ -148,13 +149,41 @@
   }
 }
 
-@media only screen and (min-width: 360px) and (min-height: 800px) {
+/* IPhone 5 */
+@media only screen and (min-width: 320px) and (min-height: 568px) {
   #intro-page .intro-container {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 
-/* Tablets */
+/* Samsing S5 / S6 / S7 */
+@media only screen and (min-width: 360px) and (min-height: 640px) {
+  #intro-page .intro-container {
+    font-size: 25px;
+  }
+}
+
+/* Nexus */
+@media only screen and (min-width: 384px) and (min-height: 640px) {
+  #intro-page .intro-container {
+    font-size: 26px;
+  }
+}
+
+/* IPhone 6S / 7 */
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  #intro-page .intro-container {
+    font-size: 26px;
+  }
+}
+
+/* Google Pixel, IPhone 6S / 7 */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  #intro-page .intro-container {
+    font-size: 27px;
+  }
+}
+
 @media only screen and (min-width: 768px) and (min-height: 800px) {
   #intro-page .intro-container {
     font-size: 30px;

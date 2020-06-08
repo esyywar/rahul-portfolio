@@ -161,7 +161,7 @@ $text-bg-colour: whitesmoke;
 
     /* Classes conditionally applied for expandable detail section */
     .desc-open {
-      height: 12em;
+      height: 22.5vh;
 
       .desc-container {
         overflow: auto;
@@ -248,23 +248,12 @@ $text-bg-colour: whitesmoke;
     #date-and-description {
       font-size: 11px;
     }
-
-    .desc-open {
-      height: 10em;
-    }
   }
 }
 
 @media only screen and (min-width: 320px) and (min-height: 568px) {
   .professional-exp-page #pro-content-card .desc-open {
     height: 11.5em;
-  }
-}
-
-/* Large mobile screens */
-@media only screen and (min-width: 340px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 14px;
   }
 }
 
@@ -279,7 +268,7 @@ $text-bg-colour: whitesmoke;
     }
 
     .desc-open {
-      height: 10em;
+      height: 23.5vh;
     }
     .desc-closed {
       height: 7em;
@@ -290,7 +279,7 @@ $text-bg-colour: whitesmoke;
 /* IPhone 6 / 6S / 7 */
 @media only screen and (min-width: 375px) and (min-height: 667px) {
   .professional-exp-page #pro-content-card .desc-open {
-    height: 12.7em;
+    height: 24vh;
   }
 }
 
@@ -305,7 +294,7 @@ $text-bg-colour: whitesmoke;
     }
 
     .desc-open {
-      height: 12.5em;
+      height: 24vh;
     }
     .desc-closed {
       height: 7em;
@@ -320,9 +309,6 @@ $text-bg-colour: whitesmoke;
       font-size: 13px;
     }
 
-    .desc-open {
-      height: 12.5em;
-    }
     .desc-closed {
       height: 7em;
     }
@@ -339,9 +325,6 @@ $text-bg-colour: whitesmoke;
       font-size: 14px;
     }
 
-    .desc-open {
-      height: 15em;
-    }
     .desc-closed {
       height: 7em;
     }
@@ -351,9 +334,6 @@ $text-bg-colour: whitesmoke;
 /* Tablets */
 @media only screen and (min-width: 768px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
-    .desc-open {
-      height: 13em;
-    }
 
     #date-and-description {
       font-size: 16px;
@@ -361,24 +341,13 @@ $text-bg-colour: whitesmoke;
   }
 }
 
-/* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 1000px) {
-  .professional-exp-page #pro-content-card {
-    .desc-open {
-      height: 18em;
-    }
-  }
-}
 
 /* Laptops */
-@media only screen and (min-width: 1024px) and (min-height: 800px) {
+@media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card {
     grid-row: 3 / 13;
     font-size: 18px;
 
-    .desc-open {
-      height: 14em;
-    }
     .desc-closed {
       height: 7.5em;
     }
@@ -400,9 +369,7 @@ $text-bg-colour: whitesmoke;
         padding-top: 0.5em;
       }
     }  
-    .desc-open {
-      height: 16.4em;
-    }
+
     .desc-closed {
       height: 8em;
     }

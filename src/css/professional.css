@@ -195,7 +195,7 @@
 }
 
 .professional-exp-page #pro-content-card .desc-open {
-  height: 12em;
+  height: 22.5vh;
 }
 
 .professional-exp-page #pro-content-card .desc-open .desc-container {
@@ -353,21 +353,11 @@
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 11px;
   }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 10em;
-  }
 }
 
 @media only screen and (min-width: 320px) and (min-height: 568px) {
   .professional-exp-page #pro-content-card .desc-open {
     height: 11.5em;
-  }
-}
-
-/* Large mobile screens */
-@media only screen and (min-width: 340px) {
-  .professional-exp-page #pro-content-card {
-    font-size: 14px;
   }
 }
 
@@ -383,7 +373,7 @@
     font-size: 12.5px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 10em;
+    height: 23.5vh;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -393,7 +383,7 @@
 /* IPhone 6 / 6S / 7 */
 @media only screen and (min-width: 375px) and (min-height: 667px) {
   .professional-exp-page #pro-content-card .desc-open {
-    height: 12.7em;
+    height: 24vh;
   }
 }
 
@@ -410,7 +400,7 @@
     font-size: 13px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 12.5em;
+    height: 24vh;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -421,9 +411,6 @@
 @media only screen and (min-width: 411px) and (min-height: 731px) {
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 13px;
-  }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 12.5em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -441,9 +428,6 @@
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 14px;
   }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 15em;
-  }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
   }
@@ -451,31 +435,18 @@
 
 /* Tablets */
 @media only screen and (min-width: 768px) and (min-height: 800px) {
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 13em;
-  }
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 16px;
   }
 }
 
-/* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 1000px) {
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 18em;
-  }
-}
-
 /* Laptops */
-@media only screen and (min-width: 1024px) and (min-height: 800px) {
+@media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
     -ms-grid-row-span: 10;
     grid-row: 3 / 13;
     font-size: 18px;
-  }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 14em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7.5em;
@@ -493,9 +464,6 @@
   }
   .professional-exp-page #pro-content-card #date-and-description .date {
     padding-top: 0.5em;
-  }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 16.4em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 8em;
