@@ -53,7 +53,7 @@ function Skills(props) {
             btnColour: "deep-orange",
             faIcon: "keyboard",
             wndName: skillComps.PLANGS,
-            wndTitle: "Progamming"
+            wndTitle: "Programming"
         }
     ]
 
