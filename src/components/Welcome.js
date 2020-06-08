@@ -40,7 +40,7 @@ function Welcome(props) {
             text: "Test Engineer",
             htmlId: "type-target-1",
             listItem: true,
-            color: "#0D00A4"
+            color: "red"
         },
         {
             id: 1,
@@ -49,7 +49,7 @@ function Welcome(props) {
             text: "Embedded Sytems Dev",
             htmlId: "type-target-2",
             listItem: true,
-            color: "#27187E"
+            color: "green"
         },
         {
             id: 3,

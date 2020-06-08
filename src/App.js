@@ -46,7 +46,7 @@ function App() {
   var startX, startY, startTime, moveX, moveY, deltaTime
 
   /* Minimum threshold for recording a swipe (in pixels) */
-  const swipeThres = 60
+  const swipeThres = 70
 
   /* Store starting touch position and time */
   // eslint-disable-next-line
@@ -72,14 +72,14 @@ function App() {
     /* Check for swipe - If detected, remove event listeners and call handler */
     if (deltaTime < 500)
     {
-      if (Math.abs(moveX) > swipeThres)
+      if (Math.abs(moveY) > swipeThres)
       {
-        horizSwipeHandle()
+        vertSwipeHandle()
         return
       }
-      else if (Math.abs(moveY) > swipeThres)
+      else if (Math.abs(moveX) > swipeThres)
       { 
-        vertSwipeHandle()
+        horizSwipeHandle()
       }
     }
   }  

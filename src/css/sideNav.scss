@@ -82,7 +82,7 @@ $skills-bg: #C18AF8;
         width: 0;
         transition: all 250ms linear;
 
-        font-size: 20px;
+        font-size: 16px;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -191,6 +191,12 @@ $skills-bg: #C18AF8;
 
 /**************************** MEDIA QUERIES *******************************/
 
+@media only screen and (min-width: 360px) {
+    .grid-container .navigation #side-nav {
+        font-size: 20px;
+    }
+}
+
 /* Large mobile screens */
 @media only screen and (min-width: 425px) {
     .grid-container .navigation {
@@ -234,35 +240,3 @@ $skills-bg: #C18AF8;
     }
 }
 
-
-/************************ MEDIA QUERIES *************************/
-
-/* For large mobile screens */
-@media only screen and (min-width: 425px), (min-height: 800px) {
-    .grid-container .navigation {
-        #burger-icon {
-            left: 1.5em;
-            padding: 4px 6px;
-    
-            div {
-                width: 30px;
-                height: 4px;
-                margin: 6px;
-            }
-        }
-       
-        .burger-change {
-            background-color: red;
-        
-            .line1 {
-                transform: rotate(-45deg) translate(-6px,8px);
-            }
-            .line2 {
-                opacity: 0;
-            }
-            .line3 {
-                transform: rotate(45deg) translate(-6px, -8px);
-            }
-        }
-    }
-}

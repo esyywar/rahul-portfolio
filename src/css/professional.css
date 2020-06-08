@@ -20,6 +20,9 @@
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  max-width: 330px;
   overflow: visible;
 }
 
@@ -27,16 +30,14 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
   grid-column: 1 / 9;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 10;
-  grid-row: 3 / 13;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 9;
+  grid-row: 4 / 13;
   width: 100%;
   height: 100%;
-  -ms-grid-row-align: center;
-      align-self: center;
   font-family: 'Muli', sans-serif;
   color: black;
-  font-size: 14px;
+  font-size: 12px;
   display: -ms-grid;
   display: grid;
   justify-items: center;
@@ -197,8 +198,16 @@
   height: 12em;
 }
 
+.professional-exp-page #pro-content-card .desc-open .desc-container {
+  overflow: auto;
+}
+
 .professional-exp-page #pro-content-card .desc-closed {
   height: 6.5em;
+}
+
+.professional-exp-page #pro-content-card .desc-closed .desc-container {
+  overflow: hidden;
 }
 
 /*********** ANIMATIONS (from animate.css at https://github.com/animate-css/animate.css) *************/
@@ -336,13 +345,53 @@
 }
 
 /********************* MEDIA QUERIES ********************/
+/* Large mobile screens */
+@media only screen and (min-width: 340px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 14px;
+  }
+}
+
 /* Mobiles with med-screen height */
 @media only screen and (min-width: 375px) and (min-height: 580px) {
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 13px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 13.5em;
+    height: 15em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7em;
+  }
+}
+
+/* Nexus 4 */
+@media only screen and (min-width: 384px) and (min-height: 640px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 13px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 12.5em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7em;
+  }
+}
+
+/* Google Pixel, IPhone 6S / 7 */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 13px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 12.5em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -388,6 +437,9 @@
 /* Laptops */
 @media only screen and (min-width: 1024px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
     font-size: 18px;
   }
   .professional-exp-page #pro-content-card .desc-open {

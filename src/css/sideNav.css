@@ -78,7 +78,7 @@
   width: 0;
   -webkit-transition: all 250ms linear;
   transition: all 250ms linear;
-  font-size: 20px;
+  font-size: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,6 +234,12 @@
 }
 
 /**************************** MEDIA QUERIES *******************************/
+@media only screen and (min-width: 360px) {
+  .grid-container .navigation #side-nav {
+    font-size: 20px;
+  }
+}
+
 /* Large mobile screens */
 @media only screen and (min-width: 425px) {
   .grid-container .navigation {
@@ -285,34 +291,6 @@
   }
   .grid-container .navigation #burger-icon {
     display: none;
-  }
-}
-
-/************************ MEDIA QUERIES *************************/
-/* For large mobile screens */
-@media only screen and (min-width: 425px), (min-height: 800px) {
-  .grid-container .navigation #burger-icon {
-    left: 1.5em;
-    padding: 4px 6px;
-  }
-  .grid-container .navigation #burger-icon div {
-    width: 30px;
-    height: 4px;
-    margin: 6px;
-  }
-  .grid-container .navigation .burger-change {
-    background-color: red;
-  }
-  .grid-container .navigation .burger-change .line1 {
-    -webkit-transform: rotate(-45deg) translate(-6px, 8px);
-            transform: rotate(-45deg) translate(-6px, 8px);
-  }
-  .grid-container .navigation .burger-change .line2 {
-    opacity: 0;
-  }
-  .grid-container .navigation .burger-change .line3 {
-    -webkit-transform: rotate(45deg) translate(-6px, -8px);
-            transform: rotate(45deg) translate(-6px, -8px);
   }
 }
 /*# sourceMappingURL=sideNav.css.map */

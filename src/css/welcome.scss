@@ -20,7 +20,8 @@
         max-width: 400px;
         text-align: center;
         font-family: 'VT323', monospace;
-        font-size: 23px;
+        font-size: 19px;
+        color: #161B21;
     
         display: flex;
         flex-direction: column;
@@ -33,12 +34,12 @@
         }
 
         hr {
-            background-color: white;
+            background-color: #161B21;
             height: 2px;
             width: 340px;
             max-width: 90%;
             margin: 0 auto;
-            border: 1px solid white;
+            border: 1px solid #161B21;
             border-radius: 3px;
             margin-bottom: 1em;
         }
@@ -104,6 +105,12 @@
 
 
 /********************* MEDIA QUERIES *******************/
+
+@media only screen and (min-width: 340px) {
+    #intro-page .intro-container {
+        font-size: 23px; 
+    }
+}
 
 @media only screen and (min-width: 360px) and (min-height: 800px) {
     #intro-page .intro-container {

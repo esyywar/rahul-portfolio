@@ -6,7 +6,7 @@
       "isExact": true,
       "Component": "Welcome",
       "transitionClass": "summary-transition",
-      "bgColour": "#FD6D0D"
+      "bgColour": "#F4A950"
     },
     {
       "id": 1,
@@ -15,7 +15,7 @@
       "isExact": false,
       "Component": "Professional",
       "transitionClass": "proexp-transition",
-      "bgColour": "#F37C94"
+      "bgColour": "#F1937E"
     },
     {
       "id": 2,

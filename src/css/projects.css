@@ -137,8 +137,7 @@
   font-size: 0.8em;
   margin-bottom: 1em;
   text-align: left;
-  overflow: auto;
-  font-size: 14px;
+  font-size: 11px;
   /* Fully displayed project description */
   /* Displayed for preview */
 }
@@ -175,7 +174,7 @@
   font-size: 0.2em;
   display: block;
   margin: auto 0 2em 0;
-  min-height: 25px;
+  min-height: 23px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,8 +215,16 @@
   height: 11em;
 }
 
+.projects-page #proj-card .desc-open .desc-container {
+  overflow: auto;
+}
+
 .projects-page #proj-card .desc-closed {
   height: 6em;
+}
+
+.projects-page #proj-card .desc-closed .desc-container {
+  overflow: hidden;
 }
 
 .projects-page #proj-card .image-container {
@@ -576,7 +583,7 @@
 
 /************************ MEDIA QUERIES *************************/
 /* Tall phones */
-@media only screen and (min-width: 320px) and (min-height: 700px) {
+@media only screen and (min-width: 320px) and (min-height: 650px) {
   .projects-page #proj-card {
     font-size: 16px;
   }
@@ -606,32 +613,35 @@
   }
 }
 
-/* For large mobile screens */
-@media only screen and (min-width: 360px) and (min-height: 800px) {
+/* Samsung S5 / S6 / S7 */
+@media only screen and (min-width: 360px) and (min-height: 640px) {
   .projects-page #proj-card {
-    font-size: 18px;
+    font-size: 17px;
   }
   .projects-page #proj-card .desc-open {
-    height: 12.5em;
+    height: 11.5em;
   }
   .projects-page #proj-card .desc-closed {
-    height: 6.5em;
+    height: 5.5em;
   }
   .projects-page #proj-card #tags-and-desc .desc-container {
-    font-size: 14px;
+    font-size: 13.5px;
   }
   .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
     font-size: 13px;
   }
   .projects-page .tags-list .tag-item {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 }
 
-/* Expand desc font if either hits */
-@media only screen and (min-width: 425px) and (min-height: 800px) {
+/* Google Pixel, IPhone 6S / 7 */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
   .projects-page #proj-card {
     font-size: 19px;
+  }
+  .projects-page #proj-card #tags-and-desc .desc-container {
+    font-size: 14.2px;
   }
   .projects-page #proj-card #tags-and-desc .proj-card-tags {
     margin-bottom: 3em;
@@ -653,24 +663,37 @@
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 800px) {
+@media only screen and (min-width: 768px) {
   .projects-page {
     overflow: visible;
   }
   .projects-page #proj-card .title-and-date {
     font-size: 1.3em;
   }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
+    font-size: 14px;
+  }
   .projects-page #proj-card #tags-and-desc .desc-container {
     font-size: 14px;
   }
   .projects-page #proj-card .desc-closed {
-    height: 6.5em;
+    height: 7em;
   }
   .projects-page #proj-card .desc-open {
     height: 13.5em;
   }
   .projects-page .tags-list .tag-item {
     font-size: 1em;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 650px) {
+  .projects-page #proj-card #tags-and-desc .desc-container {
+    font-size: 15px;
+  }
+  .projects-page #proj-card .desc-closed {
+    height: 6.4em;
   }
 }
 
@@ -730,6 +753,14 @@
   }
   .projects-page #proj-card #tags-and-desc {
     max-width: 650px;
+  }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    margin-bottom: 3em;
+  }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
+    font-size: 16px;
+    margin: 0.3em;
+    padding: 0.4em;
   }
   .projects-page #proj-card #tags-and-desc .desc-container {
     font-size: 18px;

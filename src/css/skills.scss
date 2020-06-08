@@ -239,6 +239,7 @@ $work-prof-col-clr: #2F1847;
 
     .hw-tool-pack {
         height: 10em;
+        min-width: 9em;
         padding: 4px 6px;
         margin: 0 4px;
 
@@ -360,7 +361,7 @@ $work-prof-col-clr: #2F1847;
 }
 
 /* Tall mobile screens */
-@media only screen and (min-width: 375px) and (min-height: 800px) {
+@media only screen and (min-width: 375px) and (min-height: 700px) {
     .skills-page .skills-content {
         .code-langs-table {
             font-size: 15px;

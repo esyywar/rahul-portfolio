@@ -115,8 +115,7 @@ $tag-list-trans-in-time: 400ms;
                 font-size: 0.8em;
                 margin-bottom: 1em;
                 text-align: left;
-                overflow: auto;
-                font-size: 14px;
+                font-size: 11px;
 
                 /* Fully displayed project description */
                 .proj-desc-full {
@@ -153,7 +152,7 @@ $tag-list-trans-in-time: 400ms;
                 font-size: 0.2em;
                 display: block;
                 margin: auto 0 2em 0;
-                min-height: 25px;
+                min-height: 23px;
                 width: 100%;
                 display: flex;
                 flex-flow: row wrap;
@@ -183,9 +182,17 @@ $tag-list-trans-in-time: 400ms;
         /* Serparate styles for when details section expanded or minimized (for mobile) */ 
         .desc-open {
             height: 11em;
+
+            .desc-container {
+                overflow: auto;
+            }
         }
         .desc-closed {
             height: 6em;
+
+            .desc-container {
+                overflow: hidden;
+            }
         }
 
         .image-container {
@@ -403,7 +410,7 @@ $tag-list-trans-in-time: 400ms;
 /************************ MEDIA QUERIES *************************/
 
 /* Tall phones */
-@media only screen and (min-width: 320px) and (min-height: 700px) {
+@media only screen and (min-width: 320px) and (min-height: 650px) {
     .projects-page {
         #proj-card {
             font-size: 16px;
@@ -442,22 +449,22 @@ $tag-list-trans-in-time: 400ms;
 }
 
 
-/* For large mobile screens */
-@media only screen and (min-width: 360px) and (min-height: 800px) {
+/* Samsung S5 / S6 / S7 */
+@media only screen and (min-width: 360px) and (min-height: 640px) {
     .projects-page {
         #proj-card {
-            font-size: 18px;
+            font-size: 17px;
     
             .desc-open {
-                height: 12.5em;
+                height: 11.5em;
             }
             .desc-closed {
-                height: 6.5em;
+                height: 5.5em;
             }
     
             #tags-and-desc {
                 .desc-container {
-                    font-size: 14px;
+                    font-size: 13.5px;
                 }
     
                 .proj-card-tags .proj-item-tag {
@@ -467,18 +474,22 @@ $tag-list-trans-in-time: 400ms;
         }
 
         .tags-list .tag-item {
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
     }
 }
 
-/* Expand desc font if either hits */
-@media only screen and (min-width: 425px) and (min-height: 800px) {
+/* Google Pixel, IPhone 6S / 7 */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
     .projects-page {
         #proj-card {
             font-size: 19px;
 
             #tags-and-desc {
+                .desc-container {
+                    font-size: 14.2px;
+                }
+
                 .proj-card-tags {
                     margin-bottom: 3em;
 
@@ -505,7 +516,7 @@ $tag-list-trans-in-time: 400ms;
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 800px) {
+@media only screen and (min-width: 768px) {
     .projects-page {
         overflow: visible;
 
@@ -514,12 +525,17 @@ $tag-list-trans-in-time: 400ms;
                 font-size: 1.3em;
             }
             
-            #tags-and-desc .desc-container {
-                font-size: 14px;
+            #tags-and-desc {
+                .proj-card-tags .proj-item-tag {
+                    font-size: 14px;
+                }
+                .desc-container {
+                    font-size: 14px;
+                }
             } 
 
             .desc-closed {
-                height: 6.5em;
+                height: 7em;
             }
             .desc-open {
                 height: 13.5em;
@@ -529,6 +545,19 @@ $tag-list-trans-in-time: 400ms;
         .tags-list .tag-item {
             font-size: 1em;
         }
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 650px) {
+    .projects-page #proj-card {            
+        #tags-and-desc .desc-container {
+            font-size: 15px;
+        } 
+
+        .desc-closed {
+            height: 6.4em;
+        } 
     }
 }
 
@@ -592,6 +621,16 @@ $tag-list-trans-in-time: 400ms;
 
             #tags-and-desc {
                 max-width: 650px;
+
+                .proj-card-tags {
+                    margin-bottom: 3em;
+
+                    .proj-item-tag {
+                        font-size: 16px;
+                        margin: 0.3em;
+                        padding: 0.4em;
+                    }
+                }
 
                 .desc-container {
                     font-size: 18px;
