@@ -47,8 +47,8 @@
 #intro-page .intro-container hr {
   background-color: white;
   height: 2px;
-  width: 290px;
-  max-width: 310px;
+  width: 340px;
+  max-width: 90%;
   margin: 0 auto;
   border: 1px solid white;
   border-radius: 3px;
@@ -62,7 +62,7 @@
 
 #intro-page .intro-container .desc-paras {
   margin-top: 0.4em;
-  max-width: 330px;
+  max-width: 400px;
 }
 
 #intro-page .intro-container .desc-paras p {
@@ -141,27 +141,32 @@
 }
 
 /********************* MEDIA QUERIES *******************/
-/* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 360px) and (min-height: 800px) {
   #intro-page .intro-container {
-    font-size: 25px;
+    font-size: 28px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 800px) {
+  #intro-page .intro-container {
+    font-size: 30px;
   }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   #intro-page .intro-container {
-    font-size: 27px;
+    font-size: 32px;
   }
   #intro-page .intro-container .name-header {
     font-size: 1.5em;
   }
   #intro-page .intro-container hr {
-    width: 310px;
     margin-bottom: 2em;
   }
   #intro-page .intro-container .desc-list, #intro-page .intro-container .desc-paras {
-    font-size: 25px;
+    font-size: 30px;
   }
   #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
     font-size: 45px;

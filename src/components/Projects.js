@@ -119,6 +119,7 @@ function Projects(props) {
     /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
 
     function nextArrowClick() {
+        /* Need to check if nav bar is open on mobile device - if so, swipe closes nav and DOES NOT change active element */
         if (cardElement < filtProjList.length - 1)
         {
             try {

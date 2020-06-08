@@ -265,7 +265,7 @@ $work-prof-col-clr: #2F1847;
 
 
 
-/*************************** ANIMATIONS *********************/ 
+/*************************** ANIMATIONS ************************/ 
 
 @keyframes slideFromRight {
     from {
@@ -359,13 +359,56 @@ $work-prof-col-clr: #2F1847;
     }
 }
 
-/* Large mobile screens */
-@media only screen and (min-width: 425px) {
-
-    /* software tools */
+/* Tall mobile screens */
+@media only screen and (min-width: 375px) and (min-height: 800px) {
     .skills-page .skills-content {
-        .hardware-page .hw-tool-pack {
-            padding: 4px 14px;
+        .code-langs-table {
+            font-size: 15px;
+        }
+
+        .hardware-page {
+            font-size: 15px;
+
+            .hw-tool-pack {
+                height: 11em;
+                padding: 4px 14px;
+
+                h3 {
+                    margin-bottom: 1em;
+                }
+
+                p {
+                    font-size: 0.9;
+                }
+            }
+        }
+    
+        .sw-tools-grid {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            width: 90%;
+        }
+    }
+}
+
+/* Large mobile screens */
+@media only screen and (min-width: 425px) and (min-height: 800px) {
+    .skills-page .skills-content {
+
+        .hardware-page {
+            font-size: 16px;
+
+            .hw-tool-pack {
+                height: 12em;
+                padding: 4px 14px;
+
+                h3 {
+                    margin-bottom: 1em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+            }
         }
     
         .sw-tools-grid {

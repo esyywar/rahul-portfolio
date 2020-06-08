@@ -46,7 +46,7 @@ function App() {
   var startX, startY, startTime, moveX, moveY, deltaTime
 
   /* Minimum threshold for recording a swipe (in pixels) */
-  const swipeThres = 50
+  const swipeThres = 60
 
   /* Store starting touch position and time */
   // eslint-disable-next-line

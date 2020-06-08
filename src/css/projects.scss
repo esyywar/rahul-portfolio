@@ -42,7 +42,7 @@ $tag-list-trans-in-time: 400ms;
     /* Active project item card style*/
     #proj-card {
         grid-column: 1 / 9;
-        grid-row: 2 / 12;
+        grid-row: 1 / 13;
         width: 100%;
         height: 100%;
         align-self: start;
@@ -113,14 +113,17 @@ $tag-list-trans-in-time: 400ms;
                 width: 100%;
                 font-family: 'Muli', sans-serif;
                 font-size: 0.8em;
+                margin-bottom: 1em;
                 text-align: left;
                 overflow: auto;
+                font-size: 14px;
 
                 /* Fully displayed project description */
                 .proj-desc-full {
                     color: black;
                     padding: 1em 1.5em 0 1.5em;
                     line-height: 1.5em;
+                    font-size: 1em;
 
                     p {
                         margin: 0.5em 0;
@@ -131,6 +134,7 @@ $tag-list-trans-in-time: 400ms;
                 .proj-desc-preview { 
                     text-align: left;
                     padding: 1em 1.5em;
+                    font-size: 1em;
                     
                     .prev-text {
                         color: black;
@@ -146,9 +150,10 @@ $tag-list-trans-in-time: 400ms;
             }
 
             .proj-card-tags {
-                font-size: 0.7em;
+                font-size: 0.2em;
                 display: block;
-                margin: auto 0 0.5em 0;
+                margin: auto 0 2em 0;
+                min-height: 25px;
                 width: 100%;
                 display: flex;
                 flex-flow: row wrap;
@@ -156,11 +161,12 @@ $tag-list-trans-in-time: 400ms;
                 justify-content: center;
 
                 .proj-item-tag {
+                    font-size: 11px;
                     align-self: flex-end;
                     background-color: black;
                     color: white;
-                    margin: 0.3em;
-                    padding: 0.3em;
+                    margin: 0.1em;
+                    padding: 0.2em;
                 }
 
                 .proj-git-link {
@@ -176,10 +182,10 @@ $tag-list-trans-in-time: 400ms;
 
         /* Serparate styles for when details section expanded or minimized (for mobile) */ 
         .desc-open {
-            height: 12.1em;
+            height: 11em;
         }
         .desc-closed {
-            height: 6.5em;
+            height: 6em;
         }
 
         .image-container {
@@ -215,7 +221,7 @@ $tag-list-trans-in-time: 400ms;
         max-width: 475px;
         grid-row: 11 / 13;
         grid-column: 1 / 9;
-        align-self: end;
+        align-self: start;
 
         /* BUG HERE - tags at top of page not clickable ... need this z-index to make it work */ 
         z-index: 2;
@@ -232,7 +238,7 @@ $tag-list-trans-in-time: 400ms;
             padding: 0.4em;
             margin: 0.1em;
             border-radius: 0.8em;
-            font-size: 0.8em;
+            font-size: 0.7em;
             transition: all 300ms;
         }
 
@@ -397,48 +403,109 @@ $tag-list-trans-in-time: 400ms;
 /************************ MEDIA QUERIES *************************/
 
 /* Tall phones */
-@media only screen and (min-width: 320px) and (min-height: 640px) {
-    .projects-page #proj-card {
-        font-size: 16px;
+@media only screen and (min-width: 320px) and (min-height: 700px) {
+    .projects-page {
+        #proj-card {
+            font-size: 16px;
+    
+            #tags-and-desc {
+                .desc-container {
+                    font-size: 13px;
+                }
 
-        .title-and-date {
-            font-size: 1em;
-            grid-row: 2 / 3;
-            
-            .date {
-                margin-top: 0.5em;
+                .proj-card-tags .proj-item-tag {
+                    font-size: 11px;
+                }
+            }
+
+            .desc-open {
+                height: 12em;
+            }
+            .desc-closed {
+                height: 6em;
+            }
+    
+            .title-and-date {
+                font-size: 1em;
+                grid-row: 2 / 3;
+                
+                .date {
+                    margin-top: 0.5em;
+                }
             }
         }
 
-        #tags-and-desc .proj-card-tags {
-            font-size: 0.6em;
+        .tags-list .tag-item {
+            font-size: 0.8em;
         }
     }
 }
 
-/* Tall phones */
-@media only screen and (min-width: 320px) and (min-height: 700px) {
-    .projects-page #proj-card {
-        font-size: 17px;
+
+/* For large mobile screens */
+@media only screen and (min-width: 360px) and (min-height: 800px) {
+    .projects-page {
+        #proj-card {
+            font-size: 18px;
+    
+            .desc-open {
+                height: 12.5em;
+            }
+            .desc-closed {
+                height: 6.5em;
+            }
+    
+            #tags-and-desc {
+                .desc-container {
+                    font-size: 14px;
+                }
+    
+                .proj-card-tags .proj-item-tag {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .tags-list .tag-item {
+            font-size: 0.9em;
+        }
     }
 }
 
-/* For large mobile screens */
-@media only screen and (min-width: 360px) {
-    .projects-page #proj-card #tags-and-desc .proj-card-tags {
-        font-size: 0.7em;
-    }
-}
+/* Expand desc font if either hits */
+@media only screen and (min-width: 425px) and (min-height: 800px) {
+    .projects-page {
+        #proj-card {
+            font-size: 19px;
 
-/* For large mobile screens */
-@media only screen and (min-width: 425px) {
-    .projects-page #proj-card #tags-and-desc .proj-card-tags {
-        font-size: 0.8em;
+            #tags-and-desc {
+                .proj-card-tags {
+                    margin-bottom: 3em;
+
+                    .proj-item-tag {
+                        font-size: 14px;
+                        margin: 0.3em;
+                        padding: 0.3em;
+                    }
+                }
+            }
+
+            .desc-open {
+                height: 11em;
+            }
+            .desc-closed {
+                height: 5.7em;
+            }
+        }
+
+        .tags-list .tag-item {
+            font-size: 0.9em;
+        }
     }
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 800px) {
     .projects-page {
         overflow: visible;
 
@@ -446,6 +513,10 @@ $tag-list-trans-in-time: 400ms;
             .title-and-date {
                 font-size: 1.3em;
             }
+            
+            #tags-and-desc .desc-container {
+                font-size: 14px;
+            } 
 
             .desc-closed {
                 height: 6.5em;
@@ -456,44 +527,19 @@ $tag-list-trans-in-time: 400ms;
         }
 
         .tags-list .tag-item {
-            font-size: 0.9em;
+            font-size: 1em;
         }
     }
 }
 
-/* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 1000px) {
-    .projects-page {
-        overflow: visible;
-
-        #proj-card {
-            .title-and-date {
-                font-size: 1.3em;
-            }
-
-            .desc-closed {
-                height: 6.5em;
-            }
-            .desc-open {
-                height: 17em;
-            }
-        }
-
-        .tags-list .tag-item {
-            font-size: 0.9em;
-        }
-    }
-}
 
 /* Laptops */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (min-height: 800px){
     .projects-page {
         overflow: visible;
 
         .tags-list {
-            .tag-item {
-                font-size: 1em;
-            }
+            align-self: center;
         }
 
         #proj-card {
@@ -506,10 +552,17 @@ $tag-list-trans-in-time: 400ms;
                 grid-row: 6 / 8;
                 margin-top: 15px;
                 max-width: 550px;
+
+                .desc-container {
+                    font-size: 16px;
+                }               
             }
 
             .desc-open {
                 height: 14.2em;
+            }
+            .desc-closed {
+                height: 6.8em;
             }
     
             .image-container {
@@ -539,6 +592,10 @@ $tag-list-trans-in-time: 400ms;
 
             #tags-and-desc {
                 max-width: 650px;
+
+                .desc-container {
+                    font-size: 18px;
+                }
             }
         }
     }

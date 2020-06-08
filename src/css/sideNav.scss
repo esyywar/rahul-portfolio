@@ -29,7 +29,7 @@ $skills-bg: #C18AF8;
         position: absolute;
         top: 1.2em;
         left: 1.2em;
-        padding: 3px;
+        padding: 4px;
         cursor: pointer;
         border: 2px solid white;
         border-radius: 4px;
@@ -45,6 +45,21 @@ $skills-bg: #C18AF8;
             margin: 4px;
             background-color: #ffffff;
             transition: all 0.3s ease;
+        }
+    }
+
+    /* Class applied when nav open */
+    .burger-change {
+        background-color: red;
+    
+        .line1 {
+            transform: rotate(-45deg) translate(-4px,6px);
+        }
+        .line2 {
+            opacity: 0;
+        }
+        .line3 {
+            transform: rotate(45deg) translate(-4px, -6px);
         }
     }
 
@@ -138,24 +153,6 @@ $skills-bg: #C18AF8;
 }
 
 
-/*************************** ANIMATION EFFECT FOR BURGER ICON *********************/
-
-/*Animation effect for burger to close button*/
-.grid-container .navigation .burger-change {
-    background-color: red;
-
-    .line1 {
-        transform: rotate(-45deg) translate(-4px,6px);
-    }
-    .line2 {
-        opacity: 0;
-    }
-    .line3 {
-        transform: rotate(45deg) translate(-4px, -6px);
-    }
-}
-
-
 /****************** ANIMATIONS ***************************/
 
 @keyframes navDropIn {
@@ -233,6 +230,39 @@ $skills-bg: #C18AF8;
 
         #burger-icon {
             display: none;
+        }
+    }
+}
+
+
+/************************ MEDIA QUERIES *************************/
+
+/* For large mobile screens */
+@media only screen and (min-width: 425px), (min-height: 800px) {
+    .grid-container .navigation {
+        #burger-icon {
+            left: 1.5em;
+            padding: 4px 6px;
+    
+            div {
+                width: 30px;
+                height: 4px;
+                margin: 6px;
+            }
+        }
+       
+        .burger-change {
+            background-color: red;
+        
+            .line1 {
+                transform: rotate(-45deg) translate(-6px,8px);
+            }
+            .line2 {
+                opacity: 0;
+            }
+            .line3 {
+                transform: rotate(45deg) translate(-6px, -8px);
+            }
         }
     }
 }

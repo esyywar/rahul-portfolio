@@ -248,14 +248,17 @@ $text-bg-colour: whitesmoke;
 }
 
 /* Large mobile screens */
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 425px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
+    grid-row: 2 / 13;
+    font-size: 16px;
+
     #date-and-description {
       font-size: 14px;
     }
 
     .desc-open {
-      height: 11.8em;
+      height: 15em;
     }
     .desc-closed {
       height: 7em;
@@ -264,10 +267,14 @@ $text-bg-colour: whitesmoke;
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
     .desc-open {
       height: 13em;
+    }
+
+    #date-and-description {
+      font-size: 16px;
     }
   }
 }
@@ -282,11 +289,12 @@ $text-bg-colour: whitesmoke;
 }
 
 /* Laptops */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
+    font-size: 18px;
 
     .desc-open {
-      height: 13.5em;
+      height: 14em;
     }
     .desc-closed {
       height: 7.5em;
@@ -299,7 +307,7 @@ $text-bg-colour: whitesmoke;
 @media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card {
 
-    font-size: 16px;
+    font-size: 20px;
 
     #date-and-description {
       font-size: 15px;

@@ -35,8 +35,8 @@
         hr {
             background-color: white;
             height: 2px;
-            width: 290px;
-            max-width: 310px;
+            width: 340px;
+            max-width: 90%;
             margin: 0 auto;
             border: 1px solid white;
             border-radius: 3px;
@@ -49,7 +49,7 @@
         }         
         .desc-paras {
             margin-top: 0.4em;
-            max-width: 330px;
+            max-width: 400px;
 
             p {
                 padding: 0.5em 0;
@@ -105,29 +105,34 @@
 
 /********************* MEDIA QUERIES *******************/
 
-/* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 360px) and (min-height: 800px) {
     #intro-page .intro-container {
-        font-size: 25px; 
+        font-size: 28px; 
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (min-height: 800px) {
+    #intro-page .intro-container {
+        font-size: 30px; 
     }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     #intro-page .intro-container {
-        font-size: 27px;
+        font-size: 32px;
         
         .name-header {
             font-size: 1.5em;
         }
 
         hr {
-            width: 310px;
             margin-bottom: 2em;
         }
 
         .desc-list, .desc-paras {
-            font-size: 25px;
+            font-size: 30px;
         }
 
         #swipe-arrow-container .swipe-arrow {

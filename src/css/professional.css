@@ -350,12 +350,18 @@
 }
 
 /* Large mobile screens */
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 425px) and (min-height: 800px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 11;
+    grid-row: 2 / 13;
+    font-size: 16px;
+  }
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 14px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 11.8em;
+    height: 15em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -363,9 +369,12 @@
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card .desc-open {
     height: 13em;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 16px;
   }
 }
 
@@ -377,9 +386,12 @@
 }
 
 /* Laptops */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 18px;
+  }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 13.5em;
+    height: 14em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7.5em;
@@ -389,7 +401,7 @@
 /* Large laptops */
 @media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card {
-    font-size: 16px;
+    font-size: 20px;
   }
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 15px;

@@ -12,13 +12,13 @@ function getMaxStrLength() {
     {
         return 110
     }
+    else if (window.innerWidth >= 550)
+    {
+        return 90
+    }
     else if (window.innerWidth >= 375)
     {
-        return 70
-    }
-    else if (window.innerWidth >= 360)
-    {
-        return 55
+        return 65
     }
     else if (window.innerWidth >= 320)
     {

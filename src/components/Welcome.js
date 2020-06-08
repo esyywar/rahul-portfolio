@@ -40,7 +40,7 @@ function Welcome(props) {
             text: "Test Engineer",
             htmlId: "type-target-1",
             listItem: true,
-            color: "#EE0D0D"
+            color: "#0D00A4"
         },
         {
             id: 1,
@@ -49,7 +49,7 @@ function Welcome(props) {
             text: "Embedded Sytems Dev",
             htmlId: "type-target-2",
             listItem: true,
-            color: "#080AB1"
+            color: "#27187E"
         },
         {
             id: 3,
@@ -58,7 +58,7 @@ function Welcome(props) {
             text: "Microsystems Researcher",
             htmlId: "type-target-3",
             listItem: true,
-            color: "#08610A"
+            color: "#140152"
         },
         {
             id: 4,
@@ -67,7 +67,7 @@ function Welcome(props) {
             text: "Front End Web Dev",
             htmlId: "type-target-4",
             listItem: true,
-            color: "black"
+            color: "#22007C"
         },
         {
             id: 5,

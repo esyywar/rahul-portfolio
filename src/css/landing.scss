@@ -8,7 +8,7 @@
 $title-background-clr: #161B21;
 $title-text-clr: #F4A950;
 
-$title-bars-clr: #FD8536;
+$title-bars-clr: #FD6D0D;
 
 $borderBlue: #A1C8F7;
 
@@ -64,8 +64,7 @@ $borderBlue: #A1C8F7;
     #landing-content {
         grid-row: 5 / 11;
         grid-column: 2 / 12;
-        width: 100%;
-        height: 100%;
+        padding: 40px 10px;
         max-width: 800px;
         max-height: 400px;
         align-self: center;
@@ -122,7 +121,9 @@ $borderBlue: #A1C8F7;
 
                 /* Name */
                 h1 {
-                    padding: 0.4em;
+                    font-size: 30px;
+                    padding: 5px;
+                    margin-bottom: 10px;
                     text-transform: uppercase;
                 }
             }
@@ -131,7 +132,7 @@ $borderBlue: #A1C8F7;
             p {
                 padding: 0.5em 1em;
                 line-height: 1.2em;
-                font-size: 1.1em;
+                font-size: 1.4em;
 
                 .title-item {
                     /* Initial condition for animation */
@@ -154,7 +155,7 @@ $borderBlue: #A1C8F7;
         .entry-btn {
             margin: 0.8em 0;
             font-family: 'Roboto', 'sans-serif';
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 600;
             color: black;
 
@@ -253,6 +254,10 @@ $borderBlue: #A1C8F7;
 
         .profile-block {
             font-size: 17px; 
+
+            .name-block h1 {
+                font-size: 35px;
+            }
         }
     }
 }
