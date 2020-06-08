@@ -20,13 +20,13 @@ function getMaxStrLength() {
     {
         return 65
     }
-    else if (window.innerWidth >= 320)
+    else if (window.innerWidth >= 340)
     {
         return 50
     }
-    else 
+    else
     {
-        return 40
+        return 30
     }
 }
 

@@ -191,6 +191,12 @@ $skills-bg: #C18AF8;
 
 /**************************** MEDIA QUERIES *******************************/
 
+@media only screen and (min-width: 320px) {
+    .grid-container .navigation #side-nav {
+        font-size: 18px;
+    }
+}
+
 @media only screen and (min-width: 360px) {
     .grid-container .navigation #side-nav {
         font-size: 20px;

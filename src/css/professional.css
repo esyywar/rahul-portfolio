@@ -345,6 +345,25 @@
 }
 
 /********************* MEDIA QUERIES ********************/
+/* Old phones */
+@media only screen and (min-width: 320px) and (min-height: 480px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 12px;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 11px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 10em;
+  }
+}
+
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 11.5em;
+  }
+}
+
 /* Large mobile screens */
 @media only screen and (min-width: 340px) {
   .professional-exp-page #pro-content-card {
@@ -354,14 +373,27 @@
 
 /* Mobiles with med-screen height */
 @media only screen and (min-width: 375px) and (min-height: 580px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
+    margin-top: 10px;
+  }
   .professional-exp-page #pro-content-card #date-and-description {
-    font-size: 13px;
+    font-size: 12.5px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 15em;
+    height: 10em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
+  }
+}
+
+/* IPhone 6 / 6S / 7 */
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 12.7em;
   }
 }
 

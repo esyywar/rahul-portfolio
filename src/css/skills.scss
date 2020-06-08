@@ -30,7 +30,7 @@ $work-prof-col-clr: #2F1847;
     align-items: center;
     text-align: center;
 
-    font-size: 15px;
+    font-size: 12px;
 
     .page-title {
         font-size: 2.5em;
@@ -190,7 +190,7 @@ $work-prof-col-clr: #2F1847;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     grid-gap: 1em;
-    font-size: 15px;
+    font-size: 12px;
 
     .sw-tool-pack {
         width: 100%;
@@ -235,7 +235,7 @@ $work-prof-col-clr: #2F1847;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 11px;
 
     .hw-tool-pack {
         height: 10em;
@@ -353,41 +353,54 @@ $work-prof-col-clr: #2F1847;
 /********************* MEDIA QUERIES **********************/ 
 
 /* Small mobile screens */
-@media only screen and (min-width: 325px) {
+@media only screen and (min-width: 320px) and (min-height: 568px) {
     /* hardware skills */
-    .skills-page .skills-content .hardware-page .hw-tool-pack {
-        padding: 4px 8px;
+    .skills-page {
+        font-size: 14px;
+
+        .skills-content {
+            .hardware-page {
+                font-size: 12px;
+
+                .hw-tool-pack {
+                    padding: 4px 8px;
+                }
+            }
+
+            .sw-tools-grid {
+                font-size: 14px;
+            }
+        }
     }
 }
 
 /* Tall mobile screens */
-@media only screen and (min-width: 375px) and (min-height: 700px) {
-    .skills-page .skills-content {
-        .code-langs-table {
-            font-size: 15px;
-        }
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+    .skills-page {
+        font-size: 15px;
 
-        .hardware-page {
-            font-size: 15px;
+        .skills-content {
+            .code-langs-table {
+                font-size: 15px;
+            }
 
-            .hw-tool-pack {
-                height: 11em;
-                padding: 4px 14px;
-
-                h3 {
-                    margin-bottom: 1em;
-                }
-
-                p {
-                    font-size: 0.9;
-                }
+            .hardware-page {
+                font-size: 14px;
+            }
+        
+            .sw-tools-grid {
+                font-size: 15px;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                width: 90%;
             }
         }
-    
-        .sw-tools-grid {
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            width: 90%;
-        }
+    }
+}
+
+/* Tall mobile screens */
+@media only screen and (min-width: 414px) and (min-height: 736px) {
+    .skills-page .skills-content .hardware-page {
+        font-size: 15px;
     }
 }
 
