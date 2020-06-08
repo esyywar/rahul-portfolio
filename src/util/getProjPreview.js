@@ -6,11 +6,11 @@ function getMaxStrLength() {
     }
     else if (window.innerWidth >= 1024) 
     {
-        return 120
+        return 110
     }
     else if (window.innerWidth >= 768)
     {
-        return 110
+        return 100
     }
     else if (window.innerWidth >= 550)
     {

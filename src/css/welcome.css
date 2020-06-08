@@ -59,12 +59,12 @@
 
 #intro-page .intro-container .desc-list {
   padding: 0.1em 0;
-  max-width: 310px;
+  max-width: 90%;
 }
 
 #intro-page .intro-container .desc-paras {
   margin-top: 0.4em;
-  max-width: 400px;
+  max-width: 90%;
 }
 
 #intro-page .intro-container .desc-paras p {
@@ -188,24 +188,43 @@
   #intro-page .intro-container {
     font-size: 30px;
   }
+  #intro-page .intro-container .name-header {
+    margin-top: 2em;
+  }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   #intro-page .intro-container {
-    font-size: 32px;
+    font-size: 31px;
+    max-width: 500px;
   }
   #intro-page .intro-container .name-header {
     font-size: 1.5em;
   }
   #intro-page .intro-container hr {
     margin-bottom: 2em;
-  }
-  #intro-page .intro-container .desc-list, #intro-page .intro-container .desc-paras {
-    font-size: 30px;
+    width: 370px;
+    max-width: 100%;
   }
   #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
     font-size: 45px;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1440px) {
+  #intro-page .intro-container {
+    font-size: 35px;
+    max-width: 600px;
+  }
+  #intro-page .intro-container .name-header {
+    font-size: 1.5em;
+  }
+  #intro-page .intro-container hr {
+    margin-bottom: 2em;
+    width: 370px;
+    max-width: 100%;
   }
 }
 /*# sourceMappingURL=welcome.css.map */

@@ -225,6 +225,19 @@ html, body {
     }
 }
 
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    .grid-container .resume-window {
+        grid-row: 2 / 11;
+        height: 110%;
+        overflow: visible;
+
+        .page-title {
+            font-size: 38px;
+        }
+    }
+}
+
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
     .grid-container .resume-window {
@@ -232,6 +245,10 @@ html, body {
         grid-column: 4 / 13;
         height: 110%;
         overflow: visible;
+
+        .page-title {
+            font-size: 40px;
+        }
         
         .next-arrow {
             right: 50px;
@@ -249,6 +266,10 @@ html, body {
         grid-column: 3 / 13;
         height: 110%;
         overflow: visible;
+
+        .page-title {
+            font-size: 50px;
+        }
 
         .next-arrow {
             right: 15%;

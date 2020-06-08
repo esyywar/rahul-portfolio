@@ -264,6 +264,20 @@ html .no-select, body .no-select {
   }
 }
 
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .grid-container .resume-window {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 9;
+    grid-row: 2 / 11;
+    height: 110%;
+    overflow: visible;
+  }
+  .grid-container .resume-window .page-title {
+    font-size: 38px;
+  }
+}
+
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
   .grid-container .resume-window {
@@ -275,6 +289,9 @@ html .no-select, body .no-select {
     grid-column: 4 / 13;
     height: 110%;
     overflow: visible;
+  }
+  .grid-container .resume-window .page-title {
+    font-size: 40px;
   }
   .grid-container .resume-window .next-arrow {
     right: 50px;
@@ -295,6 +312,9 @@ html .no-select, body .no-select {
     grid-column: 3 / 13;
     height: 110%;
     overflow: visible;
+  }
+  .grid-container .resume-window .page-title {
+    font-size: 50px;
   }
   .grid-container .resume-window .next-arrow {
     right: 15%;

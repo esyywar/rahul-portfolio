@@ -47,11 +47,11 @@
 
         .desc-list {
             padding: 0.1em 0;
-            max-width: 310px;
+            max-width: 90%;
         }         
         .desc-paras {
             margin-top: 0.4em;
-            max-width: 400px;
+            max-width: 90%;
 
             p {
                 padding: 0.5em 0;
@@ -151,13 +151,18 @@
 @media only screen and (min-width: 768px) and (min-height: 800px) {
     #intro-page .intro-container {
         font-size: 30px; 
+
+        .name-header {
+            margin-top: 2em;
+        }
     }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
     #intro-page .intro-container {
-        font-size: 32px;
+        font-size: 31px;
+        max-width: 500px;
         
         .name-header {
             font-size: 1.5em;
@@ -165,14 +170,31 @@
 
         hr {
             margin-bottom: 2em;
-        }
-
-        .desc-list, .desc-paras {
-            font-size: 30px;
+            width: 370px;
+            max-width: 100%;
         }
 
         #swipe-arrow-container .swipe-arrow {
             font-size: 45px;
+        }
+    }
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1440px) {
+    #intro-page .intro-container {
+        font-size: 35px;
+        max-width: 600px;
+        
+        .name-header {
+            font-size: 1.5em;
+        }
+
+        hr {
+            margin-bottom: 2em;
+            width: 370px;
+            max-width: 100%;
         }
     }
 }

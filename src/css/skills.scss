@@ -186,10 +186,11 @@ $work-prof-col-clr: #2F1847;
 .skills-page .skills-content .sw-tools-grid {
     height: 100%;
     width: 100%;
+    max-width: 950px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    grid-gap: 1em;
+    grid-gap: 0.5em;
     font-size: 12px;
 
     .sw-tool-pack {
@@ -212,6 +213,7 @@ $work-prof-col-clr: #2F1847;
         .tool-pack-title {
             height: 20%;
             justify-self: flex-start;
+            font-size: 1.2em;
             color: #FFBF00;
         }
 
@@ -391,6 +393,7 @@ $work-prof-col-clr: #2F1847;
             .sw-tools-grid {
                 font-size: 15px;
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                grid-gap: 1em;
                 width: 90%;
             }
         }
@@ -491,5 +494,12 @@ $work-prof-col-clr: #2F1847;
                 font-size: 18px;
             }
         }
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1400px) {
+    .skills-page .skills-content .sw-tools-grid {
+        font-size: 20px;
     }
 }

@@ -409,8 +409,11 @@
 
 /* Google Pixel, IPhone 6S / 7 */
 @media only screen and (min-width: 411px) and (min-height: 731px) {
+  .professional-exp-page #pro-content-card {
+    font-size: 17px;
+  }
   .professional-exp-page #pro-content-card #date-and-description {
-    font-size: 13px;
+    font-size: 14px;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -435,6 +438,11 @@
 
 /* Tablets */
 @media only screen and (min-width: 768px) and (min-height: 800px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
+  }
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 16px;
   }
@@ -459,8 +467,8 @@
     font-size: 20px;
   }
   .professional-exp-page #pro-content-card #date-and-description {
-    font-size: 15px;
-    max-width: 650px;
+    font-size: 17px;
+    max-width: 700px;
   }
   .professional-exp-page #pro-content-card #date-and-description .date {
     padding-top: 0.5em;

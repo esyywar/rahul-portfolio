@@ -305,8 +305,10 @@ $text-bg-colour: whitesmoke;
 /* Google Pixel, IPhone 6S / 7 */
 @media only screen and (min-width: 411px) and (min-height: 731px) {
   .professional-exp-page #pro-content-card {
+    font-size: 17px;
+
     #date-and-description {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .desc-closed {
@@ -334,6 +336,7 @@ $text-bg-colour: whitesmoke;
 /* Tablets */
 @media only screen and (min-width: 768px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
+    grid-row: 3 / 13;
 
     #date-and-description {
       font-size: 16px;
@@ -362,14 +365,13 @@ $text-bg-colour: whitesmoke;
     font-size: 20px;
 
     #date-and-description {
-      font-size: 15px;
-      max-width: 650px;
+      font-size: 17px;
+      max-width: 700px;
 
       .date {
         padding-top: 0.5em;
       }
     }  
-
     .desc-closed {
       height: 8em;
     }
