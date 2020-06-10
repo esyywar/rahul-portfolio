@@ -92,13 +92,13 @@ $work-prof-col-clr: #2F1847;
     // Pure animations classes
     .slide-right {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(100px);
         animation: slideFromRight 300ms ease forwards;
     }
 
     .slide-left {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-100px);
         animation: slideFromLeft 300ms ease forwards;
     }
 
@@ -273,7 +273,7 @@ $work-prof-col-clr: #2F1847;
 @keyframes slideFromRight {
     from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(100px);
     }
     to {
         opacity: 1;
@@ -284,7 +284,7 @@ $work-prof-col-clr: #2F1847;
 @keyframes slideFromLeft {
     from {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-100px);
     }
     to {
         opacity: 1;

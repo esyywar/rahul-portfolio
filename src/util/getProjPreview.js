@@ -4,10 +4,6 @@ function getMaxStrLength() {
     {
         return 140
     }
-    else if (window.innerWidth >= 1024) 
-    {
-        return 110
-    }
     else if (window.innerWidth >= 768)
     {
         return 100

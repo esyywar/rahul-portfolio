@@ -102,28 +102,6 @@
     }
 }
 
-@keyframes exitLeft {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-}
-
-@keyframes exitRight {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-}
-
 
 /***************** MEDIA QUERIES *****************/
 

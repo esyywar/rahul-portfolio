@@ -210,6 +210,29 @@ html, body {
     }
   }
 
+/* These animations are used in the professional, education and projects components to transition card elements */
+@keyframes exitLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes exitRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
 
 /***************** MEDIA QUERIES *****************/
 
@@ -276,6 +299,29 @@ html, body {
         }
         .prev-arrow {
             left: 30%;
+        }
+    }
+
+    /* Changing exit animations to not go too far off-screen */
+    @keyframes exitLeft {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-30%);
+        }
+    }
+
+    @keyframes exitRight {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(30%);
         }
     }
 }

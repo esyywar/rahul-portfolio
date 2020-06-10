@@ -254,6 +254,58 @@ html .no-select, body .no-select {
   }
 }
 
+/* These animations are used in the professional, education and projects components to transition card elements */
+@-webkit-keyframes exitLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes exitLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes exitRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes exitRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
 /***************** MEDIA QUERIES *****************/
 @media only screen and (min-width: 560px) {
   .grid-container .resume-window .next-arrow {
@@ -321,6 +373,55 @@ html .no-select, body .no-select {
   }
   .grid-container .resume-window .prev-arrow {
     left: 30%;
+  }
+  /* Changing exit animations to not go too far off-screen */
+  @-webkit-keyframes exitLeft {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(-30%);
+              transform: translateX(-30%);
+    }
+  }
+  @keyframes exitLeft {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(-30%);
+              transform: translateX(-30%);
+    }
+  }
+  @-webkit-keyframes exitRight {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(30%);
+              transform: translateX(30%);
+    }
+  }
+  @keyframes exitRight {
+    from {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translateX(30%);
+              transform: translateX(30%);
+    }
   }
 }
 /*# sourceMappingURL=portfolio.css.map */
