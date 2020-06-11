@@ -652,6 +652,9 @@
   .projects-page #proj-card #tags-and-desc .desc-container {
     font-size: 13.5px;
   }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    min-height: 22px;
+  }
   .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
     font-size: 13px;
   }

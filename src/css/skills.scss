@@ -376,16 +376,12 @@ $work-prof-col-clr: #2F1847;
     }
 }
 
-/* Tall mobile screens */
-@media only screen and (min-width: 375px) and (min-height: 667px) {
+/* Samsung Galaxy S5 */
+@media only screen and (min-width: 360px) and (min-height: 640px) {
     .skills-page {
         font-size: 15px;
 
         .skills-content {
-            .code-langs-table {
-                font-size: 15px;
-            }
-
             .hardware-page {
                 font-size: 14px;
             }
@@ -400,38 +396,29 @@ $work-prof-col-clr: #2F1847;
     }
 }
 
+/* IPhone 6 / 7 / 8 */
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+    .skills-page .skills-content .code-langs-table {
+        font-size: 14px;
+    }
+}
+
 /* Tall mobile screens */
 @media only screen and (min-width: 411px) and (min-height: 731px) {
-    .skills-page .skills-content .hardware-page {
-        font-size: 16px;
-
-        .hw-tool-pack {
-            height: 10.8em;
+    .skills-page .skills-content {
+        .hardware-page {
+            font-size: 16px;
+    
+            .hw-tool-pack {
+                height: 10.8em;
+            }
         }
     }
 }
 
 /* Large mobile screens */
 @media only screen and (min-width: 425px) and (min-height: 800px) {
-    .skills-page .skills-content {
-
-        .hardware-page {
-            font-size: 16px;
-
-            .hw-tool-pack {
-                height: 12em;
-                padding: 4px 14px;
-
-                h3 {
-                    margin-bottom: 1em;
-                }
-
-                p {
-                    font-size: 1em;
-                }
-            }
-        }
-    
+    .skills-page .skills-content {    
         .sw-tools-grid {
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             width: 90%;

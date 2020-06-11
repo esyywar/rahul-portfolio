@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
+import { resetSwipeU, resetSwipeD, resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
 
 import { isMobileDevice } from '../util/mobileCheck'
 
@@ -24,6 +24,8 @@ function Landing() {
 
     const [doRedirect, setRedirect] = useState(false)
 
+    const isSwipeUp = useSelector(state => state.swipeUpEv)
+    const isSwipeDown = useSelector(state => state.swipeDownEv)
     const isSwipeLeft = useSelector(state => state.swipeLeftEv)
     const isSwipeRight = useSelector(state => state.swipeRightEv)
 
@@ -84,10 +86,16 @@ function Landing() {
 
     /******************* HANDLING SWIPE EVENTS (TO ENTER SITE) ********************/
 
-    if (isSwipeLeft || isSwipeRight)
-    {
+    function resetAllSwipes() {
+        dispatch(resetSwipeU())
+        dispatch(resetSwipeD())
         dispatch(resetSwipeL())
         dispatch(resetSwipeR())
+    }
+
+    if (isSwipeUp || isSwipeDown|| isSwipeLeft || isSwipeRight)
+    {
+        resetAllSwipes()
         enterSite()
     }
 

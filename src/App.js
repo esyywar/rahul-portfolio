@@ -6,12 +6,10 @@ import Landing from './components/Landing'
 import PortfolioMain from './components/PortfolioMain'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { nextComp, prevComp } from './actions/setActiveComp'
-import { touchEventSet, setSwipeR, setSwipeL, resetSwipeR, resetSwipeL } from './actions/touchEventSet'
+import { touchEventSet, setSwipeU, setSwipeD, setSwipeR, setSwipeL } from './actions/touchEventSet'
+import { resetSwipeU, resetSwipeD, resetSwipeR, resetSwipeL } from './actions/touchEventSet'
 
 import { watchForHover } from './util/toggleHoverAnim'
-
-import portfolioPages from './content/portfolioPages.json'
 
 import './css/hoverEffects.css'
 
@@ -36,9 +34,6 @@ function App() {
 
   /* State indicating if touch event listeners are set */
   const isTouchEvListener = useSelector(state => state.isTouchEvListener)
-
-  /* Set state of active component */
-  const activeComp = useSelector(state => state.activeComp)
 
 
   /**************** DETECTING SWIPE EVENTS *****************/
@@ -104,6 +99,10 @@ function App() {
 
   /* Check if swiped left or right and handle event */
   function horizSwipeHandle() {
+    /* Reset vertical swipes before changing components */
+    dispatch(resetSwipeU())
+    dispatch(resetSwipeD())
+
     if (moveX > 0)
     {
       dispatch(setSwipeR())
@@ -122,17 +121,11 @@ function App() {
 
     if (moveY > 0) 
     {
-      if (activeComp > 0)
-      {
-        dispatch(prevComp())
-      }
+      return dispatch(setSwipeU())
     }
     else if (moveY < 0)
     {
-      if (activeComp < portfolioPages.length - 1)
-      {
-        dispatch(nextComp())
-      }
+      return dispatch(setSwipeD())
     }
   }
 

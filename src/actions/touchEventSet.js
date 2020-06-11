@@ -48,14 +48,14 @@ export const setSwipeL = () => {
 // Set flag for swipe right event
 export const resetSwipeU = () => {
     return {
-        type: "SWIPE_R_RESET"
+        type: "SWIPE_U_RESET"
     }
 }
 
 // Reset flag for swipe right event
 export const resetSwipeD = () => {
     return {
-        type: "SWIPE_L_RESET"
+        type: "SWIPE_D_RESET"
     }
 }
 

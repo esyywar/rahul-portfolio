@@ -387,12 +387,13 @@
   }
 }
 
-/* Nexus 4 */
-@media only screen and (min-width: 384px) and (min-height: 640px) {
+/* Samsung S5 */
+@media only screen and (min-width: 360px) and (min-height: 640px) {
   .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
     -ms-grid-row-span: 10;
     grid-row: 3 / 13;
+    font-size: 14px;
     -ms-grid-column-align: end;
         justify-self: end;
   }

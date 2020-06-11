@@ -502,8 +502,12 @@ $tag-list-trans-in-time: 400ms;
                     font-size: 13.5px;
                 }
     
-                .proj-card-tags .proj-item-tag {
-                    font-size: 13px;
+                .proj-card-tags {
+                    min-height: 22px;
+
+                    .proj-item-tag {
+                        font-size: 13px;
+                    }
                 }
             }
         }
