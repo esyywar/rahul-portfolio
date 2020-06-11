@@ -65,7 +65,7 @@ function App() {
     document.removeEventListener("touchmove", handleTouchMove)
 
     /* Check for swipe - If detected, remove event listeners and call handler */
-    if (deltaTime < 500)
+    if (deltaTime < 400)
     {
       if (Math.abs(moveY) > swipeThres)
       {

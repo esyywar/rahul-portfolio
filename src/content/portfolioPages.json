@@ -6,7 +6,7 @@
       "isExact": true,
       "Component": "Welcome",
       "transitionClass": "summary-transition",
-      "bgColour": "#F4A950"
+      "bgColour": "#e39c49"
     },
     {
       "id": 1,
@@ -15,7 +15,7 @@
       "isExact": false,
       "Component": "Professional",
       "transitionClass": "proexp-transition",
-      "bgColour": "#F1937E"
+      "bgColour": "#de8773"
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "isExact": false,
       "Component": "Education",
       "transitionClass": "education-transition",
-      "bgColour": "#7BB2D9"
+      "bgColour": "#6a9abd"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "isExact": false,
       "Component": "Projects",
       "transitionClass": "projects-transition",
-      "bgColour": "#5DB76B"
+      "bgColour": "#4f9c5b"
     },
     {
       "id": 4,
@@ -42,6 +42,6 @@
       "isExact": false,
       "Component": "Skills",
       "transitionClass": "skills-transition",
-      "bgColour": "#C18AF8"
+      "bgColour": "#9a70c4"
     }
   ]
