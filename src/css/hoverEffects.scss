@@ -25,16 +25,15 @@ $active-tag-hover-clr: rgb(255, 178, 34);
         /* Navigation component hover effects */
         .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
             letter-spacing: 2px;
-            color: #F0A202;
+            color: #0847f5;
         }
 
         /* Welcome page hovers */
         #intro-page .intro-container #swipe-arrow-container:hover {
-            transition: all 100ms;
+            transition: all 200ms;
             color: yellow;
 
             .swipe-arrow {
-                transition: all 300ms;
                 transform: rotate(90deg) scale(1.4);
             } 
         }
