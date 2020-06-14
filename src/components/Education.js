@@ -31,6 +31,7 @@ function Education(props) {
   const [cardElement, setCardElement] = useState(0)
 
   /************************* PRELOAD IMAGES ************************/
+
   let images = [],
     sources = []
   education.forEach((element) => {
@@ -94,7 +95,7 @@ function Education(props) {
       <h1 className='page-title'>Education</h1>
 
       {/* Render the currently active education card */}
-      <EduCard eduItem={education[cardElement]} img={images[cardElement]} />
+      <EduCard eduItem={education[cardElement]} img={images[education[cardElement].id]} />
 
       {/* Display next and previous arrows only if elements exist in each direction */}
       {cardElement > 0 && activeComp === props.id && (

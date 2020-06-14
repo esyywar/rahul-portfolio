@@ -175,7 +175,7 @@ function Projects(props) {
       {/* Render the active project item card */}
       <ProjCard
         projItem={filtProjList[cardElement]}
-        img={images[cardElement]}
+        img={images[filtProjList[cardElement].id]}
         isDescOpen={isDescOpen}
         expandDescToggle={handleDescToggle}
       />

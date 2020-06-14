@@ -106,7 +106,7 @@ function Professional(props) {
       {/* Render the active professional experience card */}
       <ProExpCard
         proExpItem={professional[cardElement]}
-        img={images[cardElement]}
+        img={images[professional[cardElement].id]}
         isDescOpen={isDescOpen}
         expandDescToggle={handleDescToggle}
       />
