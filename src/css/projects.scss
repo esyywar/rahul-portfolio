@@ -564,10 +564,10 @@ $tag-list-trans-in-time: 400ms;
 
       #tags-and-desc {
         .proj-card-tags .proj-item-tag {
-          font-size: 14px;
+          font-size: 13px;
         }
         .desc-container {
-          font-size: 14px;
+          font-size: 13px;
         }
       }
 
@@ -586,14 +586,19 @@ $tag-list-trans-in-time: 400ms;
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 650px) {
+@media only screen and (min-width: 768px) and (min-height: 640px) {
   .projects-page #proj-card {
-    #tags-and-desc .desc-container {
-      font-size: 15px;
+    #tags-and-desc {
+      .proj-card-tags .proj-item-tag {
+        font-size: 14px;
+      }
+      .desc-container {
+        font-size: 15px;
+      }
     }
 
     .desc-closed {
-      height: 6.4em;
+      height: 6em;
     }
   }
 }

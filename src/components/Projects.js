@@ -1,224 +1,203 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from "react-transition-group"
 
-import ProjTagList from './subComponents/ProjTagList'
-import ProjCard from './subComponents/ProjCard'
+import ProjTagList from "./subComponents/ProjTagList"
+import ProjCard from "./subComponents/ProjCard"
 
-import { useSelector, useDispatch } from 'react-redux'
-import { sideNavToggle } from '../actions/setSideNav'
-import { resetSwipeL, resetSwipeR } from '../actions/touchEventSet'
+import { useSelector, useDispatch } from "react-redux"
+import { sideNavToggle } from "../actions/setSideNav"
+import { resetSwipeL, resetSwipeR } from "../actions/touchEventSet"
 
-import { isMobileScrWidth } from '../util/mobileCheck'
+import { isMobileScrWidth } from "../util/mobileCheck"
+import { preloadImage } from "../util/imgPreload"
 
-import projects from '../content/projects.json'
+import projects from "../content/projects.json"
 
-import '../css/projects.css'
-
+import "../css/projects.css"
 
 function Projects(props) {
+  /************ STATE FROM REDUX STORE ******************/
 
-    /************ STATE FROM REDUX STORE ******************/
-    
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    /* Used in this component to show/remove side arrows on component change */
-    const activeComp = useSelector(state => state.activeComp)
+  /* Used in this component to show/remove side arrows on component change */
+  const activeComp = useSelector((state) => state.activeComp)
 
-    const sideNavOpen = useSelector(state => state.sideNavOpen)
+  const sideNavOpen = useSelector((state) => state.sideNavOpen)
 
-    const isLeftSwipe = useSelector(state => state.swipeLeftEv)
-    const isRightSwipe = useSelector(state => state.swipeRightEv)
+  const isLeftSwipe = useSelector((state) => state.swipeLeftEv)
+  const isRightSwipe = useSelector((state) => state.swipeRightEv)
 
-    /* Toggling the expandable detail section in child component 'ProjCard' */
-    const [isDescOpen, setDescOpen] = useState(false)
+  /* Toggling the expandable detail section in child component 'ProjCard' */
+  const [isDescOpen, setDescOpen] = useState(false)
 
+  /**************** LOCAL STATE *****************/
 
-    /**************** LOCAL STATE *****************/
+  /* Initialize tag-list to all unique tags in projects */
+  const [tagList, setTagList] = useState([])
 
-    /* Initialize tag-list to all unique tags in projects */
-    const [tagList, setTagList] = useState([])
+  /* Active project card element */
+  const [cardElement, setCardElement] = useState(0)
 
-    /* Active project card element */
-    const [cardElement, setCardElement] = useState(0)
+  /************************* PRELOAD IMAGES ************************/
 
+  let images = [],
+    sources = []
+  projects.forEach((element) => {
+    sources.push(require(`../img/projects/${element.photo}`))
+  })
+  preloadImage(images, sources)
 
-    /************* TAGS FROM PROJECTS *******************/
+  /************* TAGS FROM PROJECTS *******************/
 
-    /* Get all unique tags from projects */
-    var projTags = []
+  /* Get all unique tags from projects */
+  var projTags = []
 
-    /* Filling projTags array with unique tag values from project items */
-    projects.forEach((element) => {
-        element.tags.forEach((element) => {
-            if (!projTags.includes(element))
-            {
-                projTags.push(element)
-            }
-        })
+  /* Filling projTags array with unique tag values from project items */
+  projects.forEach((element) => {
+    element.tags.forEach((element) => {
+      if (!projTags.includes(element)) {
+        projTags.push(element)
+      }
     })
+  })
 
+  /*********** FILTER PROJECTS TO SHOW ONLY THOSE WITH SELECTED TAGS **************/
 
-    /*********** FILTER PROJECTS TO SHOW ONLY THOSE WITH SELECTED TAGS **************/
+  var filtProjList
 
-    var filtProjList
+  /* If any tags are used to filter -> show only relevant projects. Otherwise, show all */
+  if (tagList.length === 0) {
+    filtProjList = projects
+  } else {
+    filtProjList = projects.filter((element) => element.tags.some((tagItem) => tagList.includes(tagItem)))
+  }
 
-    /* If any tags are used to filter -> show only relevant projects. Otherwise, show all */
-    if (tagList.length === 0)
-    {
-        filtProjList = projects
-    }
-    else
-    {
-        filtProjList = projects.filter(element => 
-            element.tags.some(tagItem => tagList.includes(tagItem))
-        )
-    }
+  /**************** TOGGLING THE ACTIVE TAGS ******************/
 
+  /* Toggle the tag's being included in the tagList */
+  function tagToggle(tag) {
+    let newTagList = [...tagList]
 
-    /**************** TOGGLING THE ACTIVE TAGS ******************/
-
-    /* Toggle the tag's being included in the tagList */
-    function tagToggle(tag) {
-        let newTagList = [...tagList]
-
-        if (tagList.includes(tag))
-        {
-            /* Removing the tag from the list */
-            newTagList = tagList.filter(element => element !== tag)
-        }
-        else 
-        {
-            newTagList.push(tag)
-        }
-
-        /* If the first element changes with new list, call a transition animation */
-        let newFirstProj = (projects.filter(element => element.tags.some(tagItem => newTagList.includes(tagItem))))[0]
-        newFirstProj = (newFirstProj) ? newFirstProj : projects[0] 
-        if (newFirstProj !== filtProjList[cardElement])
-        {
-            return projCardTrans(newTagList)
-        }
-
-        setCardElement(0)
-        setTagList(newTagList)
+    if (tagList.includes(tag)) {
+      /* Removing the tag from the list */
+      newTagList = tagList.filter((element) => element !== tag)
+    } else {
+      newTagList.push(tag)
     }
 
-    /* If project card changes with tag change, use this transition animation */
-    function projCardTrans(newTagList) {
-        document.getElementById("proj-card").style.animation = "fallBack 500ms ease forwards"
+    /* If the first element changes with new list, call a transition animation */
+    let newFirstProj = projects.filter((element) => element.tags.some((tagItem) => newTagList.includes(tagItem)))[0]
+    newFirstProj = newFirstProj ? newFirstProj : projects[0]
+    if (newFirstProj !== filtProjList[cardElement]) {
+      return projCardTrans(newTagList)
+    }
 
+    setCardElement(0)
+    setTagList(newTagList)
+  }
+
+  /* If project card changes with tag change, use this transition animation */
+  function projCardTrans(newTagList) {
+    document.getElementById("proj-card").style.animation = "fallBack 500ms ease forwards"
+
+    setTimeout(() => {
+      setCardElement(0)
+      setTagList(newTagList)
+      document.getElementById("proj-card").style.animation = "slideFromRight 300ms ease forwards"
+    }, 500)
+  }
+
+  /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
+
+  function nextArrowClick() {
+    /* Need to check if nav bar is open on mobile device - if so, swipe closes nav and DOES NOT change active element */
+    if (cardElement < filtProjList.length - 1) {
+      try {
+        // Make current element exit and set up for next animation
+        document.getElementById("proj-card").style.animation = "exitLeft 300ms ease-in forwards"
         setTimeout(() => {
-            setCardElement(0)
-            setTagList(newTagList)
-            document.getElementById("proj-card").style.animation = "slideFromRight 300ms ease forwards"
-        }, 500)
+          setCardElement(cardElement + 1)
+          document.getElementById("proj-card").style.animation = "slideFromRight 300ms ease-in forwards"
+        }, 300)
+      } catch (error) {
+        console.log(error.message)
+      }
     }
+  }
 
-
-    /*************** ANIMATION EFFECT ON ARROW CLICKS **************/
-
-    function nextArrowClick() {
-        /* Need to check if nav bar is open on mobile device - if so, swipe closes nav and DOES NOT change active element */
-        if (cardElement < filtProjList.length - 1)
-        {
-            try {
-                // Make current element exit and set up for next animation
-                document.getElementById("proj-card").style.animation = "exitLeft 300ms ease-in forwards"
-                setTimeout(() => {
-                    setCardElement(cardElement + 1)
-                    document.getElementById("proj-card").style.animation = "slideFromRight 300ms ease-in forwards"
-                }, 300)
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
+  function prevArrowClick() {
+    if (cardElement > 0) {
+      try {
+        document.getElementById("proj-card").style.animation = "exitRight 300ms ease-in forwards"
+        setTimeout(() => {
+          setCardElement(cardElement - 1)
+          document.getElementById("proj-card").style.animation = "slideFromLeft 300ms ease-in forwards"
+        }, 300)
+      } catch (error) {
+        console.log(error.message)
+      }
     }
+  }
 
-    function prevArrowClick() {
-        if (cardElement > 0)
-        {
-            try {
-                document.getElementById("proj-card").style.animation = "exitRight 300ms ease-in forwards"
-                setTimeout(() => {
-                    setCardElement(cardElement - 1)
-                    document.getElementById("proj-card").style.animation = "slideFromLeft 300ms ease-in forwards"
-                }, 300)  
-            } catch (error) {
-                console.log(error.message)
-            }
-        }
+  /**************** TOGGLE PROJ-CARD EXPANDABLE DESCRIPTION ***************/
+
+  /* Toggle state which enables filter-tags to show and expansion of detail section */
+  function handleDescToggle() {
+    setDescOpen(!isDescOpen)
+  }
+
+  /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
+
+  if (isLeftSwipe) {
+    dispatch(resetSwipeL())
+    if (sideNavOpen && isMobileScrWidth()) {
+      dispatch(sideNavToggle())
+    } else {
+      nextArrowClick()
     }
+  }
 
-
-    /**************** TOGGLE PROJ-CARD EXPANDABLE DESCRIPTION ***************/
-
-    /* Toggle state which enables filter-tags to show and expansion of detail section */
-    function handleDescToggle()
-    {
-        setDescOpen(!isDescOpen)
+  if (isRightSwipe) {
+    dispatch(resetSwipeR())
+    if (cardElement === 0 && !sideNavOpen && isMobileScrWidth()) {
+      dispatch(sideNavToggle())
+    } else {
+      prevArrowClick()
     }
+  }
 
+  return (
+    <div className='projects-page'>
+      <h1 className='page-title'>Projects</h1>
 
-    /*************** FIRE ARROW CLICKS AND NAV TOGGLE ON SWIPES ***************/
+      {/* Render the active project item card */}
+      <ProjCard
+        projItem={filtProjList[cardElement]}
+        img={images[cardElement]}
+        isDescOpen={isDescOpen}
+        expandDescToggle={handleDescToggle}
+      />
 
-    if (isLeftSwipe)
-    {
-        dispatch(resetSwipeL())
-        if (sideNavOpen && isMobileScrWidth())
-        {
-            dispatch(sideNavToggle())
-        }
-        else
-        {
-            nextArrowClick() 
-        } 
-    }
+      {/* Display next and previous arrows only if elements exist in each direction */}
+      {cardElement > 0 && activeComp === props.id && (
+        <span className='prev-arrow' onClick={prevArrowClick}>
+          &#10094;
+        </span>
+      )}
+      {cardElement + 1 < filtProjList.length && activeComp === props.id && (
+        <span className='next-arrow' onClick={nextArrowClick}>
+          &#10095;
+        </span>
+      )}
 
-    if (isRightSwipe)
-    {
-        dispatch(resetSwipeR())
-        if (cardElement === 0 && !sideNavOpen && isMobileScrWidth())
-        {
-            dispatch(sideNavToggle())
-        }
-        else 
-        {
-            prevArrowClick()  
-        }     
-    }
-
-
-    return (
-        <div className="projects-page">
-            <h1 className="page-title">Projects</h1>
-
-            {/* Render the active project item card */}
-            <ProjCard 
-                projItem = {filtProjList[cardElement]} 
-                isDescOpen = {isDescOpen} 
-                expandDescToggle = {handleDescToggle}
-            />
-
-            {/* Display next and previous arrows only if elements exist in each direction */}
-            {(cardElement > 0 && activeComp === props.id) && <span className="prev-arrow" onClick={prevArrowClick}>&#10094;</span>}
-            {(cardElement + 1 < filtProjList.length && activeComp === props.id) && <span className="next-arrow" onClick={nextArrowClick}>&#10095;</span>}
-
-            {/* Listing all tag items selectable by user */}
-            <CSSTransition
-                in = {!isDescOpen}
-                timeout = {500}
-                classNames = "tag-list-trans"
-                unmountOnExit
-            >
-                <ProjTagList 
-                    projTags = {projTags}
-                    activeTags = {tagList}
-                    tagToggleFunc = {tagToggle}
-                />
-            </CSSTransition>
-        </div>
-    )
+      {/* Listing all tag items selectable by user */}
+      <CSSTransition in={!isDescOpen} timeout={500} classNames='tag-list-trans' unmountOnExit>
+        <ProjTagList projTags={projTags} activeTags={tagList} tagToggleFunc={tagToggle} />
+      </CSSTransition>
+    </div>
+  )
 }
 
 export default Projects

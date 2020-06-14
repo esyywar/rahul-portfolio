@@ -272,7 +272,7 @@
 }
 
 /* Tablet devices */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) and (min-height: 570px) {
   .grid-container .navigation {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;

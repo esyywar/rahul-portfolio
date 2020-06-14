@@ -130,7 +130,7 @@
   }
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 580px) {
   .education-page #edu-card {
     .school-and-date {
       grid-column: 1 / 6;
@@ -149,7 +149,7 @@
     }
 
     .degree-and-major {
-      grid-column: 5 / 9;
+      grid-column: 4 / 9;
     }
   }
 }
@@ -163,8 +163,14 @@
     }
 
     .degree-and-major {
-      grid-column: 4 / 8;
+      grid-column: 3 / 8;
     }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .education-page #edu-card .degree-and-major {
+    grid-column: 4 / 8;
   }
 }
 

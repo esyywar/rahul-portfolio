@@ -219,7 +219,7 @@ $skills-bg: #c18af8;
 }
 
 /* Tablet devices */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) and (min-height: 570px) {
   .grid-container .navigation {
     grid-column: 1 / 5;
   }

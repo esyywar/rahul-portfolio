@@ -163,7 +163,7 @@
   }
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 580px) {
   .education-page #edu-card .school-and-date {
     -ms-grid-column: 1;
     -ms-grid-column-span: 5;
@@ -183,9 +183,9 @@
     grid-column: 1 / 5;
   }
   .education-page #edu-card .degree-and-major {
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 4;
-    grid-column: 5 / 9;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 5;
+    grid-column: 4 / 9;
   }
 }
 
@@ -198,6 +198,14 @@
     -ms-grid-column-span: 4;
     grid-column: 2 / 6;
   }
+  .education-page #edu-card .degree-and-major {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 5;
+    grid-column: 3 / 8;
+  }
+}
+
+@media only screen and (min-width: 800px) {
   .education-page #edu-card .degree-and-major {
     -ms-grid-column: 4;
     -ms-grid-column-span: 4;
