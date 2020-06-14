@@ -1,328 +1,323 @@
 /************************* COLOUR SELECTIONS ***************/
 
-$summary-bg: #FD8536;
-$workexp-bg: #F16481;
-$projects-bg: #74DE86;
-$education-bg: #7BB2D9;
-$skills-bg: #C18AF8;
+$summary-bg: #fd8536;
+$workexp-bg: #f16481;
+$projects-bg: #74de86;
+$education-bg: #7bb2d9;
+$skills-bg: #c18af8;
 
-
-/************************** FONT IMPORTS *******************/ 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
+/************************** FONT IMPORTS *******************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 /************************* CSS TRANSITIONS *******************/
 
 $transition-enter-time: 500ms;
 $transition-exit-time: 200ms;
 
-
 /************************* CSS RESET *************************/
 
-html, body {
-    margin: 0px;
-    padding: 0px;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
 
-    /* apply to elements to prevent highlighting on click */
-    .no-select {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-} 
+  /* apply to elements to prevent highlighting on click */
+  .no-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
 
 /*********************** SETTING UP THE GRID CONTAINER AND RESUME WINDOW *****************/
 
 // Make grid container used by all portfolio items
 .grid-container {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: repeat(12, 1fr);
-    justify-items: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  justify-items: center;
+  align-items: center;
 
-    // Background colour set by state and changes on routed component
-    transition: background-color 500ms;
+  // Background colour set by state and changes on routed component
+  transition: background-color 500ms;
 
-    .resume-window {
-        margin-top: 1em;
-        grid-row: 2 / 12;
-        grid-column: 2 / 12;
-        width: 100%;
-        height: 100%;
-        color: whitesmoke;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
+  .resume-window {
+    margin-top: 1em;
+    grid-row: 2 / 12;
+    grid-column: 2 / 12;
+    width: 100%;
+    height: 100%;
+    color: whitesmoke;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
 
-        .page-title {
-            margin-top: 0.5em;
-            z-index: 2;
-        }
-
-        /* Horizontal scroll arrows on pages: Pro Exp, Education, Projects */
-        .prev-arrow, .next-arrow {
-            cursor: pointer;
-            position: fixed;
-            top: 50%;
-            color: white;
-            font-weight: bold;
-            font-size: 40px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            transition: color transform 200ms;
-
-            // Initial conditions for animation
-            opacity: 0;
-            animation: appearIn 500ms ease 500ms forwards;
-        }
-    
-        .next-arrow {
-            right: 10px;
-        }
-        
-        .prev-arrow {
-            left: 10px;
-        }
+    .page-title {
+      margin-top: 0.5em;
+      z-index: 2;
     }
+
+    /* Horizontal scroll arrows on pages: Pro Exp, Education, Projects */
+    .prev-arrow,
+    .next-arrow {
+      cursor: pointer;
+      position: fixed;
+      top: 50%;
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      transition: color transform 200ms;
+
+      // Initial conditions for animation
+      opacity: 0;
+      animation: appearIn 500ms ease 500ms forwards;
+    }
+
+    .next-arrow {
+      right: 10px;
+    }
+
+    .prev-arrow {
+      left: 10px;
+    }
+  }
 }
 
 /*************************** CSS REACT TRANSITIONS **************************/
 
 .grid-container {
-    /*********** SUMMARY PAGE ********/
-    .summary-transition-enter {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    .summary-transition-enter-active {
-        opacity: 1;
-        transform: translateX(0);
-        transition: all $transition-enter-time;
-    }
-    .summary-transition-exit {
-        transform: translateX(0);
-        opacity: 1;
-        transition: all $transition-exit-time;
-    }
-    .summary-transition-exit-active {
-        transform: scale(0.7);
-        opacity: 0;
-    }   
+  /*********** SUMMARY PAGE ********/
+  .summary-transition-enter {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .summary-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all $transition-enter-time;
+  }
+  .summary-transition-exit {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all $transition-exit-time;
+  }
+  .summary-transition-exit-active {
+    transform: scale(0.7);
+    opacity: 0;
+  }
 
-    /******* WORK EXP / PROFESSIONAL PAGE ******/
-    .proexp-transition-enter {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    .proexp-transition-enter-active {
-        opacity: 1;
-        transform: translateX(0);
-        transition: all $transition-enter-time;
-    }
-    .proexp-transition-exit {
-        transform: translateX(0);
-        opacity: 1;
-        transition: all $transition-exit-time;
-    }
-    .proexp-transition-exit-active {
-        transform: scale(0.7);
-        opacity: 0;
-    }
+  /******* WORK EXP / PROFESSIONAL PAGE ******/
+  .proexp-transition-enter {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .proexp-transition-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all $transition-enter-time;
+  }
+  .proexp-transition-exit {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all $transition-exit-time;
+  }
+  .proexp-transition-exit-active {
+    transform: scale(0.7);
+    opacity: 0;
+  }
 
-    /*********** EDUCATION PAGE **********/ 
-    .education-transition-enter {
-        transform: translate3d(-100%, 100%, 0);
-        opacity: 0;
-    }
-    .education-transition-enter-active {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        transition: all $transition-enter-time;
-    }
-    .education-transition-exit {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-        transition: all $transition-exit-time;
-    }
-    .education-transition-exit-active {
-        transform: scale(0.7);
-        opacity: 0;
-    }
+  /*********** EDUCATION PAGE **********/
+  .education-transition-enter {
+    transform: translate3d(-100%, 100%, 0);
+    opacity: 0;
+  }
+  .education-transition-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all $transition-enter-time;
+  }
+  .education-transition-exit {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: all $transition-exit-time;
+  }
+  .education-transition-exit-active {
+    transform: scale(0.7);
+    opacity: 0;
+  }
 
-    /**** SKILLS PAGE ****/
-    .skills-transition-enter {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    .skills-transition-enter-active {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all $transition-enter-time;
-    }
-    .skills-transition-exit {
-        transform: translateY(0);
-        opacity: 1;
-        transition: all $transition-exit-time;
-    }
-    .skills-transition-exit-active {
-        transform: scale(0.7);
-        opacity: 0;
-    }   
-    
-    /********** SKILLS PAGE *********/
-    .projects-transition-enter {
-        transform: translate3d(100%, 100%, 0);
-        opacity: 0;
-    }
-    .projects-transition-enter-active {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-        transition: all $transition-enter-time;
-    }
-    .projects-transition-exit {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-        transition: all $transition-exit-time;
-    }
-    .projects-transition-exit-active {
-        transform: scale(0.7);
-        opacity: 0;
-    }
+  /**** SKILLS PAGE ****/
+  .skills-transition-enter {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  .skills-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all $transition-enter-time;
+  }
+  .skills-transition-exit {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all $transition-exit-time;
+  }
+  .skills-transition-exit-active {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  /********** SKILLS PAGE *********/
+  .projects-transition-enter {
+    transform: translate3d(100%, 100%, 0);
+    opacity: 0;
+  }
+  .projects-transition-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all $transition-enter-time;
+  }
+  .projects-transition-exit {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: all $transition-exit-time;
+  }
+  .projects-transition-exit-active {
+    transform: scale(0.7);
+    opacity: 0;
+  }
 }
 
-
-/******************* BASIC ANIMATIONS ******************/ 
+/******************* BASIC ANIMATIONS ******************/
 
 @keyframes appearIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
 /* These animations are used in the professional, education and projects components to transition card elements */
 @keyframes exitLeft {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes exitRight {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(100%);
-    }
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
-
 
 /***************** MEDIA QUERIES *****************/
 
 @media only screen and (min-width: 560px) {
-    .grid-container .resume-window {
-        .next-arrow {
-            right: 40px;
-        }
-        .prev-arrow {
-            left: 40px;
-        }
-
+  .grid-container .resume-window {
+    .next-arrow {
+      right: 40px;
     }
+    .prev-arrow {
+      left: 40px;
+    }
+  }
 }
 
 /* Tablet */
-@media only screen and (min-width: 768px) {
-    .grid-container .resume-window {
-        grid-row: 2 / 11;
-        height: 110%;
-        overflow: visible;
+@media only screen and (min-width: 768px) and (min-height: 768px) {
+  .grid-container .resume-window {
+    grid-row: 2 / 11;
+    height: 110%;
+    overflow: visible;
 
-        .page-title {
-            font-size: 38px;
-        }
+    .page-title {
+      font-size: 38px;
     }
+  }
 }
 
 /* Laptops - fix the navbar and content side by side */
 @media only screen and (min-width: 1024px) {
-    .grid-container .resume-window {
-        grid-row: 2 / 11;
-        grid-column: 4 / 13;
-        height: 110%;
-        overflow: visible;
+  .grid-container .resume-window {
+    grid-row: 2 / 11;
+    grid-column: 4 / 13;
+    height: 110%;
+    overflow: visible;
 
-        .page-title {
-            font-size: 40px;
-        }
-        
-        .next-arrow {
-            right: 50px;
-        }
-        .prev-arrow {
-            left: 30%;
-        }
+    .page-title {
+      font-size: 40px;
     }
+
+    .next-arrow {
+      right: 50px;
+    }
+    .prev-arrow {
+      left: 30%;
+    }
+  }
 }
 
 /* Large laptop */
-@media only screen and (min-width: 1345px) {
-    .grid-container .resume-window {
-        grid-row: 2 / 11;
-        grid-column: 3 / 13;
-        height: 110%;
-        overflow: visible;
+@media only screen and (min-width: 1345px) and (min-height: 768px) {
+  .grid-container .resume-window {
+    grid-row: 2 / 11;
+    grid-column: 3 / 13;
+    height: 110%;
+    overflow: visible;
 
-        .page-title {
-            font-size: 50px;
-        }
-
-        .next-arrow {
-            right: 15%;
-        }
-        .prev-arrow {
-            left: 30%;
-        }
+    .page-title {
+      font-size: 50px;
     }
 
-    /* Changing exit animations to not go too far off-screen */
-    @keyframes exitLeft {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(-30%);
-        }
+    .next-arrow {
+      right: 15%;
     }
+    .prev-arrow {
+      left: 30%;
+    }
+  }
 
-    @keyframes exitRight {
-        from {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateX(30%);
-        }
+  /* Changing exit animations to not go too far off-screen */
+  @keyframes exitLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
     }
+    to {
+      opacity: 0;
+      transform: translateX(-30%);
+    }
+  }
+
+  @keyframes exitRight {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(30%);
+    }
+  }
 }
-

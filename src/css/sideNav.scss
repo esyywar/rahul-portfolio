@@ -3,246 +3,241 @@
 $light-blue: rgb(85, 187, 255);
 $true-blue: rgb(24, 163, 255);
 
-$summary-bg: #FD8536;
-$workexp-bg: #F16481;
-$projects-bg: #74DE86;
-$education-bg: #7BB2D9;
-$skills-bg: #C18AF8;
-
+$summary-bg: #fd8536;
+$workexp-bg: #f16481;
+$projects-bg: #74de86;
+$education-bg: #7bb2d9;
+$skills-bg: #c18af8;
 
 /*************************** FONT SELECTIONS ****************/
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
 
 .grid-container .navigation {
-    grid-row: 1 / 13;
-    grid-column: 1 / 10;
-    justify-self: start;
+  grid-row: 1 / 13;
+  grid-column: 1 / 10;
+  justify-self: start;
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+  overflow: visible;
+
+  #burger-icon {
+    z-index: 4;
+    position: absolute;
+    top: 1.2em;
+    left: 1.2em;
+    padding: 4px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 4px;
+
+    // Drop in on render animation
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: navDropIn 400ms ease-in forwards 200ms;
+
+    div {
+      width: 25px;
+      height: 3px;
+      margin: 4px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+  }
+
+  /* Class applied when nav open */
+  .burger-change {
+    background-color: red;
+
+    .line1 {
+      transform: rotate(-45deg) translate(-4px, 6px);
+    }
+    .line2 {
+      opacity: 0;
+    }
+    .line3 {
+      transform: rotate(45deg) translate(-4px, -6px);
+    }
+  }
+
+  // This class to be applied only when the side-nav is opened
+  .side-nav-border {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-right: 3px solid whitesmoke;
+  }
+
+  #side-nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgb(187, 185, 185);
+    box-shadow: 6px 0 8px rgba(0, 0, 0, 0.4);
+
     height: 100%;
-    width: 100%;
-    max-width: 300px;
-    overflow: visible;
+    width: 0;
+    transition: all 250ms linear;
 
-    #burger-icon {
-        z-index: 4;
-        position: absolute;
-        top: 1.2em;
-        left: 1.2em;
-        padding: 4px;
-        cursor: pointer;
-        border: 2px solid white;
-        border-radius: 4px;
+    font-size: 16px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 
-        // Drop in on render animation
+    .headshot-container {
+      border-radius: 50%;
+      width: 7em;
+      height: 7em;
+      margin-top: 3.5em;
+      margin-bottom: 1em;
+
+      background-image: url("../img/nav/rahul-arsenal-photo.jpg");
+      background-position: center;
+    }
+
+    .profile-link-container {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-around;
+      width: 80%;
+
+      .profile-link {
+        color: inherit;
+        text-decoration: none;
+
+        // Initial conditions for animation
         opacity: 0;
-        transform: translateY(-100%);
-        animation: navDropIn 400ms ease-in forwards 200ms;
-
-        div {
-            width: 25px;
-            height: 3px;
-            margin: 4px;
-            background-color: #ffffff;
-            transition: all 0.3s ease;
-        }
+        transform: translateX(-100%);
+      }
     }
 
-    /* Class applied when nav open */
-    .burger-change {
-        background-color: red;
-    
-        .line1 {
-            transform: rotate(-45deg) translate(-4px,6px);
-        }
-        .line2 {
-            opacity: 0;
-        }
-        .line3 {
-            transform: rotate(45deg) translate(-4px, -6px);
-        }
+    #nav-hr {
+      margin: 0.5em 0 1em 0;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 4px;
+      height: 3px;
+
+      // Initial style for animation
+      opacity: 0;
+      width: 0;
     }
 
-    // This class to be applied only when the side-nav is opened
-    .side-nav-border {
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-        border-right: 3px solid whitesmoke;
+    .side-nav-link-container {
+      font-family: "Lato", sans-serif;
+      text-align: center;
+
+      .nav-link-container {
+        padding: 0.5em 0;
+
+        // Initial styling for animation
+        opacity: 0;
+        transform: translateX(-100%);
+
+        .nav-link {
+          cursor: pointer;
+          transition: all 300ms;
+          color: black;
+          text-decoration: none;
+          font-size: 1.1em;
+          font-weight: 650;
+          transition: 300ms;
+        }
+      }
     }
-
-    #side-nav {
-        position: relative;
-        top: 0;
-        left: 0;
-        z-index: 3;
-        background-color:rgb(187, 185, 185);
-        box-shadow: 6px 0 8px rgba(0, 0, 0, 0.4);
-
-        height: 100%;
-        width: 0;
-        transition: all 250ms linear;
-
-        font-size: 16px;
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-
-        .headshot-container {
-            border-radius: 50%;
-            width: 7em;
-            height: 7em;
-            margin-top: 3.5em;
-            margin-bottom: 1em;
-
-            background-image: url('../img/nav/rahul-arsenal-photo.jpg');
-            background-position: center;
-        }
-
-        .profile-link-container {
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            justify-content: space-around;
-            width: 80%;
-
-            .profile-link {
-                color: inherit;
-                text-decoration: none;
-
-                // Initial conditions for animation
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-        }
-
-        #nav-hr {
-            margin: 0.5em 0 1em 0;
-            background-color: black;
-            border: 2px solid black;
-            border-radius: 4px;
-            height: 3px;
-
-            // Initial style for animation
-            opacity: 0;
-            width: 0;
-        }
-
-        .side-nav-link-container {
-            font-family: 'Lato', sans-serif;
-            text-align: center;
-
-            .nav-link-container {
-                padding: 0.5em 0;
-
-                // Initial styling for animation
-                opacity: 0;
-                transform: translateX(-100%);
-
-                .nav-link {
-                    cursor: pointer;
-                    transition: all 300ms;
-                    color: black;
-                    text-decoration: none;
-                    font-size: 1.1em;
-                    font-weight: 650;
-                    transition: 300ms;
-                }
-            }
-        }
-    }
+  }
 }
-
 
 /****************** ANIMATIONS ***************************/
 
 @keyframes navDropIn {
-    from {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translate(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 @keyframes hrFill {
-    from {
-        opacity: 0;
-        width: 0;
-    }
-    to {
-        opacity: 1;
-        width: 75%;
-    }
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 75%;
+  }
 }
 
 @keyframes itemsAppear {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
 
 /**************************** MEDIA QUERIES *******************************/
 
 @media only screen and (min-width: 320px) {
-    .grid-container .navigation #side-nav {
-        font-size: 18px;
-    }
+  .grid-container .navigation #side-nav {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-width: 360px) {
-    .grid-container .navigation #side-nav {
-        font-size: 20px;
-    }
+  .grid-container .navigation #side-nav {
+    font-size: 20px;
+  }
 }
 
 /* Large mobile screens */
 @media only screen and (min-width: 425px) {
-    .grid-container .navigation {
-        grid-column: 1 / 8;
-    }
+  .grid-container .navigation {
+    grid-column: 1 / 8;
+  }
 }
 
 @media only screen and (min-width: 500px) {
-    .grid-container .navigation {
-        grid-column: 1 / 7;
-    }
+  .grid-container .navigation {
+    grid-column: 1 / 7;
+  }
 }
 
 @media only screen and (min-width: 600px) {
-    .grid-container .navigation {
-        grid-column: 1 / 6;
-    }
+  .grid-container .navigation {
+    grid-column: 1 / 6;
+  }
 }
 
 /* Tablet devices */
 @media only screen and (min-width: 700px) {
-    .grid-container .navigation {
-        grid-column: 1 / 5;
-    }
+  .grid-container .navigation {
+    grid-column: 1 / 5;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-    .grid-container .navigation {
-        grid-column: 1 / 4;
-    }
+  .grid-container .navigation {
+    grid-column: 1 / 4;
+  }
 }
 
 /* Laptops - fix the navbar to side now without toggling */
 @media only screen and (min-width: 1024px) {
-    .grid-container .navigation {
-        grid-column: 1 / 4;
+  .grid-container .navigation {
+    grid-column: 1 / 4;
 
-        #burger-icon {
-            display: none;
-        }
+    #burger-icon {
+      display: none;
     }
+  }
 }
-

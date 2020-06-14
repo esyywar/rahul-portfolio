@@ -1,60 +1,65 @@
 /* This file holds all hover styles for the app - the class is applied in App.js depending on if mobile is touch or click interface */
 
-
 /**************** SASS VARIABLES *****************/
 
 $inactive-tag-hover-clr: rgb(100, 45, 163);
 $active-tag-hover-clr: rgb(255, 178, 34);
 
-
 /**************** HOVER CLASS AND STYLES ******************/
 
 .has-hover {
-    /* Hover effect on landing page */
-    .landing-page #landing-content .profile-block .name-block:hover {
-        .left-line, .right-line {
-            opacity: 1;
-            width: 15%;
-        }
-        .left-line hr, .right-line hr {
-            width: 100%;
-        }
+  /* Hover effect on landing page */
+  .landing-page #landing-content .profile-block .name-block:hover {
+    .left-line,
+    .right-line {
+      opacity: 1;
+      width: 15%;
+    }
+    .left-line hr,
+    .right-line hr {
+      width: 100%;
+    }
+  }
+
+  .grid-container {
+    /* Navigation component hover effects */
+    .navigation
+      #side-nav
+      .side-nav-link-container
+      .nav-link-container
+      .nav-link:hover {
+      letter-spacing: 2px;
+      color: #0847f5;
     }
 
-    .grid-container {
-        /* Navigation component hover effects */
-        .navigation #side-nav .side-nav-link-container .nav-link-container .nav-link:hover {
-            letter-spacing: 2px;
-            color: #0847f5;
-        }
+    /* Welcome page hovers */
+    #intro-page .intro-container #swipe-arrow-container:hover {
+      transition: all 200ms;
+      color: yellow;
 
-        /* Welcome page hovers */
-        #intro-page .intro-container #swipe-arrow-container:hover {
-            transition: all 200ms;
-            color: yellow;
-
-            .swipe-arrow {
-                transform: rotate(90deg) scale(1.4);
-            } 
-        }
-
-        /* Projects page */ 
-        .projects-page .tags-list {
-            .tag-active:hover {
-                background-color: $active-tag-hover-clr;
-            }
-            .tag-inactive:hover {
-                background-color: $inactive-tag-hover-clr;
-            }
-        }
-
-        /* Forward and previous arrows */ 
-        .resume-window {
-            .prev-arrow:hover, .next-arrow:hover {
-                transition: all 300ms;
-                color: yellow;
-                transform: scale(1.4);
-            }
-        }
+      .swipe-arrow {
+        transform: rotate(90deg) scale(1.4);
+      }
     }
+
+    /* Projects page */
+    .projects-page .tags-list {
+      .tag-active:hover {
+        background-color: $active-tag-hover-clr;
+      }
+      .tag-inactive:hover {
+        background-color: $inactive-tag-hover-clr;
+      }
+    }
+
+    /* Forward and previous arrows */
+    .resume-window {
+      .prev-arrow:hover,
+      .next-arrow:hover {
+        transition: all 300ms;
+        color: yellow;
+        transform: scale(1.4);
+      }
+    }
+  }
 }

@@ -1,209 +1,204 @@
-/**************** GOOGLE FONT IMPORTS *****************/ 
+/**************** GOOGLE FONT IMPORTS *****************/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .education-page {
-    height: 100%;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Container for education item cards */
+  #edu-card {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 2em;
     width: 100%;
+    height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 
-    /* Container for education item cards */
-    #edu-card {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        margin-top: 2em;
-        width: 100%;
-        height: 100%;
-
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-
-        p {
-            padding: 0.3em 0;
-        }
-
-        /* Text box appearing at top left */
-        .school-and-date {
-            grid-row: 1 / 3;
-            grid-column: 1 / 7;
-            align-self: center;
-            text-align: left;
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.96);
-            border-radius: 1em;
-            padding: 0.5em 1em;
-
-            //Animation effect on first render
-            opacity: 0;
-            transform: translateX(-100%);
-            animation: slideFromLeft 500ms ease-in 500ms forwards;
-        }
-
-        /* Container for image in center */
-        .image-container {
-            grid-row: 2 / 8;
-            grid-column: 1 / 9;
-            justify-self: center;
-            border-radius: 2em;
-            width: 85%;
-            height: 100%;
-            max-width: 410px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-
-            img {
-                width: auto;
-
-                // Initial conditions for animation
-                height: 0%;
-                animation: imageGrowHeight 1s ease-in-out forwards;
-            }            
-        }
-
-        /* Text box appearing at bottom right */
-        .degree-and-major {
-            grid-row: 7 / 9;
-            grid-column: 1 / 9;
-            align-self: center;
-            text-align: right;
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.96);
-            border-radius: 1em;
-            padding: 0.5em;
-
-            //Animation effect on first render
-            opacity: 0;
-            transform: translateX(100%);
-            animation: slideFromRight 500ms ease-in 500ms forwards;
-        }
+    p {
+      padding: 0.3em 0;
     }
+
+    /* Text box appearing at top left */
+    .school-and-date {
+      grid-row: 1 / 3;
+      grid-column: 1 / 7;
+      align-self: center;
+      text-align: left;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.96);
+      border-radius: 1em;
+      padding: 0.5em 1em;
+
+      //Animation effect on first render
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideFromLeft 500ms ease-in 500ms forwards;
+    }
+
+    /* Container for image in center */
+    .image-container {
+      grid-row: 2 / 8;
+      grid-column: 1 / 9;
+      justify-self: center;
+      border-radius: 2em;
+      width: 85%;
+      height: 100%;
+      max-width: 410px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      img {
+        width: auto;
+
+        // Initial conditions for animation
+        height: 0%;
+        animation: imageGrowHeight 1s ease-in-out forwards;
+      }
+    }
+
+    /* Text box appearing at bottom right */
+    .degree-and-major {
+      grid-row: 7 / 9;
+      grid-column: 1 / 9;
+      align-self: center;
+      text-align: right;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.96);
+      border-radius: 1em;
+      padding: 0.5em;
+
+      //Animation effect on first render
+      opacity: 0;
+      transform: translateX(100%);
+      animation: slideFromRight 500ms ease-in 500ms forwards;
+    }
+  }
 }
 
-
-/*************************** ANIMATIONS *********************/ 
+/*************************** ANIMATIONS *********************/
 
 /* Note: This element uses the slideFromRight and slideFromLeft animations defined in skills.scss */
 
 @keyframes imageGrowHeight {
-    from {
-        height: 0%;
-    }
-    to {
-        height: 100%;
-    }
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
 }
-
 
 /***************** MEDIA QUERIES *****************/
 
 /* Old Phones */
-@media only screen and (min-width: 320px) and (min-height: 480px) {
-    .education-page #edu-card {
-        font-size: 13px;
-    }
+@media only screen and (min-width: 320px) {
+  .education-page #edu-card {
+    font-size: 13px;
+  }
 }
 
 /* IPhone 5 - old phones */
 @media only screen and (min-width: 320px) and (min-height: 568px) {
-    .education-page #edu-card {
-        font-size: 14px;
-    }
+  .education-page #edu-card {
+    font-size: 14px;
+  }
 }
 
 /* Samsung S5 */
 @media only screen and (min-width: 360px) and (min-height: 640px) {
-    .education-page #edu-card {
-        font-size: 15px;
-    }
+  .education-page #edu-card {
+    font-size: 15px;
+  }
 }
 
 /* Large-mid size phones*/
 @media only screen and (min-width: 411px) and (min-height: 731px) {
-    .education-page #edu-card {
-        font-size: 16px;
-    }
+  .education-page #edu-card {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-width: 550px) {
-    .education-page #edu-card {
-        .school-and-date {
-            grid-column: 1 / 6;
-
-        }
-
-        .degree-and-major {
-            grid-column: 4 / 9;
-        }
+  .education-page #edu-card {
+    .school-and-date {
+      grid-column: 1 / 6;
     }
+
+    .degree-and-major {
+      grid-column: 4 / 9;
+    }
+  }
 }
 
 @media only screen and (min-width: 620px) {
-    .education-page #edu-card {
-        .school-and-date {
-            grid-column: 1 / 5;
-
-        }
-
-        .degree-and-major {
-            grid-column: 5 / 9;
-        }
+  .education-page #edu-card {
+    .school-and-date {
+      grid-column: 1 / 5;
     }
+
+    .degree-and-major {
+      grid-column: 5 / 9;
+    }
+  }
 }
 
 @media only screen and (min-width: 700px) {
-    .education-page #edu-card {
-        font-size: 18px; 
-        
-        .school-and-date {
-            grid-column: 2 / 6;
+  .education-page #edu-card {
+    font-size: 18px;
 
-        }
-
-        .degree-and-major {
-            grid-column: 4 / 8;
-        }
+    .school-and-date {
+      grid-column: 2 / 6;
     }
+
+    .degree-and-major {
+      grid-column: 4 / 8;
+    }
+  }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-    .education-page #edu-card {
-        font-size: 18px;
-        
-        .school-and-date {
-            grid-column: 2 / 5;
+  .education-page #edu-card {
+    font-size: 18px;
 
-        }
-
-        .degree-and-major {
-            grid-column: 4 / 8;
-        }
+    .school-and-date {
+      grid-column: 2 / 5;
     }
+
+    .degree-and-major {
+      grid-column: 4 / 8;
+    }
+  }
+}
+
+/* Large laptops */
+@media only screen and (min-width: 1366px) {
+  .education-page #edu-card {
+    .school-and-date {
+      grid-column: 3 / 6;
+    }
+
+    .degree-and-major {
+      grid-column: 4 / 7;
+    }
+  }
 }
 
 /* Large laptops */
 @media only screen and (min-width: 1400px) {
-    .education-page #edu-card {
-        font-size: 20px;
-
-        .school-and-date {
-            grid-column: 3 / 6;
-        }
-
-        .degree-and-major {
-            grid-column: 4 / 7;
-        }
-    }
+  .education-page #edu-card {
+    font-size: 20px;
+  }
 }
-
-
-

@@ -4,13 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 /************************* CSS TRANSITIONS *******************/
 /************************* CSS RESET *************************/
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   /* apply to elements to prevent highlighting on click */
 }
 
-html .no-select, body .no-select {
+html .no-select,
+body .no-select {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -49,7 +51,7 @@ html .no-select, body .no-select {
   height: 100%;
   color: whitesmoke;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* Horizontal scroll arrows on pages: Pro Exp, Education, Projects */
 }
 
@@ -58,7 +60,8 @@ html .no-select, body .no-select {
   z-index: 2;
 }
 
-.grid-container .resume-window .prev-arrow, .grid-container .resume-window .next-arrow {
+.grid-container .resume-window .prev-arrow,
+.grid-container .resume-window .next-arrow {
   cursor: pointer;
   position: fixed;
   top: 50%;
@@ -317,7 +320,7 @@ html .no-select, body .no-select {
 }
 
 /* Tablet */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 768px) {
   .grid-container .resume-window {
     -ms-grid-row: 2;
     -ms-grid-row-span: 9;
@@ -354,7 +357,7 @@ html .no-select, body .no-select {
 }
 
 /* Large laptop */
-@media only screen and (min-width: 1345px) {
+@media only screen and (min-width: 1345px) and (min-height: 768px) {
   .grid-container .resume-window {
     -ms-grid-row: 2;
     -ms-grid-row-span: 9;

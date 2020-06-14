@@ -11,6 +11,7 @@
       grid-template-rows: repeat(12, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
+  overflow: visible;
 }
 
 .professional-exp-page .page-title {
@@ -35,7 +36,7 @@
   grid-row: 4 / 13;
   width: 100%;
   height: 100%;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   color: black;
   font-size: 12px;
   display: -ms-grid;
@@ -45,6 +46,7 @@
       grid-template-rows: repeat(8, 1fr);
   -ms-grid-columns: (1fr)[8];
       grid-template-columns: repeat(8, 1fr);
+  overflow: visible;
   /* Classes conditionally applied for expandable detail section */
 }
 
@@ -85,7 +87,7 @@
 
 .professional-exp-page #pro-content-card .title-loc-and-company .employer {
   font-size: 1.2em;
-  color: #F08700;
+  color: #f08700;
 }
 
 .professional-exp-page #pro-content-card .title-loc-and-company p {
@@ -438,7 +440,7 @@
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 800px) {
+@media only screen and (min-width: 768px) and (min-height: 768px) {
   .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
     -ms-grid-row-span: 10;
@@ -452,13 +454,29 @@
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   .professional-exp-page #pro-content-card {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 9;
+    grid-row: 4 / 13;
+    font-size: 17px;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 15px;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7.5em;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
+  .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
     -ms-grid-row-span: 10;
     grid-row: 3 / 13;
     font-size: 18px;
   }
-  .professional-exp-page #pro-content-card .desc-closed {
-    height: 7.5em;
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 22.5vh;
   }
 }
 

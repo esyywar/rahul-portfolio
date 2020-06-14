@@ -1,200 +1,215 @@
 /*************** GOOGLE FONT IMPORTS **********************/
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
-
-/**************** WELCOME PAGE STYLE ***********************/ 
+/**************** WELCOME PAGE STYLE ***********************/
 
 #intro-page {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .intro-container {
     height: 100%;
     width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-size: 19px;
+    color: #161b21;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 
-    .intro-container {
-        height: 100%;
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-        font-family: 'VT323', monospace;
-        font-size: 19px;
-        color: #161B21;
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-
-        .name-header {
-            margin-top: 1em;
-            font-size: 1.5em;
-            font-family: 'Muli', 'sans-serif';
-        }
-
-        hr {
-            background-color: #161B21;
-            height: 2px;
-            width: 340px;
-            max-width: 90%;
-            margin: 0 auto;
-            border: 1px solid #161B21;
-            border-radius: 3px;
-            margin-bottom: 1em;
-        }
-
-        .desc-list {
-            padding: 0.1em 0;
-            max-width: 90%;
-        }         
-        .desc-paras {
-            margin-top: 0.4em;
-            max-width: 90%;
-
-            p {
-                padding: 0.5em 0;
-            }
-        }
-
-        // Swipe up arrow
-        #swipe-arrow-container {
-            position: fixed;
-            bottom: 3%;
-
-            // Initial conditions for entrance animation
-            opacity: 0;
-            transform: translateY(100%);
-            animation: slideFromBtm 500ms linear 500ms forwards;
-            
-            .swipe-arrow {
-                cursor: pointer;
-                margin-top: -0.2em;
-                padding: 0 1em;
-                font-size: 35px;
-                transform: rotate(90deg);
-            }
-        }
+    .name-header {
+      margin-top: 1em;
+      font-size: 1.5em;
+      font-family: "Muli", "sans-serif";
     }
+
+    hr {
+      background-color: #161b21;
+      height: 2px;
+      width: 340px;
+      max-width: 90%;
+      margin: 0 auto;
+      border: 1px solid #161b21;
+      border-radius: 3px;
+      margin-bottom: 1em;
+    }
+
+    .desc-list {
+      padding: 0.1em 0;
+      max-width: 90%;
+    }
+    .desc-paras {
+      margin-top: 0.4em;
+      max-width: 90%;
+
+      p {
+        padding: 0.5em 0;
+      }
+    }
+
+    // Swipe up arrow
+    #swipe-arrow-container {
+      position: fixed;
+      bottom: 3%;
+
+      // Initial conditions for entrance animation
+      opacity: 0;
+      transform: translateY(100%);
+      animation: slideFromBtm 500ms linear 500ms forwards;
+
+      .swipe-arrow {
+        cursor: pointer;
+        margin-top: -0.2em;
+        padding: 0 1em;
+        font-size: 35px;
+        transform: rotate(90deg);
+      }
+    }
+  }
 }
 
-
-/******************* ANIMATIONS ******************/ 
+/******************* ANIMATIONS ******************/
 
 @keyframes slideFromBtm {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes swipeBounce {
-    0%, 100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0.3em);
-    }
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0.3em);
+  }
 }
-
 
 /********************* MEDIA QUERIES *******************/
 
-@media only screen and (min-width: 340px) {
-    #intro-page .intro-container {
-        font-size: 23px; 
-    }
+/* IPhone 5 / SE */
+@media only screen and (min-width: 320px) and (min-height: 568px) {
+  #intro-page .intro-container {
+    font-size: 22px;
+  }
 }
 
-/* IPhone 5 */
-@media only screen and (min-width: 320px) and (min-height: 568px) {
-    #intro-page .intro-container {
-        font-size: 22px; 
-    }
+@media only screen and (min-width: 340px) and (min-height: 540px) {
+  #intro-page .intro-container {
+    font-size: 23px;
+  }
 }
 
 /* Samsing S5 / S6 / S7 */
 @media only screen and (min-width: 360px) and (min-height: 640px) {
-    #intro-page .intro-container {
-        font-size: 25px; 
-    }
+  #intro-page .intro-container {
+    font-size: 25px;
+  }
 }
 
 /* Nexus */
 @media only screen and (min-width: 384px) and (min-height: 640px) {
-    #intro-page .intro-container {
-        font-size: 26px; 
-    }
+  #intro-page .intro-container {
+    font-size: 26px;
+  }
 }
 
 /* IPhone 6S / 7 */
 @media only screen and (min-width: 375px) and (min-height: 667px) {
-    #intro-page .intro-container {
-        font-size: 26px; 
-    }
+  #intro-page .intro-container {
+    font-size: 26px;
+  }
 }
 
 /* Google Pixel, IPhone 6S / 7 */
 @media only screen and (min-width: 411px) and (min-height: 731px) {
-    #intro-page .intro-container {
-        font-size: 27px; 
-    }
+  #intro-page .intro-container {
+    font-size: 27px;
+  }
 }
 
-@media only screen and (min-width: 768px) and (min-height: 800px) {
-    #intro-page .intro-container {
-        font-size: 30px; 
+@media only screen and (min-width: 768px) and (min-height: 768px) {
+  #intro-page .intro-container {
+    font-size: 30px;
 
-        .name-header {
-            margin-top: 2em;
-        }
+    .name-header {
+      margin-top: 2em;
     }
+  }
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-    #intro-page .intro-container {
-        font-size: 31px;
-        max-width: 500px;
-        
-        .name-header {
-            font-size: 1.5em;
-        }
+  #intro-page .intro-container {
+    font-size: 29px;
+    max-width: 500px;
 
-        hr {
-            margin-bottom: 2em;
-            width: 370px;
-            max-width: 100%;
-        }
-
-        #swipe-arrow-container .swipe-arrow {
-            font-size: 45px;
-        }
+    .name-header {
+      font-size: 1.5em;
     }
+
+    hr {
+      margin-bottom: 1.5em;
+    }
+
+    #swipe-arrow-container .swipe-arrow {
+      font-size: 45px;
+    }
+  }
 }
 
+/* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
+  #intro-page .intro-container {
+    font-size: 31px;
+    max-width: 500px;
+
+    .name-header {
+      font-size: 1.5em;
+    }
+
+    hr {
+      margin-bottom: 2em;
+    }
+
+    #swipe-arrow-container .swipe-arrow {
+      font-size: 45px;
+    }
+  }
+}
 
 /* Desktop */
 @media only screen and (min-width: 1440px) {
-    #intro-page .intro-container {
-        font-size: 35px;
-        max-width: 600px;
-        
-        .name-header {
-            font-size: 1.5em;
-        }
+  #intro-page .intro-container {
+    font-size: 35px;
+    max-width: 600px;
 
-        hr {
-            margin-bottom: 2em;
-            width: 370px;
-            max-width: 100%;
-        }
+    .name-header {
+      font-size: 1.5em;
     }
+
+    hr {
+      margin-bottom: 2em;
+      width: 370px;
+      max-width: 100%;
+    }
+  }
 }

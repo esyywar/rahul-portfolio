@@ -1,12 +1,10 @@
-/**************** GOOGLE FONT IMPORTS *****************/ 
+/**************** GOOGLE FONT IMPORTS *****************/
 
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
 
-
-/**************** SASS VARIABLE COLOURS *****************/ 
+/**************** SASS VARIABLE COLOURS *****************/
 
 $text-bg-colour: whitesmoke;
-
 
 /**************** PROFESSIONAL EXPERIENCE PAGE STYLE *************/
 
@@ -17,6 +15,8 @@ $text-bg-colour: whitesmoke;
   display: grid;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(8, 1fr);
+
+  overflow: visible;
 
   .page-title {
     grid-column: 1 / 9;
@@ -31,7 +31,7 @@ $text-bg-colour: whitesmoke;
     grid-row: 4 / 13;
     width: 100%;
     height: 100%;
-    font-family: 'Muli', sans-serif;
+    font-family: "Muli", sans-serif;
     color: black;
     font-size: 12px;
 
@@ -39,6 +39,8 @@ $text-bg-colour: whitesmoke;
     justify-items: center;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(8, 1fr);
+
+    overflow: visible;
 
     .title-loc-and-company {
       grid-row: 1 / 3;
@@ -65,7 +67,7 @@ $text-bg-colour: whitesmoke;
 
       .employer {
         font-size: 1.2em;
-        color: #F08700;
+        color: #f08700;
       }
 
       p {
@@ -141,10 +143,10 @@ $text-bg-colour: whitesmoke;
         }
 
         /* Displayed for preview */
-        .pro-exp-desc-preview { 
+        .pro-exp-desc-preview {
           padding: 0.7em 1.3em;
           text-align: left;
-          
+
           .prev-text {
             color: black;
           }
@@ -177,66 +179,64 @@ $text-bg-colour: whitesmoke;
   }
 }
 
-
-/*********** ANIMATIONS (from animate.css at https://github.com/animate-css/animate.css) *************/ 
+/*********** ANIMATIONS (from animate.css at https://github.com/animate-css/animate.css) *************/
 
 @keyframes jackInTheBox {
-    from {
-      opacity: 0;
-      transform: scale(0.1) rotate(30deg);
-      transform-origin: center bottom;
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
 
-    50% {
-      transform: rotate(-10deg);
-    }
+  50% {
+    transform: rotate(-10deg);
+  }
 
-    70% {
-      transform: rotate(3deg);
-    }
+  70% {
+    transform: rotate(3deg);
+  }
 
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes lightSpeedInLeft {
-    from {
-        transform: translate3d(-100%, 0, 0) skewX(30deg);
-        opacity: 0;
-    }
-    60% {
-      transform: skewX(-20deg);
-      opacity: 1;
-    }
-    80% {
-      transform: skewX(5deg);
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
+  from {
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(5deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
 
 @keyframes lightSpeedInRight {
-    from {
-      transform: translate3d(100%, 0, 0) skewX(-30deg);
-      opacity: 0;
-    }
-    60% {
-      transform: skewX(20deg);
-      opacity: 1;
-    }
-    80% {
-      transform: skewX(-5deg);
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
+  from {
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+  60% {
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+  80% {
+    transform: skewX(-5deg);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
-
 
 /********************* MEDIA QUERIES ********************/
 
@@ -289,7 +289,7 @@ $text-bg-colour: whitesmoke;
     grid-row: 3 / 13;
     font-size: 14px;
     justify-self: end;
-    
+
     #date-and-description {
       font-size: 13px;
     }
@@ -335,7 +335,7 @@ $text-bg-colour: whitesmoke;
 }
 
 /* Tablets */
-@media only screen and (min-width: 768px) and (min-height: 800px) {
+@media only screen and (min-width: 768px) and (min-height: 768px) {
   .professional-exp-page #pro-content-card {
     grid-row: 3 / 13;
 
@@ -345,24 +345,41 @@ $text-bg-colour: whitesmoke;
   }
 }
 
-
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-  .professional-exp-page #pro-content-card {
-    grid-row: 3 / 13;
-    font-size: 18px;
+  .professional-exp-page {
+    #pro-content-card {
+      grid-row: 4 / 13;
+      font-size: 17px;
 
-    .desc-closed {
-      height: 7.5em;
+      #date-and-description {
+        font-size: 15px;
+      }
+
+      .desc-closed {
+        height: 7.5em;
+      }
     }
   }
 }
 
+/* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
+  .professional-exp-page {
+    #pro-content-card {
+      grid-row: 3 / 13;
+      font-size: 18px;
+
+      .desc-open {
+        height: 22.5vh;
+      }
+    }
+  }
+}
 
 /* Large laptops */
 @media only screen and (min-width: 1440px) {
   .professional-exp-page #pro-content-card {
-
     font-size: 20px;
 
     #date-and-description {
@@ -372,7 +389,7 @@ $text-bg-colour: whitesmoke;
       .date {
         padding-top: 0.5em;
       }
-    }  
+    }
     .desc-closed {
       height: 8em;
     }

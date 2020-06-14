@@ -22,9 +22,9 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 19px;
-  color: #161B21;
+  color: #161b21;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,16 +43,16 @@
 #intro-page .intro-container .name-header {
   margin-top: 1em;
   font-size: 1.5em;
-  font-family: 'Muli', 'sans-serif';
+  font-family: "Muli", "sans-serif";
 }
 
 #intro-page .intro-container hr {
-  background-color: #161B21;
+  background-color: #161b21;
   height: 2px;
   width: 340px;
   max-width: 90%;
   margin: 0 auto;
-  border: 1px solid #161B21;
+  border: 1px solid #161b21;
   border-radius: 3px;
   margin-bottom: 1em;
 }
@@ -117,7 +117,8 @@
 }
 
 @-webkit-keyframes swipeBounce {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -130,7 +131,8 @@
 }
 
 @keyframes swipeBounce {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -143,16 +145,16 @@
 }
 
 /********************* MEDIA QUERIES *******************/
-@media only screen and (min-width: 340px) {
-  #intro-page .intro-container {
-    font-size: 23px;
-  }
-}
-
-/* IPhone 5 */
+/* IPhone 5 / SE */
 @media only screen and (min-width: 320px) and (min-height: 568px) {
   #intro-page .intro-container {
     font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 340px) and (min-height: 540px) {
+  #intro-page .intro-container {
+    font-size: 23px;
   }
 }
 
@@ -184,7 +186,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (min-height: 800px) {
+@media only screen and (min-width: 768px) and (min-height: 768px) {
   #intro-page .intro-container {
     font-size: 30px;
   }
@@ -196,6 +198,23 @@
 /* Laptops */
 @media only screen and (min-width: 1024px) {
   #intro-page .intro-container {
+    font-size: 29px;
+    max-width: 500px;
+  }
+  #intro-page .intro-container .name-header {
+    font-size: 1.5em;
+  }
+  #intro-page .intro-container hr {
+    margin-bottom: 1.5em;
+  }
+  #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
+    font-size: 45px;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 800px) {
+  #intro-page .intro-container {
     font-size: 31px;
     max-width: 500px;
   }
@@ -204,8 +223,6 @@
   }
   #intro-page .intro-container hr {
     margin-bottom: 2em;
-    width: 370px;
-    max-width: 100%;
   }
   #intro-page .intro-container #swipe-arrow-container .swipe-arrow {
     font-size: 45px;

@@ -17,7 +17,7 @@
 }
 
 .education-page #edu-card {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 16px;
   margin-top: 2em;
@@ -136,7 +136,7 @@
 
 /***************** MEDIA QUERIES *****************/
 /* Old Phones */
-@media only screen and (min-width: 320px) and (min-height: 480px) {
+@media only screen and (min-width: 320px) {
   .education-page #edu-card {
     font-size: 13px;
   }
@@ -223,10 +223,7 @@
 }
 
 /* Large laptops */
-@media only screen and (min-width: 1400px) {
-  .education-page #edu-card {
-    font-size: 20px;
-  }
+@media only screen and (min-width: 1366px) {
   .education-page #edu-card .school-and-date {
     -ms-grid-column: 3;
     -ms-grid-column-span: 3;
@@ -236,6 +233,13 @@
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
     grid-column: 4 / 7;
+  }
+}
+
+/* Large laptops */
+@media only screen and (min-width: 1400px) {
+  .education-page #edu-card {
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=education.css.map */

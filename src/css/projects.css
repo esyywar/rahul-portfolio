@@ -21,7 +21,8 @@
   /* list of tags to filter projects appearing bottom of page */
 }
 
-.projects-page .prev-arrow, .projects-page .next-arrow {
+.projects-page .prev-arrow,
+.projects-page .next-arrow {
   top: 42% !important;
 }
 
@@ -45,7 +46,7 @@
   height: 100%;
   -ms-grid-row-align: start;
       align-self: start;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   display: -ms-grid;
   display: grid;
@@ -78,8 +79,8 @@
   border-radius: 5px;
   padding: 0.5em;
   font-size: 1.1em;
-  color: #2F3C7E;
-  background-color: #FBEAEB;
+  color: #2f3c7e;
+  background-color: #fbeaeb;
   border: 1px solid black;
   opacity: 0;
   -webkit-transform: translateY(100%);
@@ -89,7 +90,7 @@
 }
 
 .projects-page #proj-card .title-and-date .date {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-top: 0.3em;
   text-transform: uppercase;
   color: #8b0c12;
@@ -108,8 +109,8 @@
   -webkit-transition: height 300ms;
   transition: height 300ms;
   border-radius: 10px;
-  color: #2F3C7E;
-  background-color: #FBEAEB;
+  color: #2f3c7e;
+  background-color: #fbeaeb;
   border: 1px solid black;
   -ms-flex-item-align: start;
       align-self: start;
@@ -133,7 +134,7 @@
 .projects-page #proj-card #tags-and-desc .desc-container {
   cursor: pointer;
   width: 100%;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 0.8em;
   margin-bottom: 1em;
   text-align: left;
@@ -164,7 +165,7 @@
 }
 
 .projects-page #proj-card #tags-and-desc .desc-container .proj-desc-preview .detail-prompt {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 600;
@@ -583,7 +584,7 @@
 
 /************************ MEDIA QUERIES *************************/
 /* Old phones */
-@media only screen and (min-width: 320px) and (min-height: 480px) {
+@media only screen and (min-width: 320px) {
   .projects-page #proj-card {
     font-size: 12px;
   }
@@ -733,14 +734,16 @@
 }
 
 /* Laptops */
-@media only screen and (min-width: 1024px) and (min-height: 800px) {
-  .projects-page {
-    overflow: visible;
-  }
+@media only screen and (min-width: 1024px) {
   .projects-page .tags-list {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row: 12;
+    -ms-grid-row-span: 1;
+    grid-row: 12 / 13;
+  }
+  .projects-page #proj-card {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 11;
+    grid-row: 2 / 13;
   }
   .projects-page #proj-card .title-and-date {
     -ms-grid-row: 2;
@@ -757,8 +760,14 @@
   .projects-page #proj-card #tags-and-desc .desc-container {
     font-size: 16px;
   }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags {
+    min-height: 25px;
+  }
+  .projects-page #proj-card #tags-and-desc .proj-card-tags .proj-item-tag {
+    padding: 0.4em;
+  }
   .projects-page #proj-card .desc-open {
-    height: 14.2em;
+    height: 13.5em;
   }
   .projects-page #proj-card .desc-closed {
     height: 6.8em;
@@ -767,6 +776,13 @@
     -ms-grid-row: 3;
     -ms-grid-row-span: 4;
     grid-row: 3 / 7;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 768px) {
+  .projects-page #proj-card .desc-open {
+    height: 14.2em;
   }
 }
 
