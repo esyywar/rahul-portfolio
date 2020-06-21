@@ -38,7 +38,7 @@ function Welcome(props) {
 			text: 'Test Engineer',
 			htmlId: 'type-target-1',
 			listItem: true,
-			color: '#90000',
+			color: '#990000',
 		},
 		{
 			id: 1,
