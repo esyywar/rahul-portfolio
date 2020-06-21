@@ -136,7 +136,7 @@
 }
 
 .grid-container .navigation #side-nav .side-nav-link-container {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
 }
 
@@ -157,6 +157,19 @@
   font-weight: 650;
   -webkit-transition: 300ms;
   transition: 300ms;
+}
+
+.grid-container .navigation #side-nav .side-nav-link-container .resume-link-container {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  font-size: 0.8em;
+  border-radius: 35px;
+  background-color: black;
+}
+
+.grid-container .navigation #side-nav .side-nav-link-container .resume-link-container a {
+  text-decoration: none;
+  color: white;
 }
 
 /****************** ANIMATIONS ***************************/

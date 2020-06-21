@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -16,146 +16,136 @@ import './css/hoverEffects.css'
 // To build font-awesome library
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faArrowRight, faBook, faKeyboard, faPlug, faTools } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faArrowRight, faBook, faKeyboard, faPlug, faTools)
-
+import {
+	faArrowRight,
+	faBook,
+	faKeyboard,
+	faPlug,
+	faTools,
+	faDownload,
+} from '@fortawesome/free-solid-svg-icons'
+library.add(fab, faArrowRight, faBook, faKeyboard, faPlug, faTools, faDownload)
 
 function App() {
+	/**************** TOGGLING HOVER EFFECTS FOR DEVICE PLATFORM ****************/
 
-  /**************** TOGGLING HOVER EFFECTS FOR DEVICE PLATFORM ****************/
+	useEffect(() => {
+		watchForHover()
+	}, [])
 
-  useEffect(() => {
-    watchForHover()
-  }, [])
+	/**************** STATE VARIABLES *********************/
 
-  /**************** STATE VARIABLES *********************/
+	const dispatch = useDispatch()
 
-  const dispatch = useDispatch()
+	/* State indicating if touch event listeners are set */
+	const isTouchEvListener = useSelector((state) => state.isTouchEvListener)
 
-  /* State indicating if touch event listeners are set */
-  const isTouchEvListener = useSelector(state => state.isTouchEvListener)
+	/**************** DETECTING SWIPE EVENTS *****************/
 
+	var startX, startY, startTime, moveX, moveY, deltaTime
 
-  /**************** DETECTING SWIPE EVENTS *****************/
+	/* Minimum threshold for recording a swipe (in pixels) */
+	const swipeThres = 90
 
-  var startX, startY, startTime, moveX, moveY, deltaTime
+	/* Store starting touch position and time */
+	// eslint-disable-next-line
+	function handleTouchStart(event) {
+		startX = event.touches[0].clientX
+		startY = event.touches[0].clientY
+		startTime = event.timeStamp
 
-  /* Minimum threshold for recording a swipe (in pixels) */
-  const swipeThres = 90
+		/* Reset movement trackers */
+		moveX = 0
+		moveY = 0
 
-  /* Store starting touch position and time */
-  // eslint-disable-next-line
-  function handleTouchStart(event) {
-    startX = event.touches[0].clientX
-    startY = event.touches[0].clientY
-    startTime = event.timeStamp
+		/* Add event listener for touch move */
+		document.addEventListener('touchmove', handleTouchMove)
+	}
 
-    /* Reset movement trackers */
-    moveX = 0
-    moveY = 0
+	/* Compare final position with start to determine if swipe occured */
+	// eslint-disable-next-line
+	function handleTouchEnd() {
+		/* Remove touch event listener */
+		document.removeEventListener('touchmove', handleTouchMove)
 
-    /* Add event listener for touch move */
-    document.addEventListener("touchmove", handleTouchMove)
-  }
+		/* Check for swipe - If detected, remove event listeners and call handler */
+		if (deltaTime < 250) {
+			if (Math.abs(moveY) > swipeThres) {
+				vertSwipeHandle()
+				return
+			} else if (Math.abs(moveX) > swipeThres) {
+				horizSwipeHandle()
+			}
+		}
+	}
 
-  /* Compare final position with start to determine if swipe occured */
-  // eslint-disable-next-line
-  function handleTouchEnd() {
-    /* Remove touch event listener */
-    document.removeEventListener("touchmove", handleTouchMove)
+	/* Track position of touch movement */
+	function handleTouchMove(event) {
+		moveX = event.touches[0].clientX - startX
+		moveY = event.touches[0].clientY - startY
+		deltaTime = event.timeStamp - startTime
+	}
 
-    /* Check for swipe - If detected, remove event listeners and call handler */
-    if (deltaTime < 250)
-    {
-      if (Math.abs(moveY) > swipeThres)
-      {
-        vertSwipeHandle()
-        return
-      }
-      else if (Math.abs(moveX) > swipeThres)
-      { 
-        horizSwipeHandle()
-      }
-    }
-  }  
+	/* Touch event listeners attached */
+	if (!isTouchEvListener) {
+		document.addEventListener('touchstart', handleTouchStart)
+		document.addEventListener('touchend', handleTouchEnd)
+		dispatch(touchEventSet(true))
+	}
 
-  /* Track position of touch movement */
-  function handleTouchMove(event) {
-    moveX = event.touches[0].clientX - startX
-    moveY = event.touches[0].clientY - startY
-    deltaTime = event.timeStamp - startTime
-  }
+	/****************** SWIPE EVENT FLAGS TO BE HANDLED IN CHILDREN COMPONENTS ********************/
 
-  /* Touch event listeners attached */
-  if (!isTouchEvListener)
-  {
-    document.addEventListener("touchstart", handleTouchStart)
-    document.addEventListener("touchend", handleTouchEnd)
-    dispatch(touchEventSet(true))
-  }
+	/* Check if swiped left or right and handle event */
+	function horizSwipeHandle() {
+		/* Reset vertical swipes before changing components */
+		dispatch(resetSwipeU())
+		dispatch(resetSwipeD())
 
+		if (moveX > 0) {
+			dispatch(setSwipeR())
+		} else if (moveX < 0) {
+			dispatch(setSwipeL())
+		}
+	}
 
-  /****************** SWIPE EVENT FLAGS TO BE HANDLED IN CHILDREN COMPONENTS ********************/
+	/* Check if swiped up or down and handle event */
+	function vertSwipeHandle() {
+		/* Reset horizontal swipes before changing components */
+		dispatch(resetSwipeL())
+		dispatch(resetSwipeR())
 
-  /* Check if swiped left or right and handle event */
-  function horizSwipeHandle() {
-    /* Reset vertical swipes before changing components */
-    dispatch(resetSwipeU())
-    dispatch(resetSwipeD())
+		if (moveY > 0) {
+			return dispatch(setSwipeU())
+		} else if (moveY < 0) {
+			return dispatch(setSwipeD())
+		}
+	}
 
-    if (moveX > 0)
-    {
-      dispatch(setSwipeR())
-    }
-    else if (moveX < 0)
-    {
-      dispatch(setSwipeL())
-    }
-  }
+	/********************* USE EFFECTS ********************/
 
-  /* Check if swiped up or down and handle event */
-  function vertSwipeHandle() {
-    /* Reset horizontal swipes before changing components */
-    dispatch(resetSwipeL())
-    dispatch(resetSwipeR())
+	/* Update the event listeners when handler function environment changes (happens with activeComp state change) */
+	useEffect(() => {
+		document.addEventListener('touchstart', handleTouchStart)
+		document.addEventListener('touchend', handleTouchEnd)
 
-    if (moveY > 0) 
-    {
-      return dispatch(setSwipeU())
-    }
-    else if (moveY < 0)
-    {
-      return dispatch(setSwipeD())
-    }
-  }
+		return () => {
+			document.removeEventListener('touchstart', handleTouchStart)
+			document.removeEventListener('touchend', handleTouchEnd)
+		}
+	}, [handleTouchStart, handleTouchEnd])
 
-
-  /********************* USE EFFECTS ********************/
-
-  /* Update the event listeners when handler function environment changes (happens with activeComp state change) */
-  useEffect(() => {
-    document.addEventListener("touchstart", handleTouchStart)
-    document.addEventListener("touchend", handleTouchEnd)
-
-    return () => {
-      document.removeEventListener("touchstart", handleTouchStart)
-      document.removeEventListener("touchend", handleTouchEnd)
-    }
-  }, [handleTouchStart, handleTouchEnd])
-
-
-  return (
-    <div>
-      <Router>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <Route exact path="/portfolio">
-          <PortfolioMain />
-        </Route>
-      </Router>
-    </div>
-  )
+	return (
+		<div>
+			<Router>
+				<Route exact path="/">
+					<Landing />
+				</Route>
+				<Route exact path="/portfolio">
+					<PortfolioMain />
+				</Route>
+			</Router>
+		</div>
+	)
 }
 
-export default App;
+export default App
