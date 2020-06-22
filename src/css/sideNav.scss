@@ -38,9 +38,9 @@ $skills-bg: #c18af8;
 		animation: navDropIn 400ms ease-in forwards 200ms;
 
 		div {
-			width: 25px;
+			width: 20px;
 			height: 3px;
-			margin: 4px;
+			margin: 3px;
 			background-color: #ffffff;
 			transition: all 0.3s ease;
 		}
@@ -51,13 +51,13 @@ $skills-bg: #c18af8;
 		background-color: red;
 
 		.line1 {
-			transform: rotate(-45deg) translate(-4px, 6px);
+			transform: rotate(-45deg) translate(-4px, 5px);
 		}
 		.line2 {
 			opacity: 0;
 		}
 		.line3 {
-			transform: rotate(45deg) translate(-4px, -6px);
+			transform: rotate(45deg) translate(-4px, -5px);
 		}
 	}
 
@@ -80,7 +80,7 @@ $skills-bg: #c18af8;
 		width: 0;
 		transition: all 250ms linear;
 
-		font-size: 16px;
+		font-size: 15px;
 		display: flex;
 		flex-flow: column wrap;
 		align-items: center;
@@ -148,7 +148,7 @@ $skills-bg: #c18af8;
 			}
 
 			.resume-link-container {
-				margin: 0.5em 0;
+				margin-top: 1em;
 				padding: 0.5em;
 				font-size: 0.8em;
 				border-radius: 35px;
@@ -199,15 +199,40 @@ $skills-bg: #c18af8;
 
 /**************************** MEDIA QUERIES *******************************/
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) and (min-height: 480px) {
 	.grid-container .navigation #side-nav {
 		font-size: 16px;
 	}
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-height: 600px) {
 	.grid-container .navigation #side-nav {
 		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 360px) {
+	.grid-container .navigation {
+		#burger-icon div {
+			width: 25px;
+			height: 3px;
+			margin: 4px;
+		}
+
+		/* Class applied when nav open */
+		.burger-change {
+			background-color: red;
+
+			.line1 {
+				transform: rotate(-45deg) translate(-4px, 6px);
+			}
+			.line2 {
+				opacity: 0;
+			}
+			.line3 {
+				transform: rotate(45deg) translate(-4px, -6px);
+			}
+		}
 	}
 }
 

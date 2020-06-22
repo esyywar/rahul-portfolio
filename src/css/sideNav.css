@@ -34,9 +34,9 @@
 }
 
 .grid-container .navigation #burger-icon div {
-  width: 25px;
+  width: 20px;
   height: 3px;
-  margin: 4px;
+  margin: 3px;
   background-color: #ffffff;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -47,8 +47,8 @@
 }
 
 .grid-container .navigation .burger-change .line1 {
-  -webkit-transform: rotate(-45deg) translate(-4px, 6px);
-          transform: rotate(-45deg) translate(-4px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-4px, 5px);
+          transform: rotate(-45deg) translate(-4px, 5px);
 }
 
 .grid-container .navigation .burger-change .line2 {
@@ -56,8 +56,8 @@
 }
 
 .grid-container .navigation .burger-change .line3 {
-  -webkit-transform: rotate(45deg) translate(-4px, -6px);
-          transform: rotate(45deg) translate(-4px, -6px);
+  -webkit-transform: rotate(45deg) translate(-4px, -5px);
+          transform: rotate(45deg) translate(-4px, -5px);
 }
 
 .grid-container .navigation .side-nav-border {
@@ -78,7 +78,7 @@
   width: 0;
   -webkit-transition: all 250ms linear;
   transition: all 250ms linear;
-  font-size: 16px;
+  font-size: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,7 +160,7 @@
 }
 
 .grid-container .navigation #side-nav .side-nav-link-container .resume-link-container {
-  margin: 0.5em 0;
+  margin-top: 1em;
   padding: 0.5em;
   font-size: 0.8em;
   border-radius: 35px;
@@ -247,15 +247,40 @@
 }
 
 /**************************** MEDIA QUERIES *******************************/
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) and (min-height: 480px) {
   .grid-container .navigation #side-nav {
     font-size: 16px;
   }
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-height: 600px) {
   .grid-container .navigation #side-nav {
     font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  .grid-container .navigation {
+    /* Class applied when nav open */
+  }
+  .grid-container .navigation #burger-icon div {
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+  }
+  .grid-container .navigation .burger-change {
+    background-color: red;
+  }
+  .grid-container .navigation .burger-change .line1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 6px);
+            transform: rotate(-45deg) translate(-4px, 6px);
+  }
+  .grid-container .navigation .burger-change .line2 {
+    opacity: 0;
+  }
+  .grid-container .navigation .burger-change .line3 {
+    -webkit-transform: rotate(45deg) translate(-4px, -6px);
+            transform: rotate(45deg) translate(-4px, -6px);
   }
 }
 
