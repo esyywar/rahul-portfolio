@@ -184,11 +184,11 @@ function SideNav(props) {
 						)
 					})}
 					{/* Putting resume/CV in navigation bar */}
-					<div className="nav-link-container resume-link-container">
-						<a href={rahulCV} target="_blank" rel="noopener noreferrer">
+					<a href={rahulCV} target="_blank" rel="noopener noreferrer">
+						<div className="nav-link-container resume-link-container">
 							<FontAwesomeIcon icon="download" /> Download CV
-						</a>
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
