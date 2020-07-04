@@ -6,7 +6,7 @@ function SWTools() {
   const swTools = techSkills.softwareTools
 
   // Choosing background colours for each of the 4 software tool packages
-  const bgColours = ["#703993", "#230C33", "#3907ED", "#493B7D"]
+  const bgColours = ["#703993", "#230C33", "#2D0DA0", "#493B7D"]
 
   // Apply animation effect on sw-tool pack containers
   useLayoutEffect(() => {

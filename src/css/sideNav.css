@@ -97,7 +97,9 @@
   height: 7em;
   margin-top: 3.5em;
   margin-bottom: 1em;
-  background-image: url("../img/nav/rahul-arsenal-photo.jpg");
+  background-image: url("../img/nav/portfolio-photo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -136,7 +138,7 @@
 }
 
 .grid-container .navigation #side-nav .side-nav-link-container {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   width: 100%;
 }
