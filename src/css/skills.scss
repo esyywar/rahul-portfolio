@@ -3,13 +3,11 @@
 $transition-enter-time: 400ms;
 $transition-exit-time: 200ms;
 
-
 /************************** SASS VARIABLES ***********************/
 
-$prog-icon-bg-clr: #FFD6EB;
+$prog-icon-bg-clr: #ffd6eb;
 $exp-col-clr: #083a08;
-$work-prof-col-clr: #2F1847;
-
+$work-prof-col-clr: #2f1847;
 
 /************************ FONT IMPORTS *********************/
 
@@ -18,475 +16,469 @@ $work-prof-col-clr: #2F1847;
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
-
-
 .skills-page {
-    height: 100%;
-    width: 100%;
+	height: 100%;
+	width: 100%;
 
-    display: grid;
-    grid-template-rows: repeat(8, 1fr);
-    justify-items: center;
-    align-items: center;
-    text-align: center;
+	display: grid;
+	grid-template-rows: repeat(8, 1fr);
+	justify-items: center;
+	align-items: center;
+	text-align: center;
 
-    font-size: 12px;
+	font-size: 12px;
 
-    .page-title {
-        font-size: 2.5em;
-    }
-    
-    .skills-content {
-        grid-row: 2 / 7;
-        margin-top: 3em;
-        height: 100%;
-        width: 100%;
+	.page-title {
+		font-size: 2.5em;
+	}
 
-        // For menu screen component
-        .menu-screen {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
+	.skills-content {
+		grid-row: 2 / 7;
+		margin-top: 3em;
+		height: 100%;
+		width: 100%;
 
-            // Initial conditions for animation
-            opacity: 0;
-            transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-            animation: flipInVert 300ms ease forwards;
+		// For menu screen component
+		.menu-screen {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
 
-            .btn-container {
-                width: 100%;
+			// Initial conditions for animation
+			opacity: 0;
+			transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+			animation: flipInVert 300ms ease forwards;
 
-                .menu-btn {
-                    font-family: 'VT323', monospace;
-                    font-weight: 300;
-                    font-size: 1.3em;
-                }
-            }
-        }
-    }
+			.btn-container {
+				width: 100%;
 
-    .skills-footer {
-        font-family: 'VT323', monospace;
-        grid-row: 8 / span 1; 
-        align-self: start;
-        width: 100%;
+				.menu-btn {
+					font-family: 'VT323', monospace;
+					font-weight: 300;
+					font-size: 1.3em;
+				}
+			}
+		}
+	}
 
-        // Initial conditions for animation
-        opacity: 0;
-        transform: translateY(100%);
-        animation: slideFromBtm 300ms ease-in 400ms forwards;
+	.skills-footer {
+		font-family: 'VT323', monospace;
+		grid-row: 8 / span 1;
+		align-self: start;
+		width: 100%;
 
-        p {
-            font-size: 1.7em;
-        }
+		// Initial conditions for animation
+		opacity: 0;
+		transform: translateY(100%);
+		animation: slideFromBtm 300ms ease-in 400ms forwards;
 
-        .back-btn {
-            font-family: 'Muli', 'sans-serif';
-            font-weight: 500;
-        }
-    }
+		p {
+			font-size: 1.7em;
+		}
 
-    // Pure animations classes
-    .slide-right {
-        opacity: 0;
-        transform: translateX(100px);
-        animation: slideFromRight 300ms ease forwards;
-    }
+		.back-btn {
+			font-family: 'Muli', 'sans-serif';
+			font-weight: 500;
+		}
+	}
 
-    .slide-left {
-        opacity: 0;
-        transform: translateX(-100px);
-        animation: slideFromLeft 300ms ease forwards;
-    }
+	// Pure animations classes
+	.slide-right {
+		opacity: 0;
+		transform: translateX(100px);
+		animation: slideFromRight 300ms ease forwards;
+	}
 
-    .skill-entrance-animation {
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transform: scale(0.5);
-        animation: growBig 300ms ease forwards;
-    }
+	.slide-left {
+		opacity: 0;
+		transform: translateX(-100px);
+		animation: slideFromLeft 300ms ease forwards;
+	}
+
+	.skill-entrance-animation {
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transform: scale(0.5);
+		animation: growBig 300ms ease forwards;
+	}
 }
-
 
 /**************** PROGRAMMING LANGUAGES COMPONENT ****************/
 
 .skills-page .skills-content .code-langs-table {
-    height: 100%;
-    max-width: 450px;
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto-fit, minmax(45px, 1fr));
-    grid-column-gap: 10px;
-    font-size: 12px;
+	height: 100%;
+	max-width: 450px;
+	display: grid;
+	margin: 0 auto;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(auto-fit, minmax(45px, 1fr));
+	grid-column-gap: 10px;
+	font-size: 12px;
 
-    .expertise-column {
-        grid-column: 1 / 2;
-        color: $exp-col-clr;
-    }
-    .working-prof-column {
-        grid-column: 2 / 3;
-        color: $work-prof-col-clr;
-    }
+	.expertise-column {
+		grid-column: 1 / 2;
+		color: $exp-col-clr;
+	}
+	.working-prof-column {
+		grid-column: 2 / 3;
+		color: $work-prof-col-clr;
+	}
 
-    .expertise-column, .working-prof-column {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+	.expertise-column,
+	.working-prof-column {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 
-        /* Table headers */ 
-        h3 {
-            font-size: 1.5em;
-        }
+		/* Table headers */
+		h3 {
+			font-size: 1.5em;
+		}
 
-        /* Style for each icon item */ 
-        .prog-icon-container {
-            padding: 0.3em;
-            border-radius: 10px;
-            background-color: $prog-icon-bg-clr;
-            color: black;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+		/* Style for each icon item */
+		.prog-icon-container {
+			padding: 0.3em;
+			border-radius: 10px;
+			background-color: $prog-icon-bg-clr;
+			color: black;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
 
-            img {
-                height: 2em;
-                width: auto;
-            }
+			img {
+				height: 2em;
+				width: auto;
+			}
 
-            span {
-                font-size: 1.5em;
-                font-family: 'VT323', monospace;
-                padding: 0 0.5em;
-            }
-        }
+			span {
+				font-size: 1.5em;
+				font-family: 'VT323', monospace;
+				padding: 0 0.5em;
+			}
+		}
 
-        /* Set intial conditions for animation */ 
-        .exp-lang {
-            opacity: 0;
-            transform: translateX(-100%);
-        }
-        .work-prof-lang {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-    }
+		/* Set intial conditions for animation */
+		.exp-lang {
+			opacity: 0;
+			transform: translateX(-100%);
+		}
+		.work-prof-lang {
+			opacity: 0;
+			transform: translateX(100%);
+		}
+	}
 }
 
 /**************** SOFTWARE TOOLS COMPONENT ****************/
 
 .skills-page .skills-content .sw-tools-grid {
-    height: 100%;
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    grid-gap: 0.5em;
-    font-size: 12px;
+	height: 100%;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+	grid-gap: 0.5em;
+	font-size: 12px;
 
-    .sw-tool-pack {
-        width: 100%;
-        height: 80%;
-        max-height: 200px;
-        margin: auto 0;
+	.sw-tool-pack {
+		width: 100%;
+		height: 80%;
+		max-height: 200px;
+		margin: auto 0;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 0.5em;
-        padding: 0.5em 0;
-        font-family: 'Oswald', sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 0.5em;
+		padding: 0.5em 0;
+		font-family: 'Oswald', sans-serif;
 
-        /* Initial conditions for animation applied in SWTools.js */
-        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-        opacity: 0;
+		/* Initial conditions for animation applied in SWTools.js */
+		transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
 
-        .tool-pack-title {
-            height: 20%;
-            justify-self: flex-start;
-            font-size: 1.2em;
-            color: #FFBF00;
-        }
+		.tool-pack-title {
+			height: 20%;
+			justify-self: flex-start;
+			font-size: 1.2em;
+			color: #ffbf00;
+		}
 
-        .tool-pack-items {
-            height: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-        }
-    }
+		.tool-pack-items {
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
+	}
 }
-
 
 /**************** HARDWARE TOOLS COMPONENT ****************/
 
 .skills-page .skills-content .hardware-page {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	font-size: 11px;
 
-    .hw-tool-pack {
-        height: 10em;
-        min-width: 9em;
-        padding: 4px 6px;
-        margin: 0 4px;
+	.hw-tool-pack {
+		height: 10em;
+		min-width: 9em;
+		padding: 4px 6px;
+		margin: 0 4px;
 
-        font-family: 'Muli', sans-serif;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        border-radius: 5px;
-        color: black;
-        box-shadow: 4px 4px 8px rgb(75, 74, 74);
+		font-family: 'Muli', sans-serif;
+		font-weight: 600;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		border-radius: 5px;
+		color: black;
+		box-shadow: 4px 4px 8px rgb(75, 74, 74);
 
-        // Initial conditions for animation
-        opacity: 0;
-        transform: scale(0.5);
-        
-        h3 {
-            color: rgb(34, 14, 211);
-            margin-bottom: 0.6em;
-        }
-    }
+		// Initial conditions for animation
+		opacity: 0;
+		transform: scale(0.5);
+
+		h3 {
+			color: rgb(34, 14, 211);
+			margin-bottom: 0.6em;
+		}
+	}
 }
 
-
-
-/*************************** ANIMATIONS ************************/ 
+/*************************** ANIMATIONS ************************/
 
 @keyframes slideFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes slideFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 @keyframes slideFromBtm {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @keyframes flipInVert {
-    from {
-        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-        opacity: 0;
-    }
-    to {
-        transform: perspective(400px) rotate3d(0, 0, 0, 0);
-        opacity: 1;
-    }
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		opacity: 0;
+	}
+	to {
+		transform: perspective(400px) rotate3d(0, 0, 0, 0);
+		opacity: 1;
+	}
 }
 
 // From animate.css
 @keyframes flipInHoriz {
-    from {
-        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-        opacity: 0;
-    }
+	from {
+		transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+		opacity: 0;
+	}
 
-    40% {
-        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-    }
+	40% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+	}
 
-    60% {
-        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-        opacity: 1;
-    }
+	60% {
+		transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+		opacity: 1;
+	}
 
-    80% {
-        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    }
+	80% {
+		transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+	}
 
-    to {
-        transform: perspective(400px);
-        opacity: 1;
-    }
+	to {
+		transform: perspective(400px);
+		opacity: 1;
+	}
 }
 
 @keyframes growBig {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+	from {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
-
-/********************* MEDIA QUERIES **********************/ 
+/********************* MEDIA QUERIES **********************/
 
 /* Small mobile screens */
 @media only screen and (min-width: 320px) and (min-height: 568px) {
-    /* hardware skills */
-    .skills-page {
-        font-size: 14px;
+	/* hardware skills */
+	.skills-page {
+		font-size: 14px;
 
-        .skills-content {
-            .hardware-page {
-                font-size: 12px;
+		.skills-content {
+			.hardware-page {
+				font-size: 12px;
 
-                .hw-tool-pack {
-                    padding: 4px 8px;
-                }
-            }
+				.hw-tool-pack {
+					padding: 4px 8px;
+				}
+			}
 
-            .sw-tools-grid {
-                font-size: 14px;
-            }
-        }
-    }
+			.sw-tools-grid {
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 /* Samsung Galaxy S5 */
 @media only screen and (min-width: 360px) and (min-height: 640px) {
-    .skills-page {
-        font-size: 15px;
+	.skills-page {
+		font-size: 15px;
 
-        .skills-content {
-            .hardware-page {
-                font-size: 14px;
-            }
-        
-            .sw-tools-grid {
-                font-size: 15px;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                grid-gap: 1em;
-                width: 90%;
-            }
-        }
-    }
+		.skills-content {
+			.hardware-page {
+				font-size: 14px;
+			}
+
+			.sw-tools-grid {
+				font-size: 15px;
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				grid-gap: 1em;
+				width: 90%;
+			}
+		}
+	}
 }
 
 /* IPhone 6 / 7 / 8 */
 @media only screen and (min-width: 375px) and (min-height: 667px) {
-    .skills-page .skills-content .code-langs-table {
-        font-size: 14px;
-    }
+	.skills-page .skills-content .code-langs-table {
+		font-size: 14px;
+	}
 }
 
 /* Tall mobile screens */
 @media only screen and (min-width: 411px) and (min-height: 731px) {
-    .skills-page .skills-content {
-        .hardware-page {
-            font-size: 16px;
-    
-            .hw-tool-pack {
-                height: 10.8em;
-            }
-        }
-    }
+	.skills-page .skills-content {
+		.hardware-page {
+			font-size: 16px;
+
+			.hw-tool-pack {
+				height: 10.8em;
+			}
+		}
+	}
 }
 
 /* Large mobile screens */
 @media only screen and (min-width: 425px) and (min-height: 800px) {
-    .skills-page .skills-content {    
-        .sw-tools-grid {
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            width: 90%;
-        }
-    }
+	.skills-page .skills-content {
+		.sw-tools-grid {
+			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+			width: 90%;
+		}
+	}
 }
 
 /* Tablets */
 @media only screen and (min-width: 768px) {
-    .skills-page {
-        .skills-footer .back-btn {
-            font-size: 1.2em;
-            font-weight: 600;
-        }
+	.skills-page {
+		.skills-footer .back-btn {
+			font-size: 1.2em;
+			font-weight: 600;
+		}
 
-        .skills-content {
-            /* For hardware */
-            .hardware-page {
-                font-size: 18px;
+		.skills-content {
+			/* For hardware */
+			.hardware-page {
+				font-size: 18px;
 
-                .hw-tool-pack {
-                    height: 13em;
-                    padding: 8px 14px;
-                }
-            }
+				.hw-tool-pack {
+					height: 13em;
+					padding: 8px 14px;
+				}
+			}
 
-            .code-langs-table {
-                font-size: 15px;
-            }
+			.code-langs-table {
+				font-size: 15px;
+			}
 
-            /* For software tools  */
-            .sw-tools-grid {
-                font-size: 16px;
-            }
-        }
-    }
+			/* For software tools  */
+			.sw-tools-grid {
+				font-size: 16px;
+			}
+		}
+	}
 }
 
 /* Laptops */
 @media only screen and (min-width: 1024px) {
-    .skills-page {
-        .skills-footer .back-btn {
-            font-size: 1.2em;
-            font-weight: 600;
-        }
+	.skills-page {
+		.skills-footer .back-btn {
+			font-size: 1.2em;
+			font-weight: 600;
+		}
 
-        .skills-content {
-            /* For hardware */
-            .hardware-page {
-                font-size: 19px;
+		.skills-content {
+			/* For hardware */
+			.hardware-page {
+				font-size: 19px;
 
-                .hw-tool-pack {
-                    //height: 0em;
-                    padding: 8px 14px;
-                }
-            }
+				.hw-tool-pack {
+					//height: 0em;
+					padding: 8px 14px;
+				}
+			}
 
-            /* For software tools */
-            .sw-tools-grid {
-                font-size: 18px;
-            }
-        }
-    }
+			/* For software tools */
+			.sw-tools-grid {
+				font-size: 18px;
+			}
+		}
+	}
 }
 
 /* Desktop */
 @media only screen and (min-width: 1400px) {
-    .skills-page .skills-content .sw-tools-grid {
-        font-size: 20px;
-    }
+	.skills-page .skills-content .sw-tools-grid {
+		font-size: 20px;
+	}
 }

@@ -138,7 +138,7 @@
 }
 
 .grid-container .navigation #side-nav .side-nav-link-container {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
   width: 100%;
 }
@@ -172,7 +172,7 @@
   max-width: 180px;
   margin: 1em auto;
   padding: 0.5em;
-  font-size: 0.8em;
+  font-size: 0.9em;
   border-radius: 35px;
   background-color: black;
 }

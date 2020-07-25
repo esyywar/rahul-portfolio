@@ -142,10 +142,11 @@
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
-  color: #2F1847;
+  color: #2f1847;
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column, .skills-page .skills-content .code-langs-table .working-prof-column {
+.skills-page .skills-content .code-langs-table .expertise-column,
+.skills-page .skills-content .code-langs-table .working-prof-column {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -165,14 +166,16 @@
   /* Set intial conditions for animation */
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column h3, .skills-page .skills-content .code-langs-table .working-prof-column h3 {
+.skills-page .skills-content .code-langs-table .expertise-column h3,
+.skills-page .skills-content .code-langs-table .working-prof-column h3 {
   font-size: 1.5em;
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container, .skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container {
+.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container,
+.skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container {
   padding: 0.3em;
   border-radius: 10px;
-  background-color: #FFD6EB;
+  background-color: #ffd6eb;
   color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,24 +192,28 @@
           justify-content: space-between;
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container img, .skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container img {
+.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container img,
+.skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container img {
   height: 2em;
   width: auto;
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container span, .skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container span {
+.skills-page .skills-content .code-langs-table .expertise-column .prog-icon-container span,
+.skills-page .skills-content .code-langs-table .working-prof-column .prog-icon-container span {
   font-size: 1.5em;
   font-family: 'VT323', monospace;
   padding: 0 0.5em;
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column .exp-lang, .skills-page .skills-content .code-langs-table .working-prof-column .exp-lang {
+.skills-page .skills-content .code-langs-table .expertise-column .exp-lang,
+.skills-page .skills-content .code-langs-table .working-prof-column .exp-lang {
   opacity: 0;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 
-.skills-page .skills-content .code-langs-table .expertise-column .work-prof-lang, .skills-page .skills-content .code-langs-table .working-prof-column .work-prof-lang {
+.skills-page .skills-content .code-langs-table .expertise-column .work-prof-lang,
+.skills-page .skills-content .code-langs-table .working-prof-column .work-prof-lang {
   opacity: 0;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -254,7 +261,7 @@
   height: 20%;
   justify-self: flex-start;
   font-size: 1.2em;
-  color: #FFBF00;
+  color: #ffbf00;
 }
 
 .skills-page .skills-content .sw-tools-grid .sw-tool-pack .tool-pack-items {

@@ -1,107 +1,115 @@
 {
-    "hardwareTools": [
-        {
-            "id": 0,
-            "title": "Testing",
-            "items": ["Oscilloscope", "DMM", "Function Generator"]
-        },
-        {
-            "id": 1,
-            "title": "Microcontrollers",
-            "items": ["ARM Cortex-M", "ATMega(Arduino)", "ESP8266", "PIC"]
-        },
-        {
-            "id": 2,
-            "title": "Peripherals",
-            "items": ["Stepper Motors", "HV Driver ICs", "SPI", "I2C", "USART/UART", "ADC/DAC"]
-        }
-    ],
-    "programmingLangs": [
-        {
-            "id": 0,
-            "language": "C",
-            "field": "embedded",
-            "proficiency": "85%",
-            "icon": "c_prog_logo.jpg",
-            "isExpert": true
-        },
-        {
-            "id": 1,
-            "language": "C++",
-            "field": "embedded",
-            "proficiency": "75%",
-            "icon": "cpp_prog_logo.jpg",
-            "isExpert": true
-        },
-        {
-            "id": 2,
-            "language": "NI LabVIEW",
-            "field": "embedded",
-            "proficiency": "90%",
-            "icon": "labview_prog_logo.jpg",
-            "isExpert": true
-        },
-        {
-            "id": 3,
-            "language": "NI TestStand",
-            "field": "embedded",
-            "proficiency": "65%",
-            "icon": "teststand_prog_logo.jpg",
-            "isExpert": false
-        },
-        {
-            "id": 4,
-            "language": "Javascript",
-            "field": "webDev",
-            "proficiency": "70%",
-            "icon": "js_prog_logo.jpg",
-            "isExpert": false
-        },
-        {
-            "id": 5,
-            "language": "CSS3",
-            "field": "webDev",
-            "proficiency": "80%",
-            "icon": "css_prog_logo.jpg",
-            "isExpert": false
-        },
-        {
-            "id": 6,
-            "language": "HTML5",
-            "field": "webDev",
-            "proficiency": "95%",
-            "icon": "html_prog_logo.jpg",
-            "isExpert": true
-        },
-        {
-            "id": 7,
-            "language": "Python 3",
-            "field": "general",
-            "proficiency": "45%",
-            "icon": "python_prog_logo.jpg",
-            "isExpert": false
-        }
-    ],
-    "softwareTools": [
-        {
-            "id": 0,
-            "title": "Workflow",
-            "items": ["Visual Studio", "Visual Studio Code", "Git", "TortoiseSVN"]
-        },
-        {
-            "id": 1,
-            "title": "Embedded",
-            "items": ["Keil uVision", "FreeRTOS", "QP RTEF", "ARM CMSIS & HAL", "GNU/GDB"]
-        },
-        {
-            "id": 2,
-            "title": "Circuit Design",
-            "items": ["KiCAD", "LTspice", "OrCAD"]
-        },
-        {
-            "id": 3,
-            "title": "Web Dev",
-            "items": ["React JS", "Redux", "SASS", "Bootstrap", "Wordpress"]
-        }
-    ]
+	"hardwareTools": [
+		{
+			"id": 0,
+			"title": "Testing",
+			"items": ["Oscilloscope", "DMM", "Function Generator"]
+		},
+		{
+			"id": 1,
+			"title": "Microcontrollers",
+			"items": ["ARM Cortex-M", "ATmega(Arduino)", "ESP8266", "PIC"]
+		},
+		{
+			"id": 2,
+			"title": "Peripherals",
+			"items": ["Stepper Motors", "HV Driver ICs", "SPI", "I2C", "USART/UART", "ADC/DAC", "DMA"]
+		}
+	],
+	"programmingLangs": [
+		{
+			"id": 0,
+			"language": "C",
+			"field": "embedded",
+			"proficiency": "85%",
+			"icon": "c_prog_logo.jpg",
+			"isExpert": true
+		},
+		{
+			"id": 1,
+			"language": "C++",
+			"field": "embedded",
+			"proficiency": "75%",
+			"icon": "cpp_prog_logo.jpg",
+			"isExpert": true
+		},
+		{
+			"id": 2,
+			"language": "NI LabVIEW",
+			"field": "embedded",
+			"proficiency": "90%",
+			"icon": "labview_prog_logo.jpg",
+			"isExpert": true
+		},
+		{
+			"id": 3,
+			"language": "NI TestStand",
+			"field": "embedded",
+			"proficiency": "65%",
+			"icon": "teststand_prog_logo.jpg",
+			"isExpert": false
+		},
+		{
+			"id": 4,
+			"language": "Javascript",
+			"field": "webDev",
+			"proficiency": "70%",
+			"icon": "js_prog_logo.jpg",
+			"isExpert": true
+		},
+		{
+			"id": 5,
+			"language": "CSS3",
+			"field": "webDev",
+			"proficiency": "80%",
+			"icon": "css_prog_logo.jpg",
+			"isExpert": false
+		},
+		{
+			"id": 6,
+			"language": "HTML5",
+			"field": "webDev",
+			"proficiency": "95%",
+			"icon": "html_prog_logo.jpg",
+			"isExpert": true
+		},
+		{
+			"id": 7,
+			"language": "Python 3",
+			"field": "general",
+			"proficiency": "45%",
+			"icon": "python_prog_logo.jpg",
+			"isExpert": false
+		},
+		{
+			"id": 8,
+			"language": "Lua",
+			"field": "embedded",
+			"proficiency": "70%",
+			"icon": "lua_prog_logo.jpg",
+			"isExpert": false
+		}
+	],
+	"softwareTools": [
+		{
+			"id": 0,
+			"title": "Workflow",
+			"items": ["Visual Studio", "Visual Studio Code", "Keil uVision", "Git", "TortoiseSVN"]
+		},
+		{
+			"id": 1,
+			"title": "Embedded",
+			"items": ["FreeRTOS", "QP RTOS", "NodeMCU", "ARM CMSIS & HAL", "GNU/GDB"]
+		},
+		{
+			"id": 2,
+			"title": "Circuit Design",
+			"items": ["KiCAD", "LTspice", "OrCAD"]
+		},
+		{
+			"id": 3,
+			"title": "Web Dev",
+			"items": ["React JS", "Redux", "Node JS", "MongoDB", "Material-UI"]
+		}
+	]
 }
