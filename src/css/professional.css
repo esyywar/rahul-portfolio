@@ -492,6 +492,13 @@
 }
 
 /* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 650px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 13em;
+  }
+}
+
+/* Laptops */
 @media only screen and (min-width: 1024px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
@@ -500,7 +507,7 @@
     font-size: 18px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 14em;
+    height: 13em;
   }
 }
 
