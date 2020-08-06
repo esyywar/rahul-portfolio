@@ -171,7 +171,7 @@
 }
 
 .professional-exp-page #pro-content-card #date-and-description .desc-container .pro-exp-desc-full {
-  padding: 0.7em 1.2em 0 1.2em;
+  padding: 0.7em 1.2em;
   line-height: 1.5em;
   color: black;
 }
@@ -197,7 +197,8 @@
 }
 
 .professional-exp-page #pro-content-card .desc-open {
-  height: 22.5vh;
+  height: 12em;
+  line-height: 1.5em;
 }
 
 .professional-exp-page #pro-content-card .desc-open .desc-container {
@@ -363,32 +364,6 @@
   }
 }
 
-/* Mobiles with med-screen height */
-@media only screen and (min-width: 375px) and (min-height: 580px) {
-  .professional-exp-page #pro-content-card {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 10;
-    grid-row: 3 / 13;
-    margin-top: 10px;
-  }
-  .professional-exp-page #pro-content-card #date-and-description {
-    font-size: 12.5px;
-  }
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 23.5vh;
-  }
-  .professional-exp-page #pro-content-card .desc-closed {
-    height: 7em;
-  }
-}
-
-/* IPhone 6 / 6S / 7 */
-@media only screen and (min-width: 375px) and (min-height: 667px) {
-  .professional-exp-page #pro-content-card .desc-open {
-    height: 24vh;
-  }
-}
-
 /* Samsung S5 */
 @media only screen and (min-width: 360px) and (min-height: 640px) {
   .professional-exp-page #pro-content-card {
@@ -403,7 +378,46 @@
     font-size: 13px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 24vh;
+    height: 12.5em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7em;
+  }
+}
+
+/* Mobiles with med-screen height */
+@media only screen and (min-width: 375px) and (min-height: 580px) {
+  .professional-exp-page #pro-content-card {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 10;
+    grid-row: 3 / 13;
+    margin-top: 10px;
+  }
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 12.5px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 11em;
+  }
+  .professional-exp-page #pro-content-card .desc-closed {
+    height: 7em;
+  }
+}
+
+/* IPhone 6 / 6S / 7 */
+@media only screen and (min-width: 375px) and (min-height: 667px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 12.5em;
+  }
+}
+
+/* IPhone X */
+@media only screen and (min-width: 375px) and (min-height: 812px) {
+  .professional-exp-page #pro-content-card #date-and-description {
+    font-size: 13.5px;
+  }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 14.5em;
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
@@ -420,6 +434,13 @@
   }
   .professional-exp-page #pro-content-card .desc-closed {
     height: 7em;
+  }
+}
+
+/* Google Pixel XL */
+@media only screen and (min-width: 411px) and (min-height: 823px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 13.5em;
   }
 }
 
@@ -449,6 +470,9 @@
   .professional-exp-page #pro-content-card #date-and-description {
     font-size: 16px;
   }
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 16em;
+  }
 }
 
 /* Laptops */
@@ -468,6 +492,13 @@
 }
 
 /* Laptops */
+@media only screen and (min-width: 1024px) and (min-height: 650px) {
+  .professional-exp-page #pro-content-card .desc-open {
+    height: 13em;
+  }
+}
+
+/* Laptops */
 @media only screen and (min-width: 1024px) and (min-height: 800px) {
   .professional-exp-page #pro-content-card {
     -ms-grid-row: 3;
@@ -476,7 +507,7 @@
     font-size: 18px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 22.5vh;
+    height: 13em;
   }
 }
 
