@@ -1,163 +1,163 @@
 [
-	{
-		"id": 0,
-		"title": "STM32-SSD1306 Drivers",
-		"date": "July 2020",
-		"photo": "ssd1306_stm32_drivers.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/ssd1306_drivers",
-		"tags": ["Embedded", "C/C++"],
-		"shortDesc": [
-			"Modified drivers for SSD1306 based displays and STM32 to be non-blocking.",
-			"The addition of DMA and interrupts prevents possible preemption in RTOS applications."
-		],
-		"fullDesc": [
-			"In doing a project with STM32 and a SSD1306 display, I found few drivers were available.",
-			"I modified some existing drivers to add functionality and use made use of interrupts and DMA to enable non-blocking transmission.",
-			"These drivers are safe to use in RTOS applications as their non-blocking operation will not be preempted."
-		]
-	},
-	{
-		"id": "1",
-		"title": "Digital Microfluidics Controller",
-		"date": "June 2020",
-		"photo": "dmf_pcb_pcbdesign_bg.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/Digital-Microfluidic-Control",
-		"tags": ["LabVIEW", "GUI", "Embedded"],
-		"shortDesc": [
-			"A 4-layer PCB and user-friendly LabVIEW GUI for moving milk droplets with high voltage electric fields.",
-			"I developed and tested this digital microfluidic device for my research experiments."
-		],
-		"fullDesc": [
-			"Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the application and development of this technology.",
-			"For my experiments, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating high voltage sequences used to move droplets on the chip.",
-			"Design inspiration is from Gaudi Labs' OpenDrop!"
-		]
-	},
-	{
-		"id": "2",
-		"title": "This Portfolio Website!",
-		"date": "May 2020",
-		"photo": "portfolio_site_w_tools.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/rahul-portfolio",
-		"tags": ["React-JS", "Web-Dev", "Javscript"],
-		"shortDesc": [
-			"This site features mobile first design and was built using React (with hooks), Redux, React-Router, React-Transition-Group and SASS.",
-			"I hope you enjoy visiting this site half as much as I did making it!"
-		],
-		"fullDesc": [
-			"Created with mobile first design, this site was built with React, Redux, React-Router, React-Transition-Group and SASS.",
-			"Using purely functional components, I got the opportunity to explore React Hooks and Redux store management. The swipe events for mobile devices were implemented natively.",
-			"This site was a joy to build and I hope you enjoy viewing it half as much as I did making it!"
-		]
-	},
-	{
-		"id": "3",
-		"title": "Win32 Sudoku Solver",
-		"date": "Apr 2020",
-		"photo": "sudoku_solver.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/sudoku-solve-GUI",
-		"tags": ["C/C++", "GUI"],
-		"shortDesc": [
-			"Watch a DFS back-tracking algorithm at work as it solves a sudoku in real-time!",
-			"Built in C with Win32 API for maximum efficiency and lightweight file size.",
-			"This program applies event driven programming and multithreading."
-		],
-		"fullDesc": [
-			"This application implements the depth-first-search backtracking algorithm to solve sudoku puzzles! The GUI allows the user to set the puzzle and speed before watching how the algorithm works.",
-			"I chose to develop this application with C and the Win32 API. GUI programming at this low level allowed me to deeply understand event driven programming and the basics of multithreading.",
-			"The final product is a lightweight and efficient application reminiscent of the 1980s!"
-		]
-	},
-	{
-		"id": "4",
-		"title": "ARM Cortex M4 Drivers",
-		"date": "Mar 2020",
-		"photo": "stm32_drivers_screenshot.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/stm32f446xx",
-		"tags": ["C/C++", "Embedded"],
-		"shortDesc": [
-			"Bare-metal programming of various peripheral APIs including IRQ configuration SPI, I2C, UART/USART and Timers.",
-			"The APIs have been tested on a Arm Cortex M4 based development board."
-		],
-		"fullDesc": [
-			"I began this bare-metal programming project to strengthen my understanding of the ARM Cortex M architecture and digital communication protocols.",
-			"I have programmed and tested  user-friendly APIs for IRQ configuration, GPIO configuration, SPI, I2C, UART/USART and Timers on the STM32F446RE Arm Cortex M4 based development board.",
-			"Programming these drivers reminds me the value of writing organized and readable code."
-		]
-	},
-	{
-		"id": "5",
-		"title": "LED Light Strip Controller",
-		"date": "Jan 2020",
-		"photo": "led_ctrl_pcb.jpg",
-		"openSrc": true,
-		"link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
-		"tags": ["C/C++", "Embedded"],
-		"shortDesc": [
-			"Built the firmware and PCB hardware for a multi-function decorative LED light strip controller.",
-			"User can switch between modes with button press and set parameters (e.g. colour, brightness) with potentiometers."
-		],
-		"fullDesc": [
-			"A decorative LED light strip controller built with the Arduino Nano microcontroller, FastLED library and a custom 2 layer PCB.",
-			"The user can select from 3 different functions which are: static colour display, patterned light show and music visualizer. In each mode, the potentiometers tune parameters such as brightness, colour and sensitivity.",
-			"A simple project that produced a great final product!"
-		]
-	},
-	{
-		"id": "6",
-		"title": "Literature Blog - rahulscorner.me",
-		"date": "Dec 2019",
-		"photo": "rahulscorner_library_page.jpg",
-		"openSrc": false,
-		"tags": ["Web-Dev", "React-JS", "Javscript"],
-		"shortDesc": [
-			"My personal blog website where I write about the books which have shaped my life!",
-			"Built with React, React-Router and SASS.",
-			"Features light and dark modes!"
-		],
-		"fullDesc": [
-			"My personal blog where I share articles and recommendations of books that have shaped my life! Built using React, React-Router, React-Helmet and SASS.",
-			"The site features light and dark modes. Currently, all data is stored on the client side. I am working on building the back-end and database for dynamic data loading.",
-			"An earlier version built with PHP7 and vanilla JS is available at my github."
-		]
-	},
-	{
-		"id": "7",
-		"title": "Rubikloud - Retail Predictions",
-		"date": "Dec 2019",
-		"photo": "rubikcloud_project.jpg",
-		"openSrc": false,
-		"tags": ["Python", "Machine Learning"],
-		"shortDesc": [
-			"The task was to take a dataset of transactions and predict each customer's likelihood of purchasing from a top 5 brand.",
-			"Experimenting with Scikit-Learn ultimately resulted in a random-forest classifier achieving a 0.946 AUC on test data."
-		],
-		"fullDesc": [
-			"The final project in my introductory machine learning course. Given a dataset of over 1 million anonimized retail transactions, I was tasked with predicting each customer's likelihood to purchase from a top 5 brand during a 3 month period.",
-			"Experimenting with the Scikit-Learn library, a variety of supervised learning models were analyzed. Ultimately, a random forest classifier gave the best results.",
-			"Evaluated on the test data, the final model produced the best ROC curve with average AUC of 0.946."
-		]
-	},
-	{
-		"id": "8",
-		"title": "OTTOGROW Hydroponics Grower",
-		"date": "Apr 2019",
-		"photo": "ottogrow_present.jpg",
-		"openSrc": false,
-		"tags": ["LabVIEW", "Embedded", "GUI"],
-		"shortDesc": [
-			"A complete hardware and software solution for regulating nutrient ion concentration in hydroponic growing systems.",
-			"Uses an Ion-Selective-Electrode sensor and user configrable set-points to autonomously control ion concentration."
-		],
-		"fullDesc": [
-			"A complete hardware and software closed loop control system for regulating nutrient ion concentration in hydroponic (soil-less) growing systems.",
-			"Presented as my capstone engineering project, this device used an Ion-Selective-Electrode sensor, water-level sensor and solenoid valves to maintain nutrient concentration within 200ppm of a user configured setpoint.",
-			"The user could monitor data and modify control parameters from a LabVIEW GUI application."
-		]
-	}
+  {
+    "id": 0,
+    "title": "STM32-SSD1306 Drivers",
+    "date": "July 2020",
+    "photo": "ssd1306_stm32_drivers.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/ssd1306_drivers",
+    "tags": ["Embedded", "C/C++"],
+    "shortDesc": [
+      "Modified drivers for SSD1306 based displays and STM32 to be non-blocking.",
+      "The addition of DMA and interrupts prevents possible preemption in RTOS applications."
+    ],
+    "fullDesc": [
+      "In doing an RTOS project with STM32 and a SSD1306 display, I found few drivers were available.",
+      "I modified existing drivers to add functionality and also to use interrupts and DMA to enable non-blocking transmission.",
+      "These drivers are safe to use in RTOS applications as their non-blocking transmission will not be preempted."
+    ]
+  },
+  {
+    "id": "1",
+    "title": "Digital Microfluidics Controller",
+    "date": "June 2020",
+    "photo": "dmf_pcb_pcbdesign_bg.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/Digital-Microfluidic-Control",
+    "tags": ["LabVIEW", "GUI", "Embedded"],
+    "shortDesc": [
+      "A 4-layer PCB and user-friendly LabVIEW GUI for moving milk droplets with high voltage electric fields.",
+      "I developed and tested this digital microfluidic device for my research experiments."
+    ],
+    "fullDesc": [
+      "Digital microfluidic technology has become a popular platform for point-of-care diagnostics as it allows automated processing of droplet sized samples - my research focuses on the application and development of this technology.",
+      "For my experiments, I have created and tested a 4 layer PCB and user-friendly GUI software for easily configuring and automating high voltage sequences used to move droplets on the chip.",
+      "Design inspiration is from Gaudi Labs' OpenDrop!"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "This Portfolio Website!",
+    "date": "May 2020",
+    "photo": "portfolio_site_w_tools.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/rahul-portfolio",
+    "tags": ["React-JS", "Web-Dev", "Javscript"],
+    "shortDesc": [
+      "This site features mobile first design and was built using React (with hooks), Redux, React-Router, React-Transition-Group and SASS.",
+      "I hope you enjoy visiting this site half as much as I did making it!"
+    ],
+    "fullDesc": [
+      "Created with mobile first design, this site was built with React, Redux, React-Router, React-Transition-Group and SASS.",
+      "Using purely functional components, I got the opportunity to explore React Hooks and Redux store management. The swipe events for mobile devices were implemented natively.",
+      "This site was a joy to build and I hope you enjoy viewing it half as much as I did making it!"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Win32 Sudoku Solver",
+    "date": "Apr 2020",
+    "photo": "sudoku_solver.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/sudoku-solve-GUI",
+    "tags": ["C/C++", "GUI"],
+    "shortDesc": [
+      "Watch a DFS back-tracking algorithm at work as it solves a sudoku in real-time!",
+      "Built in C with Win32 API for maximum efficiency and lightweight file size.",
+      "This program applies event driven programming and multithreading."
+    ],
+    "fullDesc": [
+      "This application implements the depth-first-search backtracking algorithm to solve sudoku puzzles! The GUI allows the user to set the puzzle and speed before watching how the algorithm works.",
+      "I chose to develop this application with C and the Win32 API. GUI programming at this low level allowed me to deeply understand event driven programming and the basics of multithreading.",
+      "The final product is a lightweight and efficient application reminiscent of the 1980s!"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "ARM Cortex M4 Drivers",
+    "date": "Mar 2020",
+    "photo": "stm32_drivers_screenshot.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/stm32f446xx",
+    "tags": ["C/C++", "Embedded"],
+    "shortDesc": [
+      "Bare-metal programming of various peripheral APIs including IRQ configuration SPI, I2C, UART/USART and Timers.",
+      "The APIs have been tested on a Arm Cortex M4 based development board."
+    ],
+    "fullDesc": [
+      "I began this bare-metal programming project to strengthen my understanding of the ARM Cortex M architecture and digital communication protocols.",
+      "I have programmed and tested  user-friendly APIs for IRQ configuration, GPIO configuration, SPI, I2C, UART/USART and Timers on the STM32F446RE Arm Cortex M4 based development board.",
+      "Programming these drivers reminds me the value of writing organized and readable code."
+    ]
+  },
+  {
+    "id": "5",
+    "title": "LED Light Strip Controller",
+    "date": "Jan 2020",
+    "photo": "led_ctrl_pcb.jpg",
+    "openSrc": true,
+    "link": "https://github.com/esyywar/Arduino-Interactive-LED-Strip",
+    "tags": ["C/C++", "Embedded"],
+    "shortDesc": [
+      "Built the firmware and PCB hardware for a multi-function decorative LED light strip controller.",
+      "User can switch between modes with button press and set parameters (e.g. colour, brightness) with potentiometers."
+    ],
+    "fullDesc": [
+      "A decorative LED light strip controller built with the Arduino Nano microcontroller, FastLED library and a custom 2 layer PCB.",
+      "The user can select from 3 different functions which are: static colour display, patterned light show and music visualizer. In each mode, the potentiometers tune parameters such as brightness, colour and sensitivity.",
+      "A simple project that produced a great final product!"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Literature Blog - rahulscorner.me",
+    "date": "Dec 2019",
+    "photo": "rahulscorner_library_page.jpg",
+    "openSrc": false,
+    "tags": ["Web-Dev", "React-JS", "Javscript"],
+    "shortDesc": [
+      "My personal blog website where I write about the books which have shaped my life!",
+      "Built with React, React-Router and SASS.",
+      "Features light and dark modes!"
+    ],
+    "fullDesc": [
+      "My personal blog where I share articles and recommendations of books that have shaped my life! Built using React, React-Router, React-Helmet and SASS.",
+      "The site features light and dark modes. Currently, all data is stored on the client side. I am working on building the back-end and database for dynamic data loading.",
+      "An earlier version built with PHP7 and vanilla JS is available at my github."
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Rubikloud - Retail Predictions",
+    "date": "Dec 2019",
+    "photo": "rubikcloud_project.jpg",
+    "openSrc": false,
+    "tags": ["Python", "Machine Learning"],
+    "shortDesc": [
+      "The task was to take a dataset of transactions and predict each customer's likelihood of purchasing from a top 5 brand.",
+      "Experimenting with Scikit-Learn ultimately resulted in a random-forest classifier achieving a 0.946 AUC on test data."
+    ],
+    "fullDesc": [
+      "The final project in my introductory machine learning course. Given a dataset of over 1 million anonimized retail transactions, I was tasked with predicting each customer's likelihood to purchase from a top 5 brand during a 3 month period.",
+      "Experimenting with the Scikit-Learn library, a variety of supervised learning models were analyzed. Ultimately, a random forest classifier gave the best results.",
+      "Evaluated on the test data, the final model produced the best ROC curve with average AUC of 0.946."
+    ]
+  },
+  {
+    "id": "8",
+    "title": "OTTOGROW Hydroponics Grower",
+    "date": "Apr 2019",
+    "photo": "ottogrow_present.jpg",
+    "openSrc": false,
+    "tags": ["LabVIEW", "Embedded", "GUI"],
+    "shortDesc": [
+      "A complete hardware and software solution for regulating nutrient ion concentration in hydroponic growing systems.",
+      "Uses an Ion-Selective-Electrode sensor and user configrable set-points to autonomously control ion concentration."
+    ],
+    "fullDesc": [
+      "A complete hardware and software closed loop control system for regulating nutrient ion concentration in hydroponic (soil-less) growing systems.",
+      "Presented as my capstone engineering project, this device used an Ion-Selective-Electrode sensor, water-level sensor and solenoid valves to maintain nutrient concentration within 200ppm of a user configured setpoint.",
+      "The user could monitor data and modify control parameters from a LabVIEW GUI application."
+    ]
+  }
 ]
