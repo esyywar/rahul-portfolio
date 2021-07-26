@@ -36,7 +36,7 @@
   grid-row: 4 / 13;
   width: 100%;
   height: 100%;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   color: black;
   font-size: 12px;
   display: -ms-grid;
@@ -440,7 +440,7 @@
 /* Google Pixel XL */
 @media only screen and (min-width: 411px) and (min-height: 823px) {
   .professional-exp-page #pro-content-card .desc-open {
-    height: 13.5em;
+    height: 14em;
   }
 }
 
@@ -507,7 +507,7 @@
     font-size: 18px;
   }
   .professional-exp-page #pro-content-card .desc-open {
-    height: 13em;
+    height: 16em;
   }
 }
 

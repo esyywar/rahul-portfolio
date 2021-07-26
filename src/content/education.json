@@ -1,39 +1,39 @@
 [
-    {
-        "id": "0",
-        "major": "Systems and Computing Engineering",
-        "degree": "Master of Applied Science",
-        "abbrevDegree": "MASc.",
-        "institution": "University of Guelph",
-        "current": true,
-        "startDate": "May 2019",
-        "endDate": "Dec 2020",
-        "photo": "uofg-engg-complex.jpg",
-        "GPA": "",
-        "allocades": []
-    },
-    {
-        "id": "1",
-        "major": "Biomedical Engineering",
-        "degree": "Bachelor of Engineering",
-        "abbrevDegree": "B.Eng (Co-op)",
-        "institution": "University of Guelph",
-        "current": false,
-        "startDate": "Sept 2014",
-        "endDate": "Apr 2019",
-        "photo": "uofg-johnston.jpg",
-        "GPA": "82.5",
-        "allocades": ["Honours Graduate", "Entrance Scholarship ($3000)"]
-    },
-    {
-        "id": "2",
-        "degree": "High School",
-        "institution": "Bayview Secondary School",
-        "current": false,
-        "startDate": "Sept 2010",
-        "endDate": "June 2014",
-        "photo": "bayview-secondary.jpg",
-        "GPA": "87",
-        "allocades": ["Honours Graduate"]
-    }
+	{
+		"id": 0,
+		"major": "Systems and Computing Engineering",
+		"degree": "Master of Applied Science",
+		"abbrevDegree": "MASc.",
+		"institution": "University of Guelph",
+		"current": true,
+		"startDate": "May 2019",
+		"endDate": "Dec 2020",
+		"photo": "uofg-engg-complex.jpg",
+		"GPA": "",
+		"allocades": []
+	},
+	{
+		"id": 1,
+		"major": "Biomedical Engineering",
+		"degree": "Bachelor of Engineering",
+		"abbrevDegree": "B.Eng (Co-op)",
+		"institution": "University of Guelph",
+		"current": false,
+		"startDate": "Sept 2014",
+		"endDate": "Apr 2019",
+		"photo": "uofg-johnston.jpg",
+		"GPA": "82.5",
+		"allocades": ["Honours Graduate", "Entrance Scholarship ($3000)"]
+	},
+	{
+		"id": 2,
+		"degree": "High School",
+		"institution": "Bayview Secondary School",
+		"current": false,
+		"startDate": "Sept 2010",
+		"endDate": "June 2014",
+		"photo": "bayview-secondary.jpg",
+		"GPA": "87",
+		"allocades": ["Honours Graduate"]
+	}
 ]

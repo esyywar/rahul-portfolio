@@ -121,7 +121,7 @@ function Landing() {
             })}
           </p>
 
-          <h4 id='location-item'>Toronto, Canada</h4>
+          <h4 id='location-item'>Palo Alto, California</h4>
         </div>
 
         <MDBBtn className='entry-btn' color='amber' onClick={enterSite}>

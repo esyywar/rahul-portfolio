@@ -1,9 +1,25 @@
 [
     {
         "id": 0,
+        "employer": "Tesla",
+        "jobTitle": "Firmware Validation Engineer",
+        "current": true,
+        "startDate": "Feb 2020",
+        "endDate": "",
+        "photo": "tesla_dc.jpg",
+        "city": "Palo Alto",
+        "country": "United States",
+        "shortDesc": ["Designing, validating and deploying hardware-in-the-loop (HIL) test infrastructure used for firmware validation.",
+            "Hardware and software design of control systems used in vehicle validation programs."],
+        "fullDesc": ["My work in hardware-in-the-loop (HIL) development requires electrical design, software setup and on-going support for HIL test fixtures.", 
+            "I design electrical schematics to simulate in-field conditions and allow fault injection to vehicle control units.", 
+            "I also develop software tools used by firmware validation engineers to setup regression test cases on the HIL testers."]
+    },
+    {
+        "id": 1,
         "employer": "University of Guelph",
         "jobTitle": "TA & Researcher",
-        "current": true,
+        "current": false,
         "startDate": "May 2019",
         "endDate": "Dec 2020",
         "photo": "aoml-photo.jpg",
@@ -16,11 +32,11 @@
             "I also work as a teaching assistant where I have led seminars, lab activities and delivered lectures on occasion."]
     },
     {
-        "id": 1,
+        "id": 2,
         "employer": "Creation Technologies",
         "jobTitle": "Test Engineer",
         "current": false,
-        "startDate": "April 2018",
+        "startDate": "Apr 2018",
         "endDate": "Jan 2019",
         "photo": "creation-office.jpg",
         "city": "Markham",
@@ -32,7 +48,7 @@
             "I also built applications for workflow automation using LabVIEW and Visual Basic."]
     },
     {
-        "id": 2,
+        "id": 3,
         "employer": "City of Toronto",
         "jobTitle": "IT Intern",
         "current": false,
